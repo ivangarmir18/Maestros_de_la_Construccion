@@ -81,7 +81,7 @@ const BudgetCalculator = {
   },
 
   generateWhatsAppUrl(result) {
-    const phone = "34622851328";
+    const phone = "34722851328";
     const text = `¡Hola Maestros de la Construcción! He realizado una simulación de presupuesto en vuestra web:
 🏗️ *Tipo de obra:* ${result.serviceName}
 📐 *Superficie aproximada:* ${result.areaM2} m²

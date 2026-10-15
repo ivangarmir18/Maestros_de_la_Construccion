@@ -44,6 +44,14 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Preguntas Frecuentes y Guía de Precios SEO -->
+  <url>
+    <loc>https://www.maestrosdelaconstruccion.es/faq</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Contacto y Soporte Técnico -->
   <url>
     <loc>https://www.maestrosdelaconstruccion.es/contacto</loc>

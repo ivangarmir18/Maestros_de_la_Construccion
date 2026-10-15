@@ -1,22 +1,45 @@
 /* ==============================================================
-   MAESTROS DE LA CONSTRUCCIÓN - ESTÉTICA PREMIUM / TECH LUXURY
+   MAESTROS DE LA CONSTRUCCIÓN - ESTÉTICA DUAL (MODO CLARO PRINCIPAL / OSCURO OPCIONAL)
    Inspirado en diseño moderno con Bento Grid, Glows y Tipografía Punchy
    ============================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap');
 
 :root {
+  /* MODO CLARO (POR DEFECTO PRINCIPAL) */
+  --bg-deep: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-card: #e2e8f0;
+  --border-highlight: rgba(217, 119, 6, 0.4);
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+  --card-hover-shadow: 0 20px 35px -10px rgba(217, 119, 6, 0.15);
+
+  --primary-gradient: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
+}
+
+/* MODO OSCURO (CUANDO .dark ESTÁ ACTIVO EN <html>) */
+html.dark {
   --bg-deep: #080914;
   --bg-surface: #0e1124;
-  --bg-card: rgba(17, 21, 44, 0.75);
+  --bg-card: rgba(17, 21, 44, 0.85);
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
   --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.08);
   --border-highlight: rgba(245, 158, 11, 0.4);
-  
-  --primary-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
-  --neon-cyan: #38bdf8;
-  --neon-amber: #f59e0b;
-  --neon-purple: #a855f7;
-  --neon-emerald: #10b981;
+  --card-shadow: none;
+  --card-hover-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.2);
+
+  --nav-bg: rgba(8, 9, 20, 0.85);
+  --footer-bg: #05060d;
+  --footer-text: #64748b;
 }
 
 * {
@@ -27,8 +50,12 @@
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-deep);
-  color: #f1f5f9;
+  color: var(--text-main);
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
   background-image: 
     radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
     radial-gradient(circle at 10% 30%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
@@ -41,9 +68,12 @@ h1, h2, h3, .font-heading {
   letter-spacing: -0.035em;
 }
 
-/* Subtle dot grid pattern */
+/* Dot grid pattern */
 .bg-mesh-dots {
   background-size: 28px 28px;
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
+html.dark .bg-mesh-dots {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
 }
 
@@ -53,7 +83,7 @@ h1, h2, h3, .font-heading {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(245, 158, 11, 0) 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0) 70%);
   filter: blur(60px);
   pointer-events: none;
 }
@@ -63,19 +93,29 @@ h1, h2, h3, .font-heading {
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0) 70%);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0) 70%);
   filter: blur(60px);
   pointer-events: none;
 }
 
-/* Vibrant Gradients (como en EchoScribe) */
+/* Vibrant Gradients adaptativos */
 .text-gradient-vibrant {
+  background: linear-gradient(135deg, #0f172a 0%, #b45309 60%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html.dark .text-gradient-vibrant {
   background: linear-gradient(135deg, #ffffff 15%, #fcd34d 45%, #f59e0b 70%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-purple-cyan {
+  background: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html.dark .text-gradient-purple-cyan {
   background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -83,48 +123,65 @@ h1, h2, h3, .font-heading {
 
 /* Bento Card Style */
 .bento-card {
-  background: linear-gradient(145deg, rgba(20, 26, 54, 0.8) 0%, rgba(13, 17, 36, 0.9) 100%);
+  background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-card);
   border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-card:hover {
   transform: translateY(-4px);
   border-color: rgba(245, 158, 11, 0.45);
-  box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.2);
+  box-shadow: var(--card-hover-shadow);
 }
 
 /* Icon Containers con Neon Glow */
 .bento-icon-amber {
   background: rgba(245, 158, 11, 0.12);
   border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #d97706;
+}
+html.dark .bento-icon-amber {
   color: #fbbf24;
 }
+
 .bento-icon-cyan {
   background: rgba(56, 189, 248, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #0284c7;
+}
+html.dark .bento-icon-cyan {
   color: #38bdf8;
 }
+
 .bento-icon-purple {
   background: rgba(168, 85, 247, 0.12);
   border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #9333ea;
+}
+html.dark .bento-icon-purple {
   color: #c084fc;
 }
+
 .bento-icon-emerald {
   background: rgba(16, 185, 129, 0.12);
   border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #059669;
+}
+html.dark .bento-icon-emerald {
   color: #34d399;
 }
 
-/* Glass Navbar espaciosa y flotante */
+/* Glass Navbar espaciosa */
 .nav-spacious {
-  background: rgba(8, 9, 20, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 /* Botón llamativo tipo EchoScribe */
@@ -142,7 +199,7 @@ h1, h2, h3, .font-heading {
   background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
 }
 
-/* Pill badge superior estilo EchoScribe */
+/* Pill badge superior */
 .pill-badge {
   display: inline-flex;
   align-items: center;
@@ -151,18 +208,25 @@ h1, h2, h3, .font-heading {
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 9999px;
+  background: rgba(241, 245, 249, 0.9);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  color: #334155;
+}
+html.dark .pill-badge {
   background: rgba(30, 36, 70, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #cbd5e1;
 }
 
-/* Before / After Slider */
+/* Before / After Slider Perfeccionado */
 .ba-container {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
   user-select: none;
+  cursor: ew-resize;
 }
+
 .ba-before {
   position: absolute;
   top: 0;
@@ -172,6 +236,18 @@ h1, h2, h3, .font-heading {
   overflow: hidden;
   z-index: 10;
 }
+
+.ba-before img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
 .ba-slider {
   position: absolute;
   top: 0;
@@ -179,25 +255,31 @@ h1, h2, h3, .font-heading {
   left: 50%;
   width: 3px;
   background-color: #ffffff;
-  box-shadow: 0 0 16px rgba(0,0,0,0.7);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
   z-index: 20;
-  cursor: ew-resize;
   transform: translateX(-50%);
+  pointer-events: none;
 }
+
 .ba-handle {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #ffffff;
-  color: #080914;
+  color: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  pointer-events: auto;
+  cursor: grab;
+}
+.ba-handle:active {
+  cursor: grabbing;
 }
 
 /* Range input */
@@ -210,11 +292,14 @@ input[type="range"] {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080914;
+  background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e2446;
+  background: #cbd5e1;
   border-radius: 4px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1e2446;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f59e0b;

@@ -15,7 +15,7 @@ class ConstructionAIAssistant {
       },
       {
         triggers: ["precio", "cuanto", "cuánto", "coste", "cuesta", "tarifa", "metro", "m2", "presupuesto", "estimacion"],
-        answer: "Como referencia orientativa de mercado en Valencia:<br>• **Reforma integral de vivienda:** De 480€ a 750€/m² según acabados.<br>• **Baño completo con alicatado de piedra/porcelánico:** De 2.900€ a 4.900€.<br>• **Cocina completa:** De 3.800€ a 7.500€.<br>• **Pladur y fosa LED de salón:** Desde 38€/m².<br><br>Puedes probar nuestro **Simulador Interactivo de Presupuestos** en la web o escribirnos al WhatsApp **622 851 328**."
+        answer: "Como referencia orientativa de mercado en Valencia:<br>• **Reforma integral de vivienda:** De 480€ a 750€/m² según acabados.<br>• **Baño completo con alicatado de piedra/porcelánico:** De 2.900€ a 4.900€.<br>• **Cocina completa:** De 3.800€ a 7.500€.<br>• **Pladur y fosa LED de salón:** Desde 38€/m².<br><br>Puedes probar nuestro **Simulador Interactivo de Presupuestos** en la web o escribirnos al WhatsApp **722 851 328**."
       },
       {
         triggers: ["tiempo", "plazo", "tarda", "duracion", "duración", "semanas", "meses"],
@@ -31,7 +31,7 @@ class ConstructionAIAssistant {
       },
       {
         triggers: ["contacto", "telefono", "teléfono", "whatsapp", "email", "llamar", "visita"],
-        answer: "Puedes comunicarte directamente con el equipo técnico de Maestros de la Construcción:<br>• **WhatsApp / Llamada directa:** <a href='https://wa.me/34622851328' target='_blank' class='text-amber-600 dark:text-amber-400 font-bold underline'>622 851 328</a><br>• **Instagram:** <a href='https://instagram.com/somosmaestrosdelaconstruccion' target='_blank' class='text-amber-600 dark:text-amber-400 font-bold underline'>@somosmaestrosdelaconstruccion</a><br><br>¿Deseas concertar una visita técnica presencial en tu vivienda?"
+        answer: "Puedes comunicarte directamente con el equipo técnico de Maestros de la Construcción:<br>• **WhatsApp / Llamada directa:** <a href='https://wa.me/34722851328' target='_blank' class='text-amber-600 dark:text-amber-400 font-bold underline'>722 851 328</a><br>• **Instagram:** <a href='https://instagram.com/somosmaestrosdelaconstruccion' target='_blank' class='text-amber-600 dark:text-amber-400 font-bold underline'>@somosmaestrosdelaconstruccion</a><br><br>¿Deseas concertar una visita técnica presencial en tu vivienda?"
       }
     ];
 
@@ -271,7 +271,7 @@ class ConstructionAIAssistant {
       }
     }
 
-    return `Para asesorarte con precisión sobre <em>"${query}"</em> y valorar tu vivienda en persona, te sugerimos agendar una visita técnica gratuita con Fabio Toro:<br><br><strong>WhatsApp directo:</strong> <a href="https://wa.me/34622851328" class="text-amber-600 dark:text-amber-400 font-bold underline" target="_blank">622 851 328</a><br>También puedes utilizar nuestro <strong>Simulador de Presupuestos</strong> en la web.`;
+    return `Para asesorarte con precisión sobre <em>"${query}"</em> y valorar tu vivienda en persona, te sugerimos agendar una visita técnica gratuita con Fabio Toro:<br><br><strong>WhatsApp directo:</strong> <a href="https://wa.me/34722851328" class="text-amber-600 dark:text-amber-400 font-bold underline" target="_blank">722 851 328</a><br>También puedes utilizar nuestro <strong>Simulador de Presupuestos</strong> en la web.`;
   }
 
   async callGeminiDirect(userQuery) {
@@ -280,7 +280,7 @@ class ConstructionAIAssistant {
       contents: [
         {
           role: "user",
-          parts: [{ text: `Eres el asesor técnico de Maestros de la Construcción en Valencia. Responde de forma cordial, seria, experta y concisa sobre reformas en Valencia (WhatsApp 622 851 328). Pregunta: ${userQuery}` }]
+          parts: [{ text: `Eres el asesor técnico de Maestros de la Construcción en Valencia. Responde de forma cordial, seria, experta y concisa sobre reformas en Valencia (WhatsApp 722 851 328). Pregunta: ${userQuery}` }]
         }
       ],
       generationConfig: {

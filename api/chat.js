@@ -45,7 +45,7 @@ Especialidades:
 Reglas de respuesta:
 - Habla en español, de forma muy profesional, cordial y concisa (máximo 2 párrafos).
 - Indica siempre que la visita técnica para toma de medidas y el presupuesto cerrado en Valencia son 100% GRATUITOS y sin compromiso.
-- Teléfono / WhatsApp oficial: 622 851 328. Responsable: Fabio Toro.`;
+- Teléfono / WhatsApp oficial: 722 851 328. Responsable: Fabio Toro.`;
 
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 

@@ -15,7 +15,7 @@ Desarrollada para ofrecer una doble experiencia de usuario (Bienvenida Visual in
 ├── obras.html              # Catálogo interactivo de trabajos reales y filtros por especialidad
 ├── presupuesto.html        # Simulador de presupuesto dinámico con desglose y exportación WhatsApp
 ├── donde-estamos.html      # Cobertura en Valencia y Google Maps interactivo (Local SEO)
-├── contacto.html           # Formulario oficial, soporte, WhatsApp directo (622 851 328) y horarios
+├── contacto.html           # Formulario oficial, soporte, WhatsApp directo (722 851 328) y horarios
 ├── sitemap.xml             # Mapa del sitio optimizado para Google Search Console
 ├── robots.txt              # Directivas para Googlebot y motores de búsqueda
 ├── vercel.json             # Configuración de despliegue en Vercel (Clean URLs y headers)
@@ -75,7 +75,7 @@ El widget de chat flotante situado en la esquina inferior derecha:
 
 ## 📱 Contacto de la Empresa
 
-- **Teléfono / WhatsApp:** +34 622 851 328
+- **Teléfono / WhatsApp:** +34 722 851 328
 - **Instagram:** [@somosmaestrosdelaconstruccion](https://instagram.com/somosmaestrosdelaconstruccion)
 - **Área de Cobertura:** Valencia Capital, Torrent, Paterna, Burjassot, Bétera, Sagunto y toda la provincia.
 

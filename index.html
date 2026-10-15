@@ -40,20 +40,23 @@
         </div>
       </a>
 
-      <!-- Navegación Central Limpia (Sin "Inicio Directo") -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+      <!-- Navegación Central Limpia -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-300">
         <a href="index.html" class="text-amber-400 font-bold transition duration-200">Bienvenida</a>
         <a href="inicio.html" class="hover:text-white transition duration-200">Inicio</a>
         <a href="obras.html" class="hover:text-white transition duration-200">Obras</a>
         <a href="presupuesto.html" class="hover:text-white transition duration-200">Presupuesto</a>
         <a href="donde-estamos.html" class="hover:text-white transition duration-200">Dónde Estamos</a>
+        <a href="faq.html" class="hover:text-white transition duration-200">FAQ</a>
         <a href="contacto.html" class="hover:text-white transition duration-200">Contacto</a>
       </nav>
 
-      <!-- Botón de Acción Principal a la derecha (Nunca se parte de línea) -->
-      <div class="hidden sm:flex items-center gap-4">
-        <a href="https://wa.me/34622851328" target="_blank" class="btn-cta-vibrant px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-extrabold whitespace-nowrap">
-          WhatsApp: 622 851 328
+      <!-- Botón de Acción Principal y Toggle de Tema a la derecha -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition" title="Cambiar tema">
+        </button>
+        <a href="https://wa.me/34722851328" target="_blank" class="btn-cta-vibrant px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-extrabold whitespace-nowrap">
+          WhatsApp: 722 851 328
         </a>
       </div>
 
@@ -72,7 +75,7 @@
       <a href="presupuesto.html" class="block py-2 text-slate-300 hover:text-white">Simulador de Presupuesto</a>
       <a href="donde-estamos.html" class="block py-2 text-slate-300 hover:text-white">Dónde Estamos en Valencia</a>
       <a href="contacto.html" class="block py-2 text-slate-300 hover:text-white">Contacto</a>
-      <a href="https://wa.me/34622851328" target="_blank" class="block text-center btn-cta-vibrant py-3 rounded-xl font-bold uppercase tracking-wider mt-3 whitespace-nowrap">WhatsApp Directo</a>
+      <a href="https://wa.me/34722851328" target="_blank" class="block text-center btn-cta-vibrant py-3 rounded-xl font-bold uppercase tracking-wider mt-3 whitespace-nowrap">WhatsApp Directo</a>
     </div>
   </header>
 
@@ -120,7 +123,7 @@
           <span>Descubre cómo transformamos cada sala</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </a>
-        <a href="https://wa.me/34622851328" target="_blank" class="px-7 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-bold text-sm border border-white/10 transition duration-200 flex items-center gap-2 whitespace-nowrap">
+        <a href="https://wa.me/34722851328" target="_blank" class="px-7 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-bold text-sm border border-white/10 transition duration-200 flex items-center gap-2 whitespace-nowrap">
           <span>Escríbenos por WhatsApp</span>
         </a>
       </div>
@@ -214,20 +217,20 @@
         </p>
       </div>
 
-      <!-- Slider interactivo con fotos REALES de WhatsApp -->
-      <div id="ba-comparison" class="ba-container shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-white/10 h-[380px] sm:h-[540px]">
+      <!-- Slider interactivo con fotos REALES de WhatsApp emparejadas -->
+      <div id="ba-comparison" class="ba-container shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-slate-200 dark:border-white/10 h-[380px] sm:h-[540px]">
         
-        <!-- Capa DESPUÉS (IMG-20261015-WA0020.jpg) -->
-        <img src="img/IMG-20261015-WA0020.jpg" alt="Ducha terminada con mármol y grifería negra" class="w-full h-full object-cover">
-        <div class="absolute bottom-5 right-5 bg-[#080914]/90 border border-white/10 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-xl z-0">
+        <!-- Capa TERMINADO (img/slider-terminado.jpg) -->
+        <img src="img/slider-terminado.jpg" alt="Ducha y baño terminado con porcelánico y grifería" class="w-full h-full object-cover">
+        <div class="absolute bottom-5 right-5 bg-white/90 dark:bg-[#080914]/90 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-xl z-0 shadow-md">
           ✓ Obra Terminada
         </div>
 
-        <!-- Capa ANTES (IMG-20261015-WA0019.jpg) -->
+        <!-- Capa EN EJECUCIÓN (img/slider-en-obra.jpg) -->
         <div class="ba-before">
-          <img src="img/IMG-20261015-WA0019.jpg" alt="Antigua ducha en demolición" class="absolute top-0 left-0 max-w-none h-full w-[400px] sm:w-[1152px] object-cover">
-          <div class="absolute bottom-5 left-5 bg-[#080914]/90 border border-white/10 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-xl">
-            Estado Inicial / Demolición
+          <img src="img/slider-en-obra.jpg" alt="Estructura técnica y montaje en obra" class="w-full h-full object-cover">
+          <div class="absolute bottom-5 left-5 bg-white/90 dark:bg-[#080914]/90 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-xl shadow-md">
+            En Ejecución / Montaje
           </div>
         </div>
 
@@ -503,7 +506,7 @@
             </div>
           </div>
 
-          <a id="hero-whatsapp-btn" href="https://wa.me/34622851328" target="_blank" class="block w-full py-4 btn-cta-vibrant text-center rounded-xl font-extrabold text-xs uppercase tracking-wider whitespace-nowrap">
+          <a id="hero-whatsapp-btn" href="https://wa.me/34722851328" target="_blank" class="block w-full py-4 btn-cta-vibrant text-center rounded-xl font-extrabold text-xs uppercase tracking-wider whitespace-nowrap">
             Hablar por WhatsApp con el Maestro
           </a>
         </div>
@@ -523,7 +526,7 @@
           <img src="img/logo.jpg" alt="Logo" class="h-9 w-auto rounded-lg border border-white/10">
           <div>
             <span class="font-bold text-white block">MAESTROS DE LA CONSTRUCCIÓN</span>
-            <span class="text-slate-500 text-[11px]">Valencia & Área Metropolitana · Tel / WhatsApp: 622 851 328</span>
+            <span class="text-slate-500 text-[11px]">Valencia & Área Metropolitana · Tel / WhatsApp: 722 851 328</span>
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-6 text-xs text-slate-400 font-medium">
@@ -575,7 +578,7 @@
 - Superficie: aprox. ${res.areaM2} m²
 - Presupuesto estimado: ${res.minRange}€ - ${res.maxRange}€
 ¿Tenéis disponibilidad para hacer una visita en Valencia?`;
-        whatsappBtn.href = `https://wa.me/34622851328?text=${encodeURIComponent(text)}`;
+        whatsappBtn.href = `https://wa.me/34722851328?text=${encodeURIComponent(text)}`;
       }
 
       if (form) {

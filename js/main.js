@@ -136,8 +136,18 @@ function initBeforeAfterSlider() {
   if (!container) return;
 
   const beforeBox = container.querySelector('.ba-before');
+  const beforeImg = beforeBox.querySelector('img');
   const sliderBar = container.querySelector('.ba-slider');
   let isDown = false;
+
+  function syncImageWidth() {
+    if (beforeImg && container) {
+      beforeImg.style.width = container.offsetWidth + 'px';
+    }
+  }
+
+  syncImageWidth();
+  window.addEventListener('resize', syncImageWidth);
 
   function move(e) {
     if (!isDown) return;
@@ -151,13 +161,19 @@ function initBeforeAfterSlider() {
     sliderBar.style.left = percent + '%';
   }
 
-  container.addEventListener('mousedown', () => isDown = true);
+  container.addEventListener('mousedown', (e) => {
+    isDown = true;
+    move(e);
+  });
   window.addEventListener('mouseup', () => isDown = false);
-  container.addEventListener('mousemove', move);
+  window.addEventListener('mousemove', move);
 
-  container.addEventListener('touchstart', () => isDown = true);
+  container.addEventListener('touchstart', (e) => {
+    isDown = true;
+    move(e);
+  }, { passive: true });
   window.addEventListener('touchend', () => isDown = false);
-  container.addEventListener('touchmove', move);
+  window.addEventListener('touchmove', move, { passive: true });
 }
 
 function initBudgetCalculatorUI() {
