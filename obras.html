@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros Trabajos y Obras | Maestros de la Construcción Valencia</title>
+  <meta name="description" content="Galería de proyectos y reformas reales en Valencia por Maestros de la Construcción. Pladur, baños con piedra natural, techos con fosas de iluminación LED y suelos porcelánicos.">
+  <meta name="robots" content="index, follow">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+</head>
+<body class="bg-[#090d16] text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- Header -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="h-11 w-auto rounded-lg border border-amber-500/30">
+        <div>
+          <span class="block font-heading font-bold text-base text-white">MAESTROS <span class="text-amber-400">DE LA CONSTRUCCIÓN</span></span>
+          <span class="block text-[10px] text-slate-400 uppercase tracking-widest">Valencia & Alrededores</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 bg-slate-900/90 p-1.5 rounded-full border border-white/10 text-xs">
+        <a href="index.html" class="px-3.5 py-1.5 rounded-full text-slate-300 hover:text-white transition">✨ Bienvenida</a>
+        <a href="inicio.html" class="px-3.5 py-1.5 rounded-full text-slate-300 hover:text-white transition">📄 Inicio</a>
+        <a href="obras.html" class="px-3.5 py-1.5 rounded-full bg-amber-500 text-slate-950 font-bold shadow transition">🏗️ Nuestros Trabajos</a>
+        <a href="presupuesto.html" class="px-3.5 py-1.5 rounded-full text-slate-300 hover:text-white transition">🧮 Presupuesto</a>
+        <a href="donde-estamos.html" class="px-3.5 py-1.5 rounded-full text-slate-300 hover:text-white transition">📍 Dónde Estamos</a>
+        <a href="contacto.html" class="px-3.5 py-1.5 rounded-full text-slate-300 hover:text-white transition">📞 Contacto</a>
+      </nav>
+
+      <a href="https://wa.me/34622851328" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-xl transition">
+        WhatsApp: 622 851 328
+      </a>
+
+      <button id="mobile-menu-btn" class="lg:hidden text-slate-300 p-2 rounded-lg bg-slate-800" aria-label="Menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-white/10 px-4 py-4 space-y-2 text-sm">
+      <a href="index.html" class="block py-2 px-3 rounded-lg text-slate-300">✨ Bienvenida</a>
+      <a href="inicio.html" class="block py-2 px-3 rounded-lg text-slate-300">📄 Inicio Directo</a>
+      <a href="obras.html" class="block py-2 px-3 rounded-lg bg-amber-500 text-slate-950 font-bold">🏗️ Nuestros Trabajos</a>
+      <a href="presupuesto.html" class="block py-2 px-3 rounded-lg text-slate-300">🧮 Presupuesto</a>
+      <a href="donde-estamos.html" class="block py-2 px-3 rounded-lg text-slate-300">📍 Dónde Estamos</a>
+      <a href="contacto.html" class="block py-2 px-3 rounded-lg text-slate-300">📞 Contacto</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Encabezado de la Galería -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="badge-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+        Portfolio de Proyectos Reales
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">
+        Nuestros Trabajos Hechos en <span class="text-gradient-gold">Valencia</span>
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base">
+        Cada imagen refleja una obra ejecutada por nuestros maestros: precisión en las juntas, colocación cuidada y diseño moderno.
+      </p>
+
+      <!-- Botones de Filtrado -->
+      <div class="flex flex-wrap justify-center gap-2 pt-4">
+        <button class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-slate-950 transition" data-filter="all">
+          Todos los Trabajos
+        </button>
+        <button class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 text-slate-300 hover:text-white transition" data-filter="pladur">
+          Pladur & Iluminación LED
+        </button>
+        <button class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 text-slate-300 hover:text-white transition" data-filter="banos">
+          Baños & Alicatados
+        </button>
+        <button class="gallery-filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 text-slate-300 hover:text-white transition" data-filter="integral">
+          Reformas Integrales
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid de Proyectos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Proyecto 1: Salón LED -->
+      <div class="gallery-item glass-card rounded-3xl overflow-hidden border border-white/10 group" data-category="pladur">
+        <div class="relative overflow-hidden h-72">
+          <img src="img/obra-salon-led.jpg" alt="Salón con luz indirecta LED en Valencia" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute top-4 left-4 bg-slate-900/90 text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full border border-amber-500/30">
+            Pladur & Fosas LED
+          </div>
+        </div>
+        <div class="p-6 space-y-3">
+          <div class="flex justify-between items-center text-xs text-slate-400">
+            <span>📍 Valencia Capital</span>
+            <span>⏱️ 2 semanas</span>
+          </div>
+          <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">
+            Frente de Salón Integrado & Hornacinas Retroiluminadas
+          </h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Estructura a medida en pladur con panel central suspendido para televisión, fosa perimetral de luz azul ambiental y 6 nichos decorativos con downlights cálidos.
+          </p>
+          <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-amber-400 font-semibold">Acabado: Blanco mate fino</span>
+            <a href="https://wa.me/34622851328?text=Hola,%20me%20interesa%20un%20proyecto%20de%20pladur%20como%20el%20del%20salón%20LED" target="_blank" class="text-xs text-slate-300 hover:text-amber-400 underline font-medium">Pedir similar ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2: Baño Rústico de Piedra -->
+      <div class="gallery-item glass-card rounded-3xl overflow-hidden border border-white/10 group" data-category="banos">
+        <div class="relative overflow-hidden h-72">
+          <img src="img/obra-bano-piedra.jpg" alt="Baño con pared de piedra natural" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute top-4 left-4 bg-slate-900/90 text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full border border-amber-500/30">
+            Alicatados Singulares
+          </div>
+        </div>
+        <div class="p-6 space-y-3">
+          <div class="flex justify-between items-center text-xs text-slate-400">
+            <span>📍 L'Horta, Valencia</span>
+            <span>⏱️ 8 días</span>
+          </div>
+          <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">
+            Baño de Diseño con Frontal en Piedra Rústica
+          </h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Reforma completa de aseo de invitados. Combinación de azulejos cerámicos con relieve blanco, cenefa de mosaico y paño principal en mampostería de piedra natural con lavabo de sobreencimera.
+          </p>
+          <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-amber-400 font-semibold">Material: Piedra & Cerámica</span>
+            <a href="https://wa.me/34622851328?text=Hola,%20me%20encanta%20el%20baño%20de%20piedra%20rústica%20de%20vuestra%20web" target="_blank" class="text-xs text-slate-300 hover:text-amber-400 underline font-medium">Pedir similar ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3: Partición de Oficinas y Despachos -->
+      <div class="gallery-item glass-card rounded-3xl overflow-hidden border border-white/10 group" data-category="pladur">
+        <div class="relative overflow-hidden h-72">
+          <img src="img/obra-pladur.jpg" alt="Montaje de pladur en oficinas Valencia" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute top-4 left-4 bg-slate-900/90 text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full border border-amber-500/30">
+            Estructuras & Pladur
+          </div>
+        </div>
+        <div class="p-6 space-y-3">
+          <div class="flex justify-between items-center text-xs text-slate-400">
+            <span>📍 Paterna (Polígono Táctica)</span>
+            <span>⏱️ 10 días</span>
+          </div>
+          <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">
+            División de Espacios y Despachos en Pladur
+          </h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Distribución completa de espacio corporativo mediante tabiquería de placa de yeso laminado con aislamiento de lana de roca en el alma, premarcos de paso y huecos para cristaleras acústicas.
+          </p>
+          <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-amber-400 font-semibold">Sistema: Knauf / Placo</span>
+            <a href="https://wa.me/34622851328?text=Hola,%20necesito%20presupuesto%20para%20tabiquería%20de%20pladur" target="_blank" class="text-xs text-slate-300 hover:text-amber-400 underline font-medium">Pedir similar ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4: Poster de Soluciones Integrales -->
+      <div class="gallery-item glass-card rounded-3xl overflow-hidden border border-white/10 group" data-category="integral">
+        <div class="relative overflow-hidden h-72">
+          <img src="img/servicios-poster.jpg" alt="Catálogo completo de obras y servicios" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute top-4 left-4 bg-slate-900/90 text-amber-400 text-[10px] font-bold px-3 py-1 rounded-full border border-amber-500/30">
+            Reforma Integral
+          </div>
+        </div>
+        <div class="p-6 space-y-3">
+          <div class="flex justify-between items-center text-xs text-slate-400">
+            <span>📍 Torrent & Valencia</span>
+            <span>⏱️ Llave en mano</span>
+          </div>
+          <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition">
+            Reforma Integral Llave en Mano de Vivienda
+          </h3>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Coordinación 360° de gremios: fontanería de última generación, solado continuo, alisado de paredes, iluminación regulable y carpintería de madera.
+          </p>
+          <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-amber-400 font-semibold">Garantía: Escrita y certificada</span>
+            <a href="presupuesto.html" class="text-xs text-amber-400 hover:underline font-bold">Simular obra ➔</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA de Cierre de Galería -->
+    <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-900 via-amber-950/20 to-slate-900 border border-amber-500/30 text-center space-y-4">
+      <h3 class="text-2xl sm:text-3xl font-bold font-heading text-white">¿Quieres ver cómo quedaría tu espacio transformado?</h3>
+      <p class="text-slate-300 text-sm max-w-2xl mx-auto">
+        Visita nuestro perfil oficial de Instagram <a href="https://instagram.com/somosmaestrosdelaconstruccion" target="_blank" class="text-amber-400 font-bold hover:underline">@somosmaestrosdelaconstruccion</a> para ver vídeos semanales de nuestras obras en curso en Valencia.
+      </p>
+      <div class="pt-2">
+        <a href="https://wa.me/34622851328" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-2xl text-xs uppercase tracking-wider transition">
+          Pedir Asesoría para Mi Proyecto
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-[#05080e] border-t border-white/10 py-10 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="img/logo.jpg" alt="Logo" class="h-8 w-auto rounded border border-amber-500/30">
+        <span class="font-bold text-white">MAESTROS DE LA CONSTRUCCIÓN</span>
+      </div>
+      <p class="text-slate-500 text-[11px]">© 2026 Maestros de la Construcción · Valencia y alrededores.</p>
+    </div>
+  </footer>
+
+  <script src="js/ai-assistant.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
