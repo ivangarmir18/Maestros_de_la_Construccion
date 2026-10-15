@@ -47,6 +47,27 @@ h1, h2, h3, .font-heading {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
 }
 
+/* Floating ambient blobs */
+.ambient-glow-amber {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(245, 158, 11, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.ambient-glow-purple {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
 /* Vibrant Gradients (como en EchoScribe) */
 .text-gradient-vibrant {
   background: linear-gradient(135deg, #ffffff 15%, #fcd34d 45%, #f59e0b 70%, #d97706 100%);
@@ -98,9 +119,9 @@ h1, h2, h3, .font-heading {
   color: #34d399;
 }
 
-/* Glass Navbar espaciosa y no apretada */
+/* Glass Navbar espaciosa y flotante */
 .nav-spacious {
-  background: rgba(8, 9, 20, 0.82);
+  background: rgba(8, 9, 20, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
