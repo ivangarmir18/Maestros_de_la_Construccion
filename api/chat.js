@@ -91,3 +91,4 @@ Reglas de respuesta:
     return res.status(500).json({ error: 'Error interno del servidor al procesar la solicitud' });
   }
 }
+

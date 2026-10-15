@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maestros de la Construcción | Reformas y Construcción en Valencia</title>
-  <meta name="description" content="Maestros de la Construcción en Valencia y alrededores. Especialistas en reformas integrales, baños de diseño, trabajos en pladur con iluminación LED, alicatados y albañilería. Pide tu presupuesto sin compromiso.">
-  <meta name="keywords" content="reformas valencia, construccion valencia, pladur valencia, alicatados valencia, reformas integrales valencia, empresa reformas torrent paterna, maestros de la construccion">
-  <meta name="author" content="Maestros de la Construcción">
+  <title>Maestros de la Construcción | Reformas y Arquitectura Interior en Valencia</title>
+  <meta name="description" content="Empresa de reformas y construcción en Valencia. Especialistas en reformas integrales de viviendas, tabiquería de pladur con iluminación indirecta, baños en piedra y alicatados de precisión. Presupuesto cerrado por escrito.">
   <meta name="robots" content="index, follow">
   
-  <!-- Open Graph / Meta Social -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.maestrosdelaconstruccion.es/">
-  <meta property="og:title" content="Maestros de la Construcción | Espacios que Cobran Vida en Valencia">
-  <meta property="og:description" content="Reformas y construcción a tu medida en Valencia y alrededores. Experiencia, calidad y cumplimiento estricto de plazos.">
-  <meta property="og:image" content="https://www.maestrosdelaconstruccion.es/img/servicios-poster.jpg">
+  <meta property="og:title" content="Maestros de la Construcción | Espacios que Cobran Vida">
+  <meta property="og:description" content="Reformas integrales y construcción en Valencia y comarca. Compromiso de plazos, acabados de autor y presupuesto transparente.">
+  <meta property="og:image" content="https://www.maestrosdelaconstruccion.es/img/obra-salon-led.jpg">
 
-  <!-- Schema.org LocalBusiness para Google Maps y Google Search -->
+  <!-- Marcado Schema.org LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,28 +34,12 @@
       "latitude": 39.4699,
       "longitude": -0.3763
     },
-    "areaServed": [
-      "Valencia", "Torrent", "Paterna", "Burjassot", "Mislata", "Bétera", "Sagunto", "Camp de Túria", "L'Horta"
-    ],
-    "priceRange": "€€",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "19:30"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "14:00"
-      }
-    ]
+    "areaServed": ["Valencia", "Torrent", "Paterna", "Burjassot", "Mislata", "Bétera", "Sagunto"],
+    "priceRange": "€€"
   }
   </script>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN configurado con modo oscuro manual -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -66,10 +48,10 @@
         extend: {
           colors: {
             brand: {
-              gold: '#f59e0b',
               amber: '#d97706',
-              dark: '#0f172a',
-              darker: '#090d16'
+              darkamber: '#b45309',
+              lightamber: '#fef3c7',
+              slate: '#0f172a'
             }
           }
         }
@@ -80,7 +62,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/jpeg" href="img/logo.jpg">
 </head>
-<body class="bg-[#090d16] text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-[#f8fafc] dark:bg-[#090d16] text-slate-800 dark:text-slate-100 antialiased selection:bg-amber-500 selection:text-white transition-colors duration-200">
 
   <!-- ==============================================================
        HEADER / BARRA DE NAVEGACIÓN
@@ -88,167 +70,169 @@
   <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 glass-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Logo de la Empresa -->
-      <a href="index.html" class="flex items-center gap-3 group">
-        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="h-12 w-auto object-contain rounded-lg border border-amber-500/30 group-hover:border-amber-400 transition">
+      <!-- Logo y Nombre -->
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="h-11 w-auto rounded-lg shadow-sm border border-slate-200 dark:border-amber-500/30">
         <div>
-          <span class="block font-heading font-extrabold text-base sm:text-lg tracking-wider text-white group-hover:text-amber-400 transition">
-            MAESTROS <span class="text-amber-400">DE LA CONSTRUCCIÓN</span>
+          <span class="block font-heading font-extrabold text-base tracking-tight text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">
+            MAESTROS <span class="text-amber-600 dark:text-amber-400">DE LA CONSTRUCCIÓN</span>
           </span>
-          <span class="block text-[11px] text-slate-400 tracking-widest uppercase font-medium">Valencia & Alrededores</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-semibold tracking-widest uppercase">Valencia & Comarca</span>
         </div>
       </a>
 
-      <!-- Selector de Modo: Pestaña Bienvenida vs Inicio -->
-      <nav class="hidden lg:flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-white/10">
-        <a href="index.html" class="px-4 py-2 rounded-full text-xs font-bold bg-amber-500 text-slate-950 shadow-md transition flex items-center gap-1.5">
-          <span>✨</span> Bienvenida Visual
+      <!-- Navegación de Escritorio -->
+      <nav class="hidden lg:flex items-center gap-1 bg-slate-100 dark:bg-slate-900/90 p-1.5 rounded-full border border-slate-200 dark:border-white/10 text-xs font-semibold">
+        <a href="index.html" class="px-3.5 py-1.5 rounded-full bg-white dark:bg-amber-600 text-slate-900 dark:text-white shadow-sm transition">
+          Bienvenida
         </a>
-        <a href="inicio.html" class="px-4 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition flex items-center gap-1.5">
-          <span>📄</span> Pestaña Inicio (Directo)
+        <a href="inicio.html" class="px-3.5 py-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
+          Inicio Directo
         </a>
-        <a href="obras.html" class="px-3.5 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+        <a href="obras.html" class="px-3.5 py-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
           Nuestros Trabajos
         </a>
-        <a href="presupuesto.html" class="px-3.5 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+        <a href="presupuesto.html" class="px-3.5 py-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
           Simulador Presupuesto
         </a>
-        <a href="donde-estamos.html" class="px-3.5 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+        <a href="donde-estamos.html" class="px-3.5 py-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
           Dónde Estamos
         </a>
-        <a href="contacto.html" class="px-3.5 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+        <a href="contacto.html" class="px-3.5 py-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
           Contacto
         </a>
       </nav>
 
-      <!-- Botón de Contacto Rápido / WhatsApp -->
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.me/34622851328?text=Hola,%20quisiera%20pedir%20presupuesto%20para%20una%20obra%20en%20Valencia" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-full shadow-lg transition duration-200">
+      <!-- Botones de Acción y Selector de Tema -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Botón de Modo Claro / Oscuro -->
+        <button class="theme-toggle-btn p-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Cambiar tema">
+          <!-- Icono inyectado dinámicamente por JS -->
+        </button>
+
+        <!-- Botón WhatsApp Directo -->
+        <a href="https://wa.me/34622851328?text=Hola,%20me%20gustaría%20solicitar%20presupuesto%20para%20una%20reforma%20en%20Valencia" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl shadow-sm transition">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          WhatsApp 622 851 328
+          <span>622 851 328</span>
         </a>
+
+        <!-- Botón Móvil -->
+        <button id="mobile-menu-btn" class="lg:hidden text-slate-700 dark:text-slate-300 p-2 rounded-xl bg-slate-100 dark:bg-slate-800" aria-label="Abrir menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
       </div>
 
-      <!-- Botón Móvil Menú -->
-      <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2 rounded-lg bg-slate-800/80 border border-white/10" aria-label="Abrir menú">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-      </button>
     </div>
 
     <!-- Menú Desplegable Móvil -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-slate-950/95 border-b border-white/10 px-4 pt-3 pb-6 space-y-2">
-      <a href="index.html" class="block py-2.5 px-4 rounded-xl text-sm font-bold bg-amber-500 text-slate-950">✨ Pestaña Bienvenida (Experiencia Visual)</a>
-      <a href="inicio.html" class="block py-2 px-4 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">📄 Pestaña Inicio (Versión Directa)</a>
-      <a href="obras.html" class="block py-2 px-4 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">🏗️ Galería de Obras</a>
-      <a href="presupuesto.html" class="block py-2 px-4 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">🧮 Simulador de Presupuesto</a>
-      <a href="donde-estamos.html" class="block py-2 px-4 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">📍 Dónde Estamos (Valencia)</a>
-      <a href="contacto.html" class="block py-2 px-4 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800">📞 Contacto & Soporte</a>
-      <a href="https://wa.me/34622851328" target="_blank" class="block py-2.5 px-4 rounded-xl text-sm font-bold text-center bg-emerald-600 text-white mt-3">WhatsApp Directo: 622 851 328</a>
+    <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-white/10 px-4 py-4 space-y-2 text-sm">
+      <a href="index.html" class="block py-2.5 px-4 rounded-xl font-bold bg-amber-50 dark:bg-slate-800 text-amber-700 dark:text-amber-400">Bienvenida Visual</a>
+      <a href="inicio.html" class="block py-2 px-4 rounded-xl font-medium text-slate-700 dark:text-slate-300">Pestaña Inicio Directo</a>
+      <a href="obras.html" class="block py-2 px-4 rounded-xl font-medium text-slate-700 dark:text-slate-300">Galería de Obras</a>
+      <a href="presupuesto.html" class="block py-2 px-4 rounded-xl font-medium text-slate-700 dark:text-slate-300">Simulador Presupuesto</a>
+      <a href="donde-estamos.html" class="block py-2 px-4 rounded-xl font-medium text-slate-700 dark:text-slate-300">Dónde Estamos (Valencia)</a>
+      <a href="contacto.html" class="block py-2 px-4 rounded-xl font-medium text-slate-700 dark:text-slate-300">Contacto & Soporte</a>
+      <a href="https://wa.me/34622851328" target="_blank" class="block py-2.5 px-4 rounded-xl font-bold text-center bg-emerald-600 text-white mt-2">WhatsApp: 622 851 328</a>
     </div>
   </header>
 
   <!-- ==============================================================
-       HERO CINEMATIC - EXPERIENCIA VISUAL DE BIENVENIDA
+       HERO PRINCIPAL - EDITORIAL MEDITERRÁNEO DE ALTO NIVEL
        ============================================================== -->
-  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-grid-pattern">
-    <!-- Ambient Glows -->
-    <div class="glow-gold -top-20 -left-20"></div>
-    <div class="glow-blue bottom-10 right-0"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-arch-grid border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- Columna de Texto y Presentación -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <!-- Columna de Texto -->
+        <div class="lg:col-span-7 space-y-6 text-left">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-gold text-xs font-semibold uppercase tracking-wider animate-pulse-glow">
-            <span>⭐</span> Reformas y Construcción de Alto Nivel en Valencia
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 text-amber-800 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
+            <svg class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            Garantía Certificada por Escrito en Valencia
           </div>
 
-          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold font-heading leading-tight tracking-tight">
-            Espacios que <br>
-            <span class="text-gradient-gold">cobran vida.</span>
+          <h1 class="text-4xl sm:text-6xl font-extrabold font-heading text-slate-900 dark:text-white leading-[1.12]">
+            Reformas de autor sin sorpresas. <br>
+            <span class="text-gradient-amber">Espacios que cobran vida.</span>
           </h1>
 
-          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-            Transformamos viviendas, locales y espacios con maestría artesanal, tecnología de iluminación indirecta LED, pladur de precisión y acabados de primera calidad en <strong class="text-white font-semibold">Valencia y alrededores</strong>.
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+            Diseñamos y ejecutamos reformas integrales, estructuras de pladur con iluminación indirecta LED continua y baños contemporáneos con acabados en piedra natural. Contrato con precio cerrado y fecha vinculante de entrega.
           </p>
 
-          <!-- Banner de acceso rápido a las dos modalidades de web -->
-          <div class="p-4 rounded-2xl glass-card flex flex-col sm:flex-row items-center justify-between gap-4 border border-amber-500/20">
-            <div class="text-left">
-              <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Tu experiencia de navegación</span>
-              <p class="text-sm text-slate-300">Estás en la <strong>Bienvenida Visual Inmersiva</strong>. Si tienes prisa y prefieres todo en un solo vistazo rápido:</p>
+          <!-- Banner de navegación rápida -->
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider block">Vista Rápida Ejecutiva</span>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Si prefieres consultar directamente todos nuestros servicios y datos de forma escueta:</p>
             </div>
-            <a href="inicio.html" class="flex-shrink-0 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold border border-white/10 transition flex items-center gap-1.5">
-              Ir a Pestaña Inicio ➔
+            <a href="inicio.html" class="flex-shrink-0 px-4 py-2 bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+              <span>Ir a Pestaña Inicio</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
 
-          <!-- CTAs Principales -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#experiencia-visual" class="px-7 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm sm:text-base tracking-wide shadow-xl hover:shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
-              <span>Bajar y Explorar la Obra</span>
-              <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          <!-- Botones de Acción -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="#comparativa" class="px-6 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-md transition flex items-center gap-2">
+              <span>Ver Transformación Real</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
             
-            <a href="#simulador" class="px-6 py-4 rounded-2xl bg-slate-800/90 hover:bg-slate-700 text-white font-bold text-sm sm:text-base border border-white/10 transition flex items-center gap-2">
-              <span>🧮 Simular Presupuesto</span>
+            <a href="presupuesto.html" class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider border border-slate-300 dark:border-slate-700 shadow-sm transition flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              <span>Simular Presupuesto</span>
             </a>
           </div>
 
-          <!-- Indicadores de Confianza -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10 text-center lg:text-left">
+          <!-- Pilares de Confianza (Sin Emojis) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
             <div>
-              <span class="block text-2xl font-extrabold text-amber-400 font-heading">100%</span>
-              <span class="text-xs text-slate-400">Plazos Garantizados</span>
+              <span class="block text-2xl font-black text-slate-900 dark:text-amber-400 font-heading">0 €</span>
+              <span class="text-xs text-slate-500 font-medium">Visita y valoración previa</span>
             </div>
             <div>
-              <span class="block text-2xl font-extrabold text-amber-400 font-heading">0 €</span>
-              <span class="text-xs text-slate-400">Presupuesto y Visita</span>
+              <span class="block text-2xl font-black text-slate-900 dark:text-amber-400 font-heading">2 Años</span>
+              <span class="text-xs text-slate-500 font-medium">Garantía total por contrato</span>
             </div>
             <div>
-              <span class="block text-2xl font-extrabold text-amber-400 font-heading">+15</span>
-              <span class="text-xs text-slate-400">Años de Oficio</span>
+              <span class="block text-2xl font-black text-slate-900 dark:text-amber-400 font-heading">100%</span>
+              <span class="text-xs text-slate-500 font-medium">Cumplimiento de fechas</span>
             </div>
             <div>
-              <span class="block text-2xl font-extrabold text-amber-400 font-heading">Valencia</span>
-              <span class="text-xs text-slate-400">Y Área Metropolitana</span>
+              <span class="block text-2xl font-black text-slate-900 dark:text-amber-400 font-heading">Valencia</span>
+              <span class="text-xs text-slate-500 font-medium">Y municipios limítrofes</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Columna Visual: Showcase 3D / Tarjeta Inmersiva -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            
-            <!-- Marco de Obra Principal con Iluminación LED real -->
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-amber-500/30 group">
-              <img src="img/obra-salon-led.jpg" alt="Salón con fosa LED y hornacinas decorativas en Valencia" class="w-full h-[480px] object-cover transform group-hover:scale-105 transition duration-700">
+        <!-- Columna Visual: Tarjeta Arquitectónica -->
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 group">
+              <img src="img/obra-salon-led.jpg" alt="Salón con fosa LED y hornacinas decorativas en Valencia" class="w-full h-[470px] object-cover group-hover:scale-105 transition duration-700">
               
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
-              
-              <!-- Tag flotante -->
-              <div class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-500/40 text-amber-300 text-xs font-bold flex items-center gap-1.5">
-                <span>💡</span> Obra Real de Salón con Iluminación LED
-              </div>
-
-              <!-- Info en pie de imagen -->
-              <div class="absolute bottom-6 left-6 right-6">
-                <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Diseño & Ejecución</span>
-                <h3 class="text-xl font-bold text-white mt-1">Frente de Salón & Fosa LED</h3>
-                <p class="text-xs text-slate-300 mt-1">Estructura de pladur a medida, hornacinas retroiluminadas y fosa de luz indirecta de alta eficiencia.</p>
+              <div class="p-5 border-t border-slate-100 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Proyecto Ejecutado</span>
+                  <span class="text-slate-500 dark:text-slate-400">Valencia Capital</span>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1">Frente de Salón & Fosa LED Perimetral</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pladur de alta densidad, fosa oculta con tiras continuas COB y hornacinas retroiluminadas.</p>
               </div>
             </div>
 
-            <!-- Mini Tarjeta Flotante: Baño Piedra -->
-            <div class="absolute -bottom-8 -left-6 sm:-left-10 bg-slate-900/95 backdrop-blur-xl p-3.5 rounded-2xl border border-white/15 shadow-2xl flex items-center gap-3 animate-float max-w-xs">
-              <img src="img/obra-bano-piedra.jpg" alt="Detalle baño piedra rústica" class="w-16 h-16 rounded-xl object-cover border border-amber-500/30">
+            <!-- Placa flotante de calidad -->
+            <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl flex items-center gap-3.5 max-w-xs">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               <div>
-                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Alicatados Singulares</span>
-                <p class="text-xs font-semibold text-white">Pared de Piedra & Lavabo Volado</p>
-                <span class="text-[10px] text-slate-400">Trabajo finalizado en Valencia</span>
+                <span class="text-[11px] font-bold text-slate-900 dark:text-white block">Compromiso de Calidad</span>
+                <span class="text-[10px] text-slate-500 dark:text-slate-400 block">Materiales Knauf, Roca y Porcelanosa</span>
               </div>
             </div>
 
@@ -256,154 +240,138 @@
         </div>
 
       </div>
+
     </div>
   </section>
 
   <!-- ==============================================================
-       EXPERIENCIA VISUAL: BAJANDO Y EXPLORANDO EL OFICIO
+       SLIDER INTERACTIVO ANTES / DESPUÉS (INNOVADOR & CONFIABLE)
        ============================================================== -->
-  <section id="experiencia-visual" class="py-24 relative overflow-hidden bg-slate-950">
+  <section id="comparativa" class="py-24 bg-white dark:bg-[#0c1322] border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Cabecera de la Experiencia -->
-      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
-        <span class="badge-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-          Experiencia de Obra Interactiva
-        </span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">
-          Cómo creamos <span class="text-gradient-gold">espacios únicos</span> paso a paso
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="badge-arch">Resultados Demostrables</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+          El antes y el después de <span class="text-gradient-amber">nuestras obras</span>
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Desliza hacia abajo para recorrer nuestros estándares de ejecución, materiales y acabados reales.
+        <p class="text-slate-600 dark:text-slate-400 text-sm">
+          Arrastra el deslizador central para ver cómo transformamos espacios en bruto con estructuras de pladur, canalizaciones ocultas e iluminación arquitectónica.
         </p>
       </div>
 
-      <!-- CAPÍTULO 1: LA ILUMINACIÓN Y EL PLADUR -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-28">
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-bold tracking-widest uppercase">
-            <span>01 / ESTRUCTURAS INTELIGENTES</span>
+      <div class="max-w-4xl mx-auto">
+        <!-- Contenedor del Slider Antes / Después -->
+        <div id="ba-comparison" class="ba-container shadow-2xl border border-slate-200 dark:border-slate-700 h-[380px] sm:h-[500px]">
+          
+          <!-- Capa DESPUÉS (Fondo Completo: Salón terminado con LED) -->
+          <img src="img/obra-salon-led.jpg" alt="Después: Salón reformado con fosa LED" class="w-full h-full object-cover">
+          <div class="absolute bottom-4 right-4 bg-slate-900/80 text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg z-0">
+            Después · Salón Finalizado
           </div>
-          <h3 class="text-2xl sm:text-4xl font-bold font-heading text-white">
-            Tabiquería de Pladur, Aislamiento Acústico y Fosas de Luz
+
+          <!-- Capa ANTES (Capa recortada: Obra de pladur en curso) -->
+          <div class="ba-before">
+            <img src="img/obra-pladur.jpg" alt="Antes: Montaje de estructura de pladur" class="absolute top-0 left-0 max-w-none h-full w-[400px] sm:w-[896px] object-cover">
+            <div class="absolute bottom-4 left-4 bg-slate-900/80 text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-lg">
+              Antes · Estructura en Bruto
+            </div>
+          </div>
+
+          <!-- Barra Deslizadora con Manejador -->
+          <div class="ba-slider">
+            <div class="ba-handle">
+              <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-4 3 4 3m8-6l4 3-4 3"></path>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-4 flex items-center justify-center gap-1.5">
+          <svg class="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg>
+          Mueve el cursor o el dedo hacia la izquierda y derecha para inspeccionar la obra
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       CAPÍTULOS TÉCNICOS: BAÑOS, ESTRUCTURAS Y COMPROMISO
+       ============================================================== -->
+  <section class="py-24 bg-slate-50 dark:bg-[#090d16]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      
+      <!-- Bloque 1: Baños de Autor -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest block">
+            Especialidad 01 · Baños & Alicatados
+          </span>
+          <h3 class="text-2xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+            Paredes de piedra natural y sanitarios suspendidos
           </h3>
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            El pladur no es solo levantar una pared: es la oportunidad de dotar a tu hogar de una acústica perfecta, ocultar instalaciones con elegancia y esculpir el espacio con techos suspendidos e iluminación perimetral regulable.
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            Sustituimos bañeras por platos de ducha de resina a ras de suelo en 48 horas e integramos paños de piedra rústica con gres porcelánico rectificado sin juntas visibles.
           </p>
-          <ul class="space-y-3 text-sm text-slate-300">
-            <li class="flex items-center gap-3">
-              <span class="text-amber-400 font-bold">✓</span> Perfilería galvanizada reforzada y placas de alta densidad.
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-amber-400 font-bold">✓</span> Fosas indirectas para tiras LED Cob de emisión continua sin puntos.
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-amber-400 font-bold">✓</span> Muebles integrados de salón, hornacinas para decoración y cabeceros.
-            </li>
-          </ul>
+          <div class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+            <div class="flex items-center gap-2.5">
+              <span class="w-4 h-4 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold">✓</span>
+              Impermeabilización técnica Schlüter-Kerdi en zonas húmedas
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-4 h-4 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold">✓</span>
+              Fontanería multicapa y griferías empotradas termostáticas
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-4 h-4 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold">✓</span>
+              Rejuntado epoxi antimanchas y antibacteriano
+            </div>
+          </div>
           <div class="pt-2">
-            <a href="obras.html" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-bold text-sm">
-              Ver proyectos de pladur realizados en Valencia ➔
+            <a href="obras.html" class="inline-flex items-center gap-2 text-amber-700 dark:text-amber-400 font-bold text-xs uppercase tracking-wider hover:underline">
+              Explorar proyectos de baños en Valencia ➔
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-6">
-          <div class="relative rounded-3xl overflow-hidden glass-card p-3 border border-white/10 group">
-            <img src="img/obra-pladur.jpg" alt="Instalación de pladur y particiones en Valencia" class="rounded-2xl w-full h-[420px] object-cover group-hover:scale-102 transition duration-500">
-            <div class="absolute bottom-6 left-6 right-6 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-white/10">
-              <p class="text-xs font-bold text-white">Partición y Distribución de Espacios con Pladur</p>
-              <p class="text-[11px] text-slate-400">Montaje milimétrico con premarcos de madera y pasos de luz preparados.</p>
-            </div>
+          <div class="arch-card p-3 overflow-hidden">
+            <img src="img/obra-bano-piedra.jpg" alt="Baño con paño de piedra natural" class="rounded-xl w-full h-[440px] object-cover">
           </div>
         </div>
       </div>
 
-      <!-- CAPÍTULO 2: ALICATADOS Y BAÑOS DE DISEÑO -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-28">
-        
-        <div class="lg:col-span-6 order-2 lg:order-1">
-          <div class="relative rounded-3xl overflow-hidden glass-card p-3 border border-white/10 group">
-            <img src="img/obra-bano-piedra.jpg" alt="Baño con pared de piedra natural y sanitario suspendido" class="rounded-2xl w-full h-[460px] object-cover group-hover:scale-102 transition duration-500">
-            <div class="absolute bottom-6 left-6 right-6 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-white/10">
-              <p class="text-xs font-bold text-white">Baño de Autor: Textura de Piedra & Grifería Empotrada</p>
-              <p class="text-[11px] text-slate-400">Combinación de gres rectificado blanco con paño de piedra natural rústica.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
-          <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-bold tracking-widest uppercase">
-            <span>02 / MAESTRÍA EN ALICATADO</span>
-          </div>
-          <h3 class="text-2xl sm:text-4xl font-bold font-heading text-white">
-            Baños que combinan la calidez de la piedra con el confort moderno
-          </h3>
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            El baño ha dejado de ser una estancia utilitaria para convertirse en tu spa privado diario. Trabajamos con porcelánicos de gran formato, azulejos rectificados sin junta visible, nichos en ducha impermeabilizados con tela Schlüter-Kerdi y saneamiento suspendido.
-          </p>
-          <ul class="space-y-3 text-sm text-slate-300">
-            <li class="flex items-center gap-3">
-              <span class="text-amber-400 font-bold">✓</span> Cambio de bañera por plato de ducha antideslizante en 48 horas.
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-amber-400 font-bold">✓</span> Fontanería multicapa y desagües insonorizados.
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-amber-400 font-bold">✓</span> Sellado antihumedad y rejuntado epoxi antimanchas.
-            </li>
-          </ul>
-          <div class="pt-2">
-            <a href="presupuesto.html" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-bold text-sm">
-              Calcular precio de reforma de baño ➔
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- CAPÍTULO 3: EL EQUIPO Y LA CERCANÍA EN VALENCIA -->
+      <!-- Bloque 2: Trato Humano con Fabio Toro y Equipo -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-bold tracking-widest uppercase">
-            <span>03 / TRANSPARENCIA Y COMPROMISO</span>
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="arch-card p-3 overflow-hidden">
+            <img src="img/fundador-valencia.jpg" alt="Fabio Toro, responsable de obra en Maestros de la Construcción" class="rounded-xl w-full h-[440px] object-cover">
           </div>
-          <h3 class="text-2xl sm:text-4xl font-bold font-heading text-white">
-            "Estamos en Valencia y alrededores para hacer tus sueños realidad"
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+          <span class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest block">
+            Especialidad 02 · Dirección Técnica en Obra
+          </span>
+          <h3 class="text-2xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+            "Tu proyecto en buenas manos: interlocutor único desde el día uno"
           </h3>
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            En Maestros de la Construcción tienes una persona con nombre, apellidos y rostro que responde de tu obra desde el primer día. Fabio Toro y todo el equipo están presentes a pie de obra en cada fase, coordinando gremios y resolviendo cada detalle.
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            El mayor temor al reformar es la falta de comunicación o los retrasos entre gremios. Con nosotros tienes a <strong>Fabio Toro</strong> y su equipo propio coordinando albañilería, fontanería, electricidad y acabados todos los días en tu vivienda.
           </p>
-          
-          <div class="p-4 rounded-2xl bg-slate-900 border border-amber-500/20 space-y-2">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
-                🤝
-              </div>
-              <div>
-                <h4 class="font-bold text-white text-sm">Contrato Cerrado con Fecha de Entrega</h4>
-                <p class="text-xs text-slate-400">Sin sorpresas de última hora ni incrementos inesperados.</p>
-              </div>
-            </div>
+
+          <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white">Penalización Vinculante por Retraso</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Si nos pasamos de la fecha pactada en el contrato de obra, te descontamos 50€ por cada día natural de demora. Cumplir es nuestra mejor garantía.</p>
           </div>
 
-          <div class="pt-2 flex flex-wrap gap-4">
-            <a href="https://wa.me/34622851328" target="_blank" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition">
+          <div class="pt-2">
+            <a href="https://wa.me/34622851328" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl transition">
               Hablar con Fabio Toro por WhatsApp
             </a>
-            <a href="donde-estamos.html" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs uppercase tracking-wider transition">
-              Consultar Zonas de Cobertura
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6">
-          <div class="relative rounded-3xl overflow-hidden glass-card p-3 border border-white/10 group">
-            <img src="img/fundador-valencia.jpg" alt="Fabio Toro y equipo de Maestros de la Construcción en Valencia" class="rounded-2xl w-full h-[440px] object-cover group-hover:scale-102 transition duration-500">
-            <div class="absolute bottom-6 left-6 right-6 bg-slate-900/95 backdrop-blur-md p-4 rounded-xl border border-amber-500/30">
-              <p class="text-xs font-bold text-amber-400 uppercase tracking-wider">Compromiso Directo</p>
-              <p class="text-sm font-semibold text-white">Profesionales cualificados con presencia directa en obra.</p>
-            </div>
           </div>
         </div>
       </div>
@@ -412,122 +380,114 @@
   </section>
 
   <!-- ==============================================================
-       SIMULADOR DE PRESUPUESTO INTERACTIVO EN TIEMPO REAL
+       SIMULADOR DE PRESUPUESTO EN VIVO (LIGHT / DARK ADAPTATIVO)
        ============================================================== -->
-  <section id="simulador" class="py-24 relative bg-[#090d16] border-t border-b border-white/5">
-    <div class="glow-gold top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <section id="simulador" class="py-24 bg-white dark:bg-[#090d16] border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span class="badge-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-          Simulador Inteligente 2026
-        </span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">
-          Calcula tu <span class="text-gradient-gold">presupuesto estimado</span>
+        <span class="badge-arch">Transparencia Total</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 dark:text-white">
+          Simulador de Presupuesto <span class="text-gradient-amber">2026</span>
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Selecciona tu tipo de obra, metros cuadrados y calidades para obtener una estimación transparente al instante ajustada a tarifas en Valencia.
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+          Calcula en segundos un presupuesto orientativo para tu reforma en Valencia con desglose de mano de obra y materiales.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Panel de Configuración del Simulador -->
-        <div class="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
+        <!-- Panel de Configuración -->
+        <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-900/80 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
           <form id="budget-calculator-form" class="space-y-6" onsubmit="return false;">
             
-            <!-- 1. Tipo de Servicio -->
             <div>
-              <label for="calc-service-type" class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                1. ¿Qué tipo de trabajo necesitas?
+              <label for="calc-service-type" class="block text-xs font-bold text-slate-900 dark:text-amber-400 uppercase tracking-wider mb-2">
+                1. Tipo de intervención
               </label>
-              <select id="calc-service-type" class="w-full bg-slate-800 border border-slate-700 text-white font-medium rounded-xl p-3.5 focus:outline-none focus:border-amber-400 text-sm">
+              <select id="calc-service-type" class="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-medium rounded-xl p-3.5 focus:outline-none focus:border-amber-600 text-sm">
                 <option value="integral" selected>Reforma Integral de Vivienda Completa</option>
-                <option value="bano">Reforma Completa de Baño (Alicatado, fontanería, sanitarios)</option>
-                <option value="cocina">Reforma de Cocina (Alicatados, fontanería, instalaciones)</option>
+                <option value="bano">Reforma Completa de Baño (Alicatados, fontanería y sanitarios)</option>
+                <option value="cocina">Reforma Completa de Cocina</option>
                 <option value="pladur">Tabiquería de Pladur y Techos con Fosa LED</option>
-                <option value="suelos">Solados y Pavimentos Porcelánicos / Tarima</option>
+                <option value="suelos">Solados Porcelánicos / Tarima AC5</option>
                 <option value="pintura">Alisado de Gotelé y Pintura Plástica</option>
               </select>
             </div>
 
-            <!-- 2. Slider de Metros Cuadrados -->
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label for="calc-area-slider" class="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                  2. Superficie aproximada
+                <label for="calc-area-slider" class="text-xs font-bold text-slate-900 dark:text-amber-400 uppercase tracking-wider">
+                  2. Superficie en metros cuadrados
                 </label>
-                <span id="calc-area-display" class="text-sm font-extrabold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
+                <span id="calc-area-display" class="text-sm font-extrabold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 px-3 py-1 rounded-full border border-amber-200 dark:border-amber-500/30">
                   75 m²
                 </span>
               </div>
-              <input type="range" id="calc-area-slider" min="10" max="220" value="75" step="5" class="w-full h-2 bg-slate-700 rounded-lg cursor-pointer">
+              <input type="range" id="calc-area-slider" min="10" max="220" value="75" step="5" class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
               <div class="flex justify-between text-[11px] text-slate-500 mt-1">
-                <span>10 m² (Baño / estancia)</span>
-                <span>80 m² (Piso estándar)</span>
-                <span>220 m² (Chalet / grande)</span>
+                <span>10 m²</span>
+                <span>75 m²</span>
+                <span>220 m²</span>
               </div>
             </div>
 
-            <!-- 3. Gama de Calidades -->
             <div>
-              <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                3. Nivel de calidades y materiales
+              <label class="block text-xs font-bold text-slate-900 dark:text-amber-400 uppercase tracking-wider mb-2">
+                3. Gama de materiales
               </label>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 <label class="cursor-pointer">
                   <input type="radio" name="calc-quality" value="basico" class="peer sr-only">
-                  <div class="p-3 rounded-xl border border-slate-700 bg-slate-800/60 peer-checked:border-amber-400 peer-checked:bg-amber-500/10 text-center transition">
-                    <span class="block text-xs font-bold text-white">Básica</span>
-                    <span class="block text-[10px] text-slate-400">Funcional</span>
+                  <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 peer-checked:border-amber-600 peer-checked:bg-amber-50 dark:peer-checked:bg-amber-500/10 text-center transition">
+                    <span class="block text-xs font-bold text-slate-900 dark:text-white">Básica</span>
+                    <span class="block text-[10px] text-slate-500">Funcional</span>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="calc-quality" value="confort" checked class="peer sr-only">
-                  <div class="p-3 rounded-xl border border-slate-700 bg-slate-800/60 peer-checked:border-amber-400 peer-checked:bg-amber-500/10 text-center transition">
-                    <span class="block text-xs font-bold text-white">Confort</span>
-                    <span class="block text-[10px] text-amber-400 font-semibold">Recomendada</span>
+                  <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 peer-checked:border-amber-600 peer-checked:bg-amber-50 dark:peer-checked:bg-amber-500/10 text-center transition">
+                    <span class="block text-xs font-bold text-slate-900 dark:text-white">Confort</span>
+                    <span class="block text-[10px] text-amber-700 dark:text-amber-400 font-semibold">Recomendada</span>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="calc-quality" value="premium" class="peer sr-only">
-                  <div class="p-3 rounded-xl border border-slate-700 bg-slate-800/60 peer-checked:border-amber-400 peer-checked:bg-amber-500/10 text-center transition">
-                    <span class="block text-xs font-bold text-white">Premium</span>
-                    <span class="block text-[10px] text-slate-400">Alta Gama</span>
+                  <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 peer-checked:border-amber-600 peer-checked:bg-amber-50 dark:peer-checked:bg-amber-500/10 text-center transition">
+                    <span class="block text-xs font-bold text-slate-900 dark:text-white">Premium</span>
+                    <span class="block text-[10px] text-slate-500">Alta Gama</span>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="calc-quality" value="lujo" class="peer sr-only">
-                  <div class="p-3 rounded-xl border border-slate-700 bg-slate-800/60 peer-checked:border-amber-400 peer-checked:bg-amber-500/10 text-center transition">
-                    <span class="block text-xs font-bold text-white">Lujo</span>
-                    <span class="block text-[10px] text-slate-400">Exclusivo</span>
+                  <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 peer-checked:border-amber-600 peer-checked:bg-amber-50 dark:peer-checked:bg-amber-500/10 text-center transition">
+                    <span class="block text-xs font-bold text-slate-900 dark:text-white">Lujo</span>
+                    <span class="block text-[10px] text-slate-500">Exclusivo</span>
                   </div>
                 </label>
               </div>
             </div>
 
-            <!-- 4. Extras y Trabajos Complementarios -->
             <div>
-              <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                4. Opciones y extras (opcional)
+              <label class="block text-xs font-bold text-slate-900 dark:text-amber-400 uppercase tracking-wider mb-2">
+                4. Partidas adicionales
               </label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/40 border border-slate-700/60 cursor-pointer hover:bg-slate-800 transition">
-                  <input type="checkbox" name="calc-extra" value="fontaneria" class="rounded text-amber-500 focus:ring-0">
-                  <span class="text-slate-300">Renovación integral fontanería (+950€)</span>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                  <input type="checkbox" name="calc-extra" value="fontaneria" class="rounded text-amber-600 focus:ring-0">
+                  <span class="text-slate-700 dark:text-slate-300">Renovación fontanería (+950€)</span>
                 </label>
-                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/40 border border-slate-700/60 cursor-pointer hover:bg-slate-800 transition">
-                  <input type="checkbox" name="calc-extra" value="electricidad" class="rounded text-amber-500 focus:ring-0">
-                  <span class="text-slate-300">Instalación eléctrica y cuadro (+1.400€)</span>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                  <input type="checkbox" name="calc-extra" value="electricidad" class="rounded text-amber-600 focus:ring-0">
+                  <span class="text-slate-700 dark:text-slate-300">Instalación eléctrica y cuadro (+1.400€)</span>
                 </label>
-                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/40 border border-slate-700/60 cursor-pointer hover:bg-slate-800 transition">
-                  <input type="checkbox" name="calc-extra" value="led" class="rounded text-amber-500 focus:ring-0">
-                  <span class="text-slate-300">Fosa perimetral iluminación LED (+550€)</span>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                  <input type="checkbox" name="calc-extra" value="led" class="rounded text-amber-600 focus:ring-0">
+                  <span class="text-slate-700 dark:text-slate-300">Fosa perimetral LED (+550€)</span>
                 </label>
-                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/40 border border-slate-700/60 cursor-pointer hover:bg-slate-800 transition">
-                  <input type="checkbox" name="calc-extra" value="desescombro" class="rounded text-amber-500 focus:ring-0">
-                  <span class="text-slate-300">Desescombro y contenedor oficial (+450€)</span>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                  <input type="checkbox" name="calc-extra" value="desescombro" class="rounded text-amber-600 focus:ring-0">
+                  <span class="text-slate-700 dark:text-slate-300">Gestión de residuos autorizada (+450€)</span>
                 </label>
               </div>
             </div>
@@ -535,48 +495,46 @@
           </form>
         </div>
 
-        <!-- Panel de Resultado y Acción de Envío a WhatsApp -->
-        <div class="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl shadow-2xl border-amber-500/30 space-y-6">
-          <div class="border-b border-white/10 pb-4">
-            <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Estimación Orientativa</span>
+        <!-- Panel de Resultados -->
+        <div class="lg:col-span-5 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-amber-500/30 shadow-lg space-y-6">
+          <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+            <span class="text-xs uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Cálculo Estimado en Valencia</span>
             <div class="flex items-baseline gap-2 mt-1">
-              <span id="calc-result-total" class="text-4xl sm:text-5xl font-black font-heading text-amber-400">
+              <span id="calc-result-total" class="text-4xl sm:text-5xl font-black font-heading text-slate-900 dark:text-amber-400">
                 44.850 €
               </span>
-              <span class="text-xs text-slate-400">(IVA no incl.)</span>
+              <span class="text-xs text-slate-500">(Sin IVA)</span>
             </div>
-            <p id="calc-result-range" class="text-xs text-slate-300 mt-1 font-medium">
-              Rango estimado: 41.250 € - 48.450 €
+            <p id="calc-result-range" class="text-xs text-slate-600 dark:text-slate-300 mt-1 font-medium">
+              Rango: 41.250 € - 48.450 €
             </p>
           </div>
 
-          <!-- Desglose de partidas -->
           <div class="space-y-2.5 text-xs">
-            <div class="flex justify-between py-1.5 border-b border-slate-800">
-              <span class="text-slate-400">Mano de obra especializada (Albañilería, Pladur...)</span>
-              <span id="calc-result-labor" class="font-bold text-white">24.650 €</span>
+            <div class="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span class="text-slate-500 dark:text-slate-400">Mano de obra especializada</span>
+              <span id="calc-result-labor" class="font-bold text-slate-900 dark:text-white">24.650 €</span>
             </div>
-            <div class="flex justify-between py-1.5 border-b border-slate-800">
-              <span class="text-slate-400">Materiales y suministros</span>
-              <span id="calc-result-materials" class="font-bold text-white">15.700 €</span>
+            <div class="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span class="text-slate-500 dark:text-slate-400">Materiales y suministros</span>
+              <span id="calc-result-materials" class="font-bold text-slate-900 dark:text-white">15.700 €</span>
             </div>
-            <div class="flex justify-between py-1.5 border-b border-slate-800">
-              <span class="text-slate-400">Gestión de residuos y limpieza final</span>
-              <span id="calc-result-waste" class="font-bold text-white">4.500 €</span>
+            <div class="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span class="text-slate-500 dark:text-slate-400">Gestión de residuos y limpieza final</span>
+              <span id="calc-result-waste" class="font-bold text-slate-900 dark:text-white">4.500 €</span>
             </div>
-            <div class="flex justify-between py-1.5 border-b border-slate-800">
-              <span class="text-slate-400">Plazo de ejecución estimado</span>
-              <span id="calc-result-time" class="font-bold text-amber-400">~6 semanas</span>
+            <div class="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span class="text-slate-500 dark:text-slate-400">Plazo contractual aproximado</span>
+              <span id="calc-result-time" class="font-bold text-amber-700 dark:text-amber-400">~6 semanas</span>
             </div>
           </div>
 
-          <!-- Botón de Envío por WhatsApp -->
           <div class="pt-2">
-            <a id="calc-whatsapp-btn" href="https://wa.me/34622851328" target="_blank" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-extrabold text-sm text-center shadow-xl transition flex items-center justify-center gap-2">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              <span>Enviar Presupuesto por WhatsApp</span>
+            <a id="calc-whatsapp-btn" href="https://wa.me/34622851328" target="_blank" class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase tracking-wider text-center shadow-md transition flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Enviar esta Estimación a WhatsApp</span>
             </a>
-            <p class="text-[10px] text-slate-500 text-center mt-2">
+            <p class="text-[11px] text-slate-500 text-center mt-2">
               Se enviará este desglose a Fabio Toro para concertar la visita técnica gratuita y darte precio cerrado en Valencia.
             </p>
           </div>
@@ -589,62 +547,50 @@
   </section>
 
   <!-- ==============================================================
-       PREGUNTAS FRECUENTES (SEO GOOGLE SEARCH CONSOLE)
+       PREGUNTAS FRECUENTES (SEO GOOGLE SEARCH)
        ============================================================== -->
-  <section class="py-24 bg-slate-950">
+  <section class="py-24 bg-slate-50 dark:bg-[#0c1322]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-16 space-y-3">
-        <span class="badge-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-          FAQ & Asesoría Legal
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
-          Preguntas frecuentes sobre <span class="text-gradient-gold">reformas en Valencia</span>
+        <span class="badge-arch">Información Legal & Trámites</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+          Preguntas frecuentes sobre <span class="text-gradient-amber">reformas en Valencia</span>
         </h2>
-        <p class="text-slate-400 text-sm">
-          Todo lo que necesitas saber antes de empezar tu obra: licencias, garantías y métodos de trabajo.
+        <p class="text-slate-600 dark:text-slate-400 text-sm">
+          Todo lo que necesitas conocer antes de iniciar tu obra: licencias, garantías y métodos de pago.
         </p>
       </div>
 
       <div class="space-y-4">
         
-        <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
-          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-sm sm:text-base font-bold text-white hover:text-amber-400 transition">
+        <div class="arch-card overflow-hidden">
+          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 transition">
             <span>¿Cobráis por la primera visita y el presupuesto en Valencia?</span>
-            <svg class="faq-icon w-5 h-5 text-amber-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="faq-icon w-5 h-5 text-amber-600 dark:text-amber-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content hidden p-5 pt-0 text-slate-300 text-sm leading-relaxed border-t border-white/5">
+          <div class="faq-content hidden p-5 pt-0 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800">
             <strong>No, es 100% gratuito y sin compromiso.</strong> Nos desplazamos a tu vivienda en Valencia capital o cualquier municipio de los alrededores (Torrent, Paterna, Burjassot, Bétera, Sagunto...) para tomar mediciones, analizar el estado del inmueble y escuchar tus ideas. En pocos días te entregamos un presupuesto detallado partida por partida.
           </div>
         </div>
 
-        <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
-          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-sm sm:text-base font-bold text-white hover:text-amber-400 transition">
+        <div class="arch-card overflow-hidden">
+          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 transition">
             <span>¿Qué permisos o licencias necesito para una reforma en Valencia?</span>
-            <svg class="faq-icon w-5 h-5 text-amber-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="faq-icon w-5 h-5 text-amber-600 dark:text-amber-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content hidden p-5 pt-0 text-slate-300 text-sm leading-relaxed border-t border-white/5">
+          <div class="faq-content hidden p-5 pt-0 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800">
             La inmensa mayoría de las reformas interiores (alicatar cocina o baño, cambio de suelo, pladur o pintura) se tramitan en el Ayuntamiento de Valencia mediante <strong>Declaración Responsable de Obra</strong>. Esto permite comenzar los trabajos casi inmediatamente tras abonar las tasas e ICIO correspondientes. Si la obra afecta a elementos estructurales o fachada histórica, te asesoramos con la documentación técnica necesaria.
           </div>
         </div>
 
-        <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
-          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-sm sm:text-base font-bold text-white hover:text-amber-400 transition">
+        <div class="arch-card overflow-hidden">
+          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 transition">
             <span>¿Qué garantía tienen los trabajos realizados?</span>
-            <svg class="faq-icon w-5 h-5 text-amber-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="faq-icon w-5 h-5 text-amber-600 dark:text-amber-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content hidden p-5 pt-0 text-slate-300 text-sm leading-relaxed border-t border-white/5">
+          <div class="faq-content hidden p-5 pt-0 text-slate-600 dark:text-slate-300 text-sm leading-relaxed border-t border-slate-100 dark:border-slate-800">
             Todos nuestros proyectos cuentan con garantía total por escrito conforme a la Ley de Ordenación de la Edificación (LOE), además de disponer de Seguro de Responsabilidad Civil profesional. Tu tranquilidad es nuestro principal aval.
-          </div>
-        </div>
-
-        <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
-          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-sm sm:text-base font-bold text-white hover:text-amber-400 transition">
-            <span>¿Cómo se pagan las obras?</span>
-            <svg class="faq-icon w-5 h-5 text-amber-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </button>
-          <div class="faq-content hidden p-5 pt-0 text-slate-300 text-sm leading-relaxed border-t border-white/5">
-            Trabajamos con un sistema transparente de <strong>hitos por certificación de obra</strong>: una provisión inicial para compra de materiales y el resto repartido conforme avanza y se comprueba cada fase (demolición, instalaciones, alicatados y fin de obra tras tu visto bueno).
           </div>
         </div>
 
@@ -656,17 +602,17 @@
   <!-- ==============================================================
        FOOTER
        ============================================================== -->
-  <footer class="bg-[#05080e] border-t border-white/10 pt-16 pb-12 text-slate-400 text-xs">
+  <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 pt-16 pb-12 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         
         <div class="space-y-4 md:col-span-1">
           <div class="flex items-center gap-3">
-            <img src="img/logo.jpg" alt="Logo" class="h-10 w-auto rounded border border-amber-500/30">
+            <img src="img/logo.jpg" alt="Logo" class="h-9 w-auto rounded border border-amber-500/30">
             <span class="font-heading font-extrabold text-white text-base">MAESTROS <span class="text-amber-400">DE LA CONSTRUCCIÓN</span></span>
           </div>
           <p class="text-slate-400 text-xs leading-relaxed">
-            Especialistas en reformas integrales, pladur, iluminación LED, alicatados y albañilería en Valencia y área metropolitana.
+            Reformas integrales, estructuras de pladur con iluminación LED, alicatados singulares y fontanería en Valencia y área metropolitana.
           </p>
           <p class="text-[11px] text-amber-400 font-semibold">
             Instagram: @somosmaestrosdelaconstruccion
@@ -674,19 +620,19 @@
         </div>
 
         <div>
-          <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Navegación</h4>
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Secciones</h4>
           <ul class="space-y-2 text-xs">
-            <li><a href="index.html" class="hover:text-amber-400 transition">✨ Pestaña Bienvenida</a></li>
-            <li><a href="inicio.html" class="hover:text-amber-400 transition">📄 Pestaña Inicio (Directo)</a></li>
-            <li><a href="obras.html" class="hover:text-amber-400 transition">🏗️ Trabajos y Obras</a></li>
-            <li><a href="presupuesto.html" class="hover:text-amber-400 transition">🧮 Simulador Presupuesto</a></li>
-            <li><a href="donde-estamos.html" class="hover:text-amber-400 transition">📍 Dónde Estamos (Valencia)</a></li>
-            <li><a href="contacto.html" class="hover:text-amber-400 transition">📞 Contacto & Soporte</a></li>
+            <li><a href="index.html" class="hover:text-amber-400 transition">Bienvenida Visual</a></li>
+            <li><a href="inicio.html" class="hover:text-amber-400 transition">Pestaña Inicio Directo</a></li>
+            <li><a href="obras.html" class="hover:text-amber-400 transition">Trabajos Realizados</a></li>
+            <li><a href="presupuesto.html" class="hover:text-amber-400 transition">Simulador Presupuesto</a></li>
+            <li><a href="donde-estamos.html" class="hover:text-amber-400 transition">Dónde Estamos</a></li>
+            <li><a href="contacto.html" class="hover:text-amber-400 transition">Contacto & Soporte</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Servicios Valencia</h4>
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Servicios</h4>
           <ul class="space-y-2 text-xs">
             <li>Reformas Integrales de Pisos</li>
             <li>Alicatados de Baños y Cocinas</li>
@@ -698,16 +644,16 @@
         </div>
 
         <div>
-          <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Contacto Directo</h4>
-          <p class="text-slate-300 mb-2">📞 Teléfono: <a href="tel:622851328" class="text-white hover:text-amber-400 font-bold">622 851 328</a></p>
-          <p class="text-slate-300 mb-2">💬 WhatsApp: <a href="https://wa.me/34622851328" class="text-emerald-400 hover:underline">34 622 851 328</a></p>
-          <p class="text-slate-300 mb-2">✉️ Email: info@maestrosdelaconstruccion.es</p>
-          <p class="text-slate-300">📍 Cobertura: Valencia, Torrent, Paterna, Burjassot, Bétera y provincia.</p>
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Contacto Directo</h4>
+          <p class="text-slate-300 mb-2">Teléfono: <a href="tel:622851328" class="text-white hover:text-amber-400 font-bold">622 851 328</a></p>
+          <p class="text-slate-300 mb-2">WhatsApp: <a href="https://wa.me/34622851328" class="text-emerald-400 hover:underline">34 622 851 328</a></p>
+          <p class="text-slate-300 mb-2">Email: info@maestrosdelaconstruccion.es</p>
+          <p class="text-slate-300">Cobertura: Valencia, Torrent, Paterna, Burjassot, Bétera y provincia.</p>
         </div>
 
       </div>
 
-      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px] gap-4">
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px] gap-4">
         <p>© 2026 Maestros de la Construcción. Todos los derechos reservados. Valencia, España.</p>
         <p>Desplegado en Vercel | Repositorio GitHub: <a href="https://github.com/ivangarmir18/Maestros_de_la_Construccion" target="_blank" class="text-amber-400 hover:underline">Maestros_de_la_Construccion</a></p>
       </div>
@@ -720,4 +666,3 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-
