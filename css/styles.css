@@ -1,27 +1,27 @@
 /* ==============================================================
-   MAESTROS DE LA CONSTRUCCIÓN - ESTÉTICA DUAL (MODO CLARO PRINCIPAL / OSCURO OPCIONAL)
-   Inspirado en diseño moderno con Bento Grid, Glows y Tipografía Punchy
+   MAESTROS DE LA CONSTRUCCIÓN - ESTÉTICA PREMIUM CÁLIDA
+   Modo Claro Elegante (Warm Sand / Alabaster) & Modo Oscuro Opcional
    ============================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap');
 
 :root {
-  /* MODO CLARO (POR DEFECTO PRINCIPAL) */
-  --bg-deep: #f8fafc;
+  /* MODO CLARO CÁLIDO & SERENO (CERO DESLUMBRAMIENTOS) */
+  --bg-deep: #f5f4ef;          /* Tono arena/lino natural, suave y acogedor */
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --border-subtle: rgba(15, 23, 42, 0.08);
-  --border-card: #e2e8f0;
-  --border-highlight: rgba(217, 119, 6, 0.4);
-  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
-  --card-hover-shadow: 0 20px 35px -10px rgba(217, 119, 6, 0.15);
+  --text-main: #1c1917;         /* Tono piedra oscura de máximo confort */
+  --text-muted: #57534e;        /* Gris cálido legible */
+  --border-subtle: #e7e5df;
+  --border-card: #e5e3dc;
+  --border-highlight: rgba(217, 119, 6, 0.45);
+  --card-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.05), 0 2px 6px -1px rgba(28, 25, 23, 0.03);
+  --card-hover-shadow: 0 16px 32px -8px rgba(217, 119, 6, 0.14);
 
   --primary-gradient: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-  --nav-bg: rgba(255, 255, 255, 0.88);
-  --footer-bg: #0f172a;
-  --footer-text: #94a3b8;
+  --nav-bg: rgba(245, 244, 239, 0.92);
+  --footer-bg: #1c1917;
+  --footer-text: #a8a29e;
 }
 
 /* MODO OSCURO (CUANDO .dark ESTÁ ACTIVO EN <html>) */
@@ -68,22 +68,22 @@ h1, h2, h3, .font-heading {
   letter-spacing: -0.035em;
 }
 
-/* Dot grid pattern */
+/* Dot grid pattern sutil */
 .bg-mesh-dots {
   background-size: 28px 28px;
-  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(28, 25, 23, 0.05) 1px, transparent 1px);
 }
 html.dark .bg-mesh-dots {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
 }
 
-/* Floating ambient blobs */
+/* Luces ambientales cálidas */
 .ambient-glow-amber {
   position: absolute;
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0) 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.10) 0%, rgba(245, 158, 11, 0) 70%);
   filter: blur(60px);
   pointer-events: none;
 }
@@ -93,14 +93,14 @@ html.dark .bg-mesh-dots {
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0) 70%);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, rgba(168, 85, 247, 0) 70%);
   filter: blur(60px);
   pointer-events: none;
 }
 
-/* Vibrant Gradients adaptativos */
+/* Gradientes de texto */
 .text-gradient-vibrant {
-  background: linear-gradient(135deg, #0f172a 0%, #b45309 60%, #d97706 100%);
+  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #ea580c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -111,7 +111,7 @@ html.dark .text-gradient-vibrant {
 }
 
 .text-gradient-purple-cyan {
-  background: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #9333ea 100%);
+  background: linear-gradient(135deg, #0369a1 0%, #4f46e5 50%, #7e22ce 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -135,96 +135,107 @@ html.dark .text-gradient-purple-cyan {
 
 .bento-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(245, 158, 11, 0.45);
+  border-color: rgba(217, 119, 6, 0.5);
   box-shadow: var(--card-hover-shadow);
 }
 
-/* En Modo Claro: asegurar que títulos y párrafos dentro de tarjetas y headers se vean oscuros automáticamente */
+/* REGLAS CLAVE MODO CLARO: Contraste perfecto para títulos y textos */
+html:not(.dark) h1 {
+  color: #1c1917 !important;
+}
+html:not(.dark) h1 span.text-gradient-vibrant {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #ea580c 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 html:not(.dark) .bento-card h2,
 html:not(.dark) .bento-card h3,
 html:not(.dark) .bento-card h4,
 html:not(.dark) .bento-card strong,
 html:not(.dark) header h1,
 html:not(.dark) header span.text-white,
-html:not(.dark) main h1.text-white,
-html:not(.dark) main h2.text-white,
-html:not(.dark) main h3.text-white,
-html:not(.dark) main h4.text-white,
-html:not(.dark) .text-white {
-  color: #0f172a !important;
+html:not(.dark) main h2,
+html:not(.dark) main h3,
+html:not(.dark) main h4 {
+  color: #1c1917 !important;
 }
 
+html:not(.dark) p,
 html:not(.dark) .bento-card p,
-html:not(.dark) main p.text-slate-300,
-html:not(.dark) main p.text-slate-400,
-html:not(.dark) .text-slate-300,
-html:not(.dark) .text-slate-400 {
-  color: #475569 !important;
+html:not(.dark) main p {
+  color: #57534e !important;
+}
+
+html:not(.dark) strong.text-white {
+  color: #1c1917 !important;
 }
 
 html:not(.dark) .border-white\/10,
 html:not(.dark) .border-white\/5 {
-  border-color: #e2e8f0 !important;
+  border-color: #e5e3dc !important;
 }
 
 html:not(.dark) .bg-white\/5,
 html:not(.dark) .bg-white\/10 {
-  background-color: #f1f5f9 !important;
-  color: #0f172a !important;
+  background-color: #eae7df !important;
+  color: #1c1917 !important;
+  border-color: #d6d3cb !important;
 }
 
 html:not(.dark) .bg-\[\#10142c\] {
   background-color: #ffffff !important;
-  color: #0f172a !important;
-  border-color: #cbd5e1 !important;
+  color: #1c1917 !important;
+  border-color: #d6d3cb !important;
 }
 
 html:not(.dark) .bg-\[\#0a0c1a\],
 html:not(.dark) .bg-\[\#080914\] {
-  background-color: #f8fafc !important;
+  background-color: #ece9e2 !important;
 }
 
 html:not(.dark) .bg-\[\#05060d\] {
-  background-color: #0f172a !important;
-  color: #94a3b8 !important;
+  background-color: #1c1917 !important;
+  color: #a8a29e !important;
 }
 
-html:not(.dark) .bg-\[\#05060d\] span.text-white {
+html:not(.dark) .bg-\[\#05060d\] span.text-white,
+html:not(.dark) footer .text-white {
   color: #ffffff !important;
 }
 
 /* Icon Containers con Neon Glow */
 .bento-icon-amber {
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: #d97706;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #b45309;
 }
 html.dark .bento-icon-amber {
   color: #fbbf24;
 }
 
 .bento-icon-cyan {
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #0284c7;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #0369a1;
 }
 html.dark .bento-icon-cyan {
   color: #38bdf8;
 }
 
 .bento-icon-purple {
-  background: rgba(168, 85, 247, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  color: #9333ea;
+  background: rgba(168, 85, 247, 0.14);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #7e22ce;
 }
 html.dark .bento-icon-purple {
   color: #c084fc;
 }
 
 .bento-icon-emerald {
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #059669;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #047857;
 }
 html.dark .bento-icon-emerald {
   color: #34d399;
@@ -242,7 +253,7 @@ html.dark .bento-icon-emerald {
 /* Botón llamativo tipo EchoScribe */
 .btn-cta-vibrant {
   background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 800;
   box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
   transition: all 0.25s ease;
@@ -263,9 +274,9 @@ html.dark .bento-icon-emerald {
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 9999px;
-  background: rgba(241, 245, 249, 0.9);
-  border: 1px solid rgba(203, 213, 225, 0.8);
-  color: #334155;
+  background: #edeae2;
+  border: 1px solid #d6d3cb;
+  color: #44403c;
 }
 html.dark .pill-badge {
   background: rgba(30, 36, 70, 0.6);
@@ -325,7 +336,7 @@ html.dark .pill-badge {
   height: 44px;
   border-radius: 50%;
   background: #ffffff;
-  color: #0f172a;
+  color: #1c1917;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -350,7 +361,7 @@ input[type="range"] {
   background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d6d3cb;
   border-radius: 4px;
 }
 html.dark ::-webkit-scrollbar-thumb {
