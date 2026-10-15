@@ -149,3 +149,4 @@ function initBudgetCalculatorUI() {
   // Cálculo inicial
   updateCalculation();
 }
+

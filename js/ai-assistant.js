@@ -1,37 +1,20 @@
 /**
  * ASISTENTE VIRTUAL IA - MAESTROS DE LA CONSTRUCCIÓN
- * Soporte con Google Gemini API + Base de Conocimiento Experta en Reformas en Valencia
+ * Conexión Segura vía Servidor Vercel (/api/chat) + Respaldo de Conocimiento Local Experto
  */
 
 class ConstructionAIAssistant {
   constructor() {
-    this.apiKey = localStorage.getItem('gemini_api_key') || '';
-    this.history = [];
+    this.localKey = localStorage.getItem('gemini_api_key') || '';
     this.isOpen = false;
-    this.systemPrompt = `Eres "MaestroBot", el asistente técnico oficial de "Maestros de la Construcción", empresa líder de reformas y construcción en Valencia y alrededores (España).
-Fundada por maestros artesanos con años de experiencia, especialistas en:
-1. Alicatados en baños, suelos y cocinas (gres porcelánico, rectificados, azulejo artesanal y piedra rústica).
-2. Trabajos de pladur y falsos techos con fosa de luz indirecta LED ambiental y nichos decorativos en salones y dormitorios.
-3. Fontanería y grifería de alta eficiencia (saneamiento, platos de ducha de resina, cisternas empotradas).
-4. Revestimientos, enlucidos y alisado de gotelé a llana con acabado fino.
-5. Solados, pavimentos continuos y tarimas flotantes AC5.
-6. Cerramientos, tabiquería y rehabilitación de fachadas.
-7. Reformas integrales de pisos, viviendas unifamiliares y locales comerciales en toda la provincia de Valencia (Campanar, Ruzafa, Eixample, Torrent, Paterna, Burjassot, Bétera, Sagunto, etc.).
-
-Tono: Cercano, muy profesional, experto en construcción, transparente y valenciano cordial.
-Instrucciones:
-- Responde siempre en español de forma concisa (máximo 2 o 3 párrafos).
-- Ofrece siempre asesoramiento práctico y recuerda al usuario que la visita técnica para toma de medidas y presupuesto en Valencia es completamente GRATUITA y sin compromiso.
-- Si preguntan por teléfono o contacto: Teléfono/WhatsApp 622 851 328.
-- No inventes precios exactos sin ver la obra, pero puedes dar rangos orientativos de mercado (ej. baño completo 3.000€-5.000€, reforma integral 500€-750€/m²).`;
 
     this.localResponses = [
       {
-        triggers: ["zona", "donde", "dónde", "valencia", "pueblo", "desplaz", "ciudades", "torrent", "paterna"],
+        triggers: ["zona", "donde", "dónde", "valencia", "pueblo", "desplaz", "ciudades", "torrent", "paterna", "burjassot", "betera", "bétera", "sagunto"],
         answer: "Operamos en toda la ciudad de **Valencia** (Ruzafa, Campanar, Ciutat Vella, El Carmen, Eixample, Poblats Marítims...) y toda el área metropolitana y provincia: **Torrent, Paterna, Burjassot, Godella, Mislata, Alaquàs, Bétera, Sagunto y Manises**.<br><br>🚗 Nos desplazamos a tu vivienda o local para tomar medidas y asesorarte **sin coste ni compromiso**."
       },
       {
-        triggers: ["precio", "cuanto", "cuánto", "coste", "cuesta", "tarifa", "metro", "m2", "presupuesto"],
+        triggers: ["precio", "cuanto", "cuánto", "coste", "cuesta", "tarifa", "metro", "m2", "presupuesto", "estimacion"],
         answer: "Cada proyecto es único, pero como referencia orientativa en Valencia:<br>• **Reforma integral de piso:** Entre 480€ y 750€/m² según calidades.<br>• **Baño completo con alicatado de piedra/porcelánico:** De 2.900€ a 4.900€.<br>• **Cocina completa:** De 3.800€ a 7.500€.<br>• **Pladur y fosa LED de salón:** Desde 38€/m².<br><br>💡 ¡Puedes probar nuestro **Simulador Interactivo de Presupuestos** en la web o escribirnos al WhatsApp **622 851 328**!"
       },
       {
@@ -89,7 +72,7 @@ Instrucciones:
             <div>
               <h4 class="font-bold text-white text-sm flex items-center gap-2">
                 MaestroBot IA
-                <span class="bg-amber-500/20 text-amber-300 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-amber-500/30">Gemini Powered</span>
+                <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30">Servidor Seguro</span>
               </h4>
               <p class="text-xs text-slate-400">Asesor de Obras & Reformas en Valencia</p>
             </div>
@@ -104,21 +87,24 @@ Instrucciones:
           </div>
         </div>
 
-        <!-- Panel de Clave Gemini (Oculto por defecto) -->
+        <!-- Panel de Configuración Opcional -->
         <div id="ai-key-panel" class="p-3 bg-slate-950 border-b border-amber-500/20 text-xs hidden">
-          <p class="text-slate-300 mb-2">Introduce tu clave API de <strong>Google AI Studio (Gemini)</strong> si quieres respuestas generadas en tiempo real por el modelo multimodal:</p>
+          <p class="text-slate-300 mb-1.5"><strong>Configuración de Clave Gemini:</strong></p>
+          <p class="text-slate-400 text-[11px] mb-2 leading-relaxed">
+            • En Vercel: Se recomienda añadir <code>GEMINI_API_KEY</code> en las Variables de Entorno del panel de Vercel (100% oculto al público).<br>
+            • En pruebas locales: Puedes pegar tu clave aquí temporalmente:
+          </p>
           <div class="flex gap-2">
             <input type="password" id="gemini-key-input" placeholder="AIzaSy..." class="flex-1 bg-slate-800 border border-slate-700 rounded px-2.5 py-1.5 text-white text-xs focus:outline-none focus:border-amber-400">
             <button id="save-key-btn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1.5 rounded text-xs transition">Guardar</button>
           </div>
-          <p class="text-[10px] text-slate-500 mt-1">Si no tienes clave, no te preocupes: responderemos con nuestro motor experto integrado.</p>
         </div>
 
         <!-- Mensajes del Chat -->
         <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3.5 text-sm max-h-[380px]">
           <div class="chat-bubble-bot p-3.5 shadow-sm text-slate-200">
             👋 ¡Hola! Soy el asistente inteligente de <strong>Maestros de la Construcción</strong>.
-            <br><br>¿En qué puedo ayudarte hoy? Puedes preguntarme sobre costes de reformas en Valencia, tiempos de ejecución, pladur con iluminación o cómo tramitar permisos.
+            <br><br>¿En qué puedo ayudarte hoy? Puedes preguntarme sobre costes de reformas en Valencia, tiempos de ejecución, pladur con iluminación o cómo tramitar permisos en el ayuntamiento.
           </div>
         </div>
 
@@ -153,8 +139,8 @@ Instrucciones:
     const saveKeyBtn = document.getElementById('save-key-btn');
     const keyInput = document.getElementById('gemini-key-input');
 
-    if (this.apiKey) {
-      keyInput.value = this.apiKey;
+    if (this.localKey) {
+      keyInput.value = this.localKey;
     }
 
     toggleBtn?.addEventListener('click', () => {
@@ -176,10 +162,10 @@ Instrucciones:
 
     saveKeyBtn?.addEventListener('click', () => {
       const val = keyInput.value.trim();
-      this.apiKey = val;
+      this.localKey = val;
       localStorage.setItem('gemini_api_key', val);
       keyPanel.classList.add('hidden');
-      this.addBotMessage('✅ Clave de Gemini API guardada correctamente. Ahora usaré el modelo de Google Gemini para responderte.');
+      this.addBotMessage('✅ Clave guardada localmente.');
     });
 
     document.querySelectorAll('.quick-chip').forEach(chip => {
@@ -238,23 +224,48 @@ Instrucciones:
     this.addUserMessage(text);
     this.showTypingIndicator();
 
-    if (this.apiKey) {
+    // 1. Intentar llamada al backend serverless seguro de Vercel (/api/chat)
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data.success && data.reply) {
+          this.removeTypingIndicator();
+          const formatted = data.reply
+            .replace(/\n\n/g, '<br><br>')
+            .replace(/\n/g, '<br>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+          this.addBotMessage(formatted);
+          return;
+        }
+      }
+    } catch (err) {
+      // Backend serverless no disponible (modo local o estático)
+    }
+
+    // 2. Si no hay backend o no tiene clave, usar clave local directa si el usuario introdujo una
+    if (this.localKey) {
       try {
-        const response = await this.callGeminiAPI(text);
+        const response = await this.callGeminiDirect(text);
         this.removeTypingIndicator();
         this.addBotMessage(response);
         return;
       } catch (err) {
-        console.warn('Fallo en Gemini API, recurriendo a base de conocimiento local:', err);
+        console.warn('Fallback a conocimiento local:', err);
       }
     }
 
-    // Respuesta con motor experto local
+    // 3. Respaldo definitivo: Motor experto local
     setTimeout(() => {
       this.removeTypingIndicator();
       const answer = this.getLocalAnswer(text);
       this.addBotMessage(answer);
-    }, 650);
+    }, 600);
   }
 
   getLocalAnswer(query) {
@@ -268,18 +279,18 @@ Instrucciones:
     return `Entendido. Para darte el mejor asesoramiento técnico sobre <em>"${query}"</em> y ver tu vivienda o local en Valencia, te recomendamos coordinar una llamada o visita sin compromiso con Fabio Toro:<br><br>📲 <strong>WhatsApp directo:</strong> <a href="https://wa.me/34622851328" class="text-amber-400 font-bold underline" target="_blank">622 851 328</a><br>O si lo prefieres, puedes usar la pestaña de <strong>Presupuesto</strong> para calcular un coste aproximado.`;
   }
 
-  async callGeminiAPI(userQuery) {
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`;
+  async callGeminiDirect(userQuery) {
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.localKey}`;
     const payload = {
       contents: [
         {
           role: "user",
-          parts: [{ text: `${this.systemPrompt}\n\nPregunta del usuario: ${userQuery}` }]
+          parts: [{ text: `Eres MaestroBot de Maestros de la Construcción en Valencia. Responde de forma cordial, profesional y concisa sobre reformas en Valencia (WhatsApp 622 851 328). Pregunta: ${userQuery}` }]
         }
       ],
       generationConfig: {
         temperature: 0.7,
-        maxOutputTokens: 350
+        maxOutputTokens: 300
       }
     };
 
@@ -289,14 +300,10 @@ Instrucciones:
       body: JSON.stringify(payload)
     });
 
-    if (!res.ok) {
-      throw new Error(`API error: ${res.statusText}`);
-    }
-
+    if (!res.ok) throw new Error('Error en API directa');
     const data = await res.json();
     const candidate = data.candidates?.[0]?.content?.parts?.[0]?.text;
     if (candidate) {
-      // Reemplazo básico de saltos de línea a <br> y negritas
       return candidate
         .replace(/\n\n/g, '<br><br>')
         .replace(/\n/g, '<br>')
@@ -306,7 +313,6 @@ Instrucciones:
   }
 }
 
-// Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   window.maestroAIAssistant = new ConstructionAIAssistant();
 });
