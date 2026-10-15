@@ -31,7 +31,7 @@ class ConstructionAIAssistant {
       },
       {
         triggers: ["contacto", "telefono", "teléfono", "whatsapp", "email", "llamar", "visita"],
-        answer: "Puedes comunicarte directamente con Fabio Toro y el equipo técnico:<br>• **Teléfono / WhatsApp:** <a href='https://wa.me/34622851328' target='_blank' class='text-amber-600 dark:text-amber-400 font-bold underline'>622 851 328</a><br>• **Email:** info@maestrosdelaconstruccion.es<br>• **Instagram:** @somosmaestrosdelaconstruccion<br><br>¿Deseas concertar una visita técnica esta misma semana?"
+        answer: "Puedes comunicarte directamente con el equipo técnico de Maestros de la Construcción:<br>• **WhatsApp / Llamada directa:** <a href='https://wa.me/34622851328' target='_blank' class='text-amber-600 dark:text-amber-400 font-bold underline'>622 851 328</a><br>• **Instagram:** <a href='https://instagram.com/somosmaestrosdelaconstruccion' target='_blank' class='text-amber-600 dark:text-amber-400 font-bold underline'>@somosmaestrosdelaconstruccion</a><br><br>¿Deseas concertar una visita técnica presencial en tu vivienda?"
       }
     ];
 
