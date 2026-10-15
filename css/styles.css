@@ -129,6 +129,7 @@ html.dark .text-gradient-purple-cyan {
   border: 1px solid var(--border-card);
   border-radius: 1.25rem;
   box-shadow: var(--card-shadow);
+  color: var(--text-main);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -136,6 +137,60 @@ html.dark .text-gradient-purple-cyan {
   transform: translateY(-4px);
   border-color: rgba(245, 158, 11, 0.45);
   box-shadow: var(--card-hover-shadow);
+}
+
+/* En Modo Claro: asegurar que títulos y párrafos dentro de tarjetas y headers se vean oscuros automáticamente */
+html:not(.dark) .bento-card h2,
+html:not(.dark) .bento-card h3,
+html:not(.dark) .bento-card h4,
+html:not(.dark) .bento-card strong,
+html:not(.dark) header h1,
+html:not(.dark) header span.text-white,
+html:not(.dark) main h1.text-white,
+html:not(.dark) main h2.text-white,
+html:not(.dark) main h3.text-white,
+html:not(.dark) main h4.text-white,
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bento-card p,
+html:not(.dark) main p.text-slate-300,
+html:not(.dark) main p.text-slate-400,
+html:not(.dark) .text-slate-300,
+html:not(.dark) .text-slate-400 {
+  color: #475569 !important;
+}
+
+html:not(.dark) .border-white\/10,
+html:not(.dark) .border-white\/5 {
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .bg-white\/5,
+html:not(.dark) .bg-white\/10 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-\[\#10142c\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-\[\#0a0c1a\],
+html:not(.dark) .bg-\[\#080914\] {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-\[\#05060d\] {
+  background-color: #0f172a !important;
+  color: #94a3b8 !important;
+}
+
+html:not(.dark) .bg-\[\#05060d\] span.text-white {
+  color: #ffffff !important;
 }
 
 /* Icon Containers con Neon Glow */

@@ -8,10 +8,15 @@
   <meta name="robots" content="index, follow">
   
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/jpeg" href="img/logo.jpg">
 </head>
-<body class="bg-[#080914] text-slate-100 antialiased selection:bg-amber-500 selection:text-white">
+<body class="bg-[#f8fafc] dark:bg-[#080914] text-slate-800 dark:text-slate-100 antialiased selection:bg-amber-500 selection:text-white">
 
   <!-- ==============================================================
        HEADER / NAVBAR ESPACIOSA Y LIMPIA
@@ -25,25 +30,28 @@
           <img src="img/logo.jpg" alt="Logo" class="w-full h-full object-cover rounded-[10px]">
         </div>
         <div>
-          <span class="block font-heading font-extrabold text-base tracking-tight text-white group-hover:text-amber-400 transition">
-            MAESTROS <span class="text-amber-400">DE LA CONSTRUCCIÓN</span>
+          <span class="block font-heading font-extrabold text-base tracking-tight text-slate-900 dark:text-white group-hover:text-amber-500 transition">
+            MAESTROS <span class="text-amber-600 dark:text-amber-400">DE LA CONSTRUCCIÓN</span>
           </span>
-          <span class="block text-[10px] text-slate-400 font-semibold tracking-widest uppercase">Valencia & Comarca</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-semibold tracking-widest uppercase">Valencia & Comarca</span>
         </div>
       </a>
 
       <!-- Navegación Central Espaciosa -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
-        <a href="index.html" class="hover:text-white transition duration-200">Bienvenida</a>
-        <a href="inicio.html" class="text-amber-400 font-bold transition duration-200">Inicio</a>
-        <a href="obras.html" class="hover:text-white transition duration-200">Obras</a>
-        <a href="presupuesto.html" class="hover:text-white transition duration-200">Presupuesto</a>
-        <a href="donde-estamos.html" class="hover:text-white transition duration-200">Dónde Estamos</a>
-        <a href="contacto.html" class="hover:text-white transition duration-200">Contacto</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <a href="index.html" class="hover:text-slate-900 dark:hover:text-white transition duration-200">Bienvenida</a>
+        <a href="inicio.html" class="text-amber-600 dark:text-amber-400 font-bold transition duration-200">Inicio</a>
+        <a href="obras.html" class="hover:text-slate-900 dark:hover:text-white transition duration-200">Obras</a>
+        <a href="presupuesto.html" class="hover:text-slate-900 dark:hover:text-white transition duration-200">Presupuesto</a>
+        <a href="donde-estamos.html" class="hover:text-slate-900 dark:hover:text-white transition duration-200">Dónde Estamos</a>
+        <a href="faq.html" class="hover:text-slate-900 dark:hover:text-white transition duration-200">FAQ</a>
+        <a href="contacto.html" class="hover:text-slate-900 dark:hover:text-white transition duration-200">Contacto</a>
       </nav>
 
-      <!-- Botón de Acción Principal a la derecha -->
-      <div class="hidden sm:flex items-center gap-4">
+      <!-- Botón de Acción Principal a la derecha con Toggle de Tema -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 transition" title="Cambiar tema">
+        </button>
         <a href="https://wa.me/34722851328" target="_blank" class="btn-cta-vibrant px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-extrabold whitespace-nowrap">
           WhatsApp: 722 851 328
         </a>
