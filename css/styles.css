@@ -1,45 +1,49 @@
 /* ==============================================================
-   MAESTROS DE LA CONSTRUCCIÓN - ESTÉTICA PREMIUM CÁLIDA
-   Modo Claro Elegante (Warm Sand / Alabaster) & Modo Oscuro Opcional
+   MAESTROS DE LA CONSTRUCCIÓN - VALENCIA
+   IDENTIDAD ARQUITECTÓNICA & ARTESANÍA DE CONSTRUCCIÓN REAL
+   Modo Claro Cálido / Modo Oscuro Técnico | Cero Estética "IA/SaaS"
    ============================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
 
 :root {
-  /* MODO CLARO CÁLIDO & SERENO (CERO DESLUMBRAMIENTOS) */
-  --bg-deep: #f5f4ef;          /* Tono arena/lino natural, suave y acogedor */
-  --bg-surface: #ffffff;
+  /* PALETA MODO CLARO: PIEDRA CALIZA, YESO & ÁMBAR DE SEGURIDAD */
+  --bg-deep: #f7f6f1;          /* Caliza/arenisca cálida, mate y agradable a la vista */
+  --bg-surface: #ffffff;       /* Superficie pura para tarjetas */
   --bg-card: #ffffff;
-  --text-main: #1c1917;         /* Tono piedra oscura de máximo confort */
-  --text-muted: #57534e;        /* Gris cálido legible */
-  --border-subtle: #e7e5df;
-  --border-card: #e5e3dc;
-  --border-highlight: rgba(217, 119, 6, 0.45);
-  --card-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.05), 0 2px 6px -1px rgba(28, 25, 23, 0.03);
-  --card-hover-shadow: 0 16px 32px -8px rgba(217, 119, 6, 0.14);
+  --bg-muted: #eae8df;         /* Piedra suave para contrastes */
+  --text-main: #18181b;        /* Tono pizarra oscura profunda de máxima nitidez */
+  --text-muted: #52525b;       /* Gris neutro técnico legible */
+  --border-card: #e4e1d6;      /* Borde arquitectónico de corte limpio */
+  --border-strong: #d4d0c2;
+  --border-highlight: #d97706;  /* Ámbar industrial */
 
-  --primary-gradient: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-  --nav-bg: rgba(245, 244, 239, 0.92);
-  --footer-bg: #1c1917;
-  --footer-text: #a8a29e;
+  --card-shadow: 0 2px 8px -2px rgba(24, 24, 27, 0.06), 0 1px 3px rgba(24, 24, 27, 0.04);
+  --card-hover-shadow: 0 12px 28px -6px rgba(217, 119, 6, 0.16);
+
+  --nav-bg: rgba(247, 246, 241, 0.94);
+  --footer-bg: #14151a;
+  --footer-text: #a1a1aa;
 }
 
-/* MODO OSCURO (CUANDO .dark ESTÁ ACTIVO EN <html>) */
+/* PALETA MODO OSCURO: PIZARRA DE TALLER & ACERO TÉCNICO */
 html.dark {
-  --bg-deep: #080914;
-  --bg-surface: #0e1124;
-  --bg-card: rgba(17, 21, 44, 0.85);
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-card: rgba(255, 255, 255, 0.08);
-  --border-highlight: rgba(245, 158, 11, 0.4);
-  --card-shadow: none;
-  --card-hover-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.2);
+  --bg-deep: #111317;          /* Granito oscuro profundo */
+  --bg-surface: #181a20;
+  --bg-card: #1c1f26;
+  --bg-muted: #242832;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --border-card: #2e3340;
+  --border-strong: #3b4152;
+  --border-highlight: #f59e0b;
 
-  --nav-bg: rgba(8, 9, 20, 0.85);
-  --footer-bg: #05060d;
-  --footer-text: #64748b;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 16px 32px -8px rgba(245, 158, 11, 0.18);
+
+  --nav-bg: rgba(17, 19, 23, 0.94);
+  --footer-bg: #0b0c0f;
+  --footer-text: #71717a;
 }
 
 * {
@@ -52,245 +56,185 @@ body {
   background-color: var(--bg-deep);
   color: var(--text-main);
   overflow-x: hidden;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  line-height: 1.55;
 }
 
-html.dark body {
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 10% 30%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 90% 70%, rgba(56, 189, 248, 0.06) 0%, transparent 50%);
-  background-attachment: fixed;
-}
-
-h1, h2, h3, .font-heading {
+/* Tipografía de Encabezados: Carácter Industrial y Técnico */
+h1, h2, h3, h4, .font-heading {
   font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-/* Dot grid pattern sutil */
-.bg-mesh-dots {
-  background-size: 28px 28px;
-  background-image: radial-gradient(circle, rgba(28, 25, 23, 0.05) 1px, transparent 1px);
-}
-html.dark .bg-mesh-dots {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
 }
 
-/* Luces ambientales cálidas */
-.ambient-glow-amber {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.10) 0%, rgba(245, 158, 11, 0) 70%);
-  filter: blur(60px);
-  pointer-events: none;
+/* Patrón Arquitectónico de Cuadrícula Milimétrica */
+.bg-blueprint-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(24, 24, 27, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 24, 27, 0.04) 1px, transparent 1px);
+}
+html.dark .bg-blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-.ambient-glow-purple {
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, rgba(168, 85, 247, 0) 70%);
-  filter: blur(60px);
-  pointer-events: none;
-}
-
-/* Gradientes de texto */
-.text-gradient-vibrant {
-  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #ea580c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-html.dark .text-gradient-vibrant {
-  background: linear-gradient(135deg, #ffffff 15%, #fcd34d 45%, #f59e0b 70%, #d97706 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-purple-cyan {
-  background: linear-gradient(135deg, #0369a1 0%, #4f46e5 50%, #7e22ce 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-html.dark .text-gradient-purple-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Bento Card Style */
-.bento-card {
+/* Tarjetas Estructuradas con Estilo Taller de Construcción */
+.bento-card, .construction-card {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-card);
-  border-radius: 1.25rem;
+  border-radius: 0.75rem; /* 12px: Estructura más cuadrada, sobria y profesional */
   box-shadow: var(--card-shadow);
   color: var(--text-main);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.bento-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(217, 119, 6, 0.5);
+.bento-card:hover, .construction-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-highlight);
   box-shadow: var(--card-hover-shadow);
 }
 
-/* REGLAS CLAVE MODO CLARO: Contraste perfecto para títulos y textos */
-html:not(.dark) h1 {
-  color: #1c1917 !important;
-}
-html:not(.dark) h1 span.text-gradient-vibrant {
-  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #ea580c 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
-
-html:not(.dark) .bento-card h2,
-html:not(.dark) .bento-card h3,
-html:not(.dark) .bento-card h4,
-html:not(.dark) .bento-card strong,
-html:not(.dark) header h1,
-html:not(.dark) header span.text-white,
-html:not(.dark) main h2,
-html:not(.dark) main h3,
-html:not(.dark) main h4 {
-  color: #1c1917 !important;
+/* Etiquetas y Sellos de Obra (Monospace y Técnicos) */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 0.375rem;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
 }
 
-html:not(.dark) p,
-html:not(.dark) .bento-card p,
-html:not(.dark) main p {
-  color: #57534e !important;
-}
-
-html:not(.dark) strong.text-white {
-  color: #1c1917 !important;
-}
-
-html:not(.dark) .border-white\/10,
-html:not(.dark) .border-white\/5 {
-  border-color: #e5e3dc !important;
-}
-
-html:not(.dark) .bg-white\/5,
-html:not(.dark) .bg-white\/10 {
-  background-color: #eae7df !important;
-  color: #1c1917 !important;
-  border-color: #d6d3cb !important;
-}
-
-html:not(.dark) .bg-\[\#10142c\] {
-  background-color: #ffffff !important;
-  color: #1c1917 !important;
-  border-color: #d6d3cb !important;
-}
-
-html:not(.dark) .bg-\[\#0a0c1a\],
-html:not(.dark) .bg-\[\#080914\] {
-  background-color: #ece9e2 !important;
-}
-
-html:not(.dark) .bg-\[\#05060d\] {
-  background-color: #1c1917 !important;
-  color: #a8a29e !important;
-}
-
-html:not(.dark) .bg-\[\#05060d\] span.text-white,
-html:not(.dark) footer .text-white {
-  color: #ffffff !important;
-}
-
-/* Icon Containers con Neon Glow */
-.bento-icon-amber {
-  background: rgba(245, 158, 11, 0.14);
-  border: 1px solid rgba(245, 158, 11, 0.35);
+.tech-badge-amber {
+  background: rgba(217, 119, 6, 0.12);
+  border: 1px solid rgba(217, 119, 6, 0.35);
   color: #b45309;
 }
-html.dark .bento-icon-amber {
+html.dark .tech-badge-amber {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
   color: #fbbf24;
 }
 
-.bento-icon-cyan {
-  background: rgba(56, 189, 248, 0.14);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: #0369a1;
-}
-html.dark .bento-icon-cyan {
-  color: #38bdf8;
-}
-
-.bento-icon-purple {
-  background: rgba(168, 85, 247, 0.14);
-  border: 1px solid rgba(168, 85, 247, 0.35);
-  color: #7e22ce;
-}
-html.dark .bento-icon-purple {
-  color: #c084fc;
-}
-
-.bento-icon-emerald {
-  background: rgba(16, 185, 129, 0.14);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  color: #047857;
-}
-html.dark .bento-icon-emerald {
-  color: #34d399;
-}
-
-/* Glass Navbar espaciosa */
-.nav-spacious {
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-subtle);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
-}
-
-/* Botón llamativo tipo EchoScribe */
-.btn-cta-vibrant {
-  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
-  color: #ffffff !important;
-  font-weight: 800;
-  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
-  transition: all 0.25s ease;
-}
-
-.btn-cta-vibrant:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.55);
-  background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
-}
-
-/* Pill badge superior */
-.pill-badge {
+/* Botones de Acción: Robustos, Sin Efectos Gaseosos */
+.btn-cta-construction {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 9999px;
-  background: #edeae2;
-  border: 1px solid #d6d3cb;
-  color: #44403c;
-}
-html.dark .pill-badge {
-  background: rgba(30, 36, 70, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #cbd5e1;
+  background-color: #d97706;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.5rem; /* Esquinas cuadradas y limpias */
+  border: 1px solid #b45309;
+  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.25);
+  transition: all 0.18s ease;
+  white-space: nowrap;
 }
 
-/* Before / After Slider Perfeccionado */
+.btn-cta-construction:hover {
+  background-color: #b45309;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.35);
+}
+
+.btn-cta-construction:active {
+  transform: translateY(1px);
+}
+
+/* Botón Secundario con Contraste Garantizado en Ambos Modos */
+.btn-secondary-construction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--bg-muted);
+  color: var(--text-main) !important;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-strong);
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary-construction:hover {
+  background-color: #dedbd0;
+  border-color: #c4c0b2;
+  transform: translateY(-1px);
+}
+
+html.dark .btn-secondary-construction {
+  background-color: #222631;
+  border-color: #353b4c;
+  color: #f4f4f5 !important;
+}
+
+html.dark .btn-secondary-construction:hover {
+  background-color: #2c3240;
+  border-color: #4a5268;
+}
+
+/* Barra de Navegación */
+.nav-construction {
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-card);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Enlaces de Menú con Contraste Preciso */
+.nav-link {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.25rem;
+  transition: color 0.15s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #d97706;
+}
+html.dark .nav-link:hover {
+  color: #fbbf24;
+}
+
+.nav-link.active {
+  color: #d97706;
+  font-weight: 700;
+}
+html.dark .nav-link.active {
+  color: #fbbf24;
+}
+
+/* Slider de Antes / Después con Cotas y Estilo Técnico */
 .ba-container {
   position: relative;
   overflow: hidden;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   user-select: none;
+  touch-action: pan-y;
   cursor: ew-resize;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--card-shadow);
 }
 
 .ba-before {
@@ -321,7 +265,7 @@ html.dark .pill-badge {
   left: 50%;
   width: 3px;
   background-color: #ffffff;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
   z-index: 20;
   transform: translateX(-50%);
   pointer-events: none;
@@ -336,37 +280,59 @@ html.dark .pill-badge {
   height: 44px;
   border-radius: 50%;
   background: #ffffff;
-  color: #1c1917;
+  border: 2px solid #d97706;
+  color: #18181b;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
   pointer-events: auto;
   cursor: grab;
 }
+
 .ba-handle:active {
   cursor: grabbing;
+  background: #fffbeb;
 }
 
-/* Range input */
-input[type="range"] {
-  accent-color: #f59e0b;
+/* Reglas Globales de Contraste para Evitar Cualquier Texto Invisible */
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4 {
+  color: #18181b;
 }
 
-/* Custom Scrollbar */
+html:not(.dark) p {
+  color: #52525b;
+}
+
+/* Ajustes Específicos para Formularios y Selectores */
+input, select, textarea {
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border-color: var(--border-card);
+  border-radius: 0.5rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+/* Scrollbar Minimalista Técnico */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d6d3cb;
+  background: var(--border-strong);
   border-radius: 4px;
 }
-html.dark ::-webkit-scrollbar-thumb {
-  background: #1e2446;
-}
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: #d97706;
 }
