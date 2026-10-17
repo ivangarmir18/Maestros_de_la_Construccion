@@ -160,19 +160,19 @@
             Donde verdaderamente marcamos la diferencia es en <strong class="font-bold text-stone-950 dark:text-white">reformas precisas de baños, frentes de pladur con iluminación indirecta LED y alisados sin polvo</strong>. Sin comerciales ni sobrecostes: el mismo oficial que mide ejecuta y supervisa tu obra en Valencia.
           </p>
 
-          <!-- 3 Sellos de Confianza Visuales -->
+          <!-- 3 Sellos de Confianza Visuales Simétricos -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs font-mono-tech text-stone-800 dark:text-stone-300">
-            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center gap-2">
+            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center justify-center gap-2 whitespace-nowrap">
               <span class="text-amber-600 font-bold">✓</span>
-              <span>Precio cerrado por contrato</span>
+              <span>Precio cerrado</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center gap-2">
+            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center justify-center gap-2 whitespace-nowrap">
               <span class="text-amber-600 font-bold">✓</span>
-              <span>Plazo: 7-10 días por estancia</span>
+              <span>Plazo: 7-10 días</span>
             </div>
-            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center gap-2">
+            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center justify-center gap-2 whitespace-nowrap">
               <span class="text-amber-600 font-bold">✓</span>
-              <span>Visita técnica gratuita</span>
+              <span>Visita gratuita</span>
             </div>
           </div>
 
@@ -204,12 +204,12 @@
           
           <div class="relative construction-card overflow-hidden rounded-xl border border-stone-300 dark:border-stone-700 shadow-2xl bg-white dark:bg-stone-900">
             
-            <!-- Foto de Impacto -->
+            <!-- Foto de Impacto Dinámica -->
             <div class="relative h-72 sm:h-80 overflow-hidden">
-              <img src="img/slider-despues-real.jpg?v=2" alt="Ducha de lujo con porcelánico rectificado terminada en Valencia" class="w-full h-full object-cover">
+              <img id="hero-main-photo" src="img/slider-despues-real.jpg?v=2" alt="Ducha de lujo con porcelánico rectificado terminada en Valencia" class="w-full h-full object-cover transition-opacity duration-300">
               
               <!-- Badges Superpuestos -->
-              <span class="photo-tag-badge absolute top-3 left-3 bg-stone-900/95 text-white">
+              <span id="hero-photo-tag" class="photo-tag-badge absolute top-3 left-3 bg-stone-900/95 text-white">
                 ★ OBRA REAL ENTREGADA
               </span>
               <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded bg-amber-600 text-white text-[10px] font-mono-tech font-extrabold uppercase tracking-wider shadow-md">
@@ -217,33 +217,51 @@
               </span>
             </div>
 
-            <!-- Ficha Técnica Pie de Foto -->
+            <!-- Ficha Técnica Pie de Foto Dinámica -->
             <div class="p-4 sm:p-5 bg-stone-100 dark:bg-stone-900/95 space-y-3">
               <div class="flex items-center justify-between">
                 <div>
-                  <h4 class="font-bold text-sm text-stone-900 dark:text-white">Ducha con Porcelánico Vetas Mármol</h4>
-                  <p class="text-xs text-stone-600 dark:text-stone-400">Plato a ras con desagüe lineal y grifería empotrada</p>
+                  <h4 id="hero-photo-title" class="font-bold text-sm text-stone-900 dark:text-white transition-opacity duration-200">Ducha con Porcelánico Vetas Mármol</h4>
+                  <p id="hero-photo-desc" class="text-xs text-stone-600 dark:text-stone-400 transition-opacity duration-200">Plato a ras con desagüe lineal y grifería empotrada</p>
                 </div>
-                <div class="text-right">
-                  <span class="text-xs font-mono-tech font-bold text-amber-600 dark:text-amber-400 block">7 DÍAS</span>
-                  <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-mono-tech font-bold">100% LIMPIA</span>
+                <div class="text-right flex-shrink-0">
+                  <span id="hero-photo-time" class="text-xs font-mono-tech font-bold text-amber-600 dark:text-amber-400 block">7 DÍAS</span>
+                  <span id="hero-photo-status" class="text-[10px] text-emerald-600 dark:text-emerald-400 font-mono-tech font-bold">100% LIMPIA</span>
                 </div>
               </div>
 
-              <!-- Mini Selector Rápido de Obras con Fotos Reales -->
+              <!-- Mini Selector Interactivo de Obras: Clica y cambia la foto arriba -->
               <div class="grid grid-cols-3 gap-2 pt-2 border-t border-stone-200 dark:border-stone-800 text-center">
-                <a href="obras.html" class="p-1.5 rounded hover:bg-stone-200/70 dark:hover:bg-stone-800 transition block group">
-                  <img src="img/slider-despues-real.jpg?v=2" class="w-full h-12 object-cover rounded mb-1 border border-amber-600/60 group-hover:scale-105 transition">
-                  <span class="text-[10px] font-mono-tech font-bold text-stone-800 dark:text-stone-200 block truncate">Baños</span>
-                </a>
-                <a href="obras.html" class="p-1.5 rounded hover:bg-stone-200/70 dark:hover:bg-stone-800 transition block group">
-                  <img src="img/obra-pladur.jpg" class="w-full h-12 object-cover rounded mb-1 border border-stone-300 dark:border-stone-700 group-hover:scale-105 transition">
-                  <span class="text-[10px] font-mono-tech font-bold text-stone-800 dark:text-stone-200 block truncate">Pladur LED</span>
-                </a>
-                <a href="obras.html" class="p-1.5 rounded hover:bg-stone-200/70 dark:hover:bg-stone-800 transition block group">
-                  <img src="img/obra-bano-piedra.jpg" class="w-full h-12 object-cover rounded mb-1 border border-stone-300 dark:border-stone-700 group-hover:scale-105 transition">
-                  <span class="text-[10px] font-mono-tech font-bold text-stone-800 dark:text-stone-200 block truncate">Alicatados</span>
-                </a>
+                <button type="button" class="hero-photo-btn active p-1.5 rounded transition text-left sm:text-center group border-2 border-amber-600 bg-amber-500/10 focus:outline-none"
+                  data-img="img/slider-despues-real.jpg?v=2"
+                  data-title="Ducha con Porcelánico Vetas Mármol"
+                  data-desc="Plato a ras con desagüe lineal y grifería empotrada"
+                  data-tag="★ OBRA REAL ENTREGADA"
+                  data-time="7 DÍAS"
+                  data-status="100% LIMPIA">
+                  <img src="img/slider-despues-real.jpg?v=2" class="w-full h-12 object-cover rounded mb-1 border border-amber-600/60 group-hover:scale-105 transition pointer-events-none">
+                  <span class="text-[10px] font-mono-tech font-bold text-amber-600 dark:text-amber-400 block truncate">1. Baños</span>
+                </button>
+                <button type="button" class="hero-photo-btn p-1.5 rounded transition text-left sm:text-center group border border-stone-300 dark:border-stone-700 hover:bg-stone-200/70 dark:hover:bg-stone-800 focus:outline-none"
+                  data-img="img/obra-pladur.jpg"
+                  data-title="Techos de Pladur con Fosa LED"
+                  data-desc="Luz indirecta perimetral, candileja y candil continuo"
+                  data-tag="★ DETALLE DE PLADUR"
+                  data-time="3 DÍAS"
+                  data-status="ACABADO FINO">
+                  <img src="img/obra-pladur.jpg" class="w-full h-12 object-cover rounded mb-1 border border-stone-300 dark:border-stone-700 group-hover:scale-105 transition pointer-events-none">
+                  <span class="text-[10px] font-mono-tech font-bold text-stone-700 dark:text-stone-300 block truncate">2. Pladur LED</span>
+                </button>
+                <button type="button" class="hero-photo-btn p-1.5 rounded transition text-left sm:text-center group border border-stone-300 dark:border-stone-700 hover:bg-stone-200/70 dark:hover:bg-stone-800 focus:outline-none"
+                  data-img="img/obra-bano-piedra.jpg"
+                  data-title="Porcelánico Pizarra con Hornacina"
+                  data-desc="Paredes a plomo sin cejas y plato de resina mineral"
+                  data-tag="★ ALICATADO PERFECTO"
+                  data-time="5 DÍAS"
+                  data-status="PRECISIÓN MILÍMETRO">
+                  <img src="img/obra-bano-piedra.jpg" class="w-full h-12 object-cover rounded mb-1 border border-stone-300 dark:border-stone-700 group-hover:scale-105 transition pointer-events-none">
+                  <span class="text-[10px] font-mono-tech font-bold text-stone-700 dark:text-stone-300 block truncate">3. Alicatados</span>
+                </button>
               </div>
             </div>
 

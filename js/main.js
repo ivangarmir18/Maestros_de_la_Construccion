@@ -132,7 +132,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Interactive Before / After Slider
   initBeforeAfterSlider();
+
+  // 7. Interactive Hero Photo Showcase Switcher
+  initHeroPhotoSwitcher();
 });
+
+function initHeroPhotoSwitcher() {
+  const photoBtns = document.querySelectorAll('.hero-photo-btn');
+  const mainPhoto = document.getElementById('hero-main-photo');
+  const photoTitle = document.getElementById('hero-photo-title');
+  const photoDesc = document.getElementById('hero-photo-desc');
+  const photoTag = document.getElementById('hero-photo-tag');
+  const photoTime = document.getElementById('hero-photo-time');
+  const photoStatus = document.getElementById('hero-photo-status');
+
+  if (!photoBtns.length || !mainPhoto) return;
+
+  photoBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const img = btn.getAttribute('data-img');
+      const title = btn.getAttribute('data-title');
+      const desc = btn.getAttribute('data-desc');
+      const tag = btn.getAttribute('data-tag');
+      const time = btn.getAttribute('data-time');
+      const status = btn.getAttribute('data-status');
+
+      // Actualizar estados visuales de los botones
+      photoBtns.forEach(b => {
+        b.classList.remove('active', 'border-2', 'border-amber-600', 'bg-amber-500/10');
+        b.classList.add('border', 'border-stone-300', 'dark:border-stone-700');
+        const span = b.querySelector('span');
+        if (span) {
+          span.classList.remove('text-amber-600', 'dark:text-amber-400');
+          span.classList.add('text-stone-700', 'dark:text-stone-300');
+        }
+      });
+
+      btn.classList.add('active', 'border-2', 'border-amber-600', 'bg-amber-500/10');
+      btn.classList.remove('border-stone-300', 'dark:border-stone-700');
+      const activeSpan = btn.querySelector('span');
+      if (activeSpan) {
+        activeSpan.classList.add('text-amber-600', 'dark:text-amber-400');
+        activeSpan.classList.remove('text-stone-700', 'dark:text-stone-300');
+      }
+
+      // Animación suave de cambio de foto y textos
+      mainPhoto.style.opacity = '0.3';
+      if (photoTitle) photoTitle.style.opacity = '0.3';
+      if (photoDesc) photoDesc.style.opacity = '0.3';
+
+      setTimeout(() => {
+        if (img) mainPhoto.src = img;
+        if (title && photoTitle) photoTitle.textContent = title;
+        if (desc && photoDesc) photoDesc.textContent = desc;
+        if (tag && photoTag) photoTag.textContent = tag;
+        if (time && photoTime) photoTime.textContent = time;
+        if (status && photoStatus) photoStatus.textContent = status;
+
+        mainPhoto.style.opacity = '1';
+        if (photoTitle) photoTitle.style.opacity = '1';
+        if (photoDesc) photoDesc.style.opacity = '1';
+      }, 150);
+    });
+  });
+}
 
 function initBeforeAfterSlider() {
   const container = document.getElementById('ba-comparison');
