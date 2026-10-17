@@ -63,28 +63,16 @@
   }
   </script>
 
-  <!-- Google Fonts & Tailwind -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            heading: ['Syne', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-            sans: ['Inter', 'sans-serif']
-          }
-        }
-      }
+      darkMode: 'class'
     }
   </script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-800 dark:text-stone-200 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased min-h-screen flex flex-col selection:bg-amber-600 selection:text-white">
 
   <!-- Header Superior -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-[#f7f6f1]/90 dark:bg-[#111317]/90 backdrop-blur-md border-b border-stone-300 dark:border-stone-800 transition-colors duration-200">
