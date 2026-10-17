@@ -16,7 +16,7 @@ class ConstructionAIAssistant {
       },
       {
         triggers: ["precio", "cuanto", "cuánto", "coste", "cuesta", "tarifa", "metro", "m2", "presupuesto", "estimacion"],
-        answer: "Precios de referencia reales en el mercado de Valencia:<br>• **Reforma de Baño Completo (alicatado porcelánico y plato resina):** De 2.900€ a 4.900€.<br>• **Pladur y Fosa LED de salón:** Desde 38€ a 55€/m² según diseño.<br>• **Alisado de paredes y eliminación de gotelé:** De 12€ a 18€/m² con masillado a espejo.<br>• **Reforma Integral de Vivienda:** De 480€ a 750€/m² (sujeta a disponibilidad de agenda).<br><br>Puedes usar nuestro **Simulador Interactivo de Presupuestos** en la web o escribirnos al WhatsApp <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a>."
+        answer: "Nuestras tarifas y horquillas directas de taller para Valencia:<br>• **Reforma de Baño Completo (alicatado porcelánico y plato resina):** De 1.750€ a 3.900€.<br>• **Pladur y Fosa LED de salón:** Desde 22€ a 38€/m² según diseño.<br>• **Alisado de paredes y eliminación de gotelé:** De 7€ a 15€/m² con masillado a espejo.<br>• **Reforma Integral de Vivienda:** De 290€ a 550€/m² (sujeta a disponibilidad de agenda).<br><br>Puedes usar nuestro **Simulador Interactivo de Presupuestos** en la web o escribirnos al WhatsApp <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a>."
       },
       {
         triggers: ["tiempo", "plazo", "tarda", "duracion", "duración", "semanas", "meses", "dias"],

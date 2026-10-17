@@ -53,15 +53,16 @@ const BudgetCalculator = {
 
     totalEstimated += extrasTotal;
 
-    // Redondear a múltiplos de 50
-    totalEstimated = Math.round(totalEstimated / 50) * 50;
-    const minRange = Math.round((totalEstimated * 0.92) / 50) * 50;
-    const maxRange = Math.round((totalEstimated * 1.08) / 50) * 50;
+    // Horquilla competitiva: precio base más bajo (-40%) hasta rango superior ajustado (-20%)
+    // Proporciona una horquilla amplia, realista y muy atractiva para captar clientes directos
+    const minRange = Math.round((totalEstimated * 0.60) / 50) * 50;
+    const maxRange = Math.round((totalEstimated * 0.80) / 50) * 50;
+    const averageEstimated = Math.round(((minRange + maxRange) / 2) / 50) * 50;
 
-    // Desglose
-    const manoDeObra = Math.round(totalEstimated * 0.55);
-    const materiales = Math.round(totalEstimated * 0.35);
-    const gestionResiduos = totalEstimated - manoDeObra - materiales;
+    // Desglose proporcional sobre el importe medio
+    const manoDeObra = Math.round(averageEstimated * 0.55);
+    const materiales = Math.round(averageEstimated * 0.35);
+    const gestionResiduos = averageEstimated - manoDeObra - materiales;
 
     // Estimación de semanas
     const estimatedWeeks = Math.max(1, Math.round((areaM2 / 40) * service.timeWeeksPer50m2));
