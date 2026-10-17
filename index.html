@@ -85,10 +85,10 @@
         <a href="contacto.html" class="nav-link">Contacto</a>
       </nav>
 
-      <!-- Botón de Acción Principal y Toggle de Tema a la derecha -->
-      <div class="hidden sm:flex items-center gap-3">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
-          <!-- Icono inyectado por JS -->
+      <!-- Botones de Acción Escritorio (lg+) -->
+      <div class="hidden lg:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
+          <!-- Icono SVG inyectado por JS -->
         </button>
         <a href="https://wa.me/34722851328" target="_blank" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
           <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
@@ -96,11 +96,12 @@
         </a>
       </div>
 
-      <!-- Botón Móvil y Toggle Tema Móvil -->
+      <!-- Botones Móvil y Tablet (< lg) -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+          <!-- Icono SVG inyectado por JS -->
         </button>
-        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú principal">
+        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
@@ -115,6 +116,15 @@
       <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos en Valencia</a>
       <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
       <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto Directo</a>
+      
+      <!-- Fila de alternancia de tema en menú móvil -->
+      <div class="pt-2">
+        <button class="theme-toggle-btn w-full flex items-center justify-between py-2.5 px-3 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-medium text-xs font-mono-tech border border-stone-300 dark:border-stone-700">
+          <span class="theme-label">MODO OSCURO / CLARO</span>
+          <span class="theme-icon-slot"></span>
+        </button>
+      </div>
+
       <a href="https://wa.me/34722851328" target="_blank" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
         WhatsApp: 722 851 328
       </a>
@@ -247,7 +257,7 @@
   <section id="comparativa" class="py-20 md:py-28 bg-[#eae8df] dark:bg-[#15171d] border-y border-stone-300 dark:border-stone-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
         <div class="tech-badge tech-badge-amber">
           <span>CONTROL DE CALIDAD EN OBRA</span>
         </div>
@@ -255,32 +265,36 @@
           La diferencia entre una obra descuidada y un <span class="text-amber-600 dark:text-amber-500">acabado milimétrico</span>
         </h2>
         <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base">
-          Desliza el marcador central para comparar el estado en demolición y fontanería en bruto frente al baño totalmente terminado y rematado.
+          Desliza el marcador central o haz clic sobre la imagen para comparar el estado en demolición y fontanería en bruto frente al baño terminado.
         </p>
       </div>
 
       <!-- Contenedor del Slider con Dimensiones Estructuradas -->
       <div class="max-w-4xl mx-auto">
-        <div id="ba-comparison" class="ba-container aspect-[3/2] sm:aspect-[16/10] bg-stone-300 dark:bg-stone-800">
+
+        <!-- Barra Comparativa Superior con Estado Permanente -->
+        <div class="grid grid-cols-2 gap-3 mb-3 text-xs font-mono-tech">
+          <div class="p-3 rounded-md bg-stone-200/90 dark:bg-stone-800/90 border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-stone-100 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-stone-500 flex-shrink-0"></span>
+            <span class="font-bold truncate">FASE 1: DEMOLICIÓN & FONTANERÍA</span>
+          </div>
+          <div class="p-3 rounded-md bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/40 text-amber-900 dark:text-amber-300 flex items-center gap-2 justify-end text-right">
+            <span class="font-bold truncate">FASE 2: ACABADO Y PORCELÁNICO</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+          </div>
+        </div>
+
+        <div id="ba-comparison" class="ba-container aspect-[3/2] sm:aspect-[16/10] bg-stone-300 dark:bg-stone-800 relative">
           
           <!-- Capa DESPUÉS (Terminado) -->
           <img src="img/slider-terminado.jpg" alt="Baño terminado con porcelánico rectificado y grifería de diseño" class="w-full h-full object-cover">
-          
-          <div class="absolute bottom-4 right-4 z-10 pointer-events-none">
-            <span class="tech-badge bg-stone-900/90 text-white border-stone-700 font-mono-tech text-[10px] sm:text-xs">
-              FASE 2: BAÑO TERMINADO & REMATADO
-            </span>
-          </div>
+          <span class="slider-badge-after">FASE 2: TERMINADO</span>
 
           <!-- Capa ANTES (En obra y demolición) -->
           <div class="ba-before">
             <img src="img/slider-en-obra.jpg" alt="Demolición, rozas y fontanería en bruto" class="w-full h-full object-cover">
-            <div class="absolute bottom-4 left-4 z-10 pointer-events-none">
-              <span class="tech-badge bg-stone-900/90 text-white border-stone-700 font-mono-tech text-[10px] sm:text-xs">
-                FASE 1: DEMOLICIÓN & FONTANERÍA
-              </span>
-            </div>
           </div>
+          <span class="slider-badge-before">FASE 1: EN OBRA</span>
 
           <!-- Barra Deslizadora y Tirador -->
           <div class="ba-slider">

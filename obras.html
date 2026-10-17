@@ -42,24 +42,28 @@
         <a href="contacto.html" class="nav-link">Contacto</a>
       </nav>
 
-      <div class="hidden sm:flex items-center gap-3">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
+      <!-- Botones de Acción Escritorio (lg+) -->
+      <div class="hidden lg:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
+          <!-- Icono SVG inyectado por JS -->
         </button>
         <a href="https://wa.me/34722851328" target="_blank" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
           WhatsApp: 722 851 328
         </a>
       </div>
 
+      <!-- Botones Móvil y Tablet (< lg) -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+          <!-- Icono SVG inyectado por JS -->
         </button>
-        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
+        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Menu -->
+    <!-- Menú Desplegable Móvil -->
     <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
       <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
       <a href="obras.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-500 border-b border-stone-200 dark:border-stone-800">Obras Reales</a>
@@ -67,6 +71,15 @@
       <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
       <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
       <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
+      
+      <!-- Fila de alternancia de tema en menú móvil -->
+      <div class="pt-2">
+        <button class="theme-toggle-btn w-full flex items-center justify-between py-2.5 px-3 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-medium text-xs font-mono-tech border border-stone-300 dark:border-stone-700">
+          <span class="theme-label">MODO OSCURO / CLARO</span>
+          <span class="theme-icon-slot"></span>
+        </button>
+      </div>
+
       <a href="https://wa.me/34722851328" target="_blank" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
         WhatsApp: 722 851 328
       </a>
@@ -90,31 +103,31 @@
       <!-- Filtros con Scroll Horizontal Táctil Seguro en Móvil -->
       <div class="flex items-center justify-start sm:justify-center gap-2 pt-4 overflow-x-auto scrollbar-none py-2 px-1 max-w-full">
         <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-bold bg-amber-600 text-white transition whitespace-nowrap shadow-sm border border-amber-700" data-filter="all">
-          Todos los Trabajos
+          Todos los Trabajos (12)
         </button>
         <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition whitespace-nowrap" data-filter="banos">
-          Baños & Fontanería
+          Baños & Fontanería (3)
         </button>
         <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition whitespace-nowrap" data-filter="pladur">
-          Pladur & Luz LED
+          Pladur & Luz LED (3)
         </button>
         <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition whitespace-nowrap" data-filter="suelos">
-          Suelos & Soleras
+          Suelos & Soleras (3)
         </button>
         <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition whitespace-nowrap" data-filter="exterior">
-          Estructuras & Exterior
+          Estructuras & Exterior (3)
         </button>
       </div>
     </div>
 
-    <!-- Grid de Proyectos Estructurado -->
+    <!-- Grid de Proyectos Estructurado: 12 OBRAS (4 FILAS DE 3 EXACTAS, CERO HUECOS SUELTOS) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
       <!-- Obra 1: Ducha de lujo terminada -->
       <div class="gallery-item construction-card overflow-hidden group" data-category="banos">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/IMG-20261015-WA0020.jpg" alt="Ducha de mármol con grifería negra" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Baño de Autor</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Baño de Autor</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Ducha de Gran Formato con Vetas de Mármol</h3>
@@ -126,7 +139,7 @@
       <div class="gallery-item construction-card overflow-hidden group" data-category="pladur">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/IMG-20261015-WA0024.jpg" alt="Estructura de pladur con aperturas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Pladur Técnico</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Pladur Técnico</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Tabiquería y Pasos de Luz en Pladur</h3>
@@ -138,7 +151,7 @@
       <div class="gallery-item construction-card overflow-hidden group" data-category="suelos">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/IMG-20261015-WA0027.jpg" alt="Colocación con cuñas autonivelantes" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Alicatado de Precisión</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Alicatado de Precisión</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Alicatado con Cuñas Autonivelantes</h3>
@@ -150,7 +163,7 @@
       <div class="gallery-item construction-card overflow-hidden group" data-category="exterior">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/IMG-20261015-WA0035.jpg" alt="Estructura exterior en chalet" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Exterior & Chalets</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Exterior & Chalets</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Pérgola Metálica & Cerramiento Exterior</h3>
@@ -162,7 +175,7 @@
       <div class="gallery-item construction-card overflow-hidden group" data-category="banos">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/IMG-20261015-WA0042.jpg" alt="Plato de ducha extraplano instalado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Cambio de Bañera</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Cambio de Bañera</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Sustitución de Bañera por Ducha en 48h</h3>
@@ -174,7 +187,7 @@
       <div class="gallery-item construction-card overflow-hidden group" data-category="suelos">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/IMG-20261015-WA0055.jpg" alt="Nivelación de solera con regla" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Albañilería de Base</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Albañilería de Base</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Nivelación y Recrecido de Soleras</h3>
@@ -186,7 +199,7 @@
       <div class="gallery-item construction-card overflow-hidden group" data-category="suelos">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/IMG-20261015-WA0066.jpg" alt="Suelo porcelánico alto brillo" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Pavimentos</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Pavimentos</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Pavimento Continuo Porcelánico Brillante</h3>
@@ -198,11 +211,59 @@
       <div class="gallery-item construction-card overflow-hidden group" data-category="pladur">
         <div class="h-64 sm:h-72 overflow-hidden relative">
           <img src="img/obra-salon-led.jpg" alt="Salón con luz indirecta LED" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 left-3 tech-badge bg-stone-900/90 text-white border-stone-700">Diseño LED</span>
+          <span class="photo-tag-badge absolute top-3 left-3">Diseño LED</span>
         </div>
         <div class="p-5">
           <h3 class="font-bold text-stone-900 dark:text-white text-base">Frente de Salón & Fosa LED Perimetral</h3>
           <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Estructura en pladur para televisión, fosa de luz ambiental regulable y hornacinas decorativas iluminadas.</p>
+        </div>
+      </div>
+
+      <!-- Obra 9: Baño con piedra y hornacina -->
+      <div class="gallery-item construction-card overflow-hidden group" data-category="banos">
+        <div class="h-64 sm:h-72 overflow-hidden relative">
+          <img src="img/obra-bano-piedra.jpg" alt="Baño con acabados de piedra y hornacina iluminada" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <span class="photo-tag-badge absolute top-3 left-3">Baño & Hornacina</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-stone-900 dark:text-white text-base">Alicatado de Textura Piedra y Hornacina</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Reforma de aseo con revestimiento porcelánico tipo pizarra natural, hornacina de ducha a medida e iluminación cálida.</p>
+        </div>
+      </div>
+
+      <!-- Obra 10: Estructura de pladur reforzada -->
+      <div class="gallery-item construction-card overflow-hidden group" data-category="pladur">
+        <div class="h-64 sm:h-72 overflow-hidden relative">
+          <img src="img/IMG-20261015-WA0023.jpg" alt="Montaje de perfilería de acero y canalizaciones" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <span class="photo-tag-badge absolute top-3 left-3">Estructura Pladur</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-stone-900 dark:text-white text-base">Montante de Acero & Aislamiento Acústico</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Esqueleto estructural en chapa galvanizada con paso interno para canalizaciones eléctricas y lana fonoabsorbente.</p>
+        </div>
+      </div>
+
+      <!-- Obra 11: Albañilería de ladrillo cara vista -->
+      <div class="gallery-item construction-card overflow-hidden group" data-category="exterior">
+        <div class="h-64 sm:h-72 overflow-hidden relative">
+          <img src="img/IMG-20261015-WA0057.jpg" alt="Muro estructural de ladrillo y mortero" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <span class="photo-tag-badge absolute top-3 left-3">Albañilería Tradicional</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-stone-900 dark:text-white text-base">Tabiquería de Ladrillo & Cerramiento Estructural</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Ejecución de muros y particiones con mortero de cemento y ladrillo cerámico, plomadas de precisión y enrase técnico.</p>
+        </div>
+      </div>
+
+      <!-- Obra 12: Solado exterior para porche -->
+      <div class="gallery-item construction-card overflow-hidden group" data-category="exterior">
+        <div class="h-64 sm:h-72 overflow-hidden relative">
+          <img src="img/IMG-20261015-WA0053.jpg" alt="Pavimento exterior antideslizante para terraza" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          <span class="photo-tag-badge absolute top-3 left-3">Porche & Terrazas</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-stone-900 dark:text-white text-base">Pavimento Antideslizante C3 para Exteriores</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Solado porcelánico de alta resistencia a intemperie con pendientes hacia sumideros lineales y junta de dilatación perimetral.</p>
         </div>
       </div>
 

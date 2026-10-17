@@ -29,25 +29,33 @@ function toggleTheme() {
 
 function updateThemeToggleButtons() {
   const isDark = document.documentElement.classList.contains('dark');
+  const sunIcon = `<svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+  </svg>`;
+  const moonIcon = `<svg class="w-4 h-4 text-stone-700 dark:text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+  </svg>`;
+
   document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
     btn.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-    btn.innerHTML = isDark
-      ? `<!-- Icono Sol (Modo Claro) -->
-         <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-         </svg>`
-      : `<!-- Icono Luna (Modo Oscuro) -->
-         <svg class="w-4 h-4 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-         </svg>`;
+    const slot = btn.querySelector('.theme-icon-slot');
+    const label = btn.querySelector('.theme-label');
+    if (slot) {
+      slot.innerHTML = isDark ? sunIcon : moonIcon;
+      if (label) {
+        label.textContent = isDark ? 'MODO CLARO (ACTIVAR)' : 'MODO OSCURO (ACTIVAR)';
+      }
+    } else {
+      btn.innerHTML = isDark ? sunIcon : moonIcon;
+    }
   });
 }
 
-// Inicializar inmediatamente
+// Inicializar inmediatamente para evitar parpadeos
 initTheme();
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializar botones de tema
+  // Inicializar todos los botones de tema presentes en la página
   document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
     btn.addEventListener('click', toggleTheme);
   });
