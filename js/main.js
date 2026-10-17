@@ -189,3 +189,4 @@ function initBeforeAfterSlider() {
     if (isDown) move(e);
   }, { passive: true });
 }
+

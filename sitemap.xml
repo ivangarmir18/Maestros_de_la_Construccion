@@ -55,9 +55,41 @@
   <!-- Contacto y Soporte Técnico -->
   <url>
     <loc>https://www.maestrosdelaconstruccion.es/contacto</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Subpágina SEO: Reforma de Baño en Valencia -->
+  <url>
+    <loc>https://www.maestrosdelaconstruccion.es/reforma-bano-valencia.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Subpágina SEO: Cambiar Bañera por Ducha en Valencia -->
+  <url>
+    <loc>https://www.maestrosdelaconstruccion.es/cambiar-banera-por-ducha-valencia.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Subpágina SEO: Quitar Gotelé y Alisar Paredes en Valencia -->
+  <url>
+    <loc>https://www.maestrosdelaconstruccion.es/alisar-paredes-quitar-gotele-valencia.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Subpágina SEO: Pladur, Techos Suspendidos y Fosas LED en Valencia -->
+  <url>
+    <loc>https://www.maestrosdelaconstruccion.es/pladur-techos-fosas-led-valencia.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
 </urlset>
