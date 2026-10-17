@@ -62,11 +62,9 @@
   <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo con Carácter Constructivo -->
+      <!-- Brand Logo Oficial con Carácter Constructivo -->
       <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-lg bg-amber-600 flex items-center justify-center font-black text-white font-heading shadow-md group-hover:scale-105 transition duration-200 flex-shrink-0">
-          MC
-        </div>
+        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-300 dark:border-stone-700 shadow-sm group-hover:scale-105 transition duration-200 flex-shrink-0">
         <div>
           <span class="block font-heading font-extrabold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white group-hover:text-amber-600 transition">
             MAESTROS <span class="text-amber-600 dark:text-amber-500">DE LA CONSTRUCCIÓN</span>
@@ -132,117 +130,220 @@
   </header>
 
   <!-- ==============================================================
-       SECCIÓN 1: HERO CON CARÁCTER CONSTRUCTIVO REAL
+       SECCIÓN 1: HERO VISUAL CON FOTO REAL Y CARÁCTER ARTESANO
        ============================================================== -->
-  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-blueprint-grid">
+  <section class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-blueprint-grid">
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 space-y-12">
       
-      <!-- Badge de Oficio Real -->
-      <div class="inline-flex items-center gap-2 mb-6">
-        <div class="tech-badge tech-badge-amber">
-          <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
-          <span>VALENCIA · ESPECIALISTAS EN BAÑOS, PLADUR & ESTANCIAS</span>
+      <!-- Layout Principal en 2 Columnas: Texto Directo + Escaparate Visual Real -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Columna Izquierda: Mensaje Contundente y Confianza (7 cols) -->
+        <div class="lg:col-span-7 text-left space-y-5">
+          
+          <!-- Badge Oficial con Logo Real de Empresa -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-stone-900 dark:text-amber-200 text-xs font-mono-tech">
+            <img src="img/logo.jpg" alt="Logo Maestros" class="w-5 h-5 rounded object-contain bg-white flex-shrink-0">
+            <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse flex-shrink-0"></span>
+            <span class="font-bold">VALENCIA · OFICIALES DIRECTOS EN TU OBRA</span>
+          </div>
+
+          <!-- Titular Principal con Impacto -->
+          <h1 class="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-[1.12] text-stone-900 dark:text-white">
+            No somos una macroempresa.<br>
+            <span class="text-amber-600 dark:text-amber-500">Somos artesanos que cuidan cada milímetro.</span>
+          </h1>
+
+          <!-- Subtítulo Claro y Conciso -->
+          <p class="text-base sm:text-lg text-stone-700 dark:text-stone-300 leading-relaxed font-normal max-w-2xl">
+            Donde verdaderamente marcamos la diferencia es en <strong class="font-bold text-stone-950 dark:text-white">reformas precisas de baños, frentes de pladur con iluminación indirecta LED y alisados sin polvo</strong>. Sin comerciales ni sobrecostes: el mismo oficial que mide ejecuta y supervisa tu obra en Valencia.
+          </p>
+
+          <!-- 3 Sellos de Confianza Visuales -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs font-mono-tech text-stone-800 dark:text-stone-300">
+            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center gap-2">
+              <span class="text-amber-600 font-bold">✓</span>
+              <span>Precio cerrado por contrato</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center gap-2">
+              <span class="text-amber-600 font-bold">✓</span>
+              <span>Plazo: 7-10 días por estancia</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800/70 border border-stone-300 dark:border-stone-700 flex items-center gap-2">
+              <span class="text-amber-600 font-bold">✓</span>
+              <span>Visita técnica gratuita</span>
+            </div>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <a href="#comparativa" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold py-3.5 px-6">
+              <span>Ver Transformación Antes / Después</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+            <a href="https://wa.me/34722851328" target="_blank" class="btn-secondary-construction text-xs font-bold py-3.5 px-6">
+              <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar por WhatsApp (722 851 328)</span>
+            </a>
+          </div>
+
+          <!-- Nota de Agenda Compacta -->
+          <p class="text-xs text-stone-500 dark:text-stone-400 font-mono-tech flex items-center gap-2 pt-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+            <span>[Nota de Agenda]: Reformas integrales de piso completo bajo consulta previa de calendario.</span>
+          </p>
+
         </div>
+
+        <!-- Columna Derecha: Tarjeta Fotográfica de Obra Real (5 cols) -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Resplandor Cálido de Fondo -->
+          <div class="absolute -inset-1.5 bg-gradient-to-tr from-amber-600/30 to-amber-500/20 rounded-2xl blur-xl"></div>
+          
+          <div class="relative construction-card overflow-hidden rounded-xl border border-stone-300 dark:border-stone-700 shadow-2xl bg-white dark:bg-stone-900">
+            
+            <!-- Foto de Impacto -->
+            <div class="relative h-72 sm:h-80 overflow-hidden">
+              <img src="img/slider-despues-real.jpg?v=2" alt="Ducha de lujo con porcelánico rectificado terminada en Valencia" class="w-full h-full object-cover">
+              
+              <!-- Badges Superpuestos -->
+              <span class="photo-tag-badge absolute top-3 left-3 bg-stone-900/95 text-white">
+                ★ OBRA REAL ENTREGADA
+              </span>
+              <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded bg-amber-600 text-white text-[10px] font-mono-tech font-extrabold uppercase tracking-wider shadow-md">
+                Valencia Capital
+              </span>
+            </div>
+
+            <!-- Ficha Técnica Pie de Foto -->
+            <div class="p-4 sm:p-5 bg-stone-100 dark:bg-stone-900/95 space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h4 class="font-bold text-sm text-stone-900 dark:text-white">Ducha con Porcelánico Vetas Mármol</h4>
+                  <p class="text-xs text-stone-600 dark:text-stone-400">Plato a ras con desagüe lineal y grifería empotrada</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-mono-tech font-bold text-amber-600 dark:text-amber-400 block">7 DÍAS</span>
+                  <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-mono-tech font-bold">100% LIMPIA</span>
+                </div>
+              </div>
+
+              <!-- Mini Selector Rápido de Obras con Fotos Reales -->
+              <div class="grid grid-cols-3 gap-2 pt-2 border-t border-stone-200 dark:border-stone-800 text-center">
+                <a href="obras.html" class="p-1.5 rounded hover:bg-stone-200/70 dark:hover:bg-stone-800 transition block group">
+                  <img src="img/slider-despues-real.jpg?v=2" class="w-full h-12 object-cover rounded mb-1 border border-amber-600/60 group-hover:scale-105 transition">
+                  <span class="text-[10px] font-mono-tech font-bold text-stone-800 dark:text-stone-200 block truncate">Baños</span>
+                </a>
+                <a href="obras.html" class="p-1.5 rounded hover:bg-stone-200/70 dark:hover:bg-stone-800 transition block group">
+                  <img src="img/obra-pladur.jpg" class="w-full h-12 object-cover rounded mb-1 border border-stone-300 dark:border-stone-700 group-hover:scale-105 transition">
+                  <span class="text-[10px] font-mono-tech font-bold text-stone-800 dark:text-stone-200 block truncate">Pladur LED</span>
+                </a>
+                <a href="obras.html" class="p-1.5 rounded hover:bg-stone-200/70 dark:hover:bg-stone-800 transition block group">
+                  <img src="img/obra-bano-piedra.jpg" class="w-full h-12 object-cover rounded mb-1 border border-stone-300 dark:border-stone-700 group-hover:scale-105 transition">
+                  <span class="text-[10px] font-mono-tech font-bold text-stone-800 dark:text-stone-200 block truncate">Alicatados</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
-      <!-- Titular Contundente y Realista -->
-      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-heading tracking-tight leading-[1.12] max-w-5xl mx-auto mb-6 text-stone-900 dark:text-white">
-        No somos una macroempresa.<br>
-        <span class="text-amber-600 dark:text-amber-500">Somos artesanos que cuidan cada milímetro de tu espacio.</span>
-      </h1>
-
-      <!-- Subtítulo con Honestidad Profesional -->
-      <p class="text-base sm:text-lg md:text-xl text-stone-700 dark:text-stone-300 max-w-3xl mx-auto leading-relaxed mb-8 font-normal">
-        Donde verdaderamente marcamos la diferencia es en <strong class="font-bold text-stone-950 dark:text-white">reformas precisas de salas, baños con porcelánico rectificado, frentes de pladur con iluminación indirecta y alisado fino</strong>. Sin intermediarios ni comerciales: el mismo oficial que toma las medidas ejecuta y supervisa tu obra.
-      </p>
-
-      <!-- Badge de Disponibilidad de Reformas Integrales -->
-      <div class="inline-flex items-start sm:items-center gap-3 p-4 px-5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-xs sm:text-sm text-stone-900 dark:text-amber-200 max-w-2xl mx-auto mb-10 text-left">
-        <svg class="w-5 h-5 flex-shrink-0 text-amber-600 dark:text-amber-400 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        <span><strong class="font-bold text-stone-950 dark:text-white font-mono-tech">[NOTA DE AGENDA]:</strong> Las reformas integrales completas de vivienda se aceptan de manera selectiva según calendario, para asegurar la dedicación absoluta a cada obra.</span>
-      </div>
-
-      <!-- Botones de Acción con Contraste Garantizado -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-        <a href="#comparativa" class="btn-cta-construction w-full sm:w-auto text-sm uppercase tracking-wider font-extrabold">
-          <span>Ver Transformación Antes / Después</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-        </a>
-        <a href="https://wa.me/34722851328" target="_blank" class="btn-secondary-construction w-full sm:w-auto text-sm font-bold">
-          <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-          <span>Consultar por WhatsApp (722 851 328)</span>
-        </a>
-      </div>
-
-      <!-- TARJETAS ESTRUCTURALES: 4 ESPECIALIDADES TÉCNICAS -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
+      <!-- 4 TARJETAS CON FOTOS REALES DE ESPECIALIDAD -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left pt-6">
         
         <!-- Tarjeta 1: Baños -->
-        <div class="construction-card p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="tech-badge tech-badge-amber whitespace-nowrap">Baños & Ducha</span>
-              <span class="text-xs text-amber-600 dark:text-amber-400 font-bold font-mono-tech whitespace-nowrap">7-10 DÍAS</span>
-            </div>
-            <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Reformas de Baños</h3>
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-              Sustitución de bañera por plato de resina antideslizante C3, fontanería multicapa empotrada, hornacinas y porcelánico rectificado a plomo.
-            </p>
+        <div class="construction-card overflow-hidden flex flex-col justify-between group">
+          <div class="h-32 overflow-hidden relative">
+            <img src="img/slider-despues-real.jpg?v=2" alt="Reforma de baño" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <span class="photo-tag-badge absolute top-2 left-2 text-[10px]">Baños</span>
           </div>
-          <div class="mt-5 pt-3 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
-            Cotas milimétricas · Impermeabilización
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="tech-badge tech-badge-amber whitespace-nowrap">Porcelánico C3</span>
+                <span class="text-xs text-amber-600 dark:text-amber-400 font-bold font-mono-tech whitespace-nowrap">7-10 DÍAS</span>
+              </div>
+              <h3 class="font-bold text-base text-stone-900 dark:text-white mb-1.5">Reformas de Baños</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                Platos de resina antideslizantes, fontanería multicapa empotrada, hornacinas y porcelánico rectificado a plomo.
+              </p>
+            </div>
+            <div class="mt-4 pt-2.5 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
+              Impermeabilización total garantizada
+            </div>
           </div>
         </div>
 
         <!-- Tarjeta 2: Pladur & LED -->
-        <div class="construction-card p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="tech-badge tech-badge-amber whitespace-nowrap">Pladur & LED</span>
-              <span class="text-xs text-amber-600 dark:text-amber-400 font-bold font-mono-tech whitespace-nowrap">A MEDIDA</span>
-            </div>
-            <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Pladur & Fosas LED</h3>
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-              Falsos techos suspendidos con fosa perimetral de luz indirecta continua, frentes de salón para TV con hornacinas y aislamiento acústico.
-            </p>
+        <div class="construction-card overflow-hidden flex flex-col justify-between group">
+          <div class="h-32 overflow-hidden relative">
+            <img src="img/obra-pladur.jpg" alt="Pladur y fosa de luz LED" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <span class="photo-tag-badge absolute top-2 left-2 text-[10px]">Pladur & Luz</span>
           </div>
-          <div class="mt-5 pt-3 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
-            Perfiles reforzados · Acabado Q3/Q4
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="tech-badge tech-badge-amber whitespace-nowrap">Luz Indirecta</span>
+                <span class="text-xs text-amber-600 dark:text-amber-400 font-bold font-mono-tech whitespace-nowrap">A MEDIDA</span>
+              </div>
+              <h3 class="font-bold text-base text-stone-900 dark:text-white mb-1.5">Pladur & Fosas LED</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                Falsos techos suspendidos con fosa perimetral de luz continua, frentes de salón para TV y aislamiento acústico.
+              </p>
+            </div>
+            <div class="mt-4 pt-2.5 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
+              Estructura reforzada · Acabado Q4
+            </div>
           </div>
         </div>
 
         <!-- Tarjeta 3: Alisados -->
-        <div class="construction-card p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="tech-badge tech-badge-amber whitespace-nowrap">Liso Espejo</span>
-              <span class="text-xs text-amber-600 dark:text-amber-400 font-bold font-mono-tech whitespace-nowrap">OBRA LIMPIA</span>
-            </div>
-            <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Alisados y Gotelé</h3>
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-              Eliminación integral de gotelé con lijado orbital asistido por aspiración (obra limpia). Masillado cruzado y acabado liso espejo.
-            </p>
+        <div class="construction-card overflow-hidden flex flex-col justify-between group">
+          <div class="h-32 overflow-hidden relative">
+            <img src="img/IMG-20261015-WA0055.jpg" alt="Albañilería y alisado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <span class="photo-tag-badge absolute top-2 left-2 text-[10px]">Liso Espejo</span>
           </div>
-          <div class="mt-5 pt-3 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
-            Lijado sin polvo · Pintura lavable
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="tech-badge tech-badge-amber whitespace-nowrap">Sin Polvo</span>
+                <span class="text-xs text-amber-600 dark:text-amber-400 font-bold font-mono-tech whitespace-nowrap">OBRA LIMPIA</span>
+              </div>
+              <h3 class="font-bold text-base text-stone-900 dark:text-white mb-1.5">Alisados y Gotelé</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                Eliminación de gotelé con lijado orbital asistido por aspiración continua. Doble masillado cruzado y pintura lavable.
+              </p>
+            </div>
+            <div class="mt-4 pt-2.5 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
+              Luz rasante LED · Tacto sedoso
+            </div>
           </div>
         </div>
 
         <!-- Tarjeta 4: Trato Directo -->
-        <div class="construction-card p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="tech-badge tech-badge-amber whitespace-nowrap">Trato Directo</span>
-              <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold font-mono-tech whitespace-nowrap">PRECIO FIJO</span>
-            </div>
-            <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Oficiales Especializados</h3>
-            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-              Presupuestos desglosados partida por partida, fechas de entrega claras y comunicación directa por WhatsApp con fotos del avance diario.
-            </p>
+        <div class="construction-card overflow-hidden flex flex-col justify-between group">
+          <div class="h-32 overflow-hidden relative bg-stone-900 flex items-center justify-center p-3">
+            <img src="img/logo.jpg" alt="Maestros de la Construcción" class="h-24 w-auto object-contain rounded bg-white p-1">
+            <span class="photo-tag-badge absolute top-2 left-2 text-[10px]">Oficiales</span>
           </div>
-          <div class="mt-5 pt-3 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
-            Garantía por escrito · Valencia y alrededores
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="tech-badge tech-badge-amber whitespace-nowrap">Garantía</span>
+                <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold font-mono-tech whitespace-nowrap">PRECIO FIJO</span>
+              </div>
+              <h3 class="font-bold text-base text-stone-900 dark:text-white mb-1.5">Oficiales Directos</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+                Presupuestos desglosados partida por partida, fechas de entrega por escrito y reporte fotográfico diario por WhatsApp.
+              </p>
+            </div>
+            <div class="mt-4 pt-2.5 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
+              Valencia y comarcas colindantes
+            </div>
           </div>
         </div>
 
@@ -462,7 +563,7 @@
 
           <div class="p-5 rounded-lg bg-amber-600/10 border border-amber-600/30 text-center space-y-1">
             <div class="text-xs text-amber-800 dark:text-amber-300 uppercase tracking-wider font-bold font-mono-tech">Rango Orientativo</div>
-            <div id="hero-calc-range" class="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white font-mono-tech">
+            <div id="hero-calc-range" class="text-xl sm:text-2xl lg:text-3xl font-black text-stone-900 dark:text-white font-mono-tech whitespace-nowrap tracking-tight">
               3.200€ - 3.900€
             </div>
             <div id="hero-calc-time" class="text-xs text-stone-600 dark:text-stone-400 mt-2">
@@ -502,9 +603,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded bg-amber-600 text-white flex items-center justify-center font-black text-xs font-heading">
-            MC
-          </div>
+          <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
           <div>
             <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
             <span class="text-stone-400 text-[11px]">Valencia & Área Metropolitana · Tel / WhatsApp: 722 851 328</span>
