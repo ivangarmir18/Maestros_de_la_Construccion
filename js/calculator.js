@@ -40,26 +40,26 @@ const BudgetCalculator = {
 
   // Precios base por servicio (en Valencia)
   rates: {
-    integral: { baseM2: 520, timeWeeksPer50m2: 4, name: "Reforma Integral de Vivienda" },
-    bano: { baseFixed: 2800, baseM2: 120, timeWeeksPer50m2: 2, name: "Reforma Completa de Baño" },
-    cocina: { baseFixed: 3600, baseM2: 150, timeWeeksPer50m2: 2.5, name: "Reforma Completa de Cocina" },
-    pladur: { baseM2: 36, timeWeeksPer50m2: 1.5, name: "Tabiquería Pladur y Fosas LED" },
-    suelos: { baseM2: 32, timeWeeksPer50m2: 1.5, name: "Solados y Pavimentos Porcelánicos" },
-    pintura: { baseM2: 15, timeWeeksPer50m2: 1, name: "Pintura y Alisado de Gotelé" }
+    integral: { baseM2: 580, timeWeeksPer50m2: 4, name: "Reforma Integral de Vivienda" },
+    bano: { baseFixed: 2200, baseM2: 320, timeWeeksPer50m2: 2, name: "Reforma Completa de Baño" },
+    cocina: { baseFixed: 2800, baseM2: 360, timeWeeksPer50m2: 2.5, name: "Reforma Completa de Cocina" },
+    pladur: { baseM2: 44, timeWeeksPer50m2: 1.5, name: "Tabiquería Pladur y Fosas LED" },
+    suelos: { baseM2: 38, timeWeeksPer50m2: 1.5, name: "Solados y Pavimentos Porcelánicos" },
+    pintura: { baseM2: 18, timeWeeksPer50m2: 1, name: "Pintura y Alisado de Gotelé" }
   },
 
   qualityMultipliers: {
-    basico: { mult: 0.9, label: "Calidad Esencial (Económica)" },
-    confort: { mult: 1.15, label: "Calidad Confort (Recomendada)" },
-    premium: { mult: 1.45, label: "Alta Calidad Premium" },
-    lujo: { mult: 1.9, label: "Diseño Exclusivo y Lujo" }
+    basico: { mult: 0.95, label: "Calidad Esencial (Económica)" },
+    confort: { mult: 1.25, label: "Calidad Confort (Recomendada)" },
+    premium: { mult: 1.65, label: "Alta Calidad Premium" },
+    lujo: { mult: 2.20, label: "Diseño Exclusivo y Lujo" }
   },
 
   extrasPrices: {
-    fontaneria: 800,
-    electricidad: 1100,
-    led: 450,
-    desescombro: 350
+    fontaneria: 950,
+    electricidad: 1300,
+    led: 550,
+    desescombro: 420
   },
 
   calculate(config) {
@@ -69,12 +69,13 @@ const BudgetCalculator = {
 
     let subtotalBase = 0;
     if (service.baseFixed) {
-      subtotalBase = service.baseFixed + (service.baseM2 * (areaM2 / 6));
+      // El incremento por m2 refleja obra real (suelos, alicatado de paredes perimetrales y mano de obra)
+      subtotalBase = service.baseFixed + (service.baseM2 * areaM2);
     } else {
       subtotalBase = service.baseM2 * areaM2;
     }
 
-    // Aplicar multiplicador de calidad
+    // Aplicar multiplicador de calidad (los acabados altos/exclusivos escalan con más peso)
     let totalEstimated = subtotalBase * qualityData.mult;
 
     // Sumar extras seleccionados
@@ -87,10 +88,10 @@ const BudgetCalculator = {
 
     totalEstimated += extrasTotal;
 
-    // Horquilla competitiva: precio base más bajo (-40%) hasta rango superior ajustado (-20%)
-    // Proporciona una horquilla amplia, realista y muy atractiva para captar clientes directos
-    const minRange = Math.round((totalEstimated * 0.60) / 50) * 50;
-    const maxRange = Math.round((totalEstimated * 0.80) / 50) * 50;
+    // Horquilla de mercado equilibrada:
+    // Los rangos más altos suben proporcionalmente más según calidades
+    const minRange = Math.round((totalEstimated * 0.85) / 50) * 50;
+    const maxRange = Math.round((totalEstimated * 1.15) / 50) * 50;
     const averageEstimated = Math.round(((minRange + maxRange) / 2) / 50) * 50;
 
     // Desglose proporcional sobre el importe medio
@@ -98,8 +99,8 @@ const BudgetCalculator = {
     const materiales = Math.round(averageEstimated * 0.35);
     const gestionResiduos = averageEstimated - manoDeObra - materiales;
 
-    // Estimación de semanas
-    const estimatedWeeks = Math.max(1, Math.round((areaM2 / 40) * service.timeWeeksPer50m2));
+    // Estimación de semanas según superficie
+    const estimatedWeeks = Math.max(1, Math.round((areaM2 / 35) * service.timeWeeksPer50m2));
 
     return {
       serviceName: service.name,
