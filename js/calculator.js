@@ -4,28 +4,62 @@
  */
 
 const BudgetCalculator = {
-  // Precios base estimados por m² o unidad (Valencia 2026)
+  // Configuración realista de metros cuadrados según el tipo de estancia
+  serviceConfigs: {
+    bano: {
+      min: 3, max: 15, defaultVal: 5, step: 1,
+      name: "Reforma Completa de Baño",
+      hintMin: "3 m² (Aseo)", hintMid: "6 m² (Baño Estándar)", hintMax: "15 m² (Baño Grande/Suite)"
+    },
+    cocina: {
+      min: 5, max: 25, defaultVal: 10, step: 1,
+      name: "Reforma Completa de Cocina",
+      hintMin: "5 m² (Pequeña)", hintMid: "10 m² (Habitual)", hintMax: "25 m² (Cocina-Comedor)"
+    },
+    pintura: {
+      min: 30, max: 220, defaultVal: 75, step: 5,
+      name: "Pintura y Alisado de Gotelé",
+      hintMin: "30 m² (1-2 Estancias)", hintMid: "75 m² (Piso Estándar)", hintMax: "220 m² (Piso Grande/Chalet)"
+    },
+    pladur: {
+      min: 10, max: 80, defaultVal: 25, step: 5,
+      name: "Tabiquería Pladur y Fosas LED",
+      hintMin: "10 m² (Habitación)", hintMid: "25 m² (Salón)", hintMax: "80 m² (Varios Techos)"
+    },
+    suelos: {
+      min: 15, max: 180, defaultVal: 60, step: 5,
+      name: "Solados y Porcelánicos",
+      hintMin: "15 m² (Cocina/Terraza)", hintMid: "60 m² (Planta Vivienda)", hintMax: "180 m² (Piso Completo)"
+    },
+    integral: {
+      min: 40, max: 250, defaultVal: 80, step: 5,
+      name: "Reforma Integral de Vivienda",
+      hintMin: "40 m² (Estudio)", hintMid: "80 m² (Piso Estándar)", hintMax: "250 m² (Ático/Chalet)"
+    }
+  },
+
+  // Precios base por servicio (en Valencia)
   rates: {
     integral: { baseM2: 520, timeWeeksPer50m2: 4, name: "Reforma Integral de Vivienda" },
-    bano: { baseFixed: 3200, baseM2: 180, timeWeeksPer50m2: 2, name: "Reforma Completa de Baño" },
-    cocina: { baseFixed: 4500, baseM2: 220, timeWeeksPer50m2: 2.5, name: "Reforma Completa de Cocina" },
-    pladur: { baseM2: 42, timeWeeksPer50m2: 1.5, name: "Tabiquería Pladur e Iluminación LED" },
-    suelos: { baseM2: 36, timeWeeksPer50m2: 1.5, name: "Solados y Alicatados Porcelánicos" },
-    pintura: { baseM2: 18, timeWeeksPer50m2: 1, name: "Alisado de Gotelé y Pintura Plástica" }
+    bano: { baseFixed: 2800, baseM2: 120, timeWeeksPer50m2: 2, name: "Reforma Completa de Baño" },
+    cocina: { baseFixed: 3600, baseM2: 150, timeWeeksPer50m2: 2.5, name: "Reforma Completa de Cocina" },
+    pladur: { baseM2: 36, timeWeeksPer50m2: 1.5, name: "Tabiquería Pladur y Fosas LED" },
+    suelos: { baseM2: 32, timeWeeksPer50m2: 1.5, name: "Solados y Pavimentos Porcelánicos" },
+    pintura: { baseM2: 15, timeWeeksPer50m2: 1, name: "Pintura y Alisado de Gotelé" }
   },
 
   qualityMultipliers: {
-    basico: { mult: 0.9, label: "Calidad Esencial" },
+    basico: { mult: 0.9, label: "Calidad Esencial (Económica)" },
     confort: { mult: 1.15, label: "Calidad Confort (Recomendada)" },
     premium: { mult: 1.45, label: "Alta Calidad Premium" },
     lujo: { mult: 1.9, label: "Diseño Exclusivo y Lujo" }
   },
 
   extrasPrices: {
-    fontaneria: 950,
-    electricidad: 1400,
-    led: 550,
-    desescombro: 450
+    fontaneria: 800,
+    electricidad: 1100,
+    led: 450,
+    desescombro: 350
   },
 
   calculate(config) {

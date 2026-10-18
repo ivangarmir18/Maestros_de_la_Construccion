@@ -357,12 +357,12 @@
           <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tech-badge tech-badge-amber whitespace-nowrap">Garantía</span>
-                <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold font-mono-tech whitespace-nowrap">PRECIO FIJO</span>
+                <span class="tech-badge tech-badge-amber whitespace-nowrap">Sin Comisiones</span>
+                <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold font-mono-tech whitespace-nowrap">PRECIO DIRECTO</span>
               </div>
               <h3 class="font-bold text-base text-stone-900 dark:text-white mb-1.5">Oficiales Directos</h3>
               <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-                Presupuestos desglosados partida por partida, fechas de entrega por escrito y reporte fotográfico diario por WhatsApp.
+                Sin comerciales ni oficinas de lujo. Precios directos de taller un 30-40% más competitivos, desglosados partida por partida y con reporte diario.
               </p>
             </div>
             <div class="mt-4 pt-2.5 border-t border-stone-200 dark:border-stone-800 text-[11px] font-mono-tech text-stone-500">
@@ -371,6 +371,30 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- BANNER DESTACADO: PEQUEÑAS REFORMAS, PINTURA Y COORDINACIÓN INTEGRAL DE GREMIOS -->
+      <div class="mt-8 construction-card p-6 sm:p-8 bg-gradient-to-r from-amber-500/10 via-stone-200/40 to-amber-500/10 dark:from-amber-500/10 dark:via-stone-800/40 dark:to-amber-500/10 border-amber-500/30">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-3xl">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="tech-badge tech-badge-amber text-[10px]">TE HACEMOS LA VIDA FÁCIL</span>
+              <span class="text-xs font-mono-tech font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">PRECIOS DE OFICIAL DIRECTO</span>
+            </div>
+            <h3 class="text-lg sm:text-2xl font-black font-heading text-stone-900 dark:text-white">
+              Pintura, pequeñas reformas y coordinación total de gremios
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+              <strong>¿Necesitas pintar, alisar una habitación o arreglos puntuales?</strong> No exigimos obras millonarias: atendemos trabajos pequeños con la misma seriedad y a precios muy ajustados. Y si tu proyecto requiere oficios complementarios (como climatización / aire acondicionado, carpintería a medida o cerrajería), <strong>nosotros contactamos a profesionales de máxima confianza y lo coordinamos todo dentro del mismo presupuesto cerrado</strong>. No tendrás que llamar a 5 autónomos distintos ni coordinar obras por tu cuenta.
+            </p>
+          </div>
+          <div class="flex-shrink-0 w-full sm:w-auto">
+            <a href="https://wa.me/34722851328?text=Hola,%20me%20gustar%C3%ADa%20consultar%20por%20una%20peque%C3%B1a%20reforma%20/%20pintura" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 btn-cta-construction py-3 px-6 text-xs uppercase tracking-wider font-extrabold whitespace-nowrap">
+              <span>Consultar Trabajo por WhatsApp</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -538,13 +562,13 @@
                 <label class="text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider font-mono-tech">
                   2. Superficie aproximada
                 </label>
-                <span id="hero-area-val" class="text-base font-black text-amber-600 dark:text-amber-500 font-mono-tech">15 m²</span>
+                <span id="hero-area-val" class="text-base font-black text-amber-600 dark:text-amber-500 font-mono-tech">5 m²</span>
               </div>
-              <input type="range" id="hero-area-range" min="5" max="150" value="15" step="1" class="w-full h-2 bg-stone-300 dark:bg-stone-700 rounded appearance-none cursor-pointer accent-amber-600">
+              <input type="range" id="hero-area-range" min="3" max="15" value="5" step="1" class="w-full h-2 bg-stone-300 dark:bg-stone-700 rounded appearance-none cursor-pointer accent-amber-600">
               <div class="flex justify-between text-[11px] text-stone-500 mt-1 font-mono-tech">
-                <span>5 m² (Aseo)</span>
-                <span>25 m² (Salón)</span>
-                <span>150 m² (Piso)</span>
+                <span id="hero-hint-min">3 m² (Aseo)</span>
+                <span id="hero-hint-mid">6 m² (Baño Estándar)</span>
+                <span id="hero-hint-max">15 m² (Suite)</span>
               </div>
             </div>
 
@@ -669,6 +693,25 @@
       const timeText = document.getElementById('hero-calc-time');
       const whatsappBtn = document.getElementById('hero-whatsapp-btn');
 
+      const serviceSelect = document.getElementById('hero-service-type');
+      const hintMin = document.getElementById('hero-hint-min');
+      const hintMid = document.getElementById('hero-hint-mid');
+      const hintMax = document.getElementById('hero-hint-max');
+
+      function syncSliderLimits() {
+        if (!serviceSelect || !areaRange || !window.BudgetCalculator) return;
+        const config = BudgetCalculator.serviceConfigs[serviceSelect.value] || BudgetCalculator.serviceConfigs.bano;
+        areaRange.min = config.min;
+        areaRange.max = config.max;
+        areaRange.step = config.step;
+        if (parseInt(areaRange.value, 10) > config.max || parseInt(areaRange.value, 10) < config.min) {
+          areaRange.value = config.defaultVal;
+        }
+        if (hintMin) hintMin.textContent = config.hintMin;
+        if (hintMid) hintMid.textContent = config.hintMid;
+        if (hintMax) hintMax.textContent = config.hintMax;
+      }
+
       function updateHeroCalc() {
         if (!areaRange || !form || !window.BudgetCalculator) return;
         const serviceType = document.getElementById('hero-service-type').value;
@@ -691,7 +734,15 @@
         whatsappBtn.href = `https://wa.me/34722851328?text=${encodeURIComponent(text)}`;
       }
 
+      if (serviceSelect) {
+        serviceSelect.addEventListener('change', () => {
+          syncSliderLimits();
+          updateHeroCalc();
+        });
+      }
+
       if (form) {
+        syncSliderLimits();
         form.addEventListener('input', updateHeroCalc);
         updateHeroCalc();
       }

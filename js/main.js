@@ -135,7 +135,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Interactive Hero Photo Showcase Switcher
   initHeroPhotoSwitcher();
+
+  // 8. Contador & Analítica de Clics a WhatsApp
+  initWhatsAppClickTracker();
 });
+
+// GESTIÓN Y SEGUIMIENTO DE CLICS A WHATSAPP
+function initWhatsAppClickTracker() {
+  const STORAGE_KEY = 'mdlc_wa_clicks';
+
+  function getClicks() {
+    return parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+  }
+
+  function incrementClick() {
+    const next = getClicks() + 1;
+    localStorage.setItem(STORAGE_KEY, next.toString());
+    updateBadgeUI(next);
+
+    // Si en el futuro configuran Google Ads (gtag) o Meta Pixel, se dispara automáticamente
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-CONVERSION_ID',
+        'event_category': 'Contact',
+        'event_label': 'WhatsApp Click'
+      });
+    }
+    console.info(`[Analytics] Clic registrado a WhatsApp. Total acumulado en este navegador: ${next}`);
+  }
+
+  // Interceptar todos los enlaces y botones que apunten a WhatsApp
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"], button[id*="whatsapp"]').forEach(el => {
+    el.addEventListener('click', () => {
+      incrementClick();
+    });
+  });
+
+  // Interceptar envíos de formulario directo a WhatsApp
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', () => {
+      incrementClick();
+    });
+  }
+
+  // Inyectar panel sutil de métricas (discreto en la esquina inferior izquierda)
+  function createTrackerBadge() {
+    if (document.getElementById('wa-tracker-badge')) return;
+    const badge = document.createElement('div');
+    badge.id = 'wa-tracker-badge';
+    badge.className = 'fixed bottom-4 left-4 z-40 bg-stone-900/90 dark:bg-stone-800/90 backdrop-blur-md text-white border border-stone-700/80 rounded-lg px-3 py-1.5 shadow-xl font-mono-tech text-[10px] flex items-center gap-2 cursor-pointer transition hover:scale-105 select-none opacity-80 hover:opacity-100';
+    badge.title = 'Contador de Clics a WhatsApp en este navegador (Clic para resetear)';
+    
+    badge.innerHTML = `
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="text-stone-300">LEADS WHATSAPP:</span>
+      <strong id="wa-tracker-count" class="text-amber-400 font-bold">${getClicks()}</strong>
+    `;
+
+    badge.addEventListener('click', (e) => {
+      if (e.shiftKey || confirm(`¿Quieres reiniciar el contador de clics a WhatsApp? (Actual: ${getClicks()})`)) {
+        localStorage.setItem(STORAGE_KEY, '0');
+        updateBadgeUI(0);
+      }
+    });
+
+    document.body.appendChild(badge);
+  }
+
+  function updateBadgeUI(count) {
+    const countEl = document.getElementById('wa-tracker-count');
+    if (countEl) countEl.textContent = count;
+  }
+
+  createTrackerBadge();
+}
 
 function initHeroPhotoSwitcher() {
   const photoBtns = document.querySelectorAll('.hero-photo-btn');
