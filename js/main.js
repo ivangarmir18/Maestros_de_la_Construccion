@@ -181,29 +181,21 @@ function initWhatsAppClickTracker() {
   }
 
   function isVisible() {
-    // Visible si se activó por atajo o si viene con ?admin=1 en la URL
+    // Solo visible si el admin lo activó explícitamente o si la URL lleva ?admin=1
     const urlParams = new URLSearchParams(window.location.search);
     return localStorage.getItem(VISIBLE_KEY) === '1' || urlParams.get('admin') === '1';
   }
 
   function toggleBadgeVisibility(forceState) {
-    let nextState;
-    if (typeof forceState === 'boolean') {
-      nextState = forceState;
-    } else {
-      nextState = !isVisible();
-    }
+    const currentState = isVisible();
+    const nextState = (typeof forceState === 'boolean') ? forceState : !currentState;
 
     localStorage.setItem(VISIBLE_KEY, nextState ? '1' : '0');
     const badge = document.getElementById('wa-tracker-badge');
     if (badge) {
+      badge.style.display = nextState ? 'inline-flex' : 'none';
       if (nextState) {
-        badge.classList.remove('hidden');
-        badge.classList.add('flex');
         updateBadgeUI(getClicks());
-      } else {
-        badge.classList.remove('flex');
-        badge.classList.add('hidden');
       }
     }
     console.info(`[Analytics] Panel Leads WhatsApp ${nextState ? 'ACTIVADO' : 'OCULTO'}`);
@@ -234,13 +226,14 @@ function initWhatsAppClickTracker() {
     });
   });
 
-  // Inyectar panel sutil de métricas (oculto por defecto)
+  // Inyectar panel de métricas (completamente oculto por defecto con display: none)
   function createTrackerBadge() {
     if (document.getElementById('wa-tracker-badge')) return;
     const badge = document.createElement('div');
     badge.id = 'wa-tracker-badge';
     const initiallyVisible = isVisible();
-    badge.className = `fixed bottom-4 left-4 z-40 bg-stone-900/95 dark:bg-stone-800/95 backdrop-blur-md text-white border border-amber-500/50 rounded-lg px-3 py-1.5 shadow-2xl font-mono-tech text-[10px] ${initiallyVisible ? 'flex' : 'hidden'} items-center gap-2 cursor-pointer transition select-none`;
+    badge.className = 'fixed bottom-4 left-4 z-50 bg-stone-900/95 dark:bg-stone-800/95 backdrop-blur-md text-white border border-amber-500/60 rounded-lg px-3 py-1.5 shadow-2xl font-mono-tech text-[10px] items-center gap-2 cursor-pointer transition select-none';
+    badge.style.display = initiallyVisible ? 'inline-flex' : 'none';
     badge.title = 'Contador Secreto de Leads WhatsApp (Clic para resetear · Alt+Shift+A para ocultar)';
     
     badge.innerHTML = `
