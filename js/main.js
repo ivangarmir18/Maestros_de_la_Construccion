@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // GESTIÓN Y SEGUIMIENTO DE CLICS A WHATSAPP
 function initWhatsAppClickTracker() {
   const STORAGE_KEY = 'mdlc_wa_clicks';
+  const VISIBLE_KEY = 'mdlc_wa_tracker_visible';
 
   function getClicks() {
     return parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
@@ -153,7 +154,7 @@ function initWhatsAppClickTracker() {
     localStorage.setItem(STORAGE_KEY, next.toString());
     updateBadgeUI(next);
 
-    // Si en el futuro configuran Google Ads (gtag) o Meta Pixel, se dispara automáticamente
+    // Disparador opcional para Google Ads (gtag) si se activa en el futuro
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', {
         'send_to': 'AW-CONVERSION_ID',
@@ -161,7 +162,7 @@ function initWhatsAppClickTracker() {
         'event_label': 'WhatsApp Click'
       });
     }
-    console.info(`[Analytics] Clic registrado a WhatsApp. Total acumulado en este navegador: ${next}`);
+    console.info(`[Analytics] Clic registrado a WhatsApp. Total acumulado: ${next}`);
   }
 
   // Interceptar todos los enlaces y botones que apunten a WhatsApp
@@ -179,22 +180,84 @@ function initWhatsAppClickTracker() {
     });
   }
 
-  // Inyectar panel sutil de métricas (discreto en la esquina inferior izquierda)
+  function isVisible() {
+    // Visible si se activó por atajo o si viene con ?admin=1 en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    return localStorage.getItem(VISIBLE_KEY) === '1' || urlParams.get('admin') === '1';
+  }
+
+  function toggleBadgeVisibility(forceState) {
+    let nextState;
+    if (typeof forceState === 'boolean') {
+      nextState = forceState;
+    } else {
+      nextState = !isVisible();
+    }
+
+    localStorage.setItem(VISIBLE_KEY, nextState ? '1' : '0');
+    const badge = document.getElementById('wa-tracker-badge');
+    if (badge) {
+      if (nextState) {
+        badge.classList.remove('hidden');
+        badge.classList.add('flex');
+        updateBadgeUI(getClicks());
+      } else {
+        badge.classList.remove('flex');
+        badge.classList.add('hidden');
+      }
+    }
+    console.info(`[Analytics] Panel Leads WhatsApp ${nextState ? 'ACTIVADO' : 'OCULTO'}`);
+  }
+
+  // Atajo de teclado secreto: ALT + SHIFT + A
+  window.addEventListener('keydown', (e) => {
+    if (e.altKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+      e.preventDefault();
+      toggleBadgeVisibility();
+    }
+  });
+
+  // Atajo móvil alternativo: 3 toques rápidos en el logo del footer
+  const footerLogos = document.querySelectorAll('footer img[src*="logo.jpg"]');
+  let tapCount = 0;
+  let tapTimer = null;
+  footerLogos.forEach(logo => {
+    logo.addEventListener('click', () => {
+      tapCount++;
+      clearTimeout(tapTimer);
+      if (tapCount >= 3) {
+        tapCount = 0;
+        toggleBadgeVisibility();
+      } else {
+        tapTimer = setTimeout(() => { tapCount = 0; }, 600);
+      }
+    });
+  });
+
+  // Inyectar panel sutil de métricas (oculto por defecto)
   function createTrackerBadge() {
     if (document.getElementById('wa-tracker-badge')) return;
     const badge = document.createElement('div');
     badge.id = 'wa-tracker-badge';
-    badge.className = 'fixed bottom-4 left-4 z-40 bg-stone-900/90 dark:bg-stone-800/90 backdrop-blur-md text-white border border-stone-700/80 rounded-lg px-3 py-1.5 shadow-xl font-mono-tech text-[10px] flex items-center gap-2 cursor-pointer transition hover:scale-105 select-none opacity-80 hover:opacity-100';
-    badge.title = 'Contador de Clics a WhatsApp en este navegador (Clic para resetear)';
+    const initiallyVisible = isVisible();
+    badge.className = `fixed bottom-4 left-4 z-40 bg-stone-900/95 dark:bg-stone-800/95 backdrop-blur-md text-white border border-amber-500/50 rounded-lg px-3 py-1.5 shadow-2xl font-mono-tech text-[10px] ${initiallyVisible ? 'flex' : 'hidden'} items-center gap-2 cursor-pointer transition select-none`;
+    badge.title = 'Contador Secreto de Leads WhatsApp (Clic para resetear · Alt+Shift+A para ocultar)';
     
     badge.innerHTML = `
-      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0"></span>
       <span class="text-stone-300">LEADS WHATSAPP:</span>
-      <strong id="wa-tracker-count" class="text-amber-400 font-bold">${getClicks()}</strong>
+      <strong id="wa-tracker-count" class="text-amber-400 font-bold text-xs">${getClicks()}</strong>
+      <button type="button" id="wa-tracker-close" class="ml-1 text-stone-400 hover:text-white font-bold p-0.5 rounded leading-none text-xs" title="Ocultar (Alt+Shift+A)">✕</button>
     `;
 
+    // Clic en la píldora para reiniciar el contador si se confirma
     badge.addEventListener('click', (e) => {
-      if (e.shiftKey || confirm(`¿Quieres reiniciar el contador de clics a WhatsApp? (Actual: ${getClicks()})`)) {
+      if (e.target && e.target.id === 'wa-tracker-close') {
+        e.stopPropagation();
+        toggleBadgeVisibility(false);
+        return;
+      }
+      if (confirm(`¿Quieres reiniciar el contador de clics a WhatsApp? (Total actual: ${getClicks()})`)) {
         localStorage.setItem(STORAGE_KEY, '0');
         updateBadgeUI(0);
       }
