@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="light">
 <head>
   <meta charset="UTF-8">
@@ -104,7 +104,7 @@
       <div class="hidden lg:flex items-center gap-3">
         <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
         </button>
-        <a href="https://wa.me/34722851328" target="_blank" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
+        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
           WhatsApp: 722 851 328
         </a>
       </div>
@@ -133,7 +133,7 @@
           <span class="theme-icon-slot"></span>
         </button>
       </div>
-      <a href="https://wa.me/34722851328" target="_blank" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
+      <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
         WhatsApp: 722 851 328
       </a>
     </div>
@@ -281,7 +281,7 @@
         Envíanos las medidas aproximadas o fotos actuales por WhatsApp. Te visitamos sin coste en cualquier punto de Valencia y alrededores.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-        <a href="https://wa.me/34722851328?text=Hola,%20he%20leido%20vuestra%20guia%20de%20reforma%20de%20baño%20y%20me%20gustaria%20pedir%20presupuesto" target="_blank" class="btn-cta-construction w-full sm:w-auto font-extrabold text-xs uppercase tracking-wider">
+        <a href="https://wa.me/34722851328?text=Hola,%20he%20leido%20vuestra%20guia%20de%20reforma%20de%20baño%20y%20me%20gustaria%20pedir%20presupuesto" target="_blank" rel="noopener noreferrer" class="btn-cta-construction w-full sm:w-auto font-extrabold text-xs uppercase tracking-wider">
           Pedir Presupuesto Baño por WhatsApp
         </a>
         <a href="presupuesto.html" class="btn-secondary-construction w-full sm:w-auto text-xs font-bold">
@@ -308,11 +308,32 @@
 
   </main>
 
-  <!-- Footer -->
+  <!-- Footer Arquitectónico & Contacto -->
   <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-2">
-      <p class="font-bold text-white">MAESTROS DE LA CONSTRUCCIÓN · VALENCIA</p>
-      <p>© 2026 Especialistas en reformas de baños y albañilería técnica en Valencia y alrededores. WhatsApp: 722 851 328</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
+          <div>
+            <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
+            <span class="text-stone-400 text-[11px] block">Valencia & Área Metropolitana · Tel / WhatsApp: 722 851 328</span>
+            <a href="mailto:contacto@maestrosdelaconstruccion.es" class="text-amber-500 hover:underline text-[11px] block font-mono-tech">contacto@maestrosdelaconstruccion.es</a>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300 font-medium">
+          <a href="index.html" class="hover:text-amber-500 transition">Inicio</a>
+          <a href="obras.html" class="hover:text-amber-500 transition">Obras</a>
+          <a href="presupuesto.html" class="hover:text-amber-500 transition">Presupuesto</a>
+          <a href="donde-estamos.html" class="hover:text-amber-500 transition">Dónde Estamos</a>
+          <a href="faq.html" class="hover:text-amber-500 transition">FAQ</a>
+          <a href="contacto.html" class="hover:text-amber-500 transition">Contacto</a>
+          <a href="https://instagram.com/somosmaestrosdelaconstruccion" target="_blank" rel="noopener noreferrer" class="text-amber-500 hover:underline">@somosmaestrosdelaconstruccion</a>
+        </div>
+      </div>
+      <div class="border-t border-stone-800 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-4">
+        <span>© 2026 Maestros de la Construcción. Oficiales y Reformas en Valencia y alrededores.</span>
+        <span>Aviso Legal · Política de Privacidad · Presupuestos sin compromiso</span>
+      </div>
     </div>
   </footer>
 
@@ -320,4 +341,5 @@
   <script src="js/main.js?v=3.0"></script>
 </body>
 </html>
+
 

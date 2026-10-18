@@ -227,6 +227,25 @@ class ConstructionAIAssistant {
     document.getElementById('typing-indicator')?.remove();
   }
 
+  escapeHtml(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  formatMarkdown(rawText) {
+    if (!rawText) return '';
+    const safe = this.escapeHtml(rawText);
+    return safe
+      .replace(/\n\n/g, '<br><br>')
+      .replace(/\n/g, '<br>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  }
+
   async handleUserMessage(text) {
     this.addUserMessage(text);
     this.showTypingIndicator();
@@ -243,11 +262,7 @@ class ConstructionAIAssistant {
         const data = await res.json();
         if (data.success && data.reply) {
           this.removeTypingIndicator();
-          const formatted = data.reply
-            .replace(/\n\n/g, '<br><br>')
-            .replace(/\n/g, '<br>')
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-          this.addBotMessage(formatted);
+          this.addBotMessage(this.formatMarkdown(data.reply));
           return;
         }
       }
@@ -260,7 +275,7 @@ class ConstructionAIAssistant {
       try {
         const response = await this.callGeminiDirect(text);
         this.removeTypingIndicator();
-        this.addBotMessage(response);
+        this.addBotMessage(this.formatMarkdown(response));
         return;
       } catch (err) {
         console.warn('Fallback a conocimiento técnico local:', err);
@@ -276,14 +291,15 @@ class ConstructionAIAssistant {
   }
 
   getLocalAnswer(query) {
-    const lower = query.toLowerCase();
+    const lower = (query || '').toLowerCase();
     for (const item of this.localResponses) {
       if (item.triggers.some(t => lower.includes(t))) {
         return item.answer;
       }
     }
 
-    return `Para valorar con precisión tu proyecto de <em>"${query}"</em> y ofrecerte un presupuesto cerrado sin compromiso, el oficial técnico puede visitar tu vivienda en Valencia:<br><br><strong>WhatsApp directo:</strong> <a href="https://wa.me/34722851328" class="text-amber-600 dark:text-amber-400 font-bold underline" target="_blank">722 851 328</a><br>También puedes calcular un coste estimado en nuestro <strong>Simulador Interactivo</strong>.`;
+    const safeQuery = this.escapeHtml(query);
+    return `Para valorar con precisión tu proyecto de <em>"${safeQuery}"</em> y ofrecerte un presupuesto cerrado sin compromiso, el oficial técnico puede visitar tu vivienda en Valencia:<br><br><strong>WhatsApp directo:</strong> <a href="https://wa.me/34722851328" class="text-amber-600 dark:text-amber-400 font-bold underline" target="_blank" rel="noopener noreferrer">722 851 328</a><br>También puedes calcular un coste estimado en nuestro <strong>Simulador Interactivo</strong>.`;
   }
 
   async callGeminiDirect(userQuery) {
@@ -311,10 +327,7 @@ class ConstructionAIAssistant {
     const data = await res.json();
     const candidate = data.candidates?.[0]?.content?.parts?.[0]?.text;
     if (candidate) {
-      return candidate
-        .replace(/\n\n/g, '<br><br>')
-        .replace(/\n/g, '<br>')
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      return candidate;
     }
     throw new Error('Respuesta vacía');
   }
