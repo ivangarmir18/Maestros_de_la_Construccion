@@ -42,33 +42,45 @@ REGLAS DE CONVERSACIÓN Y DERIVACIÓN (MUY IMPORTANTE):
 6. No inventes precios que contradigan las tarifas base de referencia.`;
 
 async function getEndpoints(apiKey) {
-  const endpoints = [
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`,
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${apiKey}`,
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`,
-    `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-    `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`
+  const priorityModels = [
+    'gemini-3.8-flash',
+    'gemini-3-flash',
+    'gemini-2.5-flash',
+    'gemini-2.0-flash',
+    'gemini-2.0-flash-lite',
+    'gemini-flash-latest',
+    'gemini-1.5-flash-latest'
   ];
 
-  // Descubrimiento dinámico de los modelos exactos disponibles para esta API key
+  const endpoints = [];
+  for (const m of priorityModels) {
+    endpoints.push(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${apiKey}`);
+    endpoints.push(`https://generativelanguage.googleapis.com/v1/models/${m}:generateContent?key=${apiKey}`);
+  }
+
+  // Descubrimiento dinámico de modelos admitidos en la cuenta de Google AI Studio
   try {
     const listRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
     if (listRes.ok) {
       const data = await listRes.json();
       if (Array.isArray(data.models)) {
-        const supported = data.models
+        // Filtrar modelos conversacionales (descartar embedding, vision-only, aqa, deep-research)
+        const validModels = data.models
           .filter(m => Array.isArray(m.supportedGenerationMethods) && m.supportedGenerationMethods.includes('generateContent'))
-          .map(m => m.name.replace(/^models\//, ''));
+          .map(m => m.name.replace(/^models\//, ''))
+          .filter(name => !name.includes('embedding') && !name.includes('research') && !name.includes('aqa'));
 
-        supported.sort((a, b) => (b.includes('flash') ? 1 : 0) - (a.includes('flash') ? 1 : 0));
+        // Ordenar: primero los modelos 'flash' rápidos, luego 'pro'
+        validModels.sort((a, b) => {
+          const aFlash = a.includes('flash') ? 2 : (a.includes('pro') ? 1 : 0);
+          const bFlash = b.includes('flash') ? 2 : (b.includes('pro') ? 1 : 0);
+          return bFlash - aFlash;
+        });
 
-        for (const name of supported) {
+        for (const name of validModels) {
           const url = `https://generativelanguage.googleapis.com/v1beta/models/${name}:generateContent?key=${apiKey}`;
           if (!endpoints.includes(url)) {
-            endpoints.unshift(url);
+            endpoints.push(url);
           }
         }
       }
@@ -163,7 +175,7 @@ export default async function handler(req, res) {
       contents,
       generationConfig: {
         temperature: 0.65,
-        maxOutputTokens: 400,
+        maxOutputTokens: 800,
         topP: 0.95
       }
     };
