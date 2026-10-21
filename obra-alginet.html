@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rehabilitación de Finca Centenaria en Alginet | Maestros de la Construcción</title>
-  <meta name="description" content="Crónica documentada de la reforma integral en una casa centenaria de Alginet. Saneamiento de humedades, solado con puente de unión y obra limpia.">
+  <title>Reforma Integral de Finca Centenaria en Alginet | Maestros de la Construcción</title>
+  <meta name="description" content="Crónica completa de la rehabilitación de una vivienda centenaria en Alginet (Ribera Alta). Demolición de baños, saneado de humedades, solados con puente de unión y acabados de lujo.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.maestrosdelaconstruccion.es/obra-alginet.html">
 
   <script>
@@ -14,18 +15,49 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class'
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            }
+          }
+        }
+      }
     }
   </script>
-  <link rel="stylesheet" href="css/styles.css?v=4.0">
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
-</head>
-<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
 
-  <!-- Header Arquitectónica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <style>
+    .article-text {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+    .article-text p {
+      text-indent: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-text p:first-of-type {
+      text-indent: 0;
+    }
+  </style>
+</head>
+<body class="bg-[#f2eee3] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
+
+  <!-- Header / Nav -->
   <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3 group">
@@ -48,21 +80,23 @@
       </nav>
 
       <div class="hidden lg:flex items-center gap-3">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
         <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
-          WhatsApp: 722 851 328
+          <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>WhatsApp: 722 851 328</span>
         </a>
       </div>
 
       <div class="flex items-center gap-2 lg:hidden">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
         <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
     </div>
 
-    <!-- Menú Móvil -->
     <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
       <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
       <a href="obras.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-500 border-b border-stone-200 dark:border-stone-800">Proyectos & Obras</a>
@@ -70,134 +104,206 @@
       <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
       <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
       <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
+      <div class="pt-2">
+        <button class="theme-toggle-btn w-full flex items-center justify-between py-2.5 px-3 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-medium text-xs font-mono-tech border border-stone-300 dark:border-stone-700">
+          <span class="theme-label">MODO OSCURO / CLARO</span>
+          <span class="theme-icon-slot"></span>
+        </button>
+      </div>
       <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
         WhatsApp: 722 851 328
       </a>
     </div>
   </header>
 
-  <!-- Artículo de Obra Documentada -->
-  <main class="pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-8 space-y-10">
-
-    <!-- Migas de Pan -->
-    <nav class="text-xs font-mono-tech text-stone-500 flex items-center gap-2">
+  <!-- Main Content -->
+  <main class="pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-8 space-y-12">
+    
+    <!-- Migas de pan centradas -->
+    <nav class="flex items-center justify-center gap-2 text-xs font-mono-tech text-stone-500">
       <a href="index.html" class="hover:text-amber-600">Inicio</a>
       <span>/</span>
       <a href="obras.html" class="hover:text-amber-600">Proyectos & Obras</a>
       <span>/</span>
-      <span class="text-stone-900 dark:text-white font-bold">Finca Centenaria en Alginet</span>
+      <span class="text-stone-800 dark:text-stone-200 font-bold">Alginet (Ribera Alta)</span>
     </nav>
 
-    <!-- Cabecera de Crónica Periodística -->
-    <div class="space-y-4 border-b border-stone-200 dark:border-stone-800 pb-8">
-      <div class="flex flex-wrap items-center gap-2">
+    <!-- Cabecera Editorial Centrada -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 pb-8 border-b border-stone-200 dark:border-stone-800">
+      <div class="flex flex-wrap items-center justify-center gap-2">
         <span class="tech-badge tech-badge-amber">CRÓNICA DE OBRA REAL</span>
-        <span class="text-xs font-mono-tech text-stone-500">Alginet (Ribera Alta) · Finca Rústica</span>
+        <span class="text-xs font-mono-tech text-stone-500">Alginet (Ribera Alta) · Finca Rústica Centenaria</span>
       </div>
       <h1 class="text-3xl sm:text-5xl font-black font-heading text-stone-900 dark:text-white leading-tight">
-        Rehabilitación de una Finca Centenaria: Cuando la Humedad Exige Técnica y el Presupuesto Sentido Común
+        Resucitar una Casa de Pueblo Centenaria: La Gran Transformación de Alginet
       </h1>
       <p class="text-stone-600 dark:text-stone-400 text-sm sm:text-base font-mono-tech">
         Por Fabio Toro · Oficial Maestro de Albañilería · Maestros de la Construcción
       </p>
     </div>
 
-    <!-- Fotografía Principal de Portada del Reportaje -->
+    <!-- Imagen Principal -->
     <div class="construction-card overflow-hidden rounded-xl">
-      <img src="img/proyectos/alginet-6-habitacion-despues.jpg" alt="Habitación terminada en Alginet" class="w-full h-80 sm:h-96 object-cover">
-      <div class="p-4 bg-stone-100 dark:bg-stone-900 text-xs font-mono-tech text-stone-600 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800">
-        Aspecto final de uno de los cuatro dormitorios tras sanear paramentos, colocar pavimento porcelánico sobre puente de unión y montar ventana Climalit.
+      <img src="img/proyectos/alginet11.jpg" alt="Baño terminado en la vivienda de Alginet con espejo LED y mueble suspendido" class="w-full h-80 sm:h-[420px] object-cover">
+      <div class="p-4 bg-stone-100 dark:bg-stone-900 text-xs font-mono-tech text-stone-600 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800 text-center">
+        Resultado final en Alginet: baño de diseño con mueble suspendido, espejo retroiluminado y gres porcelánico rectificado.
       </div>
     </div>
 
-    <!-- Crónica Redactada en Estilo Periodístico (4 Párrafos Narrativos) -->
-    <article class="prose dark:prose-invert max-w-none space-y-6 text-stone-800 dark:text-stone-200 text-base sm:text-lg leading-relaxed">
+    <!-- Texto Periodístico Justificado -->
+    <article class="article-text text-stone-800 dark:text-stone-200 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
       
       <p>
-        Cuando los nuevos propietarios nos abrieron las puertas de esta casa de campo en Alginet, la finca llevaba años deshabitada y acumulaba más de un siglo de historia entre sus muros de carga. La vivienda había sido una gran oportunidad de compra en una parcela amplia, pero el paso del tiempo y las filtraciones por capilaridad habían hecho mella: el antiguo cuarto de baño estaba prácticamente inutilizable, con el chapado cerámico desprendido por completo en bloques y el suelo deteriorado por la humedad continua.
+        Entrar por primera vez en esta vivienda tradicional de Alginet fue contemplar cien años de historia arquitectónica en estado crítico. Muros maestros de tapial y ladrillo macizo castigados por la humedad por capilaridad, un cuarto de baño primitivo con revestimientos agrietados y soleras desniveladas con caídas de hasta cinco centímetros entre estancias. Una obra de esta magnitud no tolera parches superficiales: exige picar hasta el esqueleto, estabilizar los soportes y dotar a la finca de las prestaciones de confort térmico y estanqueidad del siglo veintiuno.
       </p>
 
       <p>
-        Nuestra primera decisión técnica fue no poner parches estéticos. Demolimos por completo el revestimiento dañado hasta descubrir la fábrica original de ladrillo y bloque, desescombramos a fondo y tratamos las paredes con mortero hidrófugo de alta densidad para frenar definitivamente el avance del agua. Para resolver el problema de la condensación interior, abrimos un hueco específico junto a la zona de ducha donde encastramos una ventana oscilobatiente de aluminio con rotura de puente térmico y vidrio Climalit, logrando una ventilación cruzada natural que protegerá la obra durante las próximas décadas.
+        La primera fase fue una demolición sin contemplaciones. Desmontamos el baño completo hasta dejar al descubierto el bloque estructural y el lecho resistente, retirando cientos de sacos de escombro. En los dormitorios levantamos las carpinterías de madera carcomidas por el tiempo y picamos las partes bajas de los muros afectados por la eflorescencia salina. Aplicamos barreras químicas impermeabilizantes e introdujimos una solera con recrecido aligerado con arlita, rematada con un puente de unión de resina epoxi bicomponente para anclar el nuevo pavimento sobre el forjado histórico sin riesgo de fisuras.
       </p>
 
       <p>
-        El gran reto económico estaba en los suelos de las cuatro habitaciones y el salón-comedor. Retirar toda la solera antigua de la casa habría disparado los costes de desescombro y mano de obra para el cliente. En lugar de eso, aplicamos una solución de taller probada: procedimos a un rayado mecánico exhaustivo de las baldosas antiguas para abrir el poro, limpiamos con aspiración industrial y sellamos toda la superficie con una imprimación de resina polimérica de puente de unión. Sobre esta base químicamente adherida, colocamos el nuevo pavimento porcelánico utilizando calzos y cuñas autonivelantes milimétricas, garantizando un plano perfectamente liso, sin una sola ceja y absorbiendo las dilataciones estructurales.
+        El solado general de la vivienda fue un ejercicio de maestría técnica. Para colocar piezas porcelánicas de gran longitud sobre una base irregular, empleamos cemento cola deformable C2TE S1 y un sistema masivo de cuñas tensoras autonivelantes verdes. Cada pieza fue rastreada con reglas de aluminio de tres metros y niveles láser bidireccionales, logrando una superficie continua, sin escalones ni resaltes entre dormitorios, distribuidores y baños. Se renovaron además todas las ventanas por cerramientos de aluminio con rotura de puente térmico y doble acristalamiento bajo emisivo tipo Climalit.
       </p>
 
       <p>
-        El trabajo culminó con el cambio integral de ventanas exteriores, persianas y rejas de seguridad, el saneamiento de las tomas de fontanería para devolver el servicio al baño, y tres manos de pintura plástica transpirable antimohos en blanco puro que multiplicaron la luz en cada rincón. Ver la cara de los propietarios al entrar y comprobar que una casa centenaria y castigada se convertía en un hogar habitable, luminoso y cálido, sin sorpresas en la factura final, es el motivo por el que amamos este oficio.
+        El baño renacido es hoy el testimonio visible de este esfuerzo. Revestido en tonos cálidos con cerámica rectificada, ducha integrada con válvula oculta, sanitarios suspendidos y un mueble flotante con espejo perimetral LED, la vivienda ha recuperado su dignidad y su valor patrimonial. Esta obra en Alginet resume lo que somos: albañiles que no le temen al polvo ni al escombro pesado porque sabemos exactamente cómo convertir una ruina en un hogar impecable.
       </p>
 
     </article>
 
-    <!-- Secuencia Fotográfica del Proceso -->
-    <div class="space-y-4 pt-6">
-      <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white">
-        El Proceso Paso a Paso en Imágenes
-      </h3>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        
-        <!-- Foto 1: Demolición -->
-        <div class="construction-card overflow-hidden">
-          <img src="img/proyectos/alginet-1-demolicion-bano.jpg" alt="Demolición del baño deteriorado" class="w-full h-56 object-cover">
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            <strong>1. Demolición inicial:</strong> Azulejos caídos por humedad en el plato de ducha original.
-          </div>
-        </div>
-
-        <!-- Foto 2: Picado y saneado -->
-        <div class="construction-card overflow-hidden">
-          <img src="img/proyectos/alginet-2-picado-impermeabilizacion.jpg" alt="Picado hasta bloque estructural" class="w-full h-56 object-cover">
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            <strong>2. Saneamiento total:</strong> Picado hasta la fábrica de ladrillo para aplicar barrera hidrófuga.
-          </div>
-        </div>
-
-        <!-- Foto 3: Solado con cuñas -->
-        <div class="construction-card overflow-hidden">
-          <img src="img/proyectos/alginet-4-solado-cunas.jpg" alt="Solado con cuñas autonivelantes sobre puente de unión" class="w-full h-56 object-cover">
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            <strong>3. Nivelación con cuñas:</strong> Colocación del nuevo suelo sobre el puente de unión sin demoler la solera previa.
-          </div>
-        </div>
-
+    <!-- Galería Cronológica Documentada (12 Fotos de Alginet) -->
+    <div class="space-y-8 pt-6 border-t border-stone-200 dark:border-stone-800">
+      <div class="text-center space-y-2">
+        <span class="tech-badge tech-badge-amber">DOCUMENTACIÓN FOTOGRÁFICA COMPLETA</span>
+        <h3 class="text-2xl font-bold font-heading text-stone-900 dark:text-white">
+          El Paso a Paso en 12 Fotografías Reales
+        </h3>
+        <p class="text-xs font-mono-tech text-stone-500">De la demolición del baño antiguo a la entrega de dormitorios y sanitarios</p>
       </div>
 
-      <!-- Comparativa Antes y Después -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-        <div class="construction-card overflow-hidden relative">
-          <img src="img/proyectos/alginet-5-habitacion-antes.jpg" alt="Habitación antes de la reforma" class="w-full h-64 object-cover">
-          <span class="absolute top-3 left-3 bg-red-600 text-white font-mono-tech text-xs px-2.5 py-1 rounded font-bold uppercase">Estado Inicial (Antes)</span>
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            Humedades visibles en la parte baja de los muros, carpintería desajustada y suelo antiguo gastado.
+      <!-- Bloque 1: Demolición y Estado Previo -->
+      <div class="space-y-4">
+        <h4 class="text-lg font-bold font-heading text-stone-900 dark:text-white flex items-center justify-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-600"></span> 1. Demolición y Diagnóstico de Humedades
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet1.jpg" alt="Demolición del baño hasta el bloque en Alginet" class="w-full h-64 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Demolición estructural:</strong> Picado de revestimientos viejos hasta el bloque y saneado del lecho.
+            </div>
           </div>
-        </div>
-
-        <div class="construction-card overflow-hidden relative">
-          <img src="img/proyectos/alginet-6-habitacion-despues.jpg" alt="Habitación terminada después de la reforma" class="w-full h-64 object-cover">
-          <span class="absolute top-3 left-3 bg-emerald-600 text-white font-mono-tech text-xs px-2.5 py-1 rounded font-bold uppercase">Resultado (Después)</span>
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            Mismo espacio tras sanear, pintar en blanco transpirable, colocar pavimento porcelánico y ventana Climalit.
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet3.jpg" alt="Dormitorio con humedad y ventana vieja en Alginet" class="w-full h-64 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Humedades previas:</strong> Muros con eflorescencias y carpintería antigua antes de sanear.
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Bloque 2: Soleras, Puente de Unión y Cuñas -->
+      <div class="space-y-4">
+        <h4 class="text-lg font-bold font-heading text-stone-900 dark:text-white flex items-center justify-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-amber-600"></span> 2. Nivelación Láser, Solado y Cuñas Tensoras
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet10.jpg" alt="Solado con cuñas autonivelantes verdes en Alginet" class="w-full h-56 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Nivelación con cuñas:</strong> Suelo porcelánico colocado con mortero C2TE y cuñas tensoras verdes.
+            </div>
+          </div>
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet7.jpg" alt="Nivelación de solera en dormitorios de Alginet" class="w-full h-56 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Maestreado continuo:</strong> Recrecido aligerado para igualar cotas en toda la planta.
+            </div>
+          </div>
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet2.jpg" alt="Replanteo general de la planta en Alginet" class="w-full h-56 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Replanteo de cortes:</strong> Trazado de escuadras maestras para evitar piezas estrechas en pasos.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque 3: Alicatados y Fontanería -->
+      <div class="space-y-4">
+        <h4 class="text-lg font-bold font-heading text-stone-900 dark:text-white flex items-center justify-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-blue-600"></span> 3. Alicatado Técnico de Baños
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet5.jpg" alt="Alicatado de paredes maestreadas en Alginet" class="w-full h-56 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Paramentos aplomados:</strong> Revestimiento cerámico en paramentos verticales con juntas uniformes.
+            </div>
+          </div>
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet6.jpg" alt="Colocación con cuñas en paredes de baño de Alginet" class="w-full h-56 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Cuñas en alicatado:</strong> Alineación milimétrica para evitar resaltes de luz en esquinas.
+            </div>
+          </div>
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet8.jpg" alt="Detalle de encuentros de azulejo en Alginet" class="w-full h-56 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Remates de precisión:</strong> Cortes con disco de diamante continuo y sellado hidrófugo.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque 4: Entregas Finales -->
+      <div class="space-y-4">
+        <h4 class="text-lg font-bold font-heading text-stone-900 dark:text-white flex items-center justify-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-emerald-600"></span> 4. Resultados Terminados: Dormitorios y Baño
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet4.jpg" alt="Dormitorio renovado con ventana Climalit en Alginet" class="w-full h-52 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Dormitorio saneado:</strong> Pintura lisa, solado nuevo y ventana Climalit con rotura de puente térmico.
+            </div>
+          </div>
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet9.jpg" alt="Sanitarios inodoro y bidet instalados en Alginet" class="w-full h-52 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Sanitarios colocados:</strong> Inodoro y bidé montados sobre suelo perfectamente nivelado.
+            </div>
+          </div>
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/alginet12.jpg" alt="Lavabo con espejo LED en Alginet" class="w-full h-52 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Detalle de lavabo:</strong> Espejo retroiluminado LED y mueble suspendido ajustado al milímetro.
+            </div>
+          </div>
+          <div class="construction-card overflow-hidden">
+            <img src="img/proyectos/IMG-20261015-WA0034.jpg" alt="Dormitorio terminado y limpio en Alginet" class="w-full h-52 object-cover">
+            <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+              <strong>Vivienda lista:</strong> Espacios amplios, luminosos y libres de humedades tras la reforma.
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- CTA de Contacto al Final del Reportaje -->
-    <div class="construction-card p-8 text-center space-y-4 bg-[#eae8df] dark:bg-[#15171d]">
+    <!-- CTA de Contacto -->
+    <div class="construction-card p-8 text-center space-y-4 bg-[#eae8df] dark:bg-[#15171d] rounded-xl">
       <h3 class="text-2xl font-black font-heading text-stone-900 dark:text-white">
-        ¿Tienes una vivienda de pueblo o finca rústica que necesita sanearse?
+        ¿Tienes una casa de pueblo o finca antigua en la Ribera o Valencia?
       </h3>
       <p class="text-sm text-stone-700 dark:text-stone-300 max-w-xl mx-auto">
-        Explícanos tu caso directamente a los oficiales. Te visitamos sin coste, revisamos humedades y te ofrecemos la mejor solución técnica ajustada a tu bolsillo.
+        Saneamos humedades desde el origen, nivelamos suelos y ejecutamos reformas integrales respetando la solidez de tu vivienda con materiales duraderos.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-        <a href="https://wa.me/34722851328?text=Hola,%20he%20le%C3%ADdo%20el%20reportaje%20de%20la%20finca%20de%20Alginet%20y%20me%20gustar%C3%ADa%20consultaros%20por%20mi%20caso"
+        <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20la%20reforma%20de%20Alginet%20y%20quiero%20consultar%20mi%20casa"
            target="_blank" rel="noopener noreferrer"
            class="btn-cta-construction">
-          Hablar con Fabio por WhatsApp (722 851 328)
+          Consultar con Fabio por WhatsApp (722 851 328)
         </a>
         <a href="obras.html" class="btn-secondary-construction">
           ← Volver a Proyectos & Obras
@@ -207,26 +313,16 @@
 
   </main>
 
-  <!-- Footer Arquitectónico -->
-  <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
-        <div>
-          <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
-          <span class="text-stone-400 text-[11px] block">Valencia & Área Metropolitana · Tel: 722 851 328</span>
-        </div>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300">
-        <a href="index.html" class="hover:text-amber-500">Inicio</a>
-        <a href="obras.html" class="hover:text-amber-500">Proyectos & Obras</a>
-        <a href="presupuesto.html" class="hover:text-amber-500">Presupuesto</a>
-        <a href="contacto.html" class="hover:text-amber-500">Contacto</a>
-      </div>
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-3">
+      <p class="font-bold text-stone-300 uppercase tracking-widest text-sm">Maestros de la Construcción</p>
+      <p>Rehabilitación de Fincas Tradicionales, Solados y Reformas Integrales en Alginet y Valencia.</p>
+      <p class="text-stone-500 font-mono-tech">Teléfono directo / WhatsApp: 722 851 328 · Valencia, España</p>
     </div>
   </footer>
 
-  <script src="js/ai-assistant.js?v=4.1"></script>
   <script src="js/main.js?v=4.0"></script>
+  <script src="js/ai-assistant.js?v=4.1"></script>
 </body>
 </html>

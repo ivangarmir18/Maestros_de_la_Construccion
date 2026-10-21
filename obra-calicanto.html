@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reforma de Gran Baño en Calicanto | Maestros de la Construcción</title>
-  <meta name="description" content="Crónica de la reforma de un baño de 60 metros cuadrados en Calicanto: porcelánico rectificado con cuñas milimétricas, fontanería multicapa y cielo raso de pladur.">
+  <title>Gran Baño de 60 m² en Calicanto: Porcelánico de Gran Formato | Maestros de la Construcción</title>
+  <meta name="description" content="Crónica técnica del alicatado monumental de un baño principal de 60 m² en Calicanto (Torrente/Chiva). Porcelánico rectificado, cuñas autonivelantes y fontanería embutida.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.maestrosdelaconstruccion.es/obra-calicanto.html">
 
   <script>
@@ -14,18 +15,49 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class'
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            }
+          }
+        }
+      }
     }
   </script>
-  <link rel="stylesheet" href="css/styles.css?v=4.0">
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
-</head>
-<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
 
-  <!-- Header Arquitectónica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <style>
+    .article-text {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+    .article-text p {
+      text-indent: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-text p:first-of-type {
+      text-indent: 0;
+    }
+  </style>
+</head>
+<body class="bg-[#f2eee3] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
+
+  <!-- Header / Nav -->
   <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3 group">
@@ -48,21 +80,23 @@
       </nav>
 
       <div class="hidden lg:flex items-center gap-3">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
         <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
-          WhatsApp: 722 851 328
+          <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>WhatsApp: 722 851 328</span>
         </a>
       </div>
 
       <div class="flex items-center gap-2 lg:hidden">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
         <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
     </div>
 
-    <!-- Menú Móvil -->
     <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
       <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
       <a href="obras.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-500 border-b border-stone-200 dark:border-stone-800">Proyectos & Obras</a>
@@ -70,109 +104,131 @@
       <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
       <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
       <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
+      <div class="pt-2">
+        <button class="theme-toggle-btn w-full flex items-center justify-between py-2.5 px-3 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-medium text-xs font-mono-tech border border-stone-300 dark:border-stone-700">
+          <span class="theme-label">MODO OSCURO / CLARO</span>
+          <span class="theme-icon-slot"></span>
+        </button>
+      </div>
       <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
         WhatsApp: 722 851 328
       </a>
     </div>
   </header>
 
-  <!-- Contenido Principal -->
-  <main class="pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-8 space-y-10">
-
-    <!-- Migas de Pan -->
-    <nav class="text-xs font-mono-tech text-stone-500 flex items-center gap-2">
+  <!-- Main Content -->
+  <main class="pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-8 space-y-12">
+    
+    <!-- Migas de pan centradas -->
+    <nav class="flex items-center justify-center gap-2 text-xs font-mono-tech text-stone-500">
       <a href="index.html" class="hover:text-amber-600">Inicio</a>
       <span>/</span>
       <a href="obras.html" class="hover:text-amber-600">Proyectos & Obras</a>
       <span>/</span>
-      <span class="text-stone-900 dark:text-white font-bold">Gran Baño en Calicanto</span>
+      <span class="text-stone-800 dark:text-stone-200 font-bold">Calicanto (Torrente/Chiva)</span>
     </nav>
 
-    <!-- Cabecera -->
-    <div class="space-y-4 border-b border-stone-200 dark:border-stone-800 pb-8">
-      <div class="flex flex-wrap items-center gap-2">
+    <!-- Cabecera Editorial Centrada -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 pb-8 border-b border-stone-200 dark:border-stone-800">
+      <div class="flex flex-wrap items-center justify-center gap-2">
         <span class="tech-badge tech-badge-amber">CRÓNICA DE OBRA REAL</span>
-        <span class="text-xs font-mono-tech text-stone-500">Calicanto (Chiva / Torrent) · Chalet Unifamiliar</span>
+        <span class="text-xs font-mono-tech text-stone-500">Calicanto · Chalet Unifamiliar</span>
       </div>
       <h1 class="text-3xl sm:text-5xl font-black font-heading text-stone-900 dark:text-white leading-tight">
-        Sesenta Metros Cuadrados de Baño: La Precisión del Gran Formato Cuando No Hay Margen de Error
+        El Reto de los 60 Metros Cuadrados: Alicatado de Gran Formato en Calicanto
       </h1>
       <p class="text-stone-600 dark:text-stone-400 text-sm sm:text-base font-mono-tech">
         Por Fabio Toro · Oficial Maestro de Albañilería · Maestros de la Construcción
       </p>
     </div>
 
-    <!-- Foto Portada -->
+    <!-- Imagen Principal -->
     <div class="construction-card overflow-hidden rounded-xl">
-      <img src="img/proyectos/calicanto-3-sanitarios-bano.jpg" alt="Baño terminado en Calicanto con sanitarios y plato de ducha" class="w-full h-80 sm:h-96 object-cover">
-      <div class="p-4 bg-stone-100 dark:bg-stone-900 text-xs font-mono-tech text-stone-600 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800">
-        Perspectiva del aseo terminado en Calicanto: inodoro vitrificado, bidet a juego, plato extraplano y alicatado rectificado a plomo.
+      <img src="img/proyectos/calicanto1.jpg" alt="Alicatado de gran formato con cuñas verdes en Calicanto" class="w-full h-80 sm:h-[420px] object-cover">
+      <div class="p-4 bg-stone-100 dark:bg-stone-900 text-xs font-mono-tech text-stone-600 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800 text-center">
+        Fase de alicatado en Calicanto: colocación de grandes piezas porcelánicas con sistema de nivelación por cuñas tensoras.
       </div>
     </div>
 
-    <!-- Crónica Narrativa -->
-    <article class="prose dark:prose-invert max-w-none space-y-6 text-stone-800 dark:text-stone-200 text-base sm:text-lg leading-relaxed">
+    <!-- Texto Periodístico Justificado -->
+    <article class="article-text text-stone-800 dark:text-stone-200 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
       
       <p>
-        Reformar un baño pequeño tiene sus dificultades de maniobra, pero enfrentarse a una estancia de sesenta metros cuadrados en una vivienda de Calicanto plantea exigencias de otro nivel. Aquí no cabe la improvisación: un ligero desnivel de un milímetro en la primera fila de azulejos se convierte en un centímetro de descuadre cuando alcanzas la pared opuesta. Los clientes querían una transformación total, retirando acabados obsoletos de los años noventa para lograr un espacio continuo, moderno y visualmente limpio.
+        En el sector de las reformas de chalets, encontrarse con un cuarto de baño de sesenta metros cuadrados de superficie útil es un desafío constructivo que pone a prueba cualquier cuadrilla. En Calicanto, los propietarios proyectaron un espacio de spa doméstico con varias zonas diferenciadas: área de doble lavabo, cabina de ducha pasante y zona de sanitarios independientes. En paramentos de tanta longitud visual, un error de un solo milímetro en la primera hilada se multiplica de forma catastrófica a medida que se avanza en altura, por lo que el rigor geométrico debía ser impecable.
       </p>
 
       <p>
-        Comenzamos saneando la red oculta de fontanería, reemplazando las viejas tuberías por canalizaciones de polietileno reticulado multicapa embutidas en rozas maestras, garantizando caudales independientes y presiones constantes tanto en la zona de ducha como en el inodoro, el bidet y el mueble doble. En el techo, estructuramos un cielo raso continuo de placa de yeso laminado hidrófugo con perfiles reforzados de acero, integrando la extracción de vapores y los puntos de luz técnica empotrada.
+        Comenzamos con la fase de albañilería gruesa y replanteo de instalaciones. Empotramos una red completa de fontanería con colectores de distribución y tubería multicapa aislada térmicamente, canalizando desagües de PVC de alto impacto hacia la bajante principal. Para asegurar una adherencia absoluta en paramentos de tanta envergadura, revocamos las paredes con mortero hidrófugo maestreado con regles y plomadas ópticas láser, creando un soporte perfectamente plano y seco antes de extender la primera masa de adhesivo.
       </p>
 
       <p>
-        El corazón de esta obra fue el trabajo minucioso de alicatado. Al trabajar con piezas porcelánicas rectificadas de gran formato, cada una de ellas fue colocada aplicando doble encolado con cemento cola flexible de máxima adherencia. En cada junta empleamos un sistema intensivo de cuñas y calzos autonivelantes plásticos que mantuvieron la presión constante entre baldosas durante el fraguado. Este procedimiento asegura que al pasar la mano por las esquinas y los paños rectos no se perciba ni el más mínimo resalte ni sombra óptica bajo la luz rasante.
+        El alicatado con piezas porcelánicas rectificadas de gran formato requirió técnica de doble encolado: peinado con llana dentada de diez milímetros en la pared y manto fino en el reverso de cada baldosa, garantizando una humectación superior al noventa y cinco por ciento sin huecos de aire. Aplicamos calzos de tracción con cuñas tensoras verdes y negras en todas las uniones, calibrando la presión con alicates de ajuste milimétrico para conseguir un plano continuo sin ningún escalón visible ni perceptible al deslizar la mano.
       </p>
 
       <p>
-        En la fase final montamos los sanitarios ergonómicos con fijaciones mecánicas ocultas, sellamos el plato de ducha con juntas de silicona neutra antimoho y ensamblamos el mueble cajonero suspendido con lavabo cerámico integrado y espejo a medida. El resultado es un baño de hotel de cinco estrellas, pero construido con la honestidad, la solidez y el trato directo de quienes pisamos el andamio todos los días.
+        Rematamos la estancia con falsos techos suspendidos con registros técnicos estancos, fosa perimetral y molduras decorativas de escayola, además de un rejuntado técnico con resinas hidrófugas resistentes a vapor y manchas. El resultado en Calicanto demuestra que cuando se unen la paciencia del artesano con las herramientas de nivelación más modernas, es posible transformar un gran espacio en una obra de arte arquitectónica hecha para perdurar.
       </p>
 
     </article>
 
-    <!-- Galería del Proceso -->
-    <div class="space-y-4 pt-6">
-      <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white">
-        El Detalle Constructivo en Imágenes
-      </h3>
+    <!-- Galería Cronológica Documentada -->
+    <div class="space-y-6 pt-6 border-t border-stone-200 dark:border-stone-800">
+      <div class="text-center space-y-2">
+        <span class="tech-badge tech-badge-amber">SECUENCIA DE TRABAJO EN CALICANTO</span>
+        <h3 class="text-2xl font-bold font-heading text-stone-900 dark:text-white">
+          Fases de Albañilería, Nivelación e Instalaciones
+        </h3>
+        <p class="text-xs font-mono-tech text-stone-500">Fotografías reales del gran baño de 60 metros cuadrados</p>
+      </div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         
+        <!-- Foto 1 -->
         <div class="construction-card overflow-hidden">
-          <img src="img/proyectos/calicanto-1-alicatado-cunas.jpg" alt="Alicatado de gran formato con cuñas" class="w-full h-56 object-cover">
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            <strong>1. Cuñas autonivelantes:</strong> Sistema milimétrico en cada hilada para evitar cejas en paredes de gran formato.
+          <div class="relative h-64 overflow-hidden">
+            <img src="img/proyectos/calicanto2.jpg" alt="Albañilería y distribución del baño en Calicanto" class="w-full h-full object-cover">
+            <span class="photo-tag-badge absolute top-3 left-3 bg-amber-600 text-white">1. DISTRIBUCIÓN & OBRA</span>
+          </div>
+          <div class="p-4 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>Replanteo de volúmenes:</strong> Ejecución de tabiquería, muretes de apoyo y regularización del espacio de 60 m².
           </div>
         </div>
 
+        <!-- Foto 2 -->
         <div class="construction-card overflow-hidden">
-          <img src="img/proyectos/calicanto-2-detalle-nivelacion.jpg" alt="Detalle de esquina e inglete" class="w-full h-56 object-cover">
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            <strong>2. Encuentro de esquinas:</strong> Plano perfecto a plomo y juntas limpias listas para el sellado epoxi.
+          <div class="relative h-64 overflow-hidden">
+            <img src="img/proyectos/calicanto1.jpg" alt="Colocación con cuñas tensoras en Calicanto" class="w-full h-full object-cover">
+            <span class="photo-tag-badge absolute top-3 left-3 bg-blue-600 text-white">2. CUÑAS Y NIVELACIÓN</span>
+          </div>
+          <div class="p-4 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>Alineación milimétrica:</strong> Doble encolado y cuñas autonivelantes para plano perfecto sin cejas.
           </div>
         </div>
 
+        <!-- Foto 3 -->
         <div class="construction-card overflow-hidden">
-          <img src="img/proyectos/calicanto-4-mueble-oficial.jpg" alt="Mueble montado por oficial en Calicanto" class="w-full h-56 object-cover">
-          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
-            <strong>3. Montaje del mueble:</strong> El maestro supervisando el cajonero suspendido y el espejo en la entrega final.
+          <div class="relative h-64 overflow-hidden">
+            <img src="img/proyectos/calicanto3.jpg" alt="Fontanería multicapa y techos en Calicanto" class="w-full h-full object-cover">
+            <span class="photo-tag-badge absolute top-3 left-3 bg-emerald-600 text-white">3. INSTALACIONES Y TECHOS</span>
+          </div>
+          <div class="p-4 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>Fontanería y falsos techos:</strong> Red multicapa embutida y molduras perimetrales de escayola para fosa de luz.
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CTA Final -->
-    <div class="construction-card p-8 text-center space-y-4 bg-[#eae8df] dark:bg-[#15171d]">
+    <!-- CTA de Contacto -->
+    <div class="construction-card p-8 text-center space-y-4 bg-[#eae8df] dark:bg-[#15171d] rounded-xl">
       <h3 class="text-2xl font-black font-heading text-stone-900 dark:text-white">
-        ¿Quieres reformar el baño de tu casa o chalet?
+        ¿Tienes un baño grande o un chalet que requiere porcelánico de gran formato?
       </h3>
       <p class="text-sm text-stone-700 dark:text-stone-300 max-w-xl mx-auto">
-        Sin intermediarios ni presupuestos hinchados. Habla directamente con nosotros y te orientamos sobre materiales, distribución y costes reales.
+        El gran formato exige oficiales con experiencia, doble encolado y sistemas de tracción para que las piezas queden lisas y fijas para siempre.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-        <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20la%20reforma%20del%20ba%C3%B1o%20de%20Calicanto%20y%20quiero%20pedir%20presupuesto%20para%20mi%20ba%C3%B1o"
+        <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20el%20ba%C3%B1o%20de%2060m2%20de%20Calicanto%20y%20quiero%20hacer%20gran%20formato%20en%20casa"
            target="_blank" rel="noopener noreferrer"
            class="btn-cta-construction">
           Consultar con Fabio por WhatsApp (722 851 328)
@@ -185,26 +241,16 @@
 
   </main>
 
-  <!-- Footer Arquitectónico -->
-  <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
-        <div>
-          <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
-          <span class="text-stone-400 text-[11px] block">Valencia & Área Metropolitana · Tel: 722 851 328</span>
-        </div>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300">
-        <a href="index.html" class="hover:text-amber-500">Inicio</a>
-        <a href="obras.html" class="hover:text-amber-500">Proyectos & Obras</a>
-        <a href="presupuesto.html" class="hover:text-amber-500">Presupuesto</a>
-        <a href="contacto.html" class="hover:text-amber-500">Contacto</a>
-      </div>
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center space-y-3">
+      <p class="font-bold text-stone-300 uppercase tracking-widest text-sm">Maestros de la Construcción</p>
+      <p>Alicatados de Gran Formato, Fontanería Multicapa y Reformas en Calicanto, Torrente, Chiva y Valencia.</p>
+      <p class="text-stone-500 font-mono-tech">Teléfono directo / WhatsApp: 722 851 328 · Valencia, España</p>
     </div>
   </footer>
 
-  <script src="js/ai-assistant.js?v=4.1"></script>
   <script src="js/main.js?v=4.0"></script>
+  <script src="js/ai-assistant.js?v=4.1"></script>
 </body>
 </html>
