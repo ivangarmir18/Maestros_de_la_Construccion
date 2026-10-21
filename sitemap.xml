@@ -60,6 +60,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Acerca de Maestros de la Construcción -->
+  <url>
+    <loc>https://www.maestrosdelaconstruccion.es/acerca-de</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Subpágina SEO: Reforma de Baño en Valencia -->
   <url>
     <loc>https://www.maestrosdelaconstruccion.es/reforma-bano-valencia.html</loc>

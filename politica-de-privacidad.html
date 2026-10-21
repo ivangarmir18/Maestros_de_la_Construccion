@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad | Maestros de la Construcción Valencia</title>
+  <meta name="description" content="Información legal sobre el tratamiento de datos personales y política de privacidad de Maestros de la Construcción conforme al RGPD y LOPD-GDD.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Anti-FOUC Theme Init -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Header Arquitectónica -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-300 dark:border-stone-700 shadow-sm group-hover:scale-105 transition duration-200 flex-shrink-0">
+        <div>
+          <span class="block font-heading font-extrabold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white group-hover:text-amber-600 transition">
+            MAESTROS <span class="text-amber-600 dark:text-amber-500">DE LA CONSTRUCCIÓN</span>
+          </span>
+          <span class="block text-[10px] text-stone-500 dark:text-stone-400 font-mono-tech tracking-wider uppercase">Valencia y Alrededores</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="acerca-de.html" class="nav-link">Acerca de</a>
+        <a href="obras.html" class="nav-link">Obras Reales</a>
+        <a href="presupuesto.html" class="nav-link">Presupuesto</a>
+        <a href="donde-estamos.html" class="nav-link">Dónde Estamos</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
+        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
+          WhatsApp: 722 851 328
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 lg:hidden">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
+        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
+      <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
+      <a href="acerca-de.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Acerca de</a>
+      <a href="obras.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Obras Reales</a>
+      <a href="presupuesto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Simulador de Presupuesto</a>
+      <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
+      <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
+      <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
+      
+      <div class="pt-2">
+        <button class="theme-toggle-btn w-full flex items-center justify-between py-2.5 px-3 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-medium text-xs font-mono-tech border border-stone-300 dark:border-stone-700">
+          <span class="theme-label">MODO OSCURO / CLARO</span>
+          <span class="theme-icon-slot"></span>
+        </button>
+      </div>
+
+      <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
+        WhatsApp: 722 851 328
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-8 space-y-10 flex-1">
+    
+    <div class="border-b border-stone-300 dark:border-stone-800 pb-6 space-y-3">
+      <div class="tech-badge tech-badge-amber">
+        <span>INFORMACIÓN LEGAL</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black font-heading text-stone-900 dark:text-white">
+        Política de Privacidad y Protección de Datos
+      </h1>
+      <p class="text-stone-600 dark:text-stone-400 text-xs sm:text-sm font-mono-tech">
+        Última actualización: Febrero de 2026 · Adaptada al Reglamento General de Protección de Datos (RGPD) y LOPD-GDD.
+      </p>
+    </div>
+
+    <div class="construction-card p-6 sm:p-10 space-y-8 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+      
+      <!-- 1. Responsable -->
+      <section class="space-y-2">
+        <h2 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white font-heading">
+          1. Identidad y Datos del Responsable del Tratamiento
+        </h2>
+        <p>
+          En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPD-GDD), se informa al usuario de que los datos personales facilitados a través de este sitio web (<a href="https://www.maestrosdelaconstruccion.es" class="text-amber-600 underline">maestrosdelaconstruccion.es</a>) o mediante nuestros canales de contacto son tratados por:
+        </p>
+        <div class="p-4 rounded-lg bg-stone-100/70 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 font-mono-tech text-xs space-y-1">
+          <div><strong class="text-stone-900 dark:text-white">Nombre comercial:</strong> Maestros de la Construcción</div>
+          <div><strong class="text-stone-900 dark:text-white">Actividad:</strong> Albañilería, acabados técnicos y reformas integrales de viviendas</div>
+          <div><strong class="text-stone-900 dark:text-white">Ámbito territorial:</strong> Valencia y área metropolitana (Comunidad Valenciana, España)</div>
+          <div><strong class="text-stone-900 dark:text-white">Teléfono / WhatsApp:</strong> +34 722 851 328</div>
+          <div><strong class="text-stone-900 dark:text-white">Correo electrónico:</strong> <a href="mailto:contacto@maestrosdelaconstruccion.es" class="text-amber-600 underline">contacto@maestrosdelaconstruccion.es</a></div>
+        </div>
+      </section>
+
+      <!-- 2. Finalidad -->
+      <section class="space-y-2">
+        <h2 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white font-heading">
+          2. Finalidad del Tratamiento de los Datos
+        </h2>
+        <p>
+          Los datos que nos facilitas voluntariamente mediante formularios, mensajes directos de WhatsApp o correo electrónico son utilizados exclusivamente para:
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5">
+          <li>Gestionar y contestar a tus solicitudes de información, dudas o asesoramiento sobre reformas.</li>
+          <li>Calcular y emitir presupuestos orientativos o cerrados con base en las medidas y necesidades de tu estancia o vivienda.</li>
+          <li>Coordinar las visitas presenciales y mediciones técnicas gratuitas en tu domicilio dentro de Valencia y municipios cercanos.</li>
+          <li>Mantener la comunicación operativa durante la ejecución, seguimiento y entrega de los trabajos contratados.</li>
+        </ul>
+        <p class="text-xs text-stone-500 italic">
+          * Maestros de la Construcción no realiza campañas de spam comercial no solicitado ni vende tus datos a ninguna plataforma publicitaria externa.
+        </p>
+      </section>
+
+      <!-- 3. Legitimación -->
+      <section class="space-y-2">
+        <h2 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white font-heading">
+          3. Base Jurídica y Legitimación
+        </h2>
+        <p>
+          La base legal para el tratamiento de tus datos es el <strong>consentimiento expreso e informado</strong> otorgado al pulsar el botón de envío de nuestros formularios o al comunicarte voluntariamente con nosotros por WhatsApp o correo electrónico, así como la <strong>aplicación de medidas precontractuales o contractuales</strong> para la elaboración del presupuesto de obra.
+        </p>
+      </section>
+
+      <!-- 4. Conservación -->
+      <section class="space-y-2">
+        <h2 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white font-heading">
+          4. Plazo de Conservación de los Datos
+        </h2>
+        <p>
+          Conservaremos tus datos durante el tiempo estrictamente necesario para atender tu solicitud o valorar tu presupuesto. En caso de formalizarse un contrato de obra o prestación de servicios, los datos relativos a facturación y garantías de construcción se conservarán durante los plazos legalmente exigibles por la legislación fiscal y civil española.
+        </p>
+      </section>
+
+      <!-- 5. Cesión de datos -->
+      <section class="space-y-2">
+        <h2 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white font-heading">
+          5. Cesión de Datos a Terceros
+        </h2>
+        <p>
+          Tus datos no serán cedidos a terceros, salvo obligación legal expresa. En los casos en que una reforma integral requiera partidas específicas (por ejemplo, instaladores autorizados de aire acondicionado, carpinteros o técnicos homologados), la comunicación de datos se realizará únicamente bajo tu autorización expresa previa y al exclusivo efecto de coordinar la ejecución en tu vivienda.
+        </p>
+      </section>
+
+      <!-- 6. Derechos del Usuario -->
+      <section class="space-y-2">
+        <h2 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white font-heading">
+          6. Ejercicio de Derechos (ARCO / RGPD)
+        </h2>
+        <p>
+          Como titular de los datos, tienes derecho en cualquier momento a:
+        </p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Acceso:</strong> Conocer qué datos personales tratamos sobre ti.</li>
+          <li><strong>Rectificación:</strong> Solicitar la corrección de datos inexactos o incompletos.</li>
+          <li><strong>Supresión:</strong> Solicitar la eliminación de tus datos cuando ya no sean necesarios para los fines descritos.</li>
+          <li><strong>Limitación y Oposición:</strong> Oponerte al tratamiento o solicitar su limitación en las circunstancias previstas en la ley.</li>
+        </ul>
+        <p>
+          Para ejercer cualquiera de estos derechos, basta con enviar un mensaje de correo electrónico con la referencia <em>"Protección de Datos"</em> a <a href="mailto:contacto@maestrosdelaconstruccion.es" class="text-amber-600 underline font-mono-tech">contacto@maestrosdelaconstruccion.es</a> o un WhatsApp al <strong>722 851 328</strong>.
+        </p>
+      </section>
+
+      <!-- 7. Seguridad -->
+      <section class="space-y-2">
+        <h2 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white font-heading">
+          7. Medidas de Seguridad y Cifrado
+        </h2>
+        <p>
+          Este sitio web opera íntegramente bajo protocolo cifrado seguro <strong>HTTPS (SSL/TLS)</strong>, garantizando que el intercambio de información entre tu dispositivo y el servidor viaje protegido contra accesos indebidos o intercepciones de red.
+        </p>
+      </section>
+
+    </div>
+
+    <div class="text-center pt-4">
+      <a href="index.html" class="btn-secondary-construction inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider py-3 px-6">
+        ← Volver a la Página Principal
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer Arquitectónico & Contacto -->
+  <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
+          <div>
+            <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
+            <span class="text-stone-400 text-[11px] block">Valencia & Área Metropolitana · Tel / WhatsApp: 722 851 328</span>
+            <a href="mailto:contacto@maestrosdelaconstruccion.es" class="text-amber-500 hover:underline text-[11px] block font-mono-tech">contacto@maestrosdelaconstruccion.es</a>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300 font-medium">
+          <a href="index.html" class="hover:text-amber-500 transition">Inicio</a>
+          <a href="acerca-de.html" class="hover:text-amber-500 transition">Acerca de</a>
+          <a href="obras.html" class="hover:text-amber-500 transition">Obras</a>
+          <a href="presupuesto.html" class="hover:text-amber-500 transition">Presupuesto</a>
+          <a href="donde-estamos.html" class="hover:text-amber-500 transition">Dónde Estamos</a>
+          <a href="faq.html" class="hover:text-amber-500 transition">FAQ</a>
+          <a href="contacto.html" class="hover:text-amber-500 transition">Contacto</a>
+          <a href="https://instagram.com/somosmaestrosdelaconstruccion" target="_blank" rel="noopener noreferrer" class="text-amber-500 hover:underline">@somosmaestrosdelaconstruccion</a>
+        </div>
+      </div>
+      <div class="border-t border-stone-800 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-4">
+        <span>© 2026 Maestros de la Construcción. Oficiales y Reformas en Valencia y alrededores.</span>
+        <span><a href="politica-de-privacidad.html" class="hover:text-amber-400 underline transition">Política de Privacidad</a> · Presupuestos sin compromiso</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ai-assistant.js?v=3.2"></script>
+  <script src="js/main.js?v=3.2"></script>
+</body>
+</html>

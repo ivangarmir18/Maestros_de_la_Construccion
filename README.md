@@ -73,11 +73,13 @@
 ```plaintext
 Maestros_de_la_Construccion/
 ├── index.html                             # Página principal (Hero interactivo, especialidades, slider, simulador, footer)
-├── obras.html                             # Galería filtrable de proyectos ejecutados en Valencia
+├── acerca-de.html                         # Presentación del equipo de oficiales, filosofía y método sin intermediarios
+├── obras.html                             # Galería de proyectos y acabados ejecutados en Valencia
 ├── presupuesto.html                       # Simulador técnico detallado con desglose de costes y exportación
 ├── donde-estamos.html                     # Mapa interactivo y comarcas de cobertura en la provincia
 ├── faq.html                               # Preguntas frecuentes con marcado estructurado FAQPage
-├── contacto.html                          # Formulario con validación y enlace directo a WhatsApp
+├── contacto.html                          # Formulario con validación y enlace directo a WhatsApp / Correo
+├── politica-de-privacidad.html            # Información legal conforme a RGPD y LOPD-GDD
 ├── reforma-bano-valencia.html             # Landing temática: Reformas completas de baño
 ├── cambiar-banera-por-ducha-valencia.html # Landing temática: Cambio de bañera a plato de ducha
 ├── alisar-paredes-quitar-gotele-valencia.html # Landing temática: Eliminación de gotelé y pintura sin polvo

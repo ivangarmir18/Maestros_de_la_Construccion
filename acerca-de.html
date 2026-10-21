@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de Nosotros · Maestros de la Construcción Valencia | Trato Directo</title>
+  <meta name="description" content="Conoce a Maestros de la Construcción en Valencia: oficiales de albañilería con más de 15 años de oficio. Directo de oficial a propietario, sin comerciales ni sobrecostes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.maestrosdelaconstruccion.es/acerca-de.html">
+
+  <!-- Anti-FOUC Theme Init -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Header Arquitectónica -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-300 dark:border-stone-700 shadow-sm group-hover:scale-105 transition duration-200 flex-shrink-0">
+        <div>
+          <span class="block font-heading font-extrabold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white group-hover:text-amber-600 transition">
+            MAESTROS <span class="text-amber-600 dark:text-amber-500">DE LA CONSTRUCCIÓN</span>
+          </span>
+          <span class="block text-[10px] text-stone-500 dark:text-stone-400 font-mono-tech tracking-wider uppercase">Valencia y Alrededores</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="acerca-de.html" class="nav-link active">Acerca de</a>
+        <a href="obras.html" class="nav-link">Obras Reales</a>
+        <a href="presupuesto.html" class="nav-link">Presupuesto</a>
+        <a href="donde-estamos.html" class="nav-link">Dónde Estamos</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
+        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
+          WhatsApp: 722 851 328
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 lg:hidden">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
+        </button>
+        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/70 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
+      <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
+      <a href="acerca-de.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-500 border-b border-stone-200 dark:border-stone-800">Acerca de</a>
+      <a href="obras.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Obras Reales</a>
+      <a href="presupuesto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Simulador de Presupuesto</a>
+      <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
+      <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
+      <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
+      
+      <div class="pt-2">
+        <button class="theme-toggle-btn w-full flex items-center justify-between py-2.5 px-3 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-medium text-xs font-mono-tech border border-stone-300 dark:border-stone-700">
+          <span class="theme-label">MODO OSCURO / CLARO</span>
+          <span class="theme-icon-slot"></span>
+        </button>
+      </div>
+
+      <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
+        WhatsApp: 722 851 328
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-8 space-y-14 flex-1">
+    
+    <!-- Hero Acerca de -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="tech-badge tech-badge-amber">
+        <span>OFICIO & VOCACIÓN TÉCNICA</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black font-heading text-stone-900 dark:text-white tracking-tight">
+        Directo de Oficial a Propietario. <br>
+        <span class="text-amber-600 dark:text-amber-500">Sin Comerciales ni Sobrecostes</span>
+      </h1>
+      <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
+        Somos un equipo de oficiales especializados en reformas de baños, pladur, gotelé y albañilería en Valencia con más de 15 años de experiencia a pie de obra.
+      </p>
+    </div>
+
+    <!-- Bloque 1: Origen y Filosofía -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      <div class="construction-card p-6 sm:p-8 flex flex-col justify-between space-y-4">
+        <div class="space-y-3">
+          <span class="tech-badge tech-badge-amber">CÓMO TRABAJAMOS</span>
+          <h2 class="text-xl sm:text-2xl font-bold font-heading text-stone-900 dark:text-white">
+            El problema de las empresas tradicionales
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            Cuando contratas una empresa de reformas convencional, habitualmente pagas el sueldo de comerciales, oficinas céntricas y hasta dos niveles de subcontratación. El resultado son sobrecostes del 30% al 40% y una falta total de control técnico cuando surgen imprevistos en tu casa.
+          </p>
+          <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            En <strong>Maestros de la Construcción</strong> rompimos con ese modelo: hablas, planificas y acuerdas directamente con los oficiales que replantean las cotas, colocan las piezas cerámicas y coordinan la obra en tu domicilio.
+          </p>
+        </div>
+        <div class="pt-2 border-t border-stone-200 dark:border-stone-800 text-xs font-mono-tech text-amber-600 dark:text-amber-400 font-bold">
+          Precios directos de taller · Control técnico real
+        </div>
+      </div>
+
+      <div class="construction-card p-6 sm:p-8 flex flex-col justify-between space-y-4">
+        <div class="space-y-3">
+          <span class="tech-badge tech-badge-amber">NUESTRA ESPECIALIDAD</span>
+          <h2 class="text-xl sm:text-2xl font-bold font-heading text-stone-900 dark:text-white">
+            Precisión milimétrica en cada partida
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            No improvisamos con materiales de saldo. Empleamos sistemas de nivelación por cuñas para azulejos rectificados de gran formato, impermeabilización de duchas con mallas elásticas y resinas antideslizantes C3, y tabiquería de pladur con candilejas para tiras LED perfectamente enrasadas.
+          </p>
+          <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            Y en alisado de paredes, utilizamos lijadoras orbitales con aspiración continua conectada para entregar un acabado liso espejo sin llenar tu vivienda de polvo.
+          </p>
+        </div>
+        <div class="pt-2 border-t border-stone-200 dark:border-stone-800 text-xs font-mono-tech text-amber-600 dark:text-amber-400 font-bold">
+          Acabados de autor · Herramienta y técnica profesional
+        </div>
+      </div>
+    </div>
+
+    <!-- Los 4 Pilares Innegociables -->
+    <div class="space-y-6">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-bold font-heading text-stone-900 dark:text-white">
+          Nuestros 4 Compromisos Innegociables
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
+          La tranquilidad de saber que tu reforma está en manos de artesanos serios.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="construction-card p-6 space-y-3 text-center">
+          <div class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 font-black font-mono-tech flex items-center justify-center mx-auto text-sm border border-amber-600/20">
+            01
+          </div>
+          <h3 class="font-bold text-sm text-stone-900 dark:text-white">Presupuesto Cerrado</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Medimos en tu vivienda antes de presupuestar. Lo acordado por escrito es exactamente lo que pagarás, sin sorpresas a mitad de obra.
+          </p>
+        </div>
+
+        <div class="construction-card p-6 space-y-3 text-center">
+          <div class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 font-black font-mono-tech flex items-center justify-center mx-auto text-sm border border-amber-600/20">
+            02
+          </div>
+          <h3 class="font-bold text-sm text-stone-900 dark:text-white">Plazos Garantizados</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Un baño se ejecuta en 7-10 días; un cambio de bañera en 48-72h. Cuadrillas continuadas sin parones ni ausencias inexplicables.
+          </p>
+        </div>
+
+        <div class="construction-card p-6 space-y-3 text-center">
+          <div class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 font-black font-mono-tech flex items-center justify-center mx-auto text-sm border border-amber-600/20">
+            03
+          </div>
+          <h3 class="font-bold text-sm text-stone-900 dark:text-white">Obra Limpia y Respeto</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Protegemos ascensores, escaleras comunitarias y suelos de paso. Retirada de escombros diaria a punto limpio homologado.
+          </p>
+        </div>
+
+        <div class="construction-card p-6 space-y-3 text-center">
+          <div class="w-10 h-10 rounded-lg bg-amber-600/10 text-amber-600 font-black font-mono-tech flex items-center justify-center mx-auto text-sm border border-amber-600/20">
+            04
+          </div>
+          <h3 class="font-bold text-sm text-stone-900 dark:text-white">Coordinación Total</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Si necesitas aire acondicionado, carpintería o electricidad, agrupamos a instaladores homologados en un único presupuesto responsable.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="construction-card p-8 sm:p-10 text-center space-y-6 max-w-3xl mx-auto bg-gradient-to-b from-stone-100/80 to-transparent dark:from-stone-900/60 dark:to-transparent">
+      <div class="space-y-2">
+        <h3 class="text-xl sm:text-2xl font-bold font-heading text-stone-900 dark:text-white">
+          ¿Hablamos de tu proyecto en Valencia?
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 max-w-xl mx-auto">
+          Nos desplazamos a tu domicilio en Valencia, Torrent, Paterna, Burjassot, Bétera o Sagunto para tomar medidas y ofrecerte una valoración técnica gratuita.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto btn-cta-construction py-3.5 px-8 font-extrabold text-xs uppercase tracking-wider text-center">
+          Escribir por WhatsApp: 722 851 328
+        </a>
+        <a href="obras.html" class="w-full sm:w-auto btn-secondary-construction py-3.5 px-6 font-bold text-xs uppercase tracking-wider text-center">
+          Ver Trabajos Reales
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Arquitectónico & Contacto -->
+  <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
+          <div>
+            <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
+            <span class="text-stone-400 text-[11px] block">Valencia & Área Metropolitana · Tel / WhatsApp: 722 851 328</span>
+            <a href="mailto:contacto@maestrosdelaconstruccion.es" class="text-amber-500 hover:underline text-[11px] block font-mono-tech">contacto@maestrosdelaconstruccion.es</a>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300 font-medium">
+          <a href="index.html" class="hover:text-amber-500 transition">Inicio</a>
+          <a href="acerca-de.html" class="hover:text-amber-500 transition text-amber-500 font-bold">Acerca de</a>
+          <a href="obras.html" class="hover:text-amber-500 transition">Obras</a>
+          <a href="presupuesto.html" class="hover:text-amber-500 transition">Presupuesto</a>
+          <a href="donde-estamos.html" class="hover:text-amber-500 transition">Dónde Estamos</a>
+          <a href="faq.html" class="hover:text-amber-500 transition">FAQ</a>
+          <a href="contacto.html" class="hover:text-amber-500 transition">Contacto</a>
+          <a href="https://instagram.com/somosmaestrosdelaconstruccion" target="_blank" rel="noopener noreferrer" class="text-amber-500 hover:underline">@somosmaestrosdelaconstruccion</a>
+        </div>
+      </div>
+      <div class="border-t border-stone-800 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-4">
+        <span>© 2026 Maestros de la Construcción. Oficiales y Reformas en Valencia y alrededores.</span>
+        <span><a href="politica-de-privacidad.html" class="hover:text-amber-400 underline transition">Política de Privacidad</a> · Presupuestos sin compromiso</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ai-assistant.js?v=3.2"></script>
+  <script src="js/main.js?v=3.2"></script>
+</body>
+</html>
