@@ -138,6 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. Contador & Analítica de Clics a WhatsApp
   initWhatsAppClickTracker();
+
+  // 9. Filtros de Proyectos Documentados
+  initProjectDossiersFilter();
+
+  // 10. Lightbox Modal de Obras Reales
+  initProjectLightbox();
 });
 
 // GESTIÓN Y SEGUIMIENTO DE CLICS A WHATSAPP
@@ -382,4 +388,124 @@ function initBeforeAfterSlider() {
     if (isDown) move(e);
   }, { passive: true });
 }
+
+// 9. FILTRO DE PROYECTOS Y OBRAS DOCUMENTADAS
+function initProjectDossiersFilter() {
+  const filterBtns = document.querySelectorAll('.project-filter-btn');
+  const projectCards = document.querySelectorAll('.project-dossier-card');
+
+  if (filterBtns.length === 0 || projectCards.length === 0) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-amber-600', 'text-white', 'font-bold', 'border-amber-700', 'shadow-sm');
+        b.classList.add('bg-stone-200/80', 'dark:bg-stone-800', 'text-stone-700', 'dark:text-stone-300', 'border-stone-300', 'dark:border-stone-700');
+      });
+      btn.classList.add('bg-amber-600', 'text-white', 'font-bold', 'border-amber-700', 'shadow-sm');
+      btn.classList.remove('bg-stone-200/80', 'dark:bg-stone-800', 'text-stone-700', 'dark:text-stone-300', 'border-stone-300', 'dark:border-stone-700');
+
+      projectCards.forEach(card => {
+        const projectKey = card.getAttribute('data-project');
+        if (target === 'all' || projectKey === target) {
+          card.classList.remove('hidden');
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 30);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.97)';
+          setTimeout(() => {
+            card.classList.add('hidden');
+          }, 180);
+        }
+      });
+    });
+  });
+
+  // Activar botón 'all' por defecto
+  const allBtn = document.querySelector('.project-filter-btn[data-target="all"]');
+  if (allBtn) {
+    allBtn.classList.add('bg-amber-600', 'text-white', 'font-bold', 'border-amber-700', 'shadow-sm');
+  }
+}
+
+// 10. LIGHTBOX MODAL PARA FOTOGRAFÍAS DE OBRAS REALES
+function initProjectLightbox() {
+  const lightbox = document.getElementById('project-lightbox');
+  if (!lightbox) return;
+
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const closeBtn = document.getElementById('lightbox-close-btn');
+  const prevBtn = document.getElementById('lightbox-prev-btn');
+  const nextBtn = document.getElementById('lightbox-next-btn');
+
+  let currentPhotos = [];
+  let currentIndex = 0;
+
+  function collectPhotos() {
+    return Array.from(document.querySelectorAll('.project-photo-thumb'));
+  }
+
+  function showPhoto(index) {
+    if (currentPhotos.length === 0) return;
+    if (index < 0) index = currentPhotos.length - 1;
+    if (index >= currentPhotos.length) index = 0;
+    currentIndex = index;
+
+    const thumb = currentPhotos[currentIndex];
+    if (!thumb) return;
+
+    const fullSrc = thumb.getAttribute('data-full');
+    const caption = thumb.getAttribute('data-caption') || thumb.querySelector('img')?.alt || '';
+
+    lightboxImg.src = fullSrc;
+    lightboxImg.alt = caption;
+    lightboxCaption.textContent = caption;
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentIndex + 1} / ${currentPhotos.length}`;
+    }
+  }
+
+  function openLightbox(thumb) {
+    currentPhotos = collectPhotos();
+    const index = currentPhotos.indexOf(thumb);
+    showPhoto(index !== -1 ? index : 0);
+    lightbox.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.project-photo-thumb').forEach(thumb => {
+    thumb.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLightbox(thumb);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', () => showPhoto(currentIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => showPhoto(currentIndex + 1));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+    if (e.key === 'ArrowRight') showPhoto(currentIndex + 1);
+  });
+}
+
 

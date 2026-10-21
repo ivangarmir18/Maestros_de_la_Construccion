@@ -3,91 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obras y Proyectos Reales | Maestros de la Construcción Valencia</title>
-  <meta name="description" content="Galería de proyectos reales ejecutados en Valencia. Baños porcelánicos, tabiquería de pladur, frentes con luz indirecta, suelos nivelados y reformas.">
-  <meta name="robots" content="index, follow">
+  <title>Proyectos y Obras Reales en Valencia | Maestros de la Construcción</title>
+  <meta name="description" content="Casos reales documentados de reformas en Valencia, Alginet, Calicanto, Sagunto, Benetússer, Faura y Torrent. Fotografías de demolición, solados con puente de unión y pladur técnico.">
+  <meta name="keywords" content="obras reales valencia, reformas documentadas, alicatado con cunas alginet, reforma bano calicanto, pladur faura, pergola torrent, cambio banera benetusser">
+  <link rel="canonical" href="https://www.maestrosdelaconstruccion.es/obras.html">
 
-  <script>
-    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class'
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            amber: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' },
+            stone: { 850: '#1f1d1a', 900: '#1c1917', 950: '#0c0a09' }
+          }
+        }
+      }
     }
   </script>
-  <link rel="stylesheet" href="css/styles.css?v=4.0">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-</head>
-<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
 
-  <!-- Header Arquitectónica -->
-  <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Chivo+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=4.1">
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+</head>
+<body class="bg-[#f2eee3] text-stone-800 dark:bg-[#111317] dark:text-stone-200 antialiased selection:bg-amber-500 selection:text-white transition-colors duration-200">
+
+  <!-- Navegación Arquitectónica -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#f2eee3]/95 dark:bg-[#111317]/95 backdrop-blur-md border-b border-stone-300/80 dark:border-stone-800 transition-colors duration-200" id="main-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3 group">
-        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-300 dark:border-stone-700 shadow-sm group-hover:scale-105 transition duration-200 flex-shrink-0">
-        <div>
-          <span class="block font-heading font-extrabold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white group-hover:text-amber-600 transition">
-            MAESTROS <span class="text-amber-600 dark:text-amber-500">DE LA CONSTRUCCIÓN</span>
+        <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-300 dark:border-stone-700 shadow-sm group-hover:border-amber-500 transition flex-shrink-0">
+        <div class="flex flex-col">
+          <span class="font-extrabold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white uppercase leading-none font-heading whitespace-nowrap">
+            MAESTROS DE LA CONSTRUCCIÓN
           </span>
-          <span class="block text-[10px] text-stone-500 dark:text-stone-400 font-mono-tech tracking-wider uppercase">Valencia y Alrededores</span>
+          <span class="text-[11px] font-mono-tech text-amber-600 dark:text-amber-500 tracking-wider uppercase mt-1 whitespace-nowrap">
+            OFICIALES & REFORMAS · VALENCIA
+          </span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="obras.html" class="nav-link active">Obras Reales</a>
-        <a href="presupuesto.html" class="nav-link">Presupuesto</a>
-        <a href="donde-estamos.html" class="nav-link">Dónde Estamos</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-        <a href="contacto.html" class="nav-link">Contacto</a>
+      <!-- Menú Escritorio -->
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-mono-tech uppercase tracking-wider text-stone-700 dark:text-stone-300 font-semibold">
+        <a href="index.html" class="nav-link whitespace-nowrap">Inicio</a>
+        <a href="obras.html" class="nav-link text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-500 pb-1 whitespace-nowrap">Proyectos & Obras</a>
+        <a href="presupuesto.html" class="nav-link whitespace-nowrap">Simulador Costes</a>
+        <a href="donde-estamos.html" class="nav-link whitespace-nowrap">Dónde Estamos</a>
+        <a href="faq.html" class="nav-link whitespace-nowrap">Preguntas Frecuentes</a>
+        <a href="contacto.html" class="nav-link whitespace-nowrap">Contacto</a>
       </nav>
 
-      <!-- Botones de Acción Escritorio (lg+) -->
+      <!-- Botón Modo Oscuro / Claro y WhatsApp -->
       <div class="hidden lg:flex items-center gap-3">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema">
-          <!-- Icono SVG inyectado por JS -->
+        <button class="theme-toggle-btn p-2 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-300 dark:border-stone-700 hover:text-amber-500 transition" aria-label="Cambiar tema">
+          <span class="theme-icon-slot"></span>
         </button>
-        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
+        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider whitespace-nowrap">
           WhatsApp: 722 851 328
         </a>
       </div>
 
-      <!-- Botones Móvil y Tablet (< lg) -->
+      <!-- Botón Menú Móvil -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema">
-          <!-- Icono SVG inyectado por JS -->
+        <button class="theme-toggle-btn p-2 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-300 dark:border-stone-700 hover:text-amber-500 transition" aria-label="Cambiar tema">
+          <span class="theme-icon-slot"></span>
         </button>
-        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button id="mobile-menu-btn" class="p-2 rounded-md text-stone-800 dark:text-white hover:text-amber-500" aria-label="Abrir menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
         </button>
       </div>
     </div>
 
-    <!-- Menú Desplegable Móvil -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-stone-300 dark:border-stone-800 bg-[#f2eee3] dark:bg-[#111317] px-6 py-6 space-y-3 font-mono-tech uppercase text-xs">
       <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
-      <a href="obras.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-500 border-b border-stone-200 dark:border-stone-800">Obras Reales</a>
-      <a href="presupuesto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Simulador de Presupuesto</a>
+      <a href="obras.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-400 border-b border-stone-200 dark:border-stone-800">Proyectos & Obras</a>
+      <a href="presupuesto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Simulador de Costes</a>
       <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
       <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
       <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
       
-      <!-- Fila de alternancia de tema en menú móvil -->
-      <div class="pt-2">
-        <button class="theme-toggle-btn w-full flex items-center justify-between py-2.5 px-3 rounded-md bg-stone-200/80 dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-medium text-xs font-mono-tech border border-stone-300 dark:border-stone-700">
-          <span class="theme-label">MODO OSCURO / CLARO</span>
-          <span class="theme-icon-slot"></span>
-        </button>
-      </div>
-
       <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
         WhatsApp: 722 851 328
       </a>
@@ -97,164 +97,667 @@
   <!-- Main Content -->
   <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
     
+    <!-- Hero Cabecera -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
       <div class="tech-badge tech-badge-amber">
-        <span>PORTFOLIO FOTOGRÁFICO DE OBRAS REALES</span>
+        <span>CASOS REALES DOCUMENTADOS PASO A PASO</span>
       </div>
       <h1 class="text-3xl sm:text-5xl font-black font-heading text-stone-900 dark:text-white">
         Proyectos y Obras <span class="text-amber-600 dark:text-amber-500">en Valencia</span>
       </h1>
-      <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base">
-        Imágenes auténticas tomadas directamente en nuestras obras: colocación milimétrica con cuñas autonivelantes, pladur técnico, fontanería vista y remates limpios.
+      <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
+        Cada reforma tiene una historia técnica detrás. Documentamos cada intervención con fotografías reales del proceso: desde la demolición y el saneamiento de patologías de humedad, hasta la colocación milimétrica con cuñas autonivelantes y la entrega de obra limpia.
       </p>
     </div>
 
-    <!-- Grid de Proyectos Estructurado: 12 OBRAS (4 FILAS DE 3 EXACTAS, CERO HUECOS SUELTOS) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- Obra 1: Ducha de lujo terminada -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="banos">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0020.jpg" alt="Ducha de mármol con grifería negra" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Baño de Autor</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Ducha de Gran Formato con Vetas de Mármol</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Plato de resina a ras de suelo con desagüe lineal oculto, grifería empotrada en negro mate y porcelánico rectificado.</p>
-        </div>
-      </div>
+    <!-- Barra de Filtro / Selector de Proyectos -->
+    <div class="flex flex-wrap items-center justify-center gap-2 pt-2 pb-4">
+      <button class="project-filter-btn active-filter px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="all">
+        Todos los Proyectos (7)
+      </button>
+      <button class="project-filter-btn px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="alginet">
+        Alginet (Finca Centenaria)
+      </button>
+      <button class="project-filter-btn px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="calicanto">
+        Calicanto (Gran Baño 60 m²)
+      </button>
+      <button class="project-filter-btn px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="sagunto">
+        Sagunto & Canet (Baño & Terrazo)
+      </button>
+      <button class="project-filter-btn px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="benetusser">
+        Benetússer (Ducha 48h)
+      </button>
+      <button class="project-filter-btn px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="faura">
+        Faura (Pladur Asistido)
+      </button>
+      <button class="project-filter-btn px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="torrent">
+        Torrent (Pérgola Metálica)
+      </button>
+      <button class="project-filter-btn px-4 py-2 rounded-md text-xs font-mono-tech border transition" data-target="pladur-comercial">
+        Pladur Comercial & Muebles
+      </button>
+    </div>
 
-      <!-- Obra 2: Pladur y Arcos -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="pladur">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0024.jpg" alt="Estructura de pladur con aperturas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Pladur Técnico</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Tabiquería y Pasos de Luz en Pladur</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Montaje de tabiquería con perfilería galvanizada reforzada y huecos arquitectónicos para cristaleras interiores.</p>
-        </div>
-      </div>
+    <!-- GRID DE PROYECTOS DOCUMENTADOS (DE 2 EN 2, CON AUTORIDAD Y PROFUNDIDAD TÉCNICA) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="projects-container">
 
-      <!-- Obra 3: Alicatado técnico con cuñas -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="suelos">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0027.jpg" alt="Colocación con cuñas autonivelantes" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Alicatado de Precisión</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Alicatado con Cuñas Autonivelantes</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Proceso de nivelación milimétrica para evitar cejas y garantizar planos 100% lisos en paredes porcelánicas.</p>
-        </div>
-      </div>
+      <!-- PROYECTO 1: ALGINET -->
+      <article class="project-dossier-card construction-card overflow-hidden flex flex-col justify-between" data-project="alginet">
+        <div class="p-6 sm:p-8 space-y-6">
+          
+          <!-- Encabezado Ficha -->
+          <div class="space-y-3 border-b border-stone-200 dark:border-stone-800 pb-5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="tech-badge tech-badge-amber">Alginet · Ribera Alta</span>
+              <span class="text-xs font-mono-tech text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">OBRA ENTREGADA LIMPIA</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+              Rehabilitación Integral de Finca Centenaria: Baño, Ventanas y Pavimento sobre Puente de Unión
+            </h2>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono-tech text-stone-500">
+              <span>Superficie: 4 habs + salón + baño</span>
+              <span>·</span>
+              <span>Trato Directo Oficial</span>
+            </div>
+          </div>
 
-      <!-- Obra 4: Pérgola exterior -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="exterior">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0035.jpg" alt="Estructura exterior en chalet" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Exterior & Chalets</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Pérgola Metálica & Cerramiento Exterior</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Estructura para porche exterior en vivienda unifamiliar, anclada sobre solera de hormigón reforzado.</p>
-        </div>
-      </div>
+          <!-- Micro-Galería Cronológica (Fotos compactas clicables) -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono-tech text-stone-500">
+              <span class="uppercase font-bold tracking-wider">Secuencia de Obra (Haz clic para ampliar)</span>
+              <span>7 fotos documentadas</span>
+            </div>
+            <div class="grid grid-cols-4 sm:grid-cols-4 gap-2">
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/alginet-1-demolicion-bano.jpg"
+                   data-caption="Alginet: Demolición de baño rústico con azulejos caídos por humedad centenaria.">
+                <img src="img/proyectos/alginet-1-demolicion-bano.jpg" alt="Alginet - Demolición Baño" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">1. Demol.</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/alginet-2-picado-impermeabilizacion.jpg"
+                   data-caption="Alginet: Picado completo hasta fábrica de ladrillo y suelo para saneamiento hidrófugo.">
+                <img src="img/proyectos/alginet-2-picado-impermeabilizacion.jpg" alt="Alginet - Picado y saneado" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">2. Picado</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/alginet-4-solado-cunas.jpg"
+                   data-caption="Alginet: Ejecución del nuevo pavimento con cuñas autonivelantes y regla sobre el suelo tratado.">
+                <img src="img/proyectos/alginet-4-solado-cunas.jpg" alt="Alginet - Solado con cuñas" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">3. Cuñas</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/alginet-6-habitacion-despues.jpg"
+                   data-caption="Alginet: Habitación terminada con suelo porcelánico brillante, ventana Climalit y pintura blanca.">
+                <img src="img/proyectos/alginet-6-habitacion-despues.jpg" alt="Alginet - Dormitorio Terminado" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-amber-600 text-[9px] text-white px-1 rounded font-mono-tech">4. Final</span>
+              </div>
+            </div>
+            
+            <!-- Comparativa Antes / Después en Miniatura -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative rounded overflow-hidden group cursor-pointer border border-stone-300 dark:border-stone-700 h-28 project-photo-thumb"
+                   data-full="img/proyectos/alginet-5-habitacion-antes.jpg"
+                   data-caption="Alginet - Estado Inicial (ANTES): Marcas de humedad por capilaridad en zócalos, ventana desajustada y suelo antiguo desgastado.">
+                <img src="img/proyectos/alginet-5-habitacion-antes.jpg" alt="Alginet Habitación Antes" class="w-full h-full object-cover group-hover:scale-105 transition">
+                <span class="absolute top-2 left-2 bg-red-600/90 text-white text-[10px] px-2 py-0.5 rounded font-mono-tech uppercase font-bold">ANTES</span>
+              </div>
+              <div class="relative rounded overflow-hidden group cursor-pointer border border-stone-300 dark:border-stone-700 h-28 project-photo-thumb"
+                   data-full="img/proyectos/alginet-6-habitacion-despues.jpg"
+                   data-caption="Alginet - Resultado (DESPUÉS): Mismo dormitorio con pavimento nuevo porcelánico rectificado, carpintería Climalit y pintura lavable.">
+                <img src="img/proyectos/alginet-6-habitacion-despues.jpg" alt="Alginet Habitación Después" class="w-full h-full object-cover group-hover:scale-105 transition">
+                <span class="absolute top-2 left-2 bg-emerald-600/90 text-white text-[10px] px-2 py-0.5 rounded font-mono-tech uppercase font-bold">DESPUÉS</span>
+              </div>
+            </div>
+          </div>
 
-      <!-- Obra 5: Cambio de bañera por plato de ducha -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="banos">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0042.jpg" alt="Plato de ducha extraplano instalado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Cambio de Bañera</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Sustitución de Bañera por Ducha en 48h</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Plato de resina antideslizante con textura de pizarra, alicatado coordinado y grifería monomando termostática.</p>
-        </div>
-      </div>
+          <!-- Documentación Técnica (4 Párrafos Narrativos Auténticos) -->
+          <div class="space-y-3.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <p>
+              <strong>1. Diagnóstico y Patologías Iniciales:</strong> Intervención integral en una vivienda rústica de más de 100 años en Alginet, adquirida recientemente y desocupada durante muchos años. El inmueble acusaba severas patologías por humedad de capilaridad que habían provocado el ahuecamiento y desprendimiento generalizado del chapado en el cuarto de baño, así como deterioro en la base de todos los muros perimetrales.
+            </p>
+            <p>
+              <strong>2. Demolición Quirúrgica y Saneamiento:</strong> Se llevó a cabo el picado completo y desescombro del baño hasta dejar al descubierto la fábrica estructural de bloque y forjado. Se sanearon los paramentos con mortero hidrófugo, se renovaron bajantes y tomas de agua, y se abrió un hueco para instalar una nueva ventana de aluminio Climalit junto a la ducha, asegurando ventilación natural y estanqueidad.
+            </p>
+            <p>
+              <strong>3. Solado sobre Puente de Unión (Ahorro de Costes):</strong> Para optimizar el presupuesto del cliente en las cuatro habitaciones y el salón-comedor, se evitó la costosa demolición de la solera original. En su lugar, se realizó un procedimiento técnico de rayado mecánico de las baldosas antiguas, seguido de una imprimación de resina polimérica de puente de unión de alta adherencia. Sobre este lecho se colocó el nuevo pavimento cerámico regleado milimétricamente con calzos autonivelantes.
+            </p>
+            <p>
+              <strong>4. Entrega de Obra Limpia:</strong> Se completó la sustitución de carpinterías exteriores por ventanas abatibles con persianas de aluminio y rejas de seguridad, pintado integral en blanco transpirable lavable y puesta a punto de los sanitarios, entregando la vivienda completamente aspirada y lista para su uso inmediato.
+            </p>
+          </div>
 
-      <!-- Obra 6: Solera y nivelación de suelo -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="suelos">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0055.jpg" alt="Nivelación de solera con regla" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Albañilería de Base</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Nivelación y Recrecido de Soleras</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Regleado milimétrico con nivel de burbuja para garantizar que el suelo posterior asiente con máxima estabilidad.</p>
-        </div>
-      </div>
+          <!-- Ficha de Especificaciones Técnicas -->
+          <div class="bg-stone-200/60 dark:bg-stone-850 p-4 rounded-lg space-y-2 text-xs font-mono-tech border border-stone-300/80 dark:border-stone-800">
+            <div class="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Especificaciones del Proyecto:</div>
+            <ul class="space-y-1 text-stone-600 dark:text-stone-400">
+              <li><strong class="text-stone-800 dark:text-stone-200">· Partidas:</strong> Demolición, puente de unión, solado con cuñas, ventanas Climalit, pintura y baño completo.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Nivelación:</strong> Cuñas autonivelantes de 2 mm y regla maestra con nivel óptico.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Ubicación:</strong> Alginet (Valencia) · Trato directo de taller sin intermediarios.</li>
+            </ul>
+          </div>
 
-      <!-- Obra 7: Suelo pulido alto brillo -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="suelos">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0066.jpg" alt="Suelo porcelánico alto brillo" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Pavimentos</span>
         </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Pavimento Continuo Porcelánico Brillante</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Suelo continuo de gran formato con acabado espejo y rodapié empotrado lacado.</p>
-        </div>
-      </div>
 
-      <!-- Obra 8: Salón con fosa LED -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="pladur">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/obra-salon-led.jpg" alt="Salón con luz indirecta LED" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Diseño LED</span>
+        <!-- Footer Acción Directa -->
+        <div class="p-6 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-mono-tech text-stone-500">¿Reforma similar en tu casa?</span>
+          <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20el%20proyecto%20de%20Alginet%20en%20vuestra%20web%20y%20me%20gustar%C3%ADa%20consultar%20una%20reforma%20similar"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-cta-construction text-xs py-2 px-4 whitespace-nowrap">
+            Consultar por WhatsApp
+          </a>
         </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Frente de Salón & Fosa LED Perimetral</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Estructura en pladur para televisión, fosa de luz ambiental regulable y hornacinas decorativas iluminadas.</p>
-        </div>
-      </div>
+      </article>
 
-      <!-- Obra 9: Baño con piedra y hornacina -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="banos">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/obra-bano-piedra.jpg" alt="Baño con acabados de piedra y hornacina iluminada" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Baño & Hornacina</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Alicatado de Textura Piedra y Hornacina</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Reforma de aseo con revestimiento porcelánico tipo pizarra natural, hornacina de ducha a medida e iluminación cálida.</p>
-        </div>
-      </div>
+      <!-- PROYECTO 2: CALICANTO -->
+      <article class="project-dossier-card construction-card overflow-hidden flex flex-col justify-between" data-project="calicanto">
+        <div class="p-6 sm:p-8 space-y-6">
+          
+          <!-- Encabezado Ficha -->
+          <div class="space-y-3 border-b border-stone-200 dark:border-stone-800 pb-5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="tech-badge tech-badge-amber">Calicanto · Chiva / Torrent</span>
+              <span class="text-xs font-mono-tech text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">OBRA ENTREGADA LIMPIA</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+              Gran Reforma Integral de Baño de 60 m²: Porcelánico Rectificado, Fontanería Empotrada y Cielo Raso
+            </h2>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono-tech text-stone-500">
+              <span>Superficie: 60 m² de estancia</span>
+              <span>·</span>
+              <span>Gran Formato & Cuñas</span>
+            </div>
+          </div>
 
-      <!-- Obra 10: Falsos Techos y Fosas de Luz en Pladur -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="pladur">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/obra-pladur.jpg" alt="Instalación de techos suspendidos y fosa de luz en pladur" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Techo & Fosa LED</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Falsos Techos Suspendidos y Fosas de Luz</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Estructura suspendida de pladur con candileja perimetral para faja de iluminación LED indirecta continua y aislamiento.</p>
-        </div>
-      </div>
+          <!-- Micro-Galería Cronológica -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono-tech text-stone-500">
+              <span class="uppercase font-bold tracking-wider">Secuencia de Obra (Haz clic para ampliar)</span>
+              <span>4 fotos documentadas</span>
+            </div>
+            <div class="grid grid-cols-4 sm:grid-cols-4 gap-2">
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/calicanto-1-alicatado-cunas.jpg"
+                   data-caption="Calicanto: Alicatado porcelánico de gran formato aplomado con cuñas autonivelantes y tomas de fontanería.">
+                <img src="img/proyectos/calicanto-1-alicatado-cunas.jpg" alt="Calicanto - Alicatado Gran Formato" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">1. Cuñas</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/calicanto-2-detalle-nivelacion.jpg"
+                   data-caption="Calicanto: Detalle técnico en esquina a inglete sin resaltes ni cejas, planeidad milimétrica.">
+                <img src="img/proyectos/calicanto-2-detalle-nivelacion.jpg" alt="Calicanto - Detalle Nivelación" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">2. Detalle</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/calicanto-3-sanitarios-bano.jpg"
+                   data-caption="Calicanto: Montaje de sanitarios vitrificados (inodoro y bidet), plato extraplano y mueble suspendido.">
+                <img src="img/proyectos/calicanto-3-sanitarios-bano.jpg" alt="Calicanto - Sanitarios" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">3. Sanitarios</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/calicanto-4-mueble-oficial.jpg"
+                   data-caption="Calicanto: El maestro oficial supervisa la entrega del mueble de tres gavetas y espejo con lavabo integrado.">
+                <img src="img/proyectos/calicanto-4-mueble-oficial.jpg" alt="Calicanto - Mueble Oficial" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-amber-600 text-[9px] text-white px-1 rounded font-mono-tech">4. Oficial</span>
+              </div>
+            </div>
+          </div>
 
-      <!-- Obra 11: Albañilería de ladrillo cara vista -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="exterior">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0057.jpg" alt="Muro estructural de ladrillo y mortero" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Albañilería Tradicional</span>
-        </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Tabiquería de Ladrillo & Cerramiento Estructural</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Ejecución de muros y particiones con mortero de cemento y ladrillo cerámico, plomadas de precisión y enrase técnico.</p>
-        </div>
-      </div>
+          <!-- Documentación Técnica (4 Párrafos Narrativos) -->
+          <div class="space-y-3.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <p>
+              <strong>1. Envergadura del Proyecto:</strong> Reforma integral en una residencia unifamiliar de la urbanización Calicanto, con un cuarto de baño de 60 metros cuadrados que requería una redistribución arquitectónica completa para maximizar confort, amplitud e iluminación natural.
+            </p>
+            <p>
+              <strong>2. Fontanería Multicapa y Desagües Ocultos:</strong> Se renovó la totalidad de la red de fontanería empotrada, instalando conducciones de polietileno reticulado multicapa con aislamiento anticondensación. Se replantearon las caídas de desagüe para dar servicio simultáneo e independiente al inodoro, bidet, lavabo suspendido y plato de ducha de gran formato.
+            </p>
+            <p>
+              <strong>3. Alicatado Porcelánico con Calzos Milimétricos:</strong> Toda la superficie de paredes y suelo fue revestida con piezas cerámicas rectificadas de gran tamaño. Cada unión fue fijada con cuñas autonivelantes y crucetas de precisión milimétrica, eliminando cualquier resalte y logrando un aplomado perfecto tanto en esquinas como en frentes rectos.
+            </p>
+            <p>
+              <strong>4. Cielo Raso Técnico y Equipamiento:</strong> Se construyó un falso techo continuo de pladur hidrófugo con canalizaciones eléctricas y de extracción ocultas. El maestro completó el ensamblaje de los sanitarios, grifería monomando cromada y mueble cajonero suspendido con lavabo encastrado y espejo, entregando la estancia lista para disfrutar.
+            </p>
+          </div>
 
-      <!-- Obra 12: Solado exterior para porche -->
-      <div class="gallery-item construction-card overflow-hidden group" data-category="exterior">
-        <div class="h-64 sm:h-72 overflow-hidden relative">
-          <img src="img/IMG-20261015-WA0053.jpg" alt="Pavimento exterior antideslizante para terraza" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-          <span class="photo-tag-badge absolute top-3 left-3">Porche & Terrazas</span>
+          <!-- Especificaciones Técnicas -->
+          <div class="bg-stone-200/60 dark:bg-stone-850 p-4 rounded-lg space-y-2 text-xs font-mono-tech border border-stone-300/80 dark:border-stone-800">
+            <div class="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Especificaciones del Proyecto:</div>
+            <ul class="space-y-1 text-stone-600 dark:text-stone-400">
+              <li><strong class="text-stone-800 dark:text-stone-200">· Partidas:</strong> Demolición, fontanería multicapa, porcelánico gran formato, cielo raso pladur, sanitarios.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Acabado:</strong> Juntas selladas con mortero epoxi antihumedad y cuñas de nivelación continua.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Ubicación:</strong> Calicanto (Valencia) · Reporte diario fotográfico al propietario.</li>
+            </ul>
+          </div>
+
         </div>
-        <div class="p-5">
-          <h3 class="font-bold text-stone-900 dark:text-white text-base">Pavimento Antideslizante C3 para Exteriores</h3>
-          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">Solado porcelánico de alta resistencia a intemperie con pendientes hacia sumideros lineales y junta de dilatación perimetral.</p>
+
+        <!-- Footer Acción Directa -->
+        <div class="p-6 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-mono-tech text-stone-500">¿Tienes un baño grande que reformar?</span>
+          <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20la%20reforma%20de%20ba%C3%B1o%20de%20Calicanto%20en%20vuestra%20web%20y%20quiero%20pedir%20presupuesto"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-cta-construction text-xs py-2 px-4 whitespace-nowrap">
+            Consultar por WhatsApp
+          </a>
         </div>
-      </div>
+      </article>
+
+      <!-- PROYECTO 3: SAGUNTO & CANET -->
+      <article class="project-dossier-card construction-card overflow-hidden flex flex-col justify-between" data-project="sagunto">
+        <div class="p-6 sm:p-8 space-y-6">
+          
+          <!-- Encabezado Ficha -->
+          <div class="space-y-3 border-b border-stone-200 dark:border-stone-800 pb-5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="tech-badge tech-badge-amber">Sagunto & Canet d'En Berenguer</span>
+              <span class="text-xs font-mono-tech text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">OBRA ENTREGADA LIMPIA</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+              Modernización de Baño Respetando Terrazo Original & Remate de Obra Inacabada
+            </h2>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono-tech text-stone-500">
+              <span>Camp de Morvedre</span>
+              <span>·</span>
+              <span>Ducha a Nivel & Molduras</span>
+            </div>
+          </div>
+
+          <!-- Micro-Galería Cronológica -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono-tech text-stone-500">
+              <span class="uppercase font-bold tracking-wider">Secuencia de Obra (Haz clic para ampliar)</span>
+              <span>2 fotos documentadas</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="aspect-video rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/sagunto-1-ducha-terrazo.jpg"
+                   data-caption="Canet d'En Berenguer: Plato de resina blanca extraplano con mampara fija y mantenimiento intacto del suelo de terrazo.">
+                <img src="img/proyectos/sagunto-1-ducha-terrazo.jpg" alt="Canet Baño Ducha Terrazo" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-2 left-2 bg-stone-900/80 text-[10px] text-white px-2 py-0.5 rounded font-mono-tech">1. Canet: Ducha & Terrazo</span>
+              </div>
+              <div class="aspect-video rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/sagunto-2-bano-piedra.jpg"
+                   data-caption="Sagunto: Finalización de aseo cuya obra había sido abandonada por otra cuadrilla; pared de textura pizarra y sanitarios.">
+                <img src="img/proyectos/sagunto-2-bano-piedra.jpg" alt="Sagunto Baño Terminado" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-2 left-2 bg-amber-600 text-[10px] text-white px-2 py-0.5 rounded font-mono-tech">2. Sagunto: Obra Rematada</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documentación Técnica (3 Párrafos Narrativos) -->
+          <div class="space-y-3.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <p>
+              <strong>1. Intervención en Canet d'En Berenguer:</strong> Reforma ágil de baño orientada a mejorar la accesibilidad y modernizar las instalaciones sin incurrir en costes innecesarios. Se desmontó la antigua ducha rota, saneando la base con mortero impermeabilizante e instalando un plato de resina mineral blanco antideslizante con mampara fija de cristal de seguridad templado.
+            </p>
+            <p>
+              <strong>2. Preservación del Terrazo Original:</strong> La propiedad deseaba conservar el pavimento clásico de terrazo pulido por su alto valor estético y resistencia. Se realizó un enrase milimétrico entre el plato y las baldosas existentes sin generar desniveles ni cejas, rematando las paredes con azulejo claro y coronando el cielo raso con molduras clásicas de escayola.
+            </p>
+            <p>
+              <strong>3. Remate de Obra Abandonada en Sagunto:</strong> Paralelamente en Sagunto, se intervino en una vivienda donde otra cuadrilla había dejado una obra parada a mitad de ejecución. Nuestro equipo saneó los paramentos desalineados, replanteó las maestras y completó el alicatado con un revestimiento cerámico de relieve tipo piedra natural, instalando inodoro, lavabo y tomas de fontanería con plena garantía técnica.
+            </p>
+          </div>
+
+          <!-- Especificaciones Técnicas -->
+          <div class="bg-stone-200/60 dark:bg-stone-850 p-4 rounded-lg space-y-2 text-xs font-mono-tech border border-stone-300/80 dark:border-stone-800">
+            <div class="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Especificaciones del Proyecto:</div>
+            <ul class="space-y-1 text-stone-600 dark:text-stone-400">
+              <li><strong class="text-stone-800 dark:text-stone-200">· Partidas:</strong> Sustitución de plato, mampara fija de cristal templado, rescate de obra y fontanería.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Filosofía:</strong> Aprovechamiento de elementos nobles originales para reducir presupuesto sin perder calidad.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Ubicación:</strong> Sagunto & Canet (Valencia).</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Acción Directa -->
+        <div class="p-6 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-mono-tech text-stone-500">¿Obra parada o reforma rápida?</span>
+          <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20la%20obra%20de%20Sagunto%20y%20Canet%20y%20necesito%20presupuesto"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-cta-construction text-xs py-2 px-4 whitespace-nowrap">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <!-- PROYECTO 4: BENETÚSSER -->
+      <article class="project-dossier-card construction-card overflow-hidden flex flex-col justify-between" data-project="benetusser">
+        <div class="p-6 sm:p-8 space-y-6">
+          
+          <!-- Encabezado Ficha -->
+          <div class="space-y-3 border-b border-stone-200 dark:border-stone-800 pb-5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="tech-badge tech-badge-amber">Benetússer · L'Horta Sud</span>
+              <span class="text-xs font-mono-tech text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">PLAZO EJECUTADO: 48 HORAS</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+              Sustitución de Bañera Antigua por Plato de Ducha Accesible con Cenefa Decorativa
+            </h2>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono-tech text-stone-500">
+              <span>Horta Sud</span>
+              <span>·</span>
+              <span>Resina Antideslizante C3 & Greca</span>
+            </div>
+          </div>
+
+          <!-- Micro-Galería Cronológica -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono-tech text-stone-500">
+              <span class="uppercase font-bold tracking-wider">Secuencia de Obra (Haz clic para ampliar)</span>
+              <span>Foto detallada</span>
+            </div>
+            <div class="rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 h-52 project-photo-thumb"
+                 data-full="img/proyectos/benetusser-1-ducha-cenefa.jpg"
+                 data-caption="Benetússer: Plato de ducha extraplano instalado en sustitución de bañera, rematado con cenefa de greca griega y grifería nueva.">
+              <img src="img/proyectos/benetusser-1-ducha-cenefa.jpg" alt="Benetússer Plato de Ducha con Cenefa" class="w-full h-full object-cover group-hover:scale-105 transition duration-200">
+              <span class="absolute top-2 left-2 bg-stone-900/80 text-[10px] text-white px-2 py-0.5 rounded font-mono-tech">Benetússer: Cambio Bañera</span>
+              <span class="absolute bottom-2 right-2 bg-amber-600 text-white text-[10px] px-2 py-0.5 rounded font-mono-tech">48h Garantizadas</span>
+            </div>
+          </div>
+
+          <!-- Documentación Técnica (3 Párrafos Narrativos) -->
+          <div class="space-y-3.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <p>
+              <strong>1. Supresión Rápida de Barreras en 48 Horas:</strong> Ejecución de cambio de bañera por ducha en una vivienda de Benetússer para facilitar el aseo diario de personas mayores. Se retiró la pesada bañera de fundición mediante corte técnico perimetral, desescombrando y dejando la base completamente limpia en pocas horas.
+            </p>
+            <p>
+              <strong>2. Impermeabilización de Fondo y Válvula de Gran Evacuación:</strong> La zona descubierta fue saneada con recrecido hidrófugo y sellado elástico en las juntas de pared y suelo. Se instaló una válvula de desagüe sifónica de gran caudal con tapa de acero inoxidable cepillado para asegurar una rápida evacuación del agua.
+            </p>
+            <p>
+              <strong>3. Cenefa Ornamental y Grifería Termostática:</strong> Para vestir la pared donde antes descansaba la bañera, se alicató con azulejo texturizado coordinado, insertando una cenefa decorativa con motivo geométrico de greca clásica. Se remató con la colocación de un conjunto de ducha termostática con barra regulable y plato antideslizante C3.
+            </p>
+          </div>
+
+          <!-- Especificaciones Técnicas -->
+          <div class="bg-stone-200/60 dark:bg-stone-850 p-4 rounded-lg space-y-2 text-xs font-mono-tech border border-stone-300/80 dark:border-stone-800">
+            <div class="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Especificaciones del Proyecto:</div>
+            <ul class="space-y-1 text-stone-600 dark:text-stone-400">
+              <li><strong class="text-stone-800 dark:text-stone-200">· Partidas:</strong> Retirada de bañera, impermeabilización con banda elástica, plato resina C3, cenefa y grifería.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Plazo:</strong> 48 horas sin cortes prolongados de suministro de agua.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Ubicación:</strong> Benetússer (Valencia).</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Acción Directa -->
+        <div class="p-6 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-mono-tech text-stone-500">¿Quieres quitar tu bañera en 48h?</span>
+          <a href="https://wa.me/34722851328?text=Hola,%20quiero%20informaci%C3%B3n%20para%20cambiar%20una%20ba%C3%B1era%20por%20ducha%20en%2048h"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-cta-construction text-xs py-2 px-4 whitespace-nowrap">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <!-- PROYECTO 5: FAURA -->
+      <article class="project-dossier-card construction-card overflow-hidden flex flex-col justify-between" data-project="faura">
+        <div class="p-6 sm:p-8 space-y-6">
+          
+          <!-- Encabezado Ficha -->
+          <div class="space-y-3 border-b border-stone-200 dark:border-stone-800 pb-5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="tech-badge tech-badge-amber">Faura · Camp de Morvedre</span>
+              <span class="text-xs font-mono-tech text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">OBRA ENTREGADA LIMPIA</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+              Adaptación de Espacio y Dormitorio Asistido en Pladur con Armario Clóset a Medida
+            </h2>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono-tech text-stone-500">
+              <span>Camp de Morvedre</span>
+              <span>·</span>
+              <span>Tabiquería Seca & Aislamiento</span>
+            </div>
+          </div>
+
+          <!-- Micro-Galería Cronológica -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono-tech text-stone-500">
+              <span class="uppercase font-bold tracking-wider">Secuencia de Obra (Haz clic para ampliar)</span>
+              <span>4 fotos documentadas</span>
+            </div>
+            <div class="grid grid-cols-4 sm:grid-cols-4 gap-2">
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/faura-1-estructura-dormitorio.jpg"
+                   data-caption="Faura: Replanteo de perfilería metálica y premarco de madera en el salón para crear el nuevo dormitorio.">
+                <img src="img/proyectos/faura-1-estructura-dormitorio.jpg" alt="Faura Estructura Tabique" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">1. Tabique</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/faura-2-estructura-closet.jpg"
+                   data-caption="Faura: Armado a medida de perfilería galvanizada para armario empotrado con baldas y barra de colgar.">
+                <img src="img/proyectos/faura-2-estructura-closet.jpg" alt="Faura Armario Metalico" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">2. Clóset</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/faura-3-placas-puerta.jpg"
+                   data-caption="Faura: Colocación de placa de yeso laminado y ensamblado de puerta interior batiente.">
+                <img src="img/proyectos/faura-3-placas-puerta.jpg" alt="Faura Placas Pladur" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">3. Puerta</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/faura-4-habitacion-terminada.jpg"
+                   data-caption="Faura: Habitación terminada, pintada en tono azul cielo sereno, con moldura de techo y obra limpia.">
+                <img src="img/proyectos/faura-4-habitacion-terminada.jpg" alt="Faura Dormitorio Terminado" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-amber-600 text-[9px] text-white px-1 rounded font-mono-tech">4. Final</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documentación Técnica (4 Párrafos Narrativos) -->
+          <div class="space-y-3.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <p>
+              <strong>1. Requerimiento Familiar y Asistencial:</strong> Proyecto con una profunda vocación humana: los familiares de un vecino de Faura con una delicada situación médica requerían segregar un dormitorio privado, silencioso y accesible en la segunda planta de la vivienda, aprovechando un hueco desaprovechado del salón principal.
+            </p>
+            <p>
+              <strong>2. Estructura Ligera con Aislamiento Acústico:</strong> Se replanteó una tabiquería en seco de pladur con perfiles de acero galvanizado de 46 mm y banda estanca desolidarizadora en forjado y techo. En el alma del tabique se incorporó lana mineral para asegurar máximo aislamiento térmico y privacidad acústica.
+            </p>
+            <p>
+              <strong>3. Clóset Empotrado Artesanal en Metal:</strong> En lugar de mobiliario de aglomerado comercial, el oficial estructuró directamente in situ con perfilería de pladur un armario empotrado completo a techo, con nichos específicos para ropa de cama, cajoneras y barra de colgar, optimizando hasta el último centímetro cúbico.
+            </p>
+            <p>
+              <strong>4. Pintura y Puesta a Punto:</strong> Se encintaron todas las juntas con pasta de acabado Q3, se instaló la puerta de paso abatible con maneta ergonómica, y se remató con molduras decorativas en el techo y pintura plástica transpirable en un tono azul celeste sereno, dejando la estancia totalmente acogedora y lista para ser habitada.
+            </p>
+          </div>
+
+          <!-- Especificaciones Técnicas -->
+          <div class="bg-stone-200/60 dark:bg-stone-850 p-4 rounded-lg space-y-2 text-xs font-mono-tech border border-stone-300/80 dark:border-stone-800">
+            <div class="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Especificaciones del Proyecto:</div>
+            <ul class="space-y-1 text-stone-600 dark:text-stone-400">
+              <li><strong class="text-stone-800 dark:text-stone-200">· Partidas:</strong> Tabiquería pladur acústico, armario clóset estructural, puerta interior, moldura y pintura.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Ventajas:</strong> Construcción limpia en seco sin sobrecargar el forjado de la segunda planta.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Ubicación:</strong> Faura (Valencia).</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Acción Directa -->
+        <div class="p-6 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-mono-tech text-stone-500">¿Necesitas dividir un espacio en casa?</span>
+          <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20la%20habitaci%C3%B3n%20de%20pladur%20de%20Faura%20y%20quiero%20dividir%20un%20espacio"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-cta-construction text-xs py-2 px-4 whitespace-nowrap">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <!-- PROYECTO 6: TORRENT -->
+      <article class="project-dossier-card construction-card overflow-hidden flex flex-col justify-between" data-project="torrent">
+        <div class="p-6 sm:p-8 space-y-6">
+          
+          <!-- Encabezado Ficha -->
+          <div class="space-y-3 border-b border-stone-200 dark:border-stone-800 pb-5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="tech-badge tech-badge-amber">Torrent · L'Horta Sud</span>
+              <span class="text-xs font-mono-tech text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">OBRA ENTREGADA LIMPIA</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+              Pérgola Metálica Autoportante para Exterior, Preinstalación Eléctrica & Cubierta Panel Sándwich
+            </h2>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono-tech text-stone-500">
+              <span>Chalet Unifamiliar</span>
+              <span>·</span>
+              <span>Estructura de Acero & Aislamiento</span>
+            </div>
+          </div>
+
+          <!-- Micro-Galería Cronológica -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono-tech text-stone-500">
+              <span class="uppercase font-bold tracking-wider">Secuencia de Obra (Haz clic para ampliar)</span>
+              <span>Foto estructural</span>
+            </div>
+            <div class="rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 h-52 project-photo-thumb"
+                 data-full="img/proyectos/torrent-1-pergola-sandwich.jpg"
+                 data-caption="Torrent: Pérgola exterior metálica reforzada, soldadura técnica, canalizaciones eléctricas y cubierta aislante en panel sándwich.">
+              <img src="img/proyectos/torrent-1-pergola-sandwich.jpg" alt="Torrent Pérgola Metálica Exterior" class="w-full h-full object-cover group-hover:scale-105 transition duration-200">
+              <span class="absolute top-2 left-2 bg-stone-900/80 text-[10px] text-white px-2 py-0.5 rounded font-mono-tech">Torrent: Pérgola Chalet</span>
+              <span class="absolute bottom-2 right-2 bg-amber-600 text-white text-[10px] px-2 py-0.5 rounded font-mono-tech">Panel Sándwich</span>
+            </div>
+          </div>
+
+          <!-- Documentación Técnica (3 Párrafos Narrativos) -->
+          <div class="space-y-3.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <p>
+              <strong>1. Replanteo y Anclajes Estructurales:</strong> Construcción de una pérgola y porche exterior en un chalet unifamiliar en Torrent. Se fijaron los apoyos mediante anclajes químicos de alta resistencia sobre la solera de hormigón existente, calculando la pendiente requerida para la rápida evacuación de aguas de lluvia.
+            </p>
+            <p>
+              <strong>2. Soldadura y Preinstalación de Electricidad:</strong> Toda la estructura se fabricó con perfilería tubular de acero estructural tratado con pintura anticorrosiva. De forma previa al sellado de los perfiles, se embutieron canalizaciones y cableado antihumedad para la conexión de puntos de luz y enchufes estancos de jardín.
+            </p>
+            <p>
+              <strong>3. Cubierta Térmica en Panel Sándwich:</strong> La techumbre se remató con paneles sándwich aislantes con núcleo de poliuretano expandido de alta densidad, con baberos perimetrales y canalón de chapa plegada, garantizando un espacio de sombra fresca en verano y 100% impermeable en invierno.
+            </p>
+          </div>
+
+          <!-- Especificaciones Técnicas -->
+          <div class="bg-stone-200/60 dark:bg-stone-850 p-4 rounded-lg space-y-2 text-xs font-mono-tech border border-stone-300/80 dark:border-stone-800">
+            <div class="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Especificaciones del Proyecto:</div>
+            <ul class="space-y-1 text-stone-600 dark:text-stone-400">
+              <li><strong class="text-stone-800 dark:text-stone-200">· Partidas:</strong> Anclajes estructurales, estructura de acero, preinstalación eléctrica, panel sándwich.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Resistencia:</strong> Aislamiento térmico frente a radiación solar y estanqueidad probada.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Ubicación:</strong> Torrent (Valencia).</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Acción Directa -->
+        <div class="p-6 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-mono-tech text-stone-500">¿Quieres un porche o pérgola exterior?</span>
+          <a href="https://wa.me/34722851328?text=Hola,%20me%20interesa%20construir%20una%20p%C3%A9rgola%20o%20porche%20como%20el%20de%20Torrent"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-cta-construction text-xs py-2 px-4 whitespace-nowrap">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <!-- PROYECTO 7: PLADUR COMERCIAL & MUEBLES DE DISEÑO -->
+      <article class="project-dossier-card construction-card overflow-hidden flex flex-col justify-between lg:col-span-2" data-project="pladur-comercial">
+        <div class="p-6 sm:p-8 space-y-6">
+          
+          <!-- Encabezado Ficha -->
+          <div class="space-y-3 border-b border-stone-200 dark:border-stone-800 pb-5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="tech-badge tech-badge-amber">Valencia Capital & Área Metropolitana</span>
+              <span class="text-xs font-mono-tech text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider">INGENIERÍA EN SECO</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+              Sistemas Avanzados de Pladur: Oficinas Modulares, Muebles Flotantes de Salón para TV & Aislamiento de Miradores
+            </h2>
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono-tech text-stone-500">
+              <span>Comercial & Residencial</span>
+              <span>·</span>
+              <span>Canales, Montantes & Acabado Q3/Q4</span>
+            </div>
+          </div>
+
+          <!-- Micro-Galería Cronológica -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono-tech text-stone-500">
+              <span class="uppercase font-bold tracking-wider">Secuencia de Obra (Haz clic para ampliar)</span>
+              <span>5 fotos documentadas</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/pladur-oficinas-estructura.jpg"
+                   data-caption="Oficinas: Armado de estructura metálica para división de tres despachos con huecos para ventanas interiores.">
+                <img src="img/proyectos/pladur-oficinas-estructura.jpg" alt="Estructura Oficinas" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">1. Estructura</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/pladur-oficinas-terminadas.jpg"
+                   data-caption="Oficinas: Módulos de pladur con encintado y carpintería interior acristalada colocada.">
+                <img src="img/proyectos/pladur-oficinas-terminadas.jpg" alt="Oficinas Pladur" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">2. Módulos</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/pladur-mueble-tv-estructura.jpg"
+                   data-caption="Salón TV: Armazón metálico suspendido en voladizo para frentes de Home Cinema sin cables vistos.">
+                <img src="img/proyectos/pladur-mueble-tv-estructura.jpg" alt="Mueble TV Estructura" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">3. Chasis TV</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/pladur-mueble-tv-terminado.jpg"
+                   data-caption="Salón TV: Mueble flotante lacado en blanco puro con hornacinas para mandos y equipo multimedia.">
+                <img src="img/proyectos/pladur-mueble-tv-terminado.jpg" alt="Mueble TV Terminado" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-stone-900/80 text-[9px] text-white px-1 rounded font-mono-tech">4. Mueble Final</span>
+              </div>
+              <div class="aspect-square rounded overflow-hidden relative group cursor-pointer border border-stone-300 dark:border-stone-700 project-photo-thumb"
+                   data-full="img/proyectos/pladur-aislamiento-mirador.jpg"
+                   data-caption="Mirador: Revestimiento hidrófugo y sellado perimetral de tabique para aislar humedad antes de puerta y clóset.">
+                <img src="img/proyectos/pladur-aislamiento-mirador.jpg" alt="Aislamiento Mirador" class="w-full h-full object-cover group-hover:scale-110 transition duration-200">
+                <span class="absolute bottom-1 left-1 bg-amber-600 text-[9px] text-white px-1 rounded font-mono-tech">5. Mirador</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documentación Técnica (4 Párrafos Narrativos) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+            <div class="space-y-3">
+              <p>
+                <strong>1. Oficinas Modulares en Tiempo Récord:</strong> Compartimentación técnica en nave comercial para generar 3 despachos independientes y zona de aseos. Se empleó perfilería galvanizada con refuerzos horizontales y cajeados para ventanas acristaladas interiores, optimizando el paso de luz natural sin penalizar el aislamiento acústico.
+              </p>
+              <p>
+                <strong>2. Mueble Flotante para Home Cinema:</strong> Fabricación a medida de un mueble suspendido en voladizo para salón. Toda la perfilería se ocultó tras placas de yeso laminado con esquineros metálicos, creando hornacinas inferiores abiertas para receptores, consolas y mandos con paso de cables totalmente ciego.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <p>
+                <strong>3. Saneamiento de Humedad en Miradores:</strong> En estancias con fachadas expuestas a condensaciones o filtraciones exteriores, se ejecutaron trasdosados con placas hidrófugas (pladur verde) y cámaras de aire ventiladas, permitiendo incorporar armarios empotrados y puertas correderas sin riesgo de mohos.
+              </p>
+              <p>
+                <strong>4. Calidad de Acabado Q3 y Q4:</strong> Todo el tratamiento de juntas y guardavivos se realiza con pastas especiales de fraguado controlado, repasadas a luz rasante para que el pintor aplique directamente el esmalte o pintura plástica sin imperfecciones.
+              </p>
+            </div>
+          </div>
+
+          <!-- Especificaciones Técnicas -->
+          <div class="bg-stone-200/60 dark:bg-stone-850 p-4 rounded-lg space-y-2 text-xs font-mono-tech border border-stone-300/80 dark:border-stone-800">
+            <div class="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Especificaciones del Proyecto:</div>
+            <ul class="space-y-1 text-stone-600 dark:text-stone-400">
+              <li><strong class="text-stone-800 dark:text-stone-200">· Aplicaciones:</strong> Oficinas comerciales, mobiliario arquitectónico flotante, techos continuos y trasdosados hidrófugos.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Estructura:</strong> Perfilería de acero galvanizado con guardavivos metálicos de impacto.</li>
+              <li><strong class="text-stone-800 dark:text-stone-200">· Servicio:</strong> Valencia capital y poblaciones limítrofes.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Acción Directa -->
+        <div class="p-6 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-mono-tech text-stone-500">¿Quieres un diseño en pladur para tu local o vivienda?</span>
+          <a href="https://wa.me/34722851328?text=Hola,%20quiero%20consultar%20un%20proyecto%20de%20pladur%20o%20muebles%20a%20medida"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-cta-construction text-xs py-2 px-4 whitespace-nowrap">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </article>
 
     </div>
 
@@ -263,8 +766,8 @@
       <h2 class="text-2xl sm:text-3xl font-black font-heading text-stone-900 dark:text-white">
         ¿Tienes un proyecto similar en mente?
       </h2>
-      <p class="text-stone-700 dark:text-stone-300 text-sm max-w-xl mx-auto">
-        Envíanos las medidas aproximadas o fotos por WhatsApp y te orientamos sin ningún compromiso.
+      <p class="text-stone-700 dark:text-stone-300 text-sm max-w-xl mx-auto leading-relaxed">
+        Envíanos las medidas aproximadas, ubicación o fotos actuales por WhatsApp. Te asesoramos directamente como oficiales, sin comerciales ni costes inflados.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
         <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction">
@@ -277,6 +780,44 @@
     </div>
 
   </main>
+
+  <!-- MODAL / LIGHTBOX DE FOTOGRAFÍAS A PANTALLA COMPLETA -->
+  <div id="project-lightbox" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="relative max-w-4xl w-full flex flex-col items-center">
+      
+      <!-- Botón Cerrar -->
+      <button id="lightbox-close-btn" class="absolute -top-12 right-0 text-white hover:text-amber-400 p-2 text-sm font-mono-tech flex items-center gap-1 transition" aria-label="Cerrar imagen">
+        <span>CERRAR</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Imagen -->
+      <div class="max-h-[75vh] w-full flex items-center justify-center overflow-hidden rounded-lg bg-stone-950 border border-stone-800 shadow-2xl">
+        <img id="lightbox-img" src="" alt="Fotografía de obra real" class="max-h-[75vh] w-auto max-w-full object-contain">
+      </div>
+
+      <!-- Pie de Foto / Explicación Técnica -->
+      <div class="w-full mt-3 p-3 bg-stone-900/90 rounded border border-stone-800 text-center">
+        <p id="lightbox-caption" class="text-xs sm:text-sm text-stone-200 font-mono-tech leading-relaxed"></p>
+      </div>
+
+      <!-- Navegación Anterior / Siguiente -->
+      <div class="flex items-center justify-between w-full mt-3 px-2">
+        <button id="lightbox-prev-btn" class="text-xs font-mono-tech text-white bg-stone-800/80 hover:bg-amber-600 px-4 py-2 rounded transition flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          <span>ANTERIOR</span>
+        </button>
+        <span id="lightbox-counter" class="text-xs font-mono-tech text-stone-400"></span>
+        <button id="lightbox-next-btn" class="text-xs font-mono-tech text-white bg-stone-800/80 hover:bg-amber-600 px-4 py-2 rounded transition flex items-center gap-1">
+          <span>SIGUIENTE</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Footer Arquitectónico & Contacto -->
   <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs">
@@ -308,6 +849,6 @@
   </footer>
 
   <script src="js/ai-assistant.js?v=4.1"></script>
-  <script src="js/main.js?v=4.0"></script>
+  <script src="js/main.js?v=4.1"></script>
 </body>
 </html>
