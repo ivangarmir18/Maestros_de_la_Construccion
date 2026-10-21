@@ -7,6 +7,13 @@
   <meta name="description" content="Galería de proyectos reales ejecutados en Valencia. Baños porcelánicos, tabiquería de pladur, frentes con luz indirecta, suelos nivelados y reformas.">
   <meta name="robots" content="index, follow">
 
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -100,25 +107,6 @@
       <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base">
         Imágenes auténticas tomadas directamente en nuestras obras: colocación milimétrica con cuñas autonivelantes, pladur técnico, fontanería vista y remates limpios.
       </p>
-
-      <!-- Filtros con Envoltura Limpia (Sin Cortes ni Barras de Scroll) -->
-      <div class="flex flex-wrap items-center justify-center gap-2 pt-4 py-2 px-1 max-w-full">
-        <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-bold bg-amber-600 text-white transition shadow-sm border border-amber-700" data-filter="all">
-          Todos los Trabajos (12)
-        </button>
-        <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition" data-filter="banos">
-          Baños & Fontanería (3)
-        </button>
-        <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition" data-filter="pladur">
-          Pladur & Luz LED (3)
-        </button>
-        <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition" data-filter="suelos">
-          Suelos & Soleras (3)
-        </button>
-        <button class="gallery-filter-btn px-3.5 py-2 rounded-md text-xs font-mono-tech uppercase font-semibold bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition" data-filter="exterior">
-          Estructuras & Exterior (3)
-        </button>
-      </div>
     </div>
 
     <!-- Grid de Proyectos Estructurado: 12 OBRAS (4 FILAS DE 3 EXACTAS, CERO HUECOS SUELTOS) -->

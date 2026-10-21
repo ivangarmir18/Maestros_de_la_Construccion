@@ -16,7 +16,7 @@ class ConstructionAIAssistant {
       },
       {
         triggers: ["precio", "cuanto", "cuánto", "coste", "cuesta", "tarifa", "metro", "m2", "presupuesto", "estimacion"],
-        answer: "Nuestras tarifas y horquillas directas de taller para Valencia:<br>• **Reforma de Baño Completo (alicatado porcelánico y plato resina):** De 1.750€ a 3.900€.<br>• **Pladur y Fosa LED de salón:** Desde 22€ a 38€/m² según diseño.<br>• **Alisado de paredes y eliminación de gotelé:** De 7€ a 15€/m² con masillado a espejo.<br>• **Reforma Integral de Vivienda:** De 290€ a 550€/m² (sujeta a disponibilidad de agenda).<br><br>Puedes usar nuestro **Simulador Interactivo de Presupuestos** en la web o escribirnos al WhatsApp <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a>."
+        answer: "Nuestras tarifas base directas de oficial para Valencia:<br>• **Cambio de Bañera por Ducha:** Desde 590€.<br>• **Reforma de Baño Completo:** Desde 1.950€.<br>• **Reforma de Cocina:** Desde 2.600€.<br>• **Pladur y Fosas LED:** Desde 26€/m² (o salón completo desde 420€).<br>• **Alisado de gotelé y pintura:** Desde 9€/m² (o estancia desde 450€).<br>• **Suelos porcelánicos:** Desde 22€/m².<br>• **Reforma Integral:** Desde 18.500€.<br><br>Sin intermediarios ni comerciales. Puedes consultar nuestro simulador o escribirnos al WhatsApp <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a>."
       },
       {
         triggers: ["tiempo", "plazo", "tarda", "duracion", "duración", "semanas", "meses", "dias"],
@@ -63,7 +63,7 @@ class ConstructionAIAssistant {
         <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
         </svg>
-        <span class="text-xs tracking-wider uppercase font-mono-tech hidden sm:inline">Oficina Técnica Virtual</span>
+        <span class="text-xs tracking-wider uppercase font-mono-tech hidden sm:inline">Atención al Cliente Virtual</span>
       </button>
 
       <!-- Modal de Chat Arquitectónico & Responsivo -->
@@ -78,14 +78,14 @@ class ConstructionAIAssistant {
             <div>
               <div class="flex items-center gap-2">
                 <h4 class="font-bold text-stone-900 dark:text-white text-xs uppercase tracking-wider font-mono-tech">
-                  Oficina Técnica
+                  Atención al Cliente
                 </h4>
                 <span class="inline-flex items-center gap-1 text-[10px] text-emerald-700 dark:text-emerald-400 font-semibold bg-emerald-100 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                   En Línea
                 </span>
               </div>
-              <p class="text-[11px] text-stone-500 dark:text-stone-400">Asesor de Obras & Reformas Valencia</p>
+              <p class="text-[11px] text-stone-500 dark:text-stone-400">Asesor Virtual de Reformas Valencia</p>
             </div>
           </div>
           <div class="flex items-center gap-1">
@@ -110,8 +110,8 @@ class ConstructionAIAssistant {
         <!-- Mensajes del Chat con Scroll Suave -->
         <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3.5 text-sm bg-stone-50/50 dark:bg-[#15171d]">
           <div class="p-3.5 rounded-lg border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-200 shadow-sm leading-relaxed text-xs sm:text-sm">
-            Hola. Bienvenido al canal de consulta técnica de <strong>Maestros de la Construcción</strong> en Valencia.
-            <br><br>Puedes consultarme sobre precios de reformas, pladur con iluminación LED, baños con plato de resina o plazos de obra. ¿Qué tienes en mente reformar?
+            Hola. Bienvenido al canal de atención y consulta de <strong>Maestros de la Construcción</strong> en Valencia.
+            <br><br>Puedes consultarme sobre tarifas base de reformas, pladur con iluminación LED, baños con plato de resina o plazos de obra. ¿Qué tienes en mente reformar?
           </div>
         </div>
 

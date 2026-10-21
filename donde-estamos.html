@@ -7,6 +7,13 @@
   <meta name="description" content="Operamos en Valencia capital y toda el área metropolitana (Torrent, Paterna, Burjassot, Bétera, Sagunto...). Visita técnica y medición gratuita en tu domicilio.">
   <meta name="robots" content="index, follow">
 
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {

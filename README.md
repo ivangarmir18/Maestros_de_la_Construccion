@@ -34,9 +34,9 @@
 - [Características del Proyecto](#características-del-proyecto)
 - [Stack Tecnológico](#stack-tecnológico)
 - [Estructura del Repositorio](#estructura-del-repositorio)
-- [Motor de Cálculo de Presupuestos](#motor-de-cálculo-de-presupuestos)
+- [Motor de Tarifas Base y Presupuestos](#motor-de-tarifas-base-y-presupuestos)
 - [Seguridad y Hardening OWASP](#seguridad-y-hardening-owasp)
-- [Oficina Técnica Virtual con IA](#oficina-técnica-virtual-con-ia)
+- [Atención al Cliente Virtual con IA](#atención-al-cliente-virtual-con-ia)
 - [Despliegue y Configuración DNS](#despliegue-y-configuración-dns)
 - [Posicionamiento Local y SEO](#posicionamiento-local-y-seo)
 - [Canales Oficiales de Contacto](#canales-oficiales-de-contacto)
@@ -96,17 +96,14 @@ Maestros_de_la_Construccion/
 
 ---
 
-## Motor de Cálculo de Presupuestos
+## Motor de Tarifas Base y Presupuestos
 
-El archivo [`js/calculator.js`](js/calculator.js) implementa un modelo de tarificación adaptativo basado en mediciones y partidas reales de obra:
+El archivo [`js/calculator.js`](js/calculator.js) implementa un modelo de tarificación transparente basado en costes directos de oficial sin sobrecostes comerciales:
 
-- **Impacto de Superficie ($m^2$):** En áreas húmedas como baños y cocinas, el incremento de metros cuadrados considera el desarrollo vertical de alicatados, pegamento C2TE S1, sellado antihumedad y tiempo de oficial.
-- **Escalado Progresivo por Calidad:**
-  - `Esencial (0.95)`: Materiales estándar y soluciones económicas.
-  - `Confort (1.25)`: Azulejos porcelánicos rectificados, plato de ducha antideslizante C3 y grifería cromada.
-  - `Premium (1.65)`: Piezas de gran formato, mamparas suspendidas y fosa perimetral de luz indirecta.
-  - `Lujo (2.20)`: Acabados singulares, hornacinas integradas y porcelánicos técnicos especiales.
-- **Formateo para WhatsApp:** Genera automáticamente la solicitud estructurada para iniciar la consulta técnica con el presupuesto estimado.
+- **Precios Base "Desde":** Baños completos desde 1.950 € (cambio de bañera por ducha desde 590 €), cocinas desde 2.600 €, pladur técnico desde 420 €, alisado y pintura desde 450 €, solados desde 490 € y reformas integrales desde 18.500 €.
+- **Escalado por Envergadura:** Presets claros de tamaño (Puntual/Aseo, Estándar habitual y Amplio/Gran formato) para evitar presupuestos volátiles o poco realistas.
+- **Partidas Reales Incluidas:** Mano de obra directa cualificada, desescombro y retirada a punto limpio autorizado, visita técnica y medición gratuita en Valencia.
+- **Integración con WhatsApp:** Generación de plantillas pre-rellenadas con los parámetros exactos seleccionados para formalizar presupuesto cerrado presencial.
 
 ---
 
@@ -128,10 +125,10 @@ El sitio implementa medidas de protección a nivel de cabeceras HTTP y sanitizac
 
 ---
 
-## Oficina Técnica Virtual con IA
+## Atención al Cliente Virtual con IA
 
 Integrada en la esquina inferior derecha mediante un componente no intrusivo:
-- **Modo Local:** Si no se dispone de conexión o clave API, el sistema resuelve consultas frecuentes mediante un catálogo de respuestas técnicas sobre plazos, normativas y precios en Valencia.
+- **Modo Local:** Si no se dispone de conexión o clave API, el sistema resuelve consultas frecuentes mediante un catálogo de respuestas sobre tarifas base, plazos, normativas y zonas de atención en Valencia.
 - **Modo Gemini Flash:** Permite introducir una clave personal de Google AI Studio, almacenada de forma aislada en el navegador del usuario (`localStorage`), para consultas técnicas avanzadas.
 
 ---
@@ -152,10 +149,11 @@ Para vincular el dominio `maestrosdelaconstruccion.es`:
 
 ## Posicionamiento Local y SEO
 
-- **Datos Estructurados Schema.org:**
+- **Datos Estructurados Schema.org & GEO:**
   - `@type: HomeAndConstructionBusiness`
   - `@type: GeneralContractor`
   - `@type: FAQPage` para resultados enriquecidos (Rich Snippets).
+  - Reconocimiento de Entidad por IA (`sameAs`): Enlazado canónico bidireccional entre el dominio web, Instagram (`@somosmaestrosdelaconstruccion`) y la ficha oficial de Google Maps.
 - **Geolocalización Técnica:** Coordenadas de Valencia (39.4699, -0.3763).
 - **Ficha de Empresa en Google Maps:** [Ver Perfil en Google](https://share.google/jS8YFrFA9vDX3dOp3)
 

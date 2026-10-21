@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -29,15 +29,27 @@
   <link rel="icon" type="image/jpeg" href="img/logo.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-  <!-- Schema.org Microdatos para SEO Local -->
+  <!-- Anti-FOUC Theme Initialization (Previene flashazos al cargar o cambiar de página) -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- Schema.org Microdatos para SEO Local & Reconocimiento de Entidad por IA (GEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": "Maestros de la Construcción Valencia",
+    "name": "Maestros de la Construcción",
+    "legalName": "Maestros de la Construcción Valencia",
     "image": "https://www.maestrosdelaconstruccion.es/img/logo.jpg",
     "telephone": "+34722851328",
+    "email": "contacto@maestrosdelaconstruccion.es",
     "url": "https://www.maestrosdelaconstruccion.es",
+    "description": "Empresa especializada en reformas de baños, pladur, gotelé y albañilería en Valencia y municipios colindantes. Trato directo de oficiales.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Valencia",
@@ -49,6 +61,13 @@
       "latitude": 39.4699,
       "longitude": -0.3763
     },
+    "areaServed": [
+      "Valencia", "Torrent", "Paterna", "Burjassot", "Bétera", "Sagunto", "Alaquàs", "Moncada", "Godella", "L'Eliana"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/somosmaestrosdelaconstruccion",
+      "https://share.google/jS8YFrFA9vDX3dOp3"
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -60,7 +79,7 @@
   }
   </script>
 </head>
-<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
+<body class="bg-[#f2eee3] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
 
   <!-- ==============================================================
        HEADER / NAVBAR ARQUITECTÓNICA & RESPONSIVA
@@ -527,13 +546,13 @@
       
       <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
         <div class="tech-badge tech-badge-amber">
-          <span>CALCULADORA DE COSTES</span>
+          <span>TARIFAS Y PRESUPUESTOS DIRECTOS</span>
         </div>
         <h2 class="text-2xl sm:text-4xl md:text-5xl font-black font-heading text-stone-900 dark:text-white">
-          Calcula el coste de tu obra <span class="text-amber-600 dark:text-amber-500">en 1 minuto</span>
+          Consulta nuestras tarifas base <span class="text-amber-600 dark:text-amber-500">sin intermediarios</span>
         </h2>
         <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base">
-          Obtén una estimación realista del mercado en Valencia según los metros de la sala o estancia.
+          Precios de partida claros y transparentes. Sin sobrecostes comerciales. Presupuesto final cerrado tras visita técnica gratuita.
         </p>
       </div>
 
@@ -541,79 +560,76 @@
         
         <!-- Formulario Izquierda -->
         <div class="lg:col-span-7 construction-card p-5 sm:p-6 flex flex-col justify-between">
-          <form id="hero-calc-form" class="space-y-4" onsubmit="return false;">
+          <form id="hero-calc-form" class="space-y-5" onsubmit="return false;">
             
             <div>
-              <label class="block text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider mb-1.5 font-mono-tech">
-                1. Tipo de estancia o trabajo
+              <label for="hero-service-type" class="block text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider mb-2 font-mono-tech">
+                1. Selecciona el tipo de trabajo
               </label>
-              <select id="hero-service-type" class="w-full bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-white font-medium rounded-md p-2.5 text-xs sm:text-sm focus:outline-none focus:border-amber-600">
-                <option value="bano" selected>Reforma de Baño (Alicatado porcelánico, plato resina, fontanería)</option>
-                <option value="pladur">Pladur Técnico y Fosas de Luz LED</option>
-                <option value="cocina">Reforma de Cocina</option>
-                <option value="suelos">Solados y Pavimentos Porcelánicos</option>
-                <option value="pintura">Alisado de Gotelé y Pintura Plástica</option>
-                <option value="integral">Reforma Integral de Vivienda (Sujeto a disponibilidad)</option>
+              <select id="hero-service-type" class="w-full bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-white font-medium rounded-md p-3 text-xs sm:text-sm focus:outline-none focus:border-amber-600">
+                <option value="ducha">Cambio de Bañera por Plato de Ducha (Desde 590 €)</option>
+                <option value="bano" selected>Reforma Completa de Baño (Desde 1.950 €)</option>
+                <option value="cocina">Reforma de Cocina (Desde 2.600 €)</option>
+                <option value="pladur">Tabiquería Pladur y Fosas de Luz LED (Desde 420 €)</option>
+                <option value="pintura">Alisado de Gotelé y Pintura Plástica (Desde 450 €)</option>
+                <option value="suelos">Solados y Pavimentos Porcelánicos (Desde 490 €)</option>
+                <option value="integral">Reforma Integral de Vivienda (Desde 18.500 €)</option>
               </select>
             </div>
 
             <div>
-              <div class="flex justify-between items-center mb-1.5">
-                <label class="text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider font-mono-tech">
-                  2. Superficie aproximada
-                </label>
-                <span id="hero-area-val" class="text-base font-black text-amber-600 dark:text-amber-500 font-mono-tech">5 m²</span>
-              </div>
-              <input type="range" id="hero-area-range" min="3" max="15" value="5" step="1" class="w-full h-2 bg-stone-300 dark:bg-stone-700 rounded appearance-none cursor-pointer accent-amber-600">
-              <div class="flex justify-between text-[11px] text-stone-500 mt-1 font-mono-tech">
-                <span id="hero-hint-min">3 m² (Aseo)</span>
-                <span id="hero-hint-mid">6 m² (Baño Estándar)</span>
-                <span id="hero-hint-max">15 m² (Suite)</span>
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider mb-1.5 font-mono-tech">
-                3. Nivel de acabados
+              <label class="block text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider mb-2 font-mono-tech">
+                2. Envergadura aproximada del proyecto
               </label>
               <div class="grid grid-cols-3 gap-2.5">
                 <label class="cursor-pointer">
-                  <input type="radio" name="hero-quality" value="basico" class="peer sr-only">
-                  <div class="py-2.5 px-2 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                    <span class="block text-xs font-bold text-stone-900 dark:text-white">Esencial</span>
+                  <input type="radio" name="hero-size" value="pequeno" class="peer sr-only">
+                  <div class="py-3 px-2 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+                    <span class="block text-xs font-bold text-stone-900 dark:text-white">Puntual</span>
+                    <span class="block text-[10px] text-stone-500">Aseo / Pequeño</span>
                   </div>
                 </label>
                 <label class="cursor-pointer">
-                  <input type="radio" name="hero-quality" value="confort" checked class="peer sr-only">
-                  <div class="py-2 px-2 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                    <span class="block text-xs font-bold text-stone-900 dark:text-white">Confort</span>
+                  <input type="radio" name="hero-size" value="medio" checked class="peer sr-only">
+                  <div class="py-3 px-2 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+                    <span class="block text-xs font-bold text-stone-900 dark:text-white">Estándar</span>
                     <span class="block text-[10px] text-amber-600 dark:text-amber-400 font-bold leading-tight">Habitual</span>
                   </div>
                 </label>
                 <label class="cursor-pointer">
-                  <input type="radio" name="hero-quality" value="premium" class="peer sr-only">
-                  <div class="py-2.5 px-2 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                    <span class="block text-xs font-bold text-stone-900 dark:text-white">Alta Gama</span>
+                  <input type="radio" name="hero-size" value="grande" class="peer sr-only">
+                  <div class="py-3 px-2 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
+                    <span class="block text-xs font-bold text-stone-900 dark:text-white">Amplio</span>
+                    <span class="block text-[10px] text-stone-500">Gran formato</span>
                   </div>
                 </label>
               </div>
+              <p id="hero-size-detail" class="mt-2 text-xs text-stone-600 dark:text-stone-400 font-mono-tech">
+                Baño estándar habitual (4 a 6 m²)
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-stone-100 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700/60">
+              <p id="hero-service-desc" class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                Demolición y desescombro, renovación de fontanería y desagües, alicatado de paredes y suelo en porcelánico, plato de ducha de resina, mampara y montaje de sanitarios.
+              </p>
             </div>
 
           </form>
         </div>
 
-        <!-- Resultado Estimado Derecha: Totalmente simétrico en altura -->
+        <!-- Resultado Estimado Derecha -->
         <div class="lg:col-span-5 construction-card p-5 sm:p-6 flex flex-col justify-between">
           <div class="space-y-3">
             <div>
-              <span class="tech-badge tech-badge-amber text-[10px] py-0.5 px-2">PRESUPUESTO ESTIMADO</span>
-              <h3 class="text-lg font-bold font-heading text-stone-900 dark:text-white mt-1">Horquilla de Obra</h3>
+              <span id="hero-calc-badge" class="tech-badge tech-badge-amber text-[10px] py-0.5 px-2">MÁS SOLICITADO</span>
+              <h3 id="hero-calc-title" class="text-lg font-bold font-heading text-stone-900 dark:text-white mt-1">Reforma Completa de Baño</h3>
             </div>
 
             <div class="py-3 px-4 rounded-lg bg-amber-600/10 border border-amber-600/30 text-center space-y-0.5">
-              <div class="text-[10px] text-amber-800 dark:text-amber-300 uppercase tracking-wider font-bold font-mono-tech">Rango Orientativo</div>
-              <div id="hero-calc-range" class="text-xl sm:text-2xl font-black text-stone-900 dark:text-white font-mono-tech whitespace-nowrap tracking-tight">
-                4.050€ - 5.450€
+              <div class="text-[10px] text-amber-800 dark:text-amber-300 uppercase tracking-wider font-bold font-mono-tech">Tarifa Base Estimada</div>
+              <div id="hero-calc-range" class="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-500 font-mono-tech whitespace-nowrap tracking-tight">
+                Desde 2.450 €
               </div>
               <div id="hero-calc-time" class="text-[11px] text-stone-600 dark:text-stone-400">
                 Plazo estimado: ~7 a 10 días laborables
@@ -633,6 +649,10 @@
                 <span>Visita de medición en Valencia:</span>
                 <span class="font-bold text-emerald-600 dark:text-emerald-400 font-mono-tech">Gratuita</span>
               </div>
+              <div class="flex justify-between">
+                <span>Presupuesto cerrado por escrito:</span>
+                <span class="font-bold text-stone-900 dark:text-white font-mono-tech">Sin sorpresas</span>
+              </div>
             </div>
           </div>
 
@@ -644,6 +664,9 @@
         </div>
 
       </div>
+
+    </div>
+  </section>
 
     </div>
   </section>
@@ -680,72 +703,48 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/calculator.js?v=3.0"></script>
-  <script src="js/ai-assistant.js"></script>
-  <script src="js/main.js?v=3.0"></script>
+  <script src="js/calculator.js?v=3.2"></script>
+  <script src="js/ai-assistant.js?v=3.2"></script>
+  <script src="js/main.js?v=3.2"></script>
   <script>
-    // Calculadora dinámica de inicio
+    // Calculadora dinámica de tarifas base
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('hero-calc-form');
-      const areaRange = document.getElementById('hero-area-range');
-      const areaVal = document.getElementById('hero-area-val');
+      const serviceSelect = document.getElementById('hero-service-type');
+      const sizeDetail = document.getElementById('hero-size-detail');
+      const serviceDesc = document.getElementById('hero-service-desc');
+      const calcBadge = document.getElementById('hero-calc-badge');
+      const calcTitle = document.getElementById('hero-calc-title');
       const rangeText = document.getElementById('hero-calc-range');
       const timeText = document.getElementById('hero-calc-time');
       const whatsappBtn = document.getElementById('hero-whatsapp-btn');
 
-      const serviceSelect = document.getElementById('hero-service-type');
-      const hintMin = document.getElementById('hero-hint-min');
-      const hintMid = document.getElementById('hero-hint-mid');
-      const hintMax = document.getElementById('hero-hint-max');
-
-      function syncSliderLimits() {
-        if (!serviceSelect || !areaRange || !window.BudgetCalculator) return;
-        const config = BudgetCalculator.serviceConfigs[serviceSelect.value] || BudgetCalculator.serviceConfigs.bano;
-        areaRange.min = config.min;
-        areaRange.max = config.max;
-        areaRange.step = config.step;
-        if (parseInt(areaRange.value, 10) > config.max || parseInt(areaRange.value, 10) < config.min) {
-          areaRange.value = config.defaultVal;
-        }
-        if (hintMin) hintMin.textContent = config.hintMin;
-        if (hintMid) hintMid.textContent = config.hintMid;
-        if (hintMax) hintMax.textContent = config.hintMax;
-      }
-
       function updateHeroCalc() {
-        if (!areaRange || !form || !window.BudgetCalculator) return;
-        const serviceType = document.getElementById('hero-service-type').value;
-        const areaM2 = parseInt(areaRange.value, 10);
-        areaVal.textContent = `${areaM2} m²`;
+        if (!serviceSelect || !window.BudgetCalculator) return;
+        const serviceKey = serviceSelect.value;
+        const sizeRadio = form ? form.querySelector('input[name="hero-size"]:checked') : null;
+        const sizeKey = sizeRadio ? sizeRadio.value : 'medio';
 
-        const qualityEl = form.querySelector('input[name="hero-quality"]:checked');
-        const quality = qualityEl ? qualityEl.value : 'confort';
+        const info = BudgetCalculator.getInfo(serviceKey, sizeKey);
 
-        const res = BudgetCalculator.calculate({ serviceType, areaM2, quality });
-
-        rangeText.textContent = `${res.minRange.toLocaleString('es-ES')}€ - ${res.maxRange.toLocaleString('es-ES')}€`;
-        timeText.textContent = `Plazo estimado de ejecución: ~${res.estimatedWeeks} ${res.estimatedWeeks === 1 ? 'semana' : 'semanas'}`;
-
-        const text = `¡Hola Maestros de la Construcción! He visto vuestra web y me gustaría pedir presupuesto para:
-- Estancia: ${res.serviceName}
-- Superficie: aprox. ${res.areaM2} m²
-- Presupuesto estimado: ${res.minRange}€ - ${res.maxRange}€
-¿Tenéis disponibilidad para hacer una visita en Valencia?`;
-        whatsappBtn.href = `https://wa.me/34722851328?text=${encodeURIComponent(text)}`;
+        if (calcBadge) calcBadge.textContent = info.badge;
+        if (calcTitle) calcTitle.textContent = info.serviceName;
+        if (rangeText) rangeText.textContent = `Desde ${info.basePriceFormatted}`;
+        if (timeText) timeText.textContent = `Plazo estimado de ejecución: ~${info.timeText}`;
+        if (serviceDesc) serviceDesc.textContent = info.description;
+        if (sizeDetail) sizeDetail.textContent = info.sizeLabel;
+        if (whatsappBtn) whatsappBtn.href = BudgetCalculator.generateWhatsAppUrl(info);
       }
 
       if (serviceSelect) {
-        serviceSelect.addEventListener('change', () => {
-          syncSliderLimits();
-          updateHeroCalc();
-        });
+        serviceSelect.addEventListener('change', updateHeroCalc);
       }
 
       if (form) {
-        syncSliderLimits();
         form.addEventListener('input', updateHeroCalc);
-        updateHeroCalc();
       }
+
+      updateHeroCalc();
     });
   </script>
 </body>

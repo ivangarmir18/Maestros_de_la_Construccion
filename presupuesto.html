@@ -7,6 +7,13 @@
   <meta name="description" content="Calcula online tu presupuesto estimado de reforma en Valencia. Precios orientativos por metro cuadrado para baños, pladur, pintura y reformas.">
   <meta name="robots" content="index, follow">
 
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -89,14 +96,14 @@
     
     <div class="text-center max-w-3xl mx-auto space-y-4">
       <div class="tech-badge tech-badge-amber">
-        <span>ESTIMADOR TÉCNICO INTERACTIVO</span>
+        <span>TARIFAS BASE DE OFICIAL</span>
       </div>
       <h1 class="text-3xl sm:text-5xl font-black font-heading text-stone-900 dark:text-white tracking-tight">
-        Simulador de Presupuesto <br>
-        <span class="text-amber-600 dark:text-amber-500">Transparente & Realista</span>
+        Tarifas Orientativas <br>
+        <span class="text-amber-600 dark:text-amber-500">Directo de Oficial a Propietario</span>
       </h1>
       <p class="text-stone-700 dark:text-stone-300 text-sm sm:text-base">
-        Ajusta la estancia, superficie y partidas de tu vivienda en Valencia para obtener un presupuesto orientativo con desglose real de materiales y mano de obra.
+        Sin sobrecostes comerciales ni intermediarios. Consulta nuestras tarifas base de partida y solicita visita presencial gratuita para fijar tu presupuesto cerrado sin compromiso.
       </p>
     </div>
 
@@ -112,88 +119,53 @@
               1. Selecciona el tipo de trabajo
             </label>
             <select id="calc-service-type" class="w-full bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-white font-medium rounded-md p-3 text-sm focus:outline-none focus:border-amber-600">
-              <option value="integral" selected>Reforma Integral de Vivienda (Sujeta a disponibilidad)</option>
-              <option value="bano">Reforma de Baño (Alicatado porcelánico, sanitarios, plato resina)</option>
-              <option value="cocina">Reforma de Cocina (Fontanería, alicatado, tomas)</option>
-              <option value="pladur">Pladur Técnico y Fosas de Luz LED</option>
-              <option value="suelos">Suelos Porcelánicos / Pavimentos y Rodapiés</option>
-              <option value="pintura">Alisado Profesional de Gotelé y Pintura</option>
+              <option value="ducha">Cambio de Bañera por Plato de Ducha (Desde 590 €)</option>
+              <option value="bano" selected>Reforma Completa de Baño (Desde 1.950 €)</option>
+              <option value="cocina">Reforma de Cocina (Desde 2.600 €)</option>
+              <option value="pladur">Tabiquería Pladur y Fosas de Luz LED (Desde 420 €)</option>
+              <option value="pintura">Alisado Profesional de Gotelé y Pintura (Desde 450 €)</option>
+              <option value="suelos">Suelos Porcelánicos / Pavimentos y Rodapiés (Desde 490 €)</option>
+              <option value="integral">Reforma Integral de Vivienda (Desde 18.500 €)</option>
             </select>
           </div>
 
           <div>
-            <div class="flex justify-between items-center mb-2">
-              <label for="calc-area-range" class="text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider font-mono-tech">
-                2. Superficie estimada
-              </label>
-              <span id="calc-area-val" class="text-lg font-black text-amber-600 dark:text-amber-500 font-mono-tech">75 m²</span>
-            </div>
-            <input type="range" id="calc-area-range" min="15" max="250" value="75" step="5" class="w-full h-2 bg-stone-300 dark:bg-stone-700 rounded appearance-none cursor-pointer accent-amber-600">
-            <div class="flex justify-between text-[11px] text-stone-500 mt-1 font-mono-tech">
-              <span id="calc-hint-min">40 m² (Estudio)</span>
-              <span id="calc-hint-mid">80 m² (Piso Estándar)</span>
-              <span id="calc-hint-max">250 m² (Ático/Chalet)</span>
-            </div>
-          </div>
-
-          <div>
             <label class="block text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider mb-2 font-mono-tech">
-              3. Gama de materiales y acabados
+              2. Envergadura aproximada del proyecto
             </label>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div class="grid grid-cols-3 gap-3">
               <label class="cursor-pointer">
-                <input type="radio" name="calc-quality" value="basico" class="peer sr-only">
+                <input type="radio" name="calc-size" value="pequeno" class="peer sr-only">
                 <div class="p-3 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                  <span class="block text-xs font-bold text-stone-900 dark:text-white">Esencial</span>
-                  <span class="block text-[10px] text-stone-500">Funcional</span>
+                  <span class="block text-xs font-bold text-stone-900 dark:text-white">Puntual</span>
+                  <span class="block text-[10px] text-stone-500">Aseo / Pequeño</span>
                 </div>
               </label>
               <label class="cursor-pointer">
-                <input type="radio" name="calc-quality" value="confort" checked class="peer sr-only">
+                <input type="radio" name="calc-size" value="medio" checked class="peer sr-only">
                 <div class="p-3 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                  <span class="block text-xs font-bold text-stone-900 dark:text-white">Confort</span>
+                  <span class="block text-xs font-bold text-stone-900 dark:text-white">Estándar</span>
                   <span class="block text-[10px] text-amber-600 dark:text-amber-400 font-bold">Habitual</span>
                 </div>
               </label>
               <label class="cursor-pointer">
-                <input type="radio" name="calc-quality" value="premium" class="peer sr-only">
+                <input type="radio" name="calc-size" value="grande" class="peer sr-only">
                 <div class="p-3 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                  <span class="block text-xs font-bold text-stone-900 dark:text-white">Premium</span>
-                  <span class="block text-[10px] text-stone-500">Alta Gama</span>
-                </div>
-              </label>
-              <label class="cursor-pointer">
-                <input type="radio" name="calc-quality" value="lujo" class="peer sr-only">
-                <div class="p-3 rounded-md border border-stone-300 dark:border-stone-700 text-center peer-checked:border-amber-600 peer-checked:bg-amber-600/10 hover:bg-stone-100 dark:hover:bg-stone-800 transition">
-                  <span class="block text-xs font-bold text-stone-900 dark:text-white">Exclusivo</span>
-                  <span class="block text-[10px] text-stone-500">A Medida</span>
+                  <span class="block text-xs font-bold text-stone-900 dark:text-white">Amplio</span>
+                  <span class="block text-[10px] text-stone-500">Gran formato</span>
                 </div>
               </label>
             </div>
+            <p id="calc-size-detail" class="mt-2 text-xs text-stone-600 dark:text-stone-400 font-mono-tech">
+              Baño estándar habitual (4 a 6 m²)
+            </p>
           </div>
 
-          <div>
-            <label class="block text-xs font-bold text-stone-900 dark:text-stone-200 uppercase tracking-wider mb-2 font-mono-tech">
-              4. Partidas y servicios complementarios
-            </label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-              <label class="flex items-center gap-3 p-3 rounded-md border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer text-stone-800 dark:text-stone-200">
-                <input type="checkbox" name="calc-extra" value="fontaneria" checked class="rounded text-amber-600 accent-amber-600">
-                <span>Renovación fontanería multicapa</span>
-              </label>
-              <label class="flex items-center gap-3 p-3 rounded-md border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer text-stone-800 dark:text-stone-200">
-                <input type="checkbox" name="calc-extra" value="electricidad" checked class="rounded text-amber-600 accent-amber-600">
-                <span>Cuadro eléctrico y tomas</span>
-              </label>
-              <label class="flex items-center gap-3 p-3 rounded-md border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer text-stone-800 dark:text-stone-200">
-                <input type="checkbox" name="calc-extra" value="led" class="rounded text-amber-600 accent-amber-600">
-                <span>Fosa perimetral iluminación LED</span>
-              </label>
-              <label class="flex items-center gap-3 p-3 rounded-md border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer text-stone-800 dark:text-stone-200">
-                <input type="checkbox" name="calc-extra" value="desescombro" checked class="rounded text-amber-600 accent-amber-600">
-                <span>Retirada y tasa de desescombro</span>
-              </label>
-            </div>
+          <div class="p-4 rounded-lg bg-stone-100 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700/60 space-y-2">
+            <h4 class="text-xs font-bold text-stone-900 dark:text-white font-mono-tech uppercase">Qué incluye esta tarifa base:</h4>
+            <p id="calc-service-desc" class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Demolición y desescombro, renovación de fontanería y desagües, alicatado de paredes y suelo en porcelánico, plato de ducha de resina, mampara y montaje de sanitarios.
+            </p>
           </div>
 
         </form>
@@ -202,47 +174,51 @@
       <!-- Tarjeta de Resultado Dinámica -->
       <div class="lg:col-span-5 construction-card p-6 sm:p-8 space-y-6 lg:sticky lg:top-28">
         <div>
-          <span class="tech-badge tech-badge-amber">DESGLOSE ESTIMADO</span>
-          <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white mt-2">Presupuesto Estimado</h3>
+          <span id="calc-result-badge" class="tech-badge tech-badge-amber">MÁS SOLICITADO</span>
+          <h3 id="calc-result-title" class="text-xl font-bold font-heading text-stone-900 dark:text-white mt-2">Reforma Completa de Baño</h3>
         </div>
 
         <div class="p-5 rounded-lg bg-amber-600/10 border border-amber-600/30 text-center space-y-1">
-          <div class="text-xs text-amber-800 dark:text-amber-300 uppercase tracking-wider font-bold font-mono-tech">Horquilla Orientativa</div>
-          <div id="calc-result-range" class="text-xl sm:text-2xl lg:text-3xl font-black text-stone-900 dark:text-white font-mono-tech whitespace-nowrap tracking-tight">
-            48.500€ - 65.600€
+          <div class="text-xs text-amber-800 dark:text-amber-300 uppercase tracking-wider font-bold font-mono-tech">Tarifa Base de Referencia</div>
+          <div id="calc-result-range" class="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-500 font-mono-tech whitespace-nowrap tracking-tight">
+            Desde 2.450 €
           </div>
-          <div class="text-xs text-stone-600 dark:text-stone-400 mt-2 font-mono-tech" id="calc-result-m2">
-            Media estimada: ~760 €/m²
+          <div class="text-xs text-stone-600 dark:text-stone-400 mt-2 font-mono-tech" id="calc-result-weeks">
+            Plazo estimado: ~7 a 10 días
           </div>
         </div>
 
-        <!-- Desglose técnico -->
+        <!-- Desglose técnico y garantías -->
         <div class="space-y-3 text-xs border-y border-stone-200 dark:border-stone-800 py-4 text-stone-700 dark:text-stone-300">
           <div class="flex justify-between items-center">
-            <span>Mano de obra directa (55%):</span>
-            <span id="calc-breakdown-labor" class="font-bold text-stone-900 dark:text-white font-mono-tech">31.380€</span>
+            <span>Mano de obra especializada directa:</span>
+            <span class="font-bold text-stone-900 dark:text-white font-mono-tech">Incluida</span>
           </div>
           <div class="flex justify-between items-center">
-            <span>Materiales y porcelánicos (35%):</span>
-            <span id="calc-breakdown-materials" class="font-bold text-stone-900 dark:text-white font-mono-tech">19.970€</span>
+            <span>Gestión y retirada de escombros:</span>
+            <span class="font-bold text-stone-900 dark:text-white font-mono-tech">Incluida</span>
           </div>
           <div class="flex justify-between items-center">
-            <span>Gestión de residuos y logística (10%):</span>
-            <span id="calc-breakdown-waste" class="font-bold text-stone-900 dark:text-white font-mono-tech">5.700€</span>
+            <span>Asesoramiento técnico directo:</span>
+            <span class="font-bold text-stone-900 dark:text-white font-mono-tech">Incluido</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span>Visita técnica y medición en Valencia:</span>
+            <span class="font-bold text-emerald-600 dark:text-emerald-400 font-mono-tech">Gratuita</span>
           </div>
           <div class="flex justify-between items-center pt-2 border-t border-stone-200 dark:border-stone-800">
-            <span class="text-amber-600 dark:text-amber-400 font-semibold font-mono-tech">Plazo estimado:</span>
-            <span id="calc-result-weeks" class="font-bold text-amber-600 dark:text-amber-400 font-mono-tech">~8 a 9 semanas</span>
+            <span>Presupuesto cerrado por escrito:</span>
+            <span class="font-bold text-stone-900 dark:text-white font-mono-tech">Sin sorpresas</span>
           </div>
         </div>
 
         <!-- Botón para enviar por WhatsApp -->
-        <a id="calc-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="block w-full py-3.5 btn-cta-construction text-center font-extrabold text-xs uppercase tracking-wider">
-          Pedir Visita Técnica con este Cálculo
+        <a id="calc-whatsapp-btn" href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block w-full py-3.5 btn-cta-construction text-center font-extrabold text-xs uppercase tracking-wider">
+          Pedir Visita Técnica y Precio Cerrado
         </a>
 
         <p class="text-[11px] text-stone-500 text-center leading-relaxed">
-          * Presupuesto cerrado tras visita presencial del oficial en tu vivienda para verificar cotas e instalaciones.
+          * El importe final y cerrado se formaliza tras la visita presencial del oficial en tu vivienda para comprobar cotas exactas e instalaciones.
         </p>
       </div>
 
@@ -325,77 +301,47 @@
     </div>
   </footer>
 
-  <script src="js/calculator.js?v=3.0"></script>
-  <script src="js/ai-assistant.js"></script>
-  <script src="js/main.js?v=3.0"></script>
+  <script src="js/calculator.js?v=3.2"></script>
+  <script src="js/ai-assistant.js?v=3.2"></script>
+  <script src="js/main.js?v=3.2"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('budget-calculator-form');
-      const areaRange = document.getElementById('calc-area-range');
-      const areaVal = document.getElementById('calc-area-val');
+      const serviceSelect = document.getElementById('calc-service-type');
+      const sizeDetail = document.getElementById('calc-size-detail');
+      const serviceDesc = document.getElementById('calc-service-desc');
+      const resultBadge = document.getElementById('calc-result-badge');
+      const resultTitle = document.getElementById('calc-result-title');
       const rangeText = document.getElementById('calc-result-range');
-      const m2Text = document.getElementById('calc-result-m2');
-      const laborText = document.getElementById('calc-breakdown-labor');
-      const materialsText = document.getElementById('calc-breakdown-materials');
-      const wasteText = document.getElementById('calc-breakdown-waste');
       const weeksText = document.getElementById('calc-result-weeks');
       const whatsappBtn = document.getElementById('calc-whatsapp-btn');
 
-      const serviceSelect = document.getElementById('calc-service-type');
-      const hintMin = document.getElementById('calc-hint-min');
-      const hintMid = document.getElementById('calc-hint-mid');
-      const hintMax = document.getElementById('calc-hint-max');
-
-      function syncSliderLimits() {
-        if (!serviceSelect || !areaRange || !window.BudgetCalculator) return;
-        const config = BudgetCalculator.serviceConfigs[serviceSelect.value] || BudgetCalculator.serviceConfigs.integral;
-        areaRange.min = config.min;
-        areaRange.max = config.max;
-        areaRange.step = config.step;
-        if (parseInt(areaRange.value, 10) > config.max || parseInt(areaRange.value, 10) < config.min) {
-          areaRange.value = config.defaultVal;
-        }
-        if (hintMin) hintMin.textContent = config.hintMin;
-        if (hintMid) hintMid.textContent = config.hintMid;
-        if (hintMax) hintMax.textContent = config.hintMax;
-      }
-
       function updateCalculation() {
-        if (!areaRange || !form || !window.BudgetCalculator) return;
-        const serviceType = document.getElementById('calc-service-type').value;
-        const areaM2 = parseInt(areaRange.value, 10);
-        areaVal.textContent = `${areaM2} m²`;
+        if (!serviceSelect || !window.BudgetCalculator) return;
+        const serviceKey = serviceSelect.value;
+        const sizeRadio = form ? form.querySelector('input[name="calc-size"]:checked') : null;
+        const sizeKey = sizeRadio ? sizeRadio.value : 'medio';
 
-        const qualityEl = form.querySelector('input[name="calc-quality"]:checked');
-        const quality = qualityEl ? qualityEl.value : 'confort';
+        const info = BudgetCalculator.getInfo(serviceKey, sizeKey);
 
-        const extras = [];
-        form.querySelectorAll('input[name="calc-extra"]:checked').forEach(el => extras.push(el.value));
-
-        const res = BudgetCalculator.calculate({ serviceType, areaM2, quality, extras });
-
-        rangeText.textContent = `${res.minRange.toLocaleString('es-ES')}€ - ${res.maxRange.toLocaleString('es-ES')}€`;
-        m2Text.textContent = `Media estimada: ${Math.round(res.totalEstimated / res.areaM2)} €/m²`;
-        laborText.textContent = `${res.manoDeObra.toLocaleString('es-ES')}€`;
-        materialsText.textContent = `${res.materiales.toLocaleString('es-ES')}€`;
-        wasteText.textContent = `${res.gestionResiduos.toLocaleString('es-ES')}€`;
-        weeksText.textContent = `~${res.estimatedWeeks} ${res.estimatedWeeks === 1 ? 'semana' : 'semanas'}`;
-
-        whatsappBtn.href = BudgetCalculator.generateWhatsAppUrl(res);
+        if (resultBadge) resultBadge.textContent = info.badge;
+        if (resultTitle) resultTitle.textContent = info.serviceName;
+        if (rangeText) rangeText.textContent = `Desde ${info.basePriceFormatted}`;
+        if (weeksText) weeksText.textContent = `Plazo estimado: ~${info.timeText}`;
+        if (serviceDesc) serviceDesc.textContent = info.description;
+        if (sizeDetail) sizeDetail.textContent = info.sizeLabel;
+        if (whatsappBtn) whatsappBtn.href = BudgetCalculator.generateWhatsAppUrl(info);
       }
 
       if (serviceSelect) {
-        serviceSelect.addEventListener('change', () => {
-          syncSliderLimits();
-          updateCalculation();
-        });
+        serviceSelect.addEventListener('change', updateCalculation);
       }
 
       if (form) {
-        syncSliderLimits();
         form.addEventListener('input', updateCalculation);
-        updateCalculation();
       }
+
+      updateCalculation();
     });
   </script>
 </body>
