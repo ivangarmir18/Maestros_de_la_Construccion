@@ -89,8 +89,20 @@ export default async function handler(req, res) {
     if (!apiKey) {
       return res.status(200).json({ status: 'error', reason: 'No GEMINI_API_KEY configurada' });
     }
-    const endpoints = await getEndpoints(apiKey);
-    return res.status(200).json({ status: 'ready', availableEndpointsCount: endpoints.length, topEndpoint: endpoints[0] });
+    try {
+      const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+      const text = await resp.text();
+      let parsed;
+      try { parsed = JSON.parse(text); } catch (_) { parsed = text; }
+      return res.status(200).json({
+        keyLength: apiKey.length,
+        keyPrefix: apiKey.slice(0, 6) + '...',
+        googleHttpStatus: resp.status,
+        googleResponse: parsed
+      });
+    } catch (err) {
+      return res.status(200).json({ error: err.message });
+    }
   }
 
   if (req.method !== 'POST') {
