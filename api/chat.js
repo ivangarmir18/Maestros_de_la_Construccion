@@ -41,15 +41,42 @@ REGLAS DE CONVERSACIÓN Y DERIVACIÓN (MUY IMPORTANTE):
    "Para ver tu estancia y darte un presupuesto exacto cerrado sin compromiso, lo ideal es que nos envíes fotos o nos escribas por WhatsApp al **722 851 328**. También podemos acordar un día para pasar a medir sin ningún coste."
 6. No inventes precios que contradigan las tarifas base de referencia.`;
 
-const CANDIDATE_URLS = (key) => [
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${key}`,
-  `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${key}`,
-  `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${key}`,
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`,
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${key}`
-];
+async function getEndpoints(apiKey) {
+  const endpoints = [
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`
+  ];
+
+  // Descubrimiento dinámico de los modelos exactos disponibles para esta API key
+  try {
+    const listRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+    if (listRes.ok) {
+      const data = await listRes.json();
+      if (Array.isArray(data.models)) {
+        const supported = data.models
+          .filter(m => Array.isArray(m.supportedGenerationMethods) && m.supportedGenerationMethods.includes('generateContent'))
+          .map(m => m.name.replace(/^models\//, ''));
+
+        supported.sort((a, b) => (b.includes('flash') ? 1 : 0) - (a.includes('flash') ? 1 : 0));
+
+        for (const name of supported) {
+          const url = `https://generativelanguage.googleapis.com/v1beta/models/${name}:generateContent?key=${apiKey}`;
+          if (!endpoints.includes(url)) {
+            endpoints.unshift(url);
+          }
+        }
+      }
+    }
+  } catch (_) {}
+
+  return endpoints;
+}
 
 export default async function handler(req, res) {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -57,29 +84,13 @@ export default async function handler(req, res) {
 
   const apiKey = (process.env.GEMINI_API_KEY || '').trim();
 
-  // Diagnóstico GET para comprobar estado en un click
+  // GET diagnóstico
   if (req.method === 'GET') {
     if (!apiKey) {
-      return res.status(200).json({ status: 'error', reason: 'No GEMINI_API_KEY en variables de Vercel' });
+      return res.status(200).json({ status: 'error', reason: 'No GEMINI_API_KEY configurada' });
     }
-    const testPayload = {
-      contents: [{ role: 'user', parts: [{ text: 'Hola, di OK si funcionas.' }] }],
-      generationConfig: { maxOutputTokens: 20 }
-    };
-    for (const url of CANDIDATE_URLS(apiKey)) {
-      try {
-        const resp = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(testPayload)
-        });
-        if (resp.ok) {
-          const data = await resp.json();
-          return res.status(200).json({ status: 'ok', workingUrl: url.split('?')[0], reply: data.candidates?.[0]?.content?.parts?.[0]?.text });
-        }
-      } catch (_) {}
-    }
-    return res.status(200).json({ status: 'error', reason: 'Ningun endpoint de Gemini respondio 200' });
+    const endpoints = await getEndpoints(apiKey);
+    return res.status(200).json({ status: 'ready', availableEndpointsCount: endpoints.length, topEndpoint: endpoints[0] });
   }
 
   if (req.method !== 'POST') {
@@ -96,14 +107,13 @@ export default async function handler(req, res) {
     const cleanMessage = message.trim().slice(0, 800);
 
     if (!apiKey) {
-      console.error('ERROR: Variable GEMINI_API_KEY no encontrada en process.env');
       return res.status(200).json({
         fallback: true,
         message: 'Clave GEMINI_API_KEY no configurada en el servidor.'
       });
     }
 
-    // Construir contents garantizando roles estrictamente alternos (user -> model -> user)
+    // Construir contents alternando estrictamente
     const contents = [];
 
     if (Array.isArray(history)) {
@@ -146,10 +156,11 @@ export default async function handler(req, res) {
       }
     };
 
+    const endpoints = await getEndpoints(apiKey);
     let successfulData = null;
     let lastError = null;
 
-    for (const url of CANDIDATE_URLS(apiKey)) {
+    for (const url of endpoints) {
       try {
         const resp = await fetch(url, {
           method: 'POST',
@@ -168,7 +179,7 @@ export default async function handler(req, res) {
       }
     }
 
-    // Fallback de compatibilidad sin systemInstruction si todos fallan
+    // Fallback de compatibilidad sin systemInstruction
     if (!successfulData) {
       const directPayload = {
         contents: [
@@ -180,7 +191,7 @@ export default async function handler(req, res) {
         generationConfig: { temperature: 0.65, maxOutputTokens: 400 }
       };
 
-      for (const url of CANDIDATE_URLS(apiKey)) {
+      for (const url of endpoints.slice(0, 4)) {
         try {
           const resp = await fetch(url, {
             method: 'POST',
