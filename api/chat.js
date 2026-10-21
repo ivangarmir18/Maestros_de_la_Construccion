@@ -71,7 +71,6 @@ export default async function handler(req, res) {
     const contents = [];
 
     if (Array.isArray(history)) {
-      // Filtrar historial válido
       const validHistory = history
         .filter(item => item && (item.role === 'user' || item.role === 'model') && typeof item.text === 'string' && item.text.trim())
         .slice(-6);
@@ -89,13 +88,11 @@ export default async function handler(req, res) {
         lastRole = role;
       }
 
-      // Si el último turno del historial fue 'user', quitarlo porque cleanMessage ocupará ese puesto
       if (contents.length > 0 && contents[contents.length - 1].role === 'user') {
         contents.pop();
       }
     }
 
-    // Añadir el mensaje actual del usuario como turno final
     contents.push({
       role: 'user',
       parts: [{ text: cleanMessage }]
@@ -113,66 +110,75 @@ export default async function handler(req, res) {
       }
     };
 
-    // 1. Intentar con gemini-1.5-flash
-    let endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-    let response = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+    // Lista de modelos a probar en orden de prioridad
+    const modelsToTry = [
+      'gemini-2.5-flash',
+      'gemini-2.0-flash',
+      'gemini-1.5-flash-latest',
+      'gemini-1.5-flash',
+      'gemini-1.5-pro-latest',
+      'gemini-pro'
+    ];
 
-    // 2. Si falla, probar con gemini-2.0-flash
-    if (!response.ok) {
-      console.warn('Fallo en gemini-1.5-flash, probando con gemini-2.0-flash...');
-      const fbEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-      const fbResponse = await fetch(fbEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (fbResponse.ok) {
-        response = fbResponse;
-      }
-    }
+    let lastError = null;
+    let successfulData = null;
 
-    // 3. Si ambos fallan con systemInstruction, intentar sin systemInstruction
-    if (!response.ok) {
-      console.warn('Probando llamada con prompt en el primer turno...');
-      const fallbackContents = [
-        {
-          role: 'user',
-          parts: [{ text: `Instrucciones del sistema:\n${SYSTEM_PROMPT}\n\nConsulta del cliente:\n${cleanMessage}` }]
+    for (const model of modelsToTry) {
+      try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        const resp = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (resp.ok) {
+          successfulData = await resp.json();
+          break;
+        } else {
+          lastError = await resp.text();
         }
-      ];
-      const directResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: fallbackContents,
-          generationConfig: {
-            temperature: 0.65,
-            maxOutputTokens: 400,
-            topP: 0.95
-          }
-        })
-      });
-      if (directResponse.ok) {
-        response = directResponse;
+      } catch (err) {
+        lastError = err.message;
       }
     }
 
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error('Error definitivo llamando a Gemini API:', errText);
+    // Fallback sin systemInstruction si fallaron los anteriores
+    if (!successfulData) {
+      for (const model of ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash-latest', 'gemini-pro']) {
+        try {
+          const directContents = [
+            {
+              role: 'user',
+              parts: [{ text: `${SYSTEM_PROMPT}\n\nConsulta del cliente:\n${cleanMessage}` }]
+            }
+          ];
+          const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: directContents,
+              generationConfig: { temperature: 0.65, maxOutputTokens: 400 }
+            })
+          });
+          if (resp.ok) {
+            successfulData = await resp.json();
+            break;
+          }
+        } catch (_) {}
+      }
+    }
+
+    if (!successfulData) {
+      console.error('Error definitivo llamando a Gemini API:', lastError);
       return res.status(200).json({
         fallback: true,
-        error: 'Error en la respuesta del modelo Gemini',
-        details: errText
+        error: 'No se pudo conectar con ningún modelo Gemini disponible',
+        details: lastError
       });
     }
 
-    const data = await response.json();
-    const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const replyText = successfulData.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
     return res.status(200).json({
       success: true,
