@@ -33,12 +33,13 @@ COMPROMISOS INNEGOCIABLES:
 REGLAS DE CONVERSACIÓN Y DERIVACIÓN (MUY IMPORTANTE):
 1. NO USES RESPUESTAS AUTOMATIZADAS NI FRASES CLICHÉ ROBÓTICAS. Genera respuestas vivas, naturales, como un profesional de confianza respondiendo una llamada o un mensaje.
 2. Sé conciso y claro (máximo 2 a 3 párrafos cortos). Usa formato markdown limpio con negritas para destacar cifras y datos clave.
-3. Cuando el usuario pregunte dudas técnicas (diferencias de azulejos, impermeabilización de duchas, aislamiento térmico/acústico con lana de roca, gotelé al temple vs plástico), explícaselo con criterio técnico sólido.
-4. GUARDARRAÍL DE DERIVACIÓN (CUANDO SE SALE DEL GUIÓN O QUIERE CERRAR):
+3. Si el usuario te saluda, dale la bienvenida amablemente como el asesor técnico de Maestros de la Construcción y pregúntale qué estancia o reforma tiene en mente.
+4. Cuando el usuario pregunte dudas técnicas (diferencias de azulejos, impermeabilización de duchas, aislamiento acústico con lana de roca, gotelé al temple vs plástico), explícaselo con criterio técnico sólido.
+5. GUARDARRAÍL DE DERIVACIÓN (CUANDO SE SALE DEL GUIÓN O QUIERE CERRAR):
    En el momento en que el usuario pregunte por algo fuera de catálogo, solicite un presupuesto final cerrado, pregunte por fechas exactas de inicio o detalles que requieran ver su vivienda en persona:
    Derívalo con total naturalidad hacia WhatsApp:
    "Para ver tu estancia y darte un presupuesto exacto cerrado sin compromiso, lo ideal es que nos envíes fotos o nos escribas por WhatsApp al **722 851 328**. También podemos acordar un día para pasar a medir sin ningún coste."
-5. No inventes precios que contradigan las tarifas base de referencia.`;
+6. No inventes precios que contradigan las tarifas base de referencia.`;
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -59,28 +60,42 @@ export default async function handler(req, res) {
     const apiKey = (process.env.GEMINI_API_KEY || '').trim();
 
     if (!apiKey) {
+      console.error('ERROR: Variable GEMINI_API_KEY no encontrada en process.env');
       return res.status(200).json({
         fallback: true,
-        message: 'Clave GEMINI_API_KEY no configurada en el servidor. Utiliza la clave local en el widget.'
+        message: 'Clave GEMINI_API_KEY no configurada en el servidor.'
       });
     }
 
-    // Construir contenido con historial de conversación para memoria contextual
+    // Construir contents garantizando roles estrictamente alternos (user -> model -> user)
     const contents = [];
 
-    // Añadir historial válido
     if (Array.isArray(history)) {
-      history.slice(-8).forEach(item => {
-        if (item && item.role && item.text) {
-          contents.push({
-            role: item.role === 'user' ? 'user' : 'model',
-            parts: [{ text: item.text.slice(0, 1000) }]
-          });
-        }
-      });
+      // Filtrar historial válido
+      const validHistory = history
+        .filter(item => item && (item.role === 'user' || item.role === 'model') && typeof item.text === 'string' && item.text.trim())
+        .slice(-6);
+
+      let lastRole = null;
+      for (const item of validHistory) {
+        const role = item.role === 'user' ? 'user' : 'model';
+        if (contents.length === 0 && role !== 'user') continue;
+        if (role === lastRole) continue;
+
+        contents.push({
+          role,
+          parts: [{ text: item.text.trim().slice(0, 800) }]
+        });
+        lastRole = role;
+      }
+
+      // Si el último turno del historial fue 'user', quitarlo porque cleanMessage ocupará ese puesto
+      if (contents.length > 0 && contents[contents.length - 1].role === 'user') {
+        contents.pop();
+      }
     }
 
-    // Añadir mensaje actual
+    // Añadir el mensaje actual del usuario como turno final
     contents.push({
       role: 'user',
       parts: [{ text: cleanMessage }]
@@ -98,16 +113,17 @@ export default async function handler(req, res) {
       }
     };
 
+    // 1. Intentar con gemini-1.5-flash
     let endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-
     let response = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 
-    // Si gemini-1.5-flash da error o cuota, intentar con gemini-2.0-flash
+    // 2. Si falla, probar con gemini-2.0-flash
     if (!response.ok) {
+      console.warn('Fallo en gemini-1.5-flash, probando con gemini-2.0-flash...');
       const fbEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
       const fbResponse = await fetch(fbEndpoint, {
         method: 'POST',
@@ -119,9 +135,35 @@ export default async function handler(req, res) {
       }
     }
 
+    // 3. Si ambos fallan con systemInstruction, intentar sin systemInstruction
+    if (!response.ok) {
+      console.warn('Probando llamada con prompt en el primer turno...');
+      const fallbackContents = [
+        {
+          role: 'user',
+          parts: [{ text: `Instrucciones del sistema:\n${SYSTEM_PROMPT}\n\nConsulta del cliente:\n${cleanMessage}` }]
+        }
+      ];
+      const directResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: fallbackContents,
+          generationConfig: {
+            temperature: 0.65,
+            maxOutputTokens: 400,
+            topP: 0.95
+          }
+        })
+      });
+      if (directResponse.ok) {
+        response = directResponse;
+      }
+    }
+
     if (!response.ok) {
       const errText = await response.text();
-      console.error('Error llamando a Gemini API:', errText);
+      console.error('Error definitivo llamando a Gemini API:', errText);
       return res.status(200).json({
         fallback: true,
         error: 'Error en la respuesta del modelo Gemini',
