@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rehabilitación de Finca Centenaria en Alginet | Maestros de la Construcción</title>
+  <meta name="description" content="Crónica documentada de la reforma integral en una casa centenaria de Alginet. Saneamiento de humedades, solado con puente de unión y obra limpia.">
+  <link rel="canonical" href="https://www.maestrosdelaconstruccion.es/obra-alginet.html">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css?v=4.0">
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+</head>
+<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
+
+  <!-- Header Arquitectónica -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-300 dark:border-stone-700 shadow-sm group-hover:scale-105 transition duration-200 flex-shrink-0">
+        <div>
+          <span class="block font-heading font-extrabold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white group-hover:text-amber-600 transition">
+            MAESTROS <span class="text-amber-600 dark:text-amber-500">DE LA CONSTRUCCIÓN</span>
+          </span>
+          <span class="block text-[10px] text-stone-500 dark:text-stone-400 font-mono-tech tracking-wider uppercase">Valencia y Alrededores</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="obras.html" class="nav-link active">Proyectos & Obras</a>
+        <a href="presupuesto.html" class="nav-link">Presupuesto</a>
+        <a href="donde-estamos.html" class="nav-link">Dónde Estamos</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
+          WhatsApp: 722 851 328
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 lg:hidden">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
+      <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
+      <a href="obras.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-500 border-b border-stone-200 dark:border-stone-800">Proyectos & Obras</a>
+      <a href="presupuesto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Simulador de Presupuesto</a>
+      <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
+      <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
+      <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
+      <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
+        WhatsApp: 722 851 328
+      </a>
+    </div>
+  </header>
+
+  <!-- Artículo de Obra Documentada -->
+  <main class="pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-8 space-y-10">
+
+    <!-- Migas de Pan -->
+    <nav class="text-xs font-mono-tech text-stone-500 flex items-center gap-2">
+      <a href="index.html" class="hover:text-amber-600">Inicio</a>
+      <span>/</span>
+      <a href="obras.html" class="hover:text-amber-600">Proyectos & Obras</a>
+      <span>/</span>
+      <span class="text-stone-900 dark:text-white font-bold">Finca Centenaria en Alginet</span>
+    </nav>
+
+    <!-- Cabecera de Crónica Periodística -->
+    <div class="space-y-4 border-b border-stone-200 dark:border-stone-800 pb-8">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="tech-badge tech-badge-amber">CRÓNICA DE OBRA REAL</span>
+        <span class="text-xs font-mono-tech text-stone-500">Alginet (Ribera Alta) · Finca Rústica</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+        Rehabilitación de una Finca Centenaria: Cuando la Humedad Exige Técnica y el Presupuesto Sentido Común
+      </h1>
+      <p class="text-stone-600 dark:text-stone-400 text-sm sm:text-base font-mono-tech">
+        Por Fabio Toro · Oficial Maestro de Albañilería · Maestros de la Construcción
+      </p>
+    </div>
+
+    <!-- Fotografía Principal de Portada del Reportaje -->
+    <div class="construction-card overflow-hidden rounded-xl">
+      <img src="img/proyectos/alginet-6-habitacion-despues.jpg" alt="Habitación terminada en Alginet" class="w-full h-80 sm:h-96 object-cover">
+      <div class="p-4 bg-stone-100 dark:bg-stone-900 text-xs font-mono-tech text-stone-600 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800">
+        Aspecto final de uno de los cuatro dormitorios tras sanear paramentos, colocar pavimento porcelánico sobre puente de unión y montar ventana Climalit.
+      </div>
+    </div>
+
+    <!-- Crónica Redactada en Estilo Periodístico (4 Párrafos Narrativos) -->
+    <article class="prose dark:prose-invert max-w-none space-y-6 text-stone-800 dark:text-stone-200 text-base sm:text-lg leading-relaxed">
+      
+      <p>
+        Cuando los nuevos propietarios nos abrieron las puertas de esta casa de campo en Alginet, la finca llevaba años deshabitada y acumulaba más de un siglo de historia entre sus muros de carga. La vivienda había sido una gran oportunidad de compra en una parcela amplia, pero el paso del tiempo y las filtraciones por capilaridad habían hecho mella: el antiguo cuarto de baño estaba prácticamente inutilizable, con el chapado cerámico desprendido por completo en bloques y el suelo deteriorado por la humedad continua.
+      </p>
+
+      <p>
+        Nuestra primera decisión técnica fue no poner parches estéticos. Demolimos por completo el revestimiento dañado hasta descubrir la fábrica original de ladrillo y bloque, desescombramos a fondo y tratamos las paredes con mortero hidrófugo de alta densidad para frenar definitivamente el avance del agua. Para resolver el problema de la condensación interior, abrimos un hueco específico junto a la zona de ducha donde encastramos una ventana oscilobatiente de aluminio con rotura de puente térmico y vidrio Climalit, logrando una ventilación cruzada natural que protegerá la obra durante las próximas décadas.
+      </p>
+
+      <p>
+        El gran reto económico estaba en los suelos de las cuatro habitaciones y el salón-comedor. Retirar toda la solera antigua de la casa habría disparado los costes de desescombro y mano de obra para el cliente. En lugar de eso, aplicamos una solución de taller probada: procedimos a un rayado mecánico exhaustivo de las baldosas antiguas para abrir el poro, limpiamos con aspiración industrial y sellamos toda la superficie con una imprimación de resina polimérica de puente de unión. Sobre esta base químicamente adherida, colocamos el nuevo pavimento porcelánico utilizando calzos y cuñas autonivelantes milimétricas, garantizando un plano perfectamente liso, sin una sola ceja y absorbiendo las dilataciones estructurales.
+      </p>
+
+      <p>
+        El trabajo culminó con el cambio integral de ventanas exteriores, persianas y rejas de seguridad, el saneamiento de las tomas de fontanería para devolver el servicio al baño, y tres manos de pintura plástica transpirable antimohos en blanco puro que multiplicaron la luz en cada rincón. Ver la cara de los propietarios al entrar y comprobar que una casa centenaria y castigada se convertía en un hogar habitable, luminoso y cálido, sin sorpresas en la factura final, es el motivo por el que amamos este oficio.
+      </p>
+
+    </article>
+
+    <!-- Secuencia Fotográfica del Proceso -->
+    <div class="space-y-4 pt-6">
+      <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white">
+        El Proceso Paso a Paso en Imágenes
+      </h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        
+        <!-- Foto 1: Demolición -->
+        <div class="construction-card overflow-hidden">
+          <img src="img/proyectos/alginet-1-demolicion-bano.jpg" alt="Demolición del baño deteriorado" class="w-full h-56 object-cover">
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>1. Demolición inicial:</strong> Azulejos caídos por humedad en el plato de ducha original.
+          </div>
+        </div>
+
+        <!-- Foto 2: Picado y saneado -->
+        <div class="construction-card overflow-hidden">
+          <img src="img/proyectos/alginet-2-picado-impermeabilizacion.jpg" alt="Picado hasta bloque estructural" class="w-full h-56 object-cover">
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>2. Saneamiento total:</strong> Picado hasta la fábrica de ladrillo para aplicar barrera hidrófuga.
+          </div>
+        </div>
+
+        <!-- Foto 3: Solado con cuñas -->
+        <div class="construction-card overflow-hidden">
+          <img src="img/proyectos/alginet-4-solado-cunas.jpg" alt="Solado con cuñas autonivelantes sobre puente de unión" class="w-full h-56 object-cover">
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>3. Nivelación con cuñas:</strong> Colocación del nuevo suelo sobre el puente de unión sin demoler la solera previa.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Comparativa Antes y Después -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="construction-card overflow-hidden relative">
+          <img src="img/proyectos/alginet-5-habitacion-antes.jpg" alt="Habitación antes de la reforma" class="w-full h-64 object-cover">
+          <span class="absolute top-3 left-3 bg-red-600 text-white font-mono-tech text-xs px-2.5 py-1 rounded font-bold uppercase">Estado Inicial (Antes)</span>
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            Humedades visibles en la parte baja de los muros, carpintería desajustada y suelo antiguo gastado.
+          </div>
+        </div>
+
+        <div class="construction-card overflow-hidden relative">
+          <img src="img/proyectos/alginet-6-habitacion-despues.jpg" alt="Habitación terminada después de la reforma" class="w-full h-64 object-cover">
+          <span class="absolute top-3 left-3 bg-emerald-600 text-white font-mono-tech text-xs px-2.5 py-1 rounded font-bold uppercase">Resultado (Después)</span>
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            Mismo espacio tras sanear, pintar en blanco transpirable, colocar pavimento porcelánico y ventana Climalit.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA de Contacto al Final del Reportaje -->
+    <div class="construction-card p-8 text-center space-y-4 bg-[#eae8df] dark:bg-[#15171d]">
+      <h3 class="text-2xl font-black font-heading text-stone-900 dark:text-white">
+        ¿Tienes una vivienda de pueblo o finca rústica que necesita sanearse?
+      </h3>
+      <p class="text-sm text-stone-700 dark:text-stone-300 max-w-xl mx-auto">
+        Explícanos tu caso directamente a los oficiales. Te visitamos sin coste, revisamos humedades y te ofrecemos la mejor solución técnica ajustada a tu bolsillo.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a href="https://wa.me/34722851328?text=Hola,%20he%20le%C3%ADdo%20el%20reportaje%20de%20la%20finca%20de%20Alginet%20y%20me%20gustar%C3%ADa%20consultaros%20por%20mi%20caso"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-cta-construction">
+          Hablar con Fabio por WhatsApp (722 851 328)
+        </a>
+        <a href="obras.html" class="btn-secondary-construction">
+          ← Volver a Proyectos & Obras
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Arquitectónico -->
+  <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
+        <div>
+          <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
+          <span class="text-stone-400 text-[11px] block">Valencia & Área Metropolitana · Tel: 722 851 328</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300">
+        <a href="index.html" class="hover:text-amber-500">Inicio</a>
+        <a href="obras.html" class="hover:text-amber-500">Proyectos & Obras</a>
+        <a href="presupuesto.html" class="hover:text-amber-500">Presupuesto</a>
+        <a href="contacto.html" class="hover:text-amber-500">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ai-assistant.js?v=4.1"></script>
+  <script src="js/main.js?v=4.0"></script>
+</body>
+</html>

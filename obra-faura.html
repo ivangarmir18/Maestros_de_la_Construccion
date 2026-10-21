@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitación Asistida en Pladur en Faura | Maestros de la Construcción</title>
+  <meta name="description" content="Crónica de la creación de una habitación asistida en un salón en Faura con tabiquería de pladur, aislamiento acústico y armario a medida.">
+  <link rel="canonical" href="https://www.maestrosdelaconstruccion.es/obra-faura.html">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css?v=4.0">
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+</head>
+<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white">
+
+  <!-- Header -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="img/logo.jpg" alt="Logo Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-300 dark:border-stone-700 shadow-sm group-hover:scale-105 transition duration-200 flex-shrink-0">
+        <div>
+          <span class="block font-heading font-extrabold text-sm sm:text-base tracking-tight text-stone-900 dark:text-white group-hover:text-amber-600 transition">
+            MAESTROS <span class="text-amber-600 dark:text-amber-500">DE LA CONSTRUCCIÓN</span>
+          </span>
+          <span class="block text-[10px] text-stone-500 dark:text-stone-400 font-mono-tech tracking-wider uppercase">Valencia y Alrededores</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="obras.html" class="nav-link active">Proyectos & Obras</a>
+        <a href="presupuesto.html" class="nav-link">Presupuesto</a>
+        <a href="donde-estamos.html" class="nav-link">Dónde Estamos</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="btn-cta-construction text-xs uppercase tracking-wider font-extrabold">
+          WhatsApp: 722 851 328
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 lg:hidden">
+        <button class="theme-toggle-btn p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200" title="Cambiar tema"></button>
+        <button id="mobile-menu-btn" class="text-stone-800 dark:text-stone-200 p-2.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 border border-stone-300 dark:border-stone-700" aria-label="Menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#f7f6f1] dark:bg-[#181a20] border-b-2 border-stone-300 dark:border-stone-800 px-6 py-5 space-y-3 text-sm">
+      <a href="index.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Inicio</a>
+      <a href="obras.html" class="block py-2.5 font-bold text-amber-600 dark:text-amber-500 border-b border-stone-200 dark:border-stone-800">Proyectos & Obras</a>
+      <a href="presupuesto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Simulador de Presupuesto</a>
+      <a href="donde-estamos.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Dónde Estamos</a>
+      <a href="faq.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Preguntas Frecuentes</a>
+      <a href="contacto.html" class="block py-2.5 font-medium text-stone-800 dark:text-stone-200 hover:text-amber-600 border-b border-stone-200 dark:border-stone-800">Contacto</a>
+      <a href="https://wa.me/34722851328" target="_blank" rel="noopener noreferrer" class="block text-center btn-cta-construction py-3 rounded-lg font-bold uppercase tracking-wider mt-4">
+        WhatsApp: 722 851 328
+      </a>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <main class="pt-32 pb-24 max-w-4xl mx-auto px-4 sm:px-8 space-y-10">
+
+    <nav class="text-xs font-mono-tech text-stone-500 flex items-center gap-2">
+      <a href="index.html" class="hover:text-amber-600">Inicio</a>
+      <span>/</span>
+      <a href="obras.html" class="hover:text-amber-600">Proyectos & Obras</a>
+      <span>/</span>
+      <span class="text-stone-900 dark:text-white font-bold">Habitación Asistida en Faura</span>
+    </nav>
+
+    <div class="space-y-4 border-b border-stone-200 dark:border-stone-800 pb-8">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="tech-badge tech-badge-amber">CRÓNICA DE OBRA REAL</span>
+        <span class="text-xs font-mono-tech text-stone-500">Faura (Camp de Morvedre) · Vivienda en Planta Alta</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black font-heading text-stone-900 dark:text-white leading-tight">
+        Construir con Empatía: Cómo un Tabique de Pladur Devolvió la Calma a una Familia en Faura
+      </h1>
+      <p class="text-stone-600 dark:text-stone-400 text-sm sm:text-base font-mono-tech">
+        Por Fabio Toro · Oficial Maestro de Albañilería · Maestros de la Construcción
+      </p>
+    </div>
+
+    <div class="construction-card overflow-hidden rounded-xl">
+      <img src="img/proyectos/faura-4-habitacion-terminada.jpg" alt="Dormitorio terminado en tono azul sereno en Faura" class="w-full h-80 sm:h-96 object-cover">
+      <div class="p-4 bg-stone-100 dark:bg-stone-900 text-xs font-mono-tech text-stone-600 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800">
+        Resultado final de la habitación asistida en Faura: aislamiento acústico, moldura en techo y pintura suave lista para habitar.
+      </div>
+    </div>
+
+    <article class="prose dark:prose-invert max-w-none space-y-6 text-stone-800 dark:text-stone-200 text-base sm:text-lg leading-relaxed">
+      
+      <p>
+        Hay encargos donde lo más importante no son los metros cuadrados ni los materiales de diseño, sino la urgencia y el bienestar de las personas. En Faura, nos llamó una familia cuyo padre atravesaba un proceso médico oncológico muy delicado. Vivían en una segunda planta y necesitaban con urgencia acondicionar un dormitorio independiente, accesible y totalmente aislado del ruido cotidiano de la vivienda, aprovechando un espacio sobrante en el salón principal pero sin meterse en semanas de obras de ladrillo ni generar escombros pesados en el edificio.
+      </p>
+
+      <p>
+        La solución técnica ideal fue recurrir a la tabiquería ligera en seco con sistemas de pladur. Replanteamos el espacio en el salón e instalamos una estructura de perfilería de acero galvanizado reforzado, anclada tanto al forjado del suelo como al techo mediante bandas estancas desolidarizadoras de caucho que impiden la transmisión de vibraciones. En el interior del tabique embutimos paneles de lana de roca de alta densidad, consiguiendo una barrera térmica y una insonorización acústica inmediata frente a la televisión y la vida diaria del resto de la casa.
+      </p>
+
+      <p>
+        Para resolver el almacenaje de forma limpia sin restar espacio útil con armarios pesados de tienda, decidimos armar in situ un armario clóset empotrado estructurado directamente con montantes metálicos. Creamos módulos para baldas de ropa doblada, maletero superior y barra de cuelgue a medida. Colocamos las placas de yeso laminado de 15 mm, encintamos todas las juntas con tres manos cruzadas de pasta de acabado fino Q3 y montamos un premarco de madera con una puerta abatible dotada de maneta ergonómica de tacto suave, fácil de accionar por una persona convaleciente.
+      </p>
+
+      <p>
+        Coronamos el perímetro superior con molduras clásicas de escayola y aplicamos una pintura plástica transpirable y lavable en tono azul celeste sereno, un color que aporta luminosidad, sosiego y descanso visual. En apenas cuatro días, transformamos un rincón abierto en un dormitorio confortable, silencioso y protegido, demostrando que la construcción bien entendida sirve ante todo para mejorar la vida de las personas cuando más lo necesitan.
+      </p>
+
+    </article>
+
+    <div class="space-y-4 pt-6">
+      <h3 class="text-xl font-bold font-heading text-stone-900 dark:text-white">
+        El Paso a Paso de la Estructura en Imágenes
+      </h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        
+        <div class="construction-card overflow-hidden">
+          <img src="img/proyectos/faura-1-estructura-dormitorio.jpg" alt="Replanteo metálico del tabique en salón" class="w-full h-56 object-cover">
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>1. Estructura portante:</strong> Montaje de canales y montantes galvanizados con premarco para la puerta.
+          </div>
+        </div>
+
+        <div class="construction-card overflow-hidden">
+          <img src="img/proyectos/faura-2-estructura-closet.jpg" alt="Armazón de pladur para armario empotrado" class="w-full h-56 object-cover">
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>2. Clóset artesanal en metal:</strong> Estructurado a mano con perfiles para baldas, maletero y barra.
+          </div>
+        </div>
+
+        <div class="construction-card overflow-hidden">
+          <img src="img/proyectos/faura-3-placas-puerta.jpg" alt="Atornillado de placas y puerta de paso" class="w-full h-56 object-cover">
+          <div class="p-3 text-xs font-mono-tech text-stone-600 dark:text-stone-400">
+            <strong>3. Emplafonado y puerta:</strong> Fijación de placas de yeso laminado y ensamblaje de la carpintería.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="construction-card p-8 text-center space-y-4 bg-[#eae8df] dark:bg-[#15171d]">
+      <h3 class="text-2xl font-black font-heading text-stone-900 dark:text-white">
+        ¿Necesitas dividir una estancia o crear un dormitorio accesible?
+      </h3>
+      <p class="text-sm text-stone-700 dark:text-stone-300 max-w-xl mx-auto">
+        El pladur permite obras limpias, rápidas y sin sobrecargas de peso en forjados antiguos. Cuéntanos qué necesitas y te damos solución en pocos días.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a href="https://wa.me/34722851328?text=Hola,%20he%20visto%20la%20habitaci%C3%B3n%20en%20pladur%20de%20Faura%20y%20quiero%20hacer%20una%20divisi%C3%B3n%20en%20casa"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-cta-construction">
+          Consultar con Fabio por WhatsApp (722 851 328)
+        </a>
+        <a href="obras.html" class="btn-secondary-construction">
+          ← Volver a Proyectos & Obras
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-stone-900 dark:bg-[#0b0c0f] border-t border-stone-800 py-12 text-stone-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="img/logo.jpg" alt="Maestros de la Construcción" class="w-12 h-12 object-contain rounded-lg bg-white p-1 border border-stone-700 shadow-sm flex-shrink-0">
+        <div>
+          <span class="font-bold text-white block text-sm">MAESTROS DE LA CONSTRUCCIÓN</span>
+          <span class="text-stone-400 text-[11px] block">Valencia & Área Metropolitana · Tel: 722 851 328</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300">
+        <a href="index.html" class="hover:text-amber-500">Inicio</a>
+        <a href="obras.html" class="hover:text-amber-500">Proyectos & Obras</a>
+        <a href="presupuesto.html" class="hover:text-amber-500">Presupuesto</a>
+        <a href="contacto.html" class="hover:text-amber-500">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ai-assistant.js?v=4.1"></script>
+  <script src="js/main.js?v=4.0"></script>
+</body>
+</html>
