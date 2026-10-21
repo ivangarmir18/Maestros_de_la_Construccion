@@ -28,7 +28,7 @@
   <link rel="icon" type="image/jpeg" href="img/logo.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 </head>
-<body class="bg-[#f7f6f1] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white min-h-screen flex flex-col justify-between">
+<body class="bg-[#f2eee3] dark:bg-[#111317] text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-600 selection:text-white min-h-screen flex flex-col justify-between">
 
   <!-- Header Arquitectónica -->
   <header id="main-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-200 nav-construction">
@@ -46,7 +46,6 @@
 
       <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
         <a href="index.html" class="nav-link">Inicio</a>
-        <a href="acerca-de.html" class="nav-link">Acerca de</a>
         <a href="obras.html" class="nav-link">Obras Reales</a>
         <a href="presupuesto.html" class="nav-link">Presupuesto</a>
         <a href="donde-estamos.html" class="nav-link">Dónde Estamos</a>
@@ -120,13 +119,22 @@
         <p>
           En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPD-GDD), se informa al usuario de que los datos personales facilitados a través de este sitio web (<a href="https://www.maestrosdelaconstruccion.es" class="text-amber-600 underline">maestrosdelaconstruccion.es</a>) o mediante nuestros canales de contacto son tratados por:
         </p>
-        <div class="p-4 rounded-lg bg-stone-100/70 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 font-mono-tech text-xs space-y-1">
-          <div><strong class="text-stone-900 dark:text-white">Nombre comercial:</strong> Maestros de la Construcción</div>
-          <div><strong class="text-stone-900 dark:text-white">Actividad:</strong> Albañilería, acabados técnicos y reformas integrales de viviendas</div>
-          <div><strong class="text-stone-900 dark:text-white">Ámbito territorial:</strong> Valencia y área metropolitana (Comunidad Valenciana, España)</div>
-          <div><strong class="text-stone-900 dark:text-white">Teléfono / WhatsApp:</strong> +34 722 851 328</div>
-          <div><strong class="text-stone-900 dark:text-white">Correo electrónico:</strong> <a href="mailto:contacto@maestrosdelaconstruccion.es" class="text-amber-600 underline">contacto@maestrosdelaconstruccion.es</a></div>
-        </div>
+        <dl class="p-4 sm:p-5 rounded-lg bg-stone-100/70 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 font-mono-tech text-xs grid grid-cols-1 sm:grid-cols-[170px_1fr] gap-x-4 gap-y-2.5">
+          <dt class="font-bold text-stone-900 dark:text-white">Nombre comercial:</dt>
+          <dd class="text-stone-700 dark:text-stone-300">Maestros de la Construcción</dd>
+          
+          <dt class="font-bold text-stone-900 dark:text-white">Actividad:</dt>
+          <dd class="text-stone-700 dark:text-stone-300">Albañilería, acabados técnicos y reformas integrales de viviendas</dd>
+          
+          <dt class="font-bold text-stone-900 dark:text-white">Ámbito territorial:</dt>
+          <dd class="text-stone-700 dark:text-stone-300">Valencia y área metropolitana (Comunidad Valenciana, España)</dd>
+          
+          <dt class="font-bold text-stone-900 dark:text-white">Teléfono / WhatsApp:</dt>
+          <dd class="text-stone-700 dark:text-stone-300">+34 722 851 328</dd>
+          
+          <dt class="font-bold text-stone-900 dark:text-white">Correo electrónico:</dt>
+          <dd><a href="mailto:contacto@maestrosdelaconstruccion.es" class="text-amber-600 dark:text-amber-400 underline">contacto@maestrosdelaconstruccion.es</a></dd>
+        </dl>
       </section>
 
       <!-- 2. Finalidad -->

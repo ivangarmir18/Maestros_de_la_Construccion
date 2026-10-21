@@ -278,6 +278,8 @@ html.dark .btn-secondary-construction:hover {
   font-weight: 600;
   font-size: 0.875rem;
   padding: 0.5rem 0.25rem;
+  white-space: nowrap;
+  display: inline-block;
   transition: color 0.15s ease;
   position: relative;
 }
