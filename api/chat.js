@@ -41,13 +41,50 @@ REGLAS DE CONVERSACIÓN Y DERIVACIÓN (MUY IMPORTANTE):
    "Para ver tu estancia y darte un presupuesto exacto cerrado sin compromiso, lo ideal es que nos envíes fotos o nos escribas por WhatsApp al **722 851 328**. También podemos acordar un día para pasar a medir sin ningún coste."
 6. No inventes precios que contradigan las tarifas base de referencia.`;
 
+const CANDIDATE_URLS = (key) => [
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${key}`,
+  `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${key}`,
+  `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${key}`,
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`,
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${key}`
+];
+
 export default async function handler(req, res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+
+  const apiKey = (process.env.GEMINI_API_KEY || '').trim();
+
+  // Diagnóstico GET para comprobar estado en un click
+  if (req.method === 'GET') {
+    if (!apiKey) {
+      return res.status(200).json({ status: 'error', reason: 'No GEMINI_API_KEY en variables de Vercel' });
+    }
+    const testPayload = {
+      contents: [{ role: 'user', parts: [{ text: 'Hola, di OK si funcionas.' }] }],
+      generationConfig: { maxOutputTokens: 20 }
+    };
+    for (const url of CANDIDATE_URLS(apiKey)) {
+      try {
+        const resp = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(testPayload)
+        });
+        if (resp.ok) {
+          const data = await resp.json();
+          return res.status(200).json({ status: 'ok', workingUrl: url.split('?')[0], reply: data.candidates?.[0]?.content?.parts?.[0]?.text });
+        }
+      } catch (_) {}
+    }
+    return res.status(200).json({ status: 'error', reason: 'Ningun endpoint de Gemini respondio 200' });
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método no permitido. Utiliza POST.' });
   }
-
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
 
   try {
     const { message, history = [] } = req.body || {};
@@ -57,7 +94,6 @@ export default async function handler(req, res) {
     }
 
     const cleanMessage = message.trim().slice(0, 800);
-    const apiKey = (process.env.GEMINI_API_KEY || '').trim();
 
     if (!apiKey) {
       console.error('ERROR: Variable GEMINI_API_KEY no encontrada en process.env');
@@ -110,22 +146,11 @@ export default async function handler(req, res) {
       }
     };
 
-    // Lista de modelos a probar en orden de prioridad
-    const modelsToTry = [
-      'gemini-2.5-flash',
-      'gemini-2.0-flash',
-      'gemini-1.5-flash-latest',
-      'gemini-1.5-flash',
-      'gemini-1.5-pro-latest',
-      'gemini-pro'
-    ];
-
-    let lastError = null;
     let successfulData = null;
+    let lastError = null;
 
-    for (const model of modelsToTry) {
+    for (const url of CANDIDATE_URLS(apiKey)) {
       try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
         const resp = await fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -143,23 +168,24 @@ export default async function handler(req, res) {
       }
     }
 
-    // Fallback sin systemInstruction si fallaron los anteriores
+    // Fallback de compatibilidad sin systemInstruction si todos fallan
     if (!successfulData) {
-      for (const model of ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash-latest', 'gemini-pro']) {
+      const directPayload = {
+        contents: [
+          {
+            role: 'user',
+            parts: [{ text: `${SYSTEM_PROMPT}\n\nConsulta del cliente:\n${cleanMessage}` }]
+          }
+        ],
+        generationConfig: { temperature: 0.65, maxOutputTokens: 400 }
+      };
+
+      for (const url of CANDIDATE_URLS(apiKey)) {
         try {
-          const directContents = [
-            {
-              role: 'user',
-              parts: [{ text: `${SYSTEM_PROMPT}\n\nConsulta del cliente:\n${cleanMessage}` }]
-            }
-          ];
-          const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+          const resp = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: directContents,
-              generationConfig: { temperature: 0.65, maxOutputTokens: 400 }
-            })
+            body: JSON.stringify(directPayload)
           });
           if (resp.ok) {
             successfulData = await resp.json();
