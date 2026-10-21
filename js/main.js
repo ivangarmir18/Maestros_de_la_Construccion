@@ -433,10 +433,44 @@ function initProjectDossiersFilter() {
   }
 }
 
-// 10. LIGHTBOX MODAL PARA FOTOGRAFÍAS DE OBRAS REALES
+// 10. LIGHTBOX MODAL PARA FOTOGRAFÍAS DE OBRAS REALES (CON ZOOM Y PANTALLA COMPLETA)
 function initProjectLightbox() {
-  const lightbox = document.getElementById('project-lightbox');
-  if (!lightbox) return;
+  let lightbox = document.getElementById('project-lightbox');
+  
+  // Si no existe el contenedor en el HTML, lo creamos dinámicamente
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.id = 'project-lightbox';
+    lightbox.className = 'fixed inset-0 z-50 bg-black/92 backdrop-blur-md hidden flex flex-col items-center justify-between p-4 sm:p-6 transition-all duration-300';
+    lightbox.innerHTML = `
+      <div class="w-full flex items-center justify-between text-white text-xs font-mono-tech max-w-6xl mx-auto pt-2 z-10">
+        <span id="lightbox-counter" class="bg-stone-900/80 px-3 py-1.5 rounded border border-stone-700 text-amber-400 font-bold">1 / 1</span>
+        <button id="lightbox-close-btn" class="p-2.5 rounded-lg bg-stone-800/80 hover:bg-amber-600 transition text-white border border-stone-700" title="Cerrar (Esc)" aria-label="Cerrar">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <div class="relative flex-1 flex items-center justify-center w-full max-w-6xl my-auto py-2">
+        <button id="lightbox-prev-btn" class="absolute left-1 sm:left-4 z-20 p-3 rounded-full bg-stone-900/80 hover:bg-amber-600 text-white transition border border-stone-700 shadow-xl" title="Anterior (Flecha Izq)" aria-label="Anterior">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+
+        <div class="relative max-h-[82vh] max-w-full flex items-center justify-center">
+          <img id="lightbox-img" src="" alt="Fotografía ampliada" class="max-h-[80vh] max-w-full w-auto object-contain rounded-lg shadow-2xl transition duration-200">
+        </div>
+
+        <button id="lightbox-next-btn" class="absolute right-1 sm:right-4 z-20 p-3 rounded-full bg-stone-900/80 hover:bg-amber-600 text-white transition border border-stone-700 shadow-xl" title="Siguiente (Flecha Der)" aria-label="Siguiente">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+
+      <div class="w-full max-w-3xl mx-auto pb-3 text-center z-10">
+        <div id="lightbox-caption" class="inline-block bg-stone-900/90 border border-stone-700/80 rounded-lg px-4 py-2 text-xs sm:text-sm font-mono-tech text-stone-200 shadow-lg max-w-full">
+        </div>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+  }
 
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
@@ -449,7 +483,13 @@ function initProjectLightbox() {
   let currentIndex = 0;
 
   function collectPhotos() {
-    return Array.from(document.querySelectorAll('.project-photo-thumb'));
+    // Busca todas las fotos marcadas o fotos de obra
+    const thumbs = Array.from(document.querySelectorAll('.zoomable-photo, .project-photo-thumb, .gallery-item img, .story-photo'));
+    // Evita duplicados y logos
+    return thumbs.filter(el => {
+      const src = el.tagName === 'IMG' ? el.src : el.getAttribute('data-full');
+      return src && !src.includes('logo.jpg') && !src.includes('favicon');
+    });
   }
 
   function showPhoto(index) {
@@ -458,23 +498,27 @@ function initProjectLightbox() {
     if (index >= currentPhotos.length) index = 0;
     currentIndex = index;
 
-    const thumb = currentPhotos[currentIndex];
-    if (!thumb) return;
+    const el = currentPhotos[currentIndex];
+    if (!el) return;
 
-    const fullSrc = thumb.getAttribute('data-full');
-    const caption = thumb.getAttribute('data-caption') || thumb.querySelector('img')?.alt || '';
+    const fullSrc = el.getAttribute('data-full') || (el.tagName === 'IMG' ? el.src : el.querySelector('img')?.src);
+    const caption = el.getAttribute('data-caption') || el.getAttribute('alt') || el.querySelector('img')?.alt || '';
 
-    lightboxImg.src = fullSrc;
-    lightboxImg.alt = caption;
-    lightboxCaption.textContent = caption;
+    if (lightboxImg && fullSrc) {
+      lightboxImg.src = fullSrc;
+      lightboxImg.alt = caption;
+    }
+    if (lightboxCaption) {
+      lightboxCaption.textContent = caption || 'Fotografía de obra real · Maestros de la Construcción';
+    }
     if (lightboxCounter) {
       lightboxCounter.textContent = `${currentIndex + 1} / ${currentPhotos.length}`;
     }
   }
 
-  function openLightbox(thumb) {
+  function openLightbox(el) {
     currentPhotos = collectPhotos();
-    const index = currentPhotos.indexOf(thumb);
+    const index = currentPhotos.indexOf(el);
     showPhoto(index !== -1 ? index : 0);
     lightbox.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -485,10 +529,13 @@ function initProjectLightbox() {
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.project-photo-thumb').forEach(thumb => {
-    thumb.addEventListener('click', (e) => {
+  // Activa cursor de zoom y evento click en todas las fotos
+  collectPhotos().forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', (e) => {
       e.preventDefault();
-      openLightbox(thumb);
+      e.stopPropagation();
+      openLightbox(el);
     });
   });
 
@@ -497,7 +544,11 @@ function initProjectLightbox() {
   if (nextBtn) nextBtn.addEventListener('click', () => showPhoto(currentIndex + 1));
 
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+    if (e.target === lightbox || e.target.id === 'lightbox-img' || e.target.closest('#lightbox-close-btn')) {
+      if (e.target !== prevBtn && e.target !== nextBtn && !e.target.closest('#lightbox-prev-btn') && !e.target.closest('#lightbox-next-btn')) {
+        closeLightbox();
+      }
+    }
   });
 
   document.addEventListener('keydown', (e) => {
