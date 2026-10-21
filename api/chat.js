@@ -56,7 +56,7 @@ export default async function handler(req, res) {
     }
 
     const cleanMessage = message.trim().slice(0, 800);
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = (process.env.GEMINI_API_KEY || '').trim();
 
     if (!apiKey) {
       return res.status(200).json({
@@ -86,30 +86,46 @@ export default async function handler(req, res) {
       parts: [{ text: cleanMessage }]
     });
 
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+    const payload = {
+      systemInstruction: {
+        parts: [{ text: SYSTEM_PROMPT }]
+      },
+      contents,
+      generationConfig: {
+        temperature: 0.65,
+        maxOutputTokens: 400,
+        topP: 0.95
+      }
+    };
 
-    const response = await fetch(endpoint, {
+    let endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+
+    let response = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: SYSTEM_PROMPT }]
-        },
-        contents,
-        generationConfig: {
-          temperature: 0.65,
-          maxOutputTokens: 380,
-          topP: 0.95
-        }
-      })
+      body: JSON.stringify(payload)
     });
+
+    // Si gemini-1.5-flash da error o cuota, intentar con gemini-2.0-flash
+    if (!response.ok) {
+      const fbEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+      const fbResponse = await fetch(fbEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (fbResponse.ok) {
+        response = fbResponse;
+      }
+    }
 
     if (!response.ok) {
       const errText = await response.text();
       console.error('Error llamando a Gemini API:', errText);
       return res.status(200).json({
         fallback: true,
-        error: 'Error en la respuesta del modelo Gemini'
+        error: 'Error en la respuesta del modelo Gemini',
+        details: errText
       });
     }
 

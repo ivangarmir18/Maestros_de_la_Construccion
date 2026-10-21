@@ -339,16 +339,19 @@ class ConstructionAIAssistant {
     const div = document.createElement('div');
     div.className = 'p-3.5 rounded-lg border border-amber-500/40 bg-amber-50/50 dark:bg-amber-950/20 text-stone-800 dark:text-stone-200 shadow-sm leading-relaxed text-xs sm:text-sm space-y-2';
     div.innerHTML = `
-      <p class="font-bold text-amber-800 dark:text-amber-400">Activa la Inteligencia Artificial de Gemini en vivo:</p>
+      <p class="font-bold text-amber-800 dark:text-amber-400">Asistente Virtual con IA:</p>
       <p class="text-xs text-stone-600 dark:text-stone-300">
-        Para que el asistente te responda de forma personalizada con todo el contexto del proyecto y sin respuestas fijas, añade tu clave gratuita de Google AI Studio.
+        Si configuraste <code class="font-mono bg-stone-200 dark:bg-stone-800 px-1 py-0.5 rounded font-bold">GEMINI_API_KEY</code> en Vercel, el servidor necesita desplegar este nuevo commit para activarla automáticamente.
+      </p>
+      <p class="text-xs text-stone-600 dark:text-stone-300">
+        También puedes introducir tu clave directamente pulsando el icono <strong>⚙️</strong> superior para usar la IA en vivo en tu navegador.
       </p>
       <div class="pt-1 flex flex-wrap gap-2">
         <button id="open-key-panel-btn" class="btn-cta-construction py-2 px-3 text-xs font-bold uppercase tracking-wider rounded">
-          Configurar Clave AI Studio
+          Introducir Clave Aquí
         </button>
         <a href="https://wa.me/34722851328?text=${encodeURIComponent('Hola, me gustaría consultar una duda sobre una reforma: ' + lastQuery)}" target="_blank" rel="noopener noreferrer" class="btn-secondary-construction py-2 px-3 text-xs font-bold uppercase tracking-wider rounded">
-          Preguntar por WhatsApp
+          Consultar por WhatsApp
         </a>
       </div>
     `;
@@ -376,23 +379,37 @@ class ConstructionAIAssistant {
       }
     });
 
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.localKey}`;
+    const payload = {
+      systemInstruction: {
+        parts: [{ text: AI_SYSTEM_PROMPT }]
+      },
+      contents,
+      generationConfig: {
+        temperature: 0.65,
+        maxOutputTokens: 400,
+        topP: 0.95
+      }
+    };
 
-    const response = await fetch(endpoint, {
+    let endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(this.localKey.trim())}`;
+
+    let response = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: AI_SYSTEM_PROMPT }]
-        },
-        contents,
-        generationConfig: {
-          temperature: 0.65,
-          maxOutputTokens: 380,
-          topP: 0.95
-        }
-      })
+      body: JSON.stringify(payload)
     });
+
+    if (!response.ok) {
+      const fbEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${encodeURIComponent(this.localKey.trim())}`;
+      const fbResponse = await fetch(fbEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (fbResponse.ok) {
+        response = fbResponse;
+      }
+    }
 
     if (!response.ok) {
       const errData = await response.json().catch(() => ({}));
