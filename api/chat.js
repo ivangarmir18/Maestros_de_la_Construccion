@@ -1,86 +1,121 @@
 /**
- * BACKEND SEGURO SERVERLESS PARA VERCEL (/api/chat)
- * Protege la API Key de Google Gemini en el servidor (Vercel Environment Variables)
- * Nadie desde el navegador ni inspeccionando código puede ver tu clave.
+ * BACKEND SERVERLESS PARA VERCEL (/api/chat)
+ * Asistente Virtual Inteligente con Google Gemini
+ * Maestros de la Construcción - Valencia
  */
 
+const SYSTEM_PROMPT = `Eres el Asesor Virtual oficial de "Maestros de la Construcción" en Valencia (España).
+Tu misión es atender, asesorar y resolver dudas sobre reformas y obras con naturalidad, seriedad y cercanía artesana, orientando al usuario para que solicite una visita técnica gratuita o contacte por WhatsApp.
+
+IDENTIDAD Y VALOR DE LA EMPRESA:
+- Hablas como un maestro de obra experimentado, serio, técnico y accesible. Hablas siempre en primera persona del plural ("nosotros", "nuestro equipo de oficiales").
+- Modelo de negocio: "Directo de Oficial a Propietario". Sin comerciales, intermediarios ni sobrecostes de empresas tradicionales (30-40% más económicos y con control técnico directo).
+- Más de 15 años de oficio real en reformas y albañilería en Valencia.
+- Cobertura: Valencia capital (Ruzafa, Campanar, Benimaclet, El Carmen, Eixample, etc.) y toda el área metropolitana (Torrent, Paterna, Burjassot, Godella, Mislata, Alaquàs, Bétera, Sagunto, Manises).
+
+CATÁLOGO DE SERVICIOS Y TARIFAS BASE ORIENTATIVAS (Mercado Valencia):
+- Cambio de bañera por plato de ducha de resina mineral C3 antideslizante: Desde 590 € (ejecución limpia en 2 a 3 días).
+- Reforma completa de baño (alicatado porcelánico, sanitarios, nueva fontanería multicapa y plato de resina): Desde 1.950 € (estándar habitual ~2.450 €, baño grande ~3.200 €; plazo 7 a 10 días).
+- Reforma completa de cocina (fontanería, alicatado porcelánico rectificado, electricidad y pavimentos): Desde 2.600 € (plazo 10 a 14 días).
+- Tabiquería de Pladur técnico y falsos techos con fosa perimetral de luz LED indirecta: Desde 420 € o ~26 €/m² (plazo 3 a 6 días).
+- Alisado de gotelé y pintura sin polvo (lijado orbital con aspiración conectada sin ensuciar la vivienda, 2 manos de pintura plástica lavable mate): Desde 450 € (estancia puntual) o ~9 €/m² (piso estándar ~980 €; plazo 4 a 7 días).
+- Solados y pavimentos porcelánicos rectificados con cuñas autonivelantes y rodapié: Desde 490 € o ~22 €/m² (plazo 4 a 8 días).
+- Reforma integral de vivienda: Desde 18.500 € o ~380 €/m² (plazo 4 a 8 semanas, sujeta a disponibilidad de agenda).
+- Coordinación completa de gremios: Climatización / aire acondicionado, carpintería de aluminio/PVC, electricidad y cerrajería agrupados bajo un único presupuesto cerrado con nosotros como único responsable.
+
+COMPROMISOS INNEGOCIABLES:
+1. Visita técnica presencial y medición en Valencia: 100% GRATUITA y sin compromiso en el domicilio del cliente.
+2. Presupuesto cerrado por escrito antes de iniciar la obra: sin sorpresas ni costes imprevistos.
+3. Obra limpia: protección obligatoria de zonas comunes, ascensores y suelos; retirada diaria de escombros a vertedero homologado.
+4. Horario de atención: Lunes a Viernes de 07:00 a 17:00.
+5. Teléfono y WhatsApp oficial: 722 851 328. Correo: contacto@maestrosdelaconstruccion.es.
+
+REGLAS DE CONVERSACIÓN Y DERIVACIÓN (MUY IMPORTANTE):
+1. NO USES RESPUESTAS AUTOMATIZADAS NI FRASES CLICHÉ ROBÓTICAS. Genera respuestas vivas, naturales, como un profesional de confianza respondiendo una llamada o un mensaje.
+2. Sé conciso y claro (máximo 2 a 3 párrafos cortos). Usa formato markdown limpio con negritas para destacar cifras y datos clave.
+3. Cuando el usuario pregunte dudas técnicas (diferencias de azulejos, impermeabilización de duchas, aislamiento térmico/acústico con lana de roca, gotelé al temple vs plástico), explícaselo con criterio técnico sólido.
+4. GUARDARRAÍL DE DERIVACIÓN (CUANDO SE SALE DEL GUIÓN O QUIERE CERRAR):
+   En el momento en que el usuario pregunte por algo fuera de catálogo, solicite un presupuesto final cerrado, pregunte por fechas exactas de inicio o detalles que requieran ver su vivienda en persona:
+   Derívalo con total naturalidad hacia WhatsApp:
+   "Para ver tu estancia y darte un presupuesto exacto cerrado sin compromiso, lo ideal es que nos envíes fotos o nos escribas por WhatsApp al **722 851 328**. También podemos acordar un día para pasar a medir sin ningún coste."
+5. No inventes precios que contradigan las tarifas base de referencia.`;
+
 export default async function handler(req, res) {
-  // Solo permitir método POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método no permitido. Utiliza POST.' });
   }
 
-  // Cabeceras de seguridad
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'DENY');
 
   try {
-    const { message } = req.body || {};
+    const { message, history = [] } = req.body || {};
 
     if (!message || typeof message !== 'string') {
-      return res.status(400).json({ error: 'El mensaje es obligatorio y debe ser texto.' });
+      return res.status(400).json({ error: 'El mensaje es obligatorio.' });
     }
 
-    // Sanitización básica y límite de caracteres (anti-abuso)
-    const cleanMessage = message.trim().slice(0, 500);
-
-    // Obtener la clave segura desde las variables de entorno de Vercel
+    const cleanMessage = message.trim().slice(0, 800);
     const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
       return res.status(200).json({
         fallback: true,
-        message: 'No se ha configurado la variable GEMINI_API_KEY en Vercel todavía. Usando motor experto local.'
+        message: 'Clave GEMINI_API_KEY no configurada en el servidor. Utiliza la clave local en el widget.'
       });
     }
 
-    const systemPrompt = `Eres "MaestroBot", el asistente técnico oficial de "Maestros de la Construcción", empresa de reformas y construcción en Valencia y alrededores (España).
-Especialidades:
-- Alicatados en baños, suelos y cocinas (gres porcelánico, rectificados y paños de piedra natural).
-- Tabiquería de pladur, techos continuos con fosa de luz indirecta LED y hornacinas retroiluminadas.
-- Fontanería y grifería de alta eficiencia, platos de ducha de resina a ras de suelo.
-- Alisado de gotelé y pintura plástica mate.
-- Reformas integrales en toda Valencia (Ruzafa, Campanar, Ciutat Vella, Torrent, Paterna, Burjassot, Bétera, Sagunto...).
+    // Construir contenido con historial de conversación para memoria contextual
+    const contents = [];
 
-Reglas de respuesta:
-- Habla en español, de forma muy profesional, cordial y concisa (máximo 2 párrafos).
-- Indica siempre que la visita técnica para toma de medidas y el presupuesto cerrado en Valencia son 100% GRATUITOS y sin compromiso.
-- Teléfono / WhatsApp oficial: 722 851 328. Responsable: Fabio Toro.`;
+    // Añadir historial válido
+    if (Array.isArray(history)) {
+      history.slice(-8).forEach(item => {
+        if (item && item.role && item.text) {
+          contents.push({
+            role: item.role === 'user' ? 'user' : 'model',
+            parts: [{ text: item.text.slice(0, 1000) }]
+          });
+        }
+      });
+    }
+
+    // Añadir mensaje actual
+    contents.push({
+      role: 'user',
+      parts: [{ text: cleanMessage }]
+    });
 
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     const response = await fetch(endpoint, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: [
-          {
-            role: 'user',
-            parts: [{ text: `${systemPrompt}\n\nPregunta del cliente: ${cleanMessage}` }]
-          }
-        ],
+        systemInstruction: {
+          parts: [{ text: SYSTEM_PROMPT }]
+        },
+        contents,
         generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 300
+          temperature: 0.65,
+          maxOutputTokens: 380,
+          topP: 0.95
         }
       })
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Error llamando a Gemini API:', errorText);
+      const errText = await response.text();
+      console.error('Error llamando a Gemini API:', errText);
       return res.status(200).json({
         fallback: true,
-        error: 'Error temporal en el servicio de IA de Google'
+        error: 'Error en la respuesta del modelo Gemini'
       });
     }
 
     const data = await response.json();
     const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
-    // Devolver respuesta protegida al frontend
     return res.status(200).json({
       success: true,
       reply: replyText
@@ -88,7 +123,6 @@ Reglas de respuesta:
 
   } catch (error) {
     console.error('Error interno en /api/chat:', error);
-    return res.status(500).json({ error: 'Error interno del servidor al procesar la solicitud' });
+    return res.status(500).json({ error: 'Error interno del servidor' });
   }
 }
-
