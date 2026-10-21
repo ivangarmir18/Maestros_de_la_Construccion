@@ -11,32 +11,60 @@ class ConstructionAIAssistant {
 
     this.localResponses = [
       {
-        triggers: ["zona", "donde", "dónde", "valencia", "pueblo", "desplaz", "ciudades", "torrent", "paterna", "burjassot", "betera", "bétera", "sagunto"],
-        answer: "Trabajamos en toda la ciudad de **Valencia** (Ruzafa, Campanar, Ciutat Vella, El Carmen, Eixample, Poblats Marítims...) y toda el área metropolitana y comarcas: **Torrent, Paterna, Burjassot, Godella, Mislata, Alaquàs, Bétera, Sagunto y Manises**.<br><br>Nos desplazamos a tu vivienda para medir y asesorarte **sin coste ni compromiso**."
+        triggers: ["hola", "buenas", "buenos dias", "buenos días", "buenas tardes", "buenas noches", "hey", "saludos", "que tal", "qué tal", "ey", "inicio"],
+        answer: "¡Hola! Bienvenido al canal de atención de <strong>Maestros de la Construcción</strong> en Valencia.<br><br>¿En qué tipo de obra o reforma te podemos asesorar?<br>• <strong>Baños y cambio de bañera por ducha</strong> (desde 590€ / 1.950€)<br>• <strong>Pladur técnico y techos con luz LED</strong> (desde 420€)<br>• <strong>Alisado de gotelé y pintura sin polvo</strong> (desde 450€)<br>• <strong>Cocinas completas y suelos porcelánicos</strong> (desde 2.600€)<br><br>Cuéntame qué tienes en mente o pregúntame por plazos, zonas y tarifas orientativas."
       },
       {
-        triggers: ["precio", "cuanto", "cuánto", "coste", "cuesta", "tarifa", "metro", "m2", "presupuesto", "estimacion"],
-        answer: "Nuestras tarifas base directas de oficial para Valencia:<br>• **Cambio de Bañera por Ducha:** Desde 590€.<br>• **Reforma de Baño Completo:** Desde 1.950€.<br>• **Reforma de Cocina:** Desde 2.600€.<br>• **Pladur y Fosas LED:** Desde 26€/m² (o salón completo desde 420€).<br>• **Alisado de gotelé y pintura:** Desde 9€/m² (o estancia desde 450€).<br>• **Suelos porcelánicos:** Desde 22€/m².<br>• **Reforma Integral:** Desde 18.500€.<br><br>Sin intermediarios ni comerciales. Puedes consultar nuestro simulador o escribirnos al WhatsApp <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a>."
+        triggers: ["zona", "donde", "dónde", "valencia", "pueblo", "desplaz", "ciudades", "torrent", "paterna", "burjassot", "betera", "bétera", "sagunto", "cobertura", "alrededores"],
+        answer: "Trabajamos en toda la ciudad de **Valencia** (Ruzafa, Campanar, Ciutat Vella, El Carmen, Eixample, Benimaclet, Poblats Marítims...) y toda el área metropolitana: **Torrent, Paterna, Burjassot, Godella, Mislata, Alaquàs, Bétera, Sagunto y Manises**.<br><br>Nos desplazamos a tu vivienda para medir y asesorarte **sin coste ni compromiso**."
       },
       {
-        triggers: ["tiempo", "plazo", "tarda", "duracion", "duración", "semanas", "meses", "dias"],
-        answer: "Fijamos plazos por escrito con compromiso de cumplimiento:<br>• **Reforma de baño completa:** 7 a 10 días laborables.<br>• **Fosas LED y techos de pladur:** 3 a 5 días.<br>• **Alisado y pintura de piso:** 5 a 8 días.<br>• **Reforma completa de piso:** Entre 5 y 8 semanas según proyecto.<br><br>Coordinamos todos los gremios directamente sin subcontratas externas."
+        triggers: ["precio", "cuanto", "cuánto", "coste", "cuesta", "tarifa", "tarifas", "metro", "m2", "presupuesto", "estimacion"],
+        answer: "Nuestras tarifas base directas de oficial para Valencia:<br>• **Cambio de Bañera por Ducha:** Desde 590€.<br>• **Reforma de Baño Completo:** Desde 1.950€.<br>• **Reforma de Cocina:** Desde 2.600€.<br>• **Pladur y Fosas LED:** Desde 26€/m² (estancia desde 420€).<br>• **Alisado de gotelé y pintura:** Desde 9€/m² (estancia desde 450€).<br>• **Suelos porcelánicos:** Desde 22€/m² (estancia desde 490€).<br>• **Reforma Integral de Vivienda:** Desde 18.500€.<br><br>Sin intermediarios ni comerciales. Puedes usar el simulador de la web o escribirnos al WhatsApp <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a>."
       },
       {
-        triggers: ["licencia", "permiso", "ayuntamiento", "declaracion", "obra mayor", "obra menor"],
-        answer: "En Valencia la inmensa mayoría de reformas interiores (cambio de azulejos, suelos, sanitarios, electricidad y pladur) se tramitan mediante **Declaración Responsable** ante el Ayuntamiento, lo que te permite empezar la obra de inmediato una vez registrada.<br><br>Te asesoramos en la tramitación para tu total seguridad."
+        triggers: ["tiempo", "plazo", "tarda", "duracion", "duración", "semanas", "meses", "dias", "días"],
+        answer: "Fijamos plazos por escrito con compromiso estricto de cumplimiento:<br>• **Cambio de bañera por ducha:** 2 a 3 días.<br>• **Reforma de baño completa:** 7 a 10 días laborables.<br>• **Fosas LED y techos de pladur:** 3 a 6 días.<br>• **Alisado y pintura de piso:** 4 a 7 días.<br>• **Reforma de cocina:** 10 a 14 días.<br>• **Reforma integral de vivienda:** 4 a 8 semanas.<br><br>Coordinamos todos los gremios directamente para evitar parones en la obra."
       },
       {
-        triggers: ["pladur", "led", "luz", "salon", "techo", "fosa", "hornacina"],
-        answer: "El pladur técnico con iluminación indirecta es una de nuestras máximas especialidades. Realizamos:<br>• Techos suspendidos con fosa perimetral para tira LED continua.<br>• Muebles de salón y frentes para TV con hornacinas a medida.<br>• Tabiques fonoabsorbentes con aislamiento acústico de lana de roca."
+        triggers: ["licencia", "permiso", "ayuntamiento", "declaracion", "declaración", "obra mayor", "obra menor"],
+        answer: "En Valencia la inmensa mayoría de reformas interiores (azulejos, sanitarios, fontanería, pladur y pintura) se tramitan de forma ágil mediante **Declaración Responsable** ante el Ayuntamiento, permitiendo iniciar la obra de inmediato.<br><br>Nosotros te guiamos en la tramitación para tu total tranquilidad."
       },
       {
-        triggers: ["bano", "baño", "ducha", "banera", "bañera", "alicatado", "plato"],
-        answer: "En reformas de baños realizamos el cambio integral en 7-10 días:<br>• Sustitución de bañera por plato de ducha de resina antideslizante C3.<br>• Fontanería nueva multicapa y desagües de PVC.<br>• Alicatado porcelánico rectificado con niveladores milimétricos.<br>• Mamparas fijas con perfilería negra o cromada y grifería empotrada."
+        triggers: ["pladur", "led", "luz", "salon", "salón", "techo", "fosa", "candileja", "hornacina"],
+        answer: "El pladur técnico con iluminación indirecta es una de nuestras máximas especialidades:<br>• Techos suspendidos continuos con fosa perimetral para tira LED.<br>• Muebles de salón y frentes para TV con hornacinas a medida.<br>• Tabiques fonoabsorbentes con aislamiento de lana de roca.<br><br>Tarifas base desde **26€/m²** o techos de salón desde 420€."
       },
       {
-        triggers: ["contacto", "telefono", "teléfono", "whatsapp", "email", "llamar", "visita"],
-        answer: "Puedes comunicarte directamente con el responsable técnico:<br>• **WhatsApp / Llamada directa:** <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a><br>• **Instagram:** <a href='https://instagram.com/somosmaestrosdelaconstruccion' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>@somosmaestrosdelaconstruccion</a><br><br>¿Quieres que pasemos por tu vivienda a tomar medidas?"
+        triggers: ["bano", "baño", "ducha", "banera", "bañera", "alicatado", "plato", "sanitario", "inodoro"],
+        answer: "En reformas de baños ofrecemos dos soluciones clave:<br>• **Cambio de bañera por plato de ducha de resina C3:** Desde 590€ (ejecución limpia en 2-3 días).<br>• **Reforma integral de baño:** Desde 1.950€ (demolición, nueva fontanería multicapa, alicatado porcelánico rectificado con niveladores y montaje de sanitarios).<br><br>¿Te gustaría concertar una visita presencial gratuita para medir?"
+      },
+      {
+        triggers: ["cocina", "cocinas", "fregadero", "encimera", "electrodomestico", "campana"],
+        answer: "En reformas de cocinas en Valencia realizamos demolición, nuevas tomas de fontanería y electricidad, alicatado porcelánico y pavimento resistente desde **2.600€**. Plazo estimado de 10 a 14 días."
+      },
+      {
+        triggers: ["pintura", "pintar", "gotele", "gotelé", "alisar", "alisado", "paredes lisas"],
+        answer: "Realizamos alisado profesional de gotelé **sin polvo** (utilizamos lijadoras orbitales conectadas a sistemas de aspiración continua) y aplicación de pintura plástica lavable mate de primera marca. Tarifas desde **9€/m²** (o habitaciones desde 450€ / piso estándar desde 980€)."
+      },
+      {
+        triggers: ["suelo", "suelos", "pavimento", "porcelanico", "porcelánico", "baldosa", "baldosas", "tarima", "rodapie", "rodapié"],
+        answer: "Colocamos solados y pavimentos porcelánicos rectificados con cemento cola flexible C2TE S1 y nivelación milimétrica por cuñas desde **22€/m²** (estancias puntuales desde 490€)."
+      },
+      {
+        triggers: ["visita", "medir", "cita", "quedar", "gratis", "gratuita", "desplazamiento", "venir", "casa", "piso"],
+        answer: "Nos desplazamos **gratuitamente y sin ningún compromiso** a tu domicilio en Valencia capital y alrededores para verificar cotas, instalaciones y entregarte un presupuesto cerrado por escrito.<br><br>Puedes concertar tu visita ahora mismo por WhatsApp en el <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a>."
+      },
+      {
+        triggers: ["aire", "climatizacion", "climatización", "carpinteria", "carpintería", "ventanas", "puertas", "gremios", "subcontrata"],
+        answer: "Te hacemos la vida fácil: si tu reforma necesita trabajos complementarios como **aire acondicionado / climatización, carpintería de aluminio/PVC o electricidad general**, nosotros contactamos con nuestros instaladores de confianza y lo unificamos todo en un **único presupuesto cerrado**. Tú solo tratas con nosotros."
+      },
+      {
+        triggers: ["quienes", "quiénes", "empresa", "oficial", "oficiales", "autonomo", "autónomo", "garantia", "garantía"],
+        answer: "Somos **Maestros de la Construcción**, equipo de oficiales de albañilería y reformas con más de 15 años de oficio real en Valencia. No tenemos comerciales intermediarios: tratas directamente con el profesional que replantea y ejecuta la obra en tu vivienda, garantizando máxima calidad y precios directos de taller."
+      },
+      {
+        triggers: ["contacto", "telefono", "teléfono", "whatsapp", "email", "llamar"],
+        answer: "Puedes comunicarte directamente con el responsable técnico:<br>• **WhatsApp / Teléfono directo:** <a href='https://wa.me/34722851328' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>722 851 328</a><br>• **Correo:** <a href='mailto:contacto@maestrosdelaconstruccion.es' class='font-bold underline text-amber-600 dark:text-amber-400'>contacto@maestrosdelaconstruccion.es</a><br>• **Instagram:** <a href='https://instagram.com/somosmaestrosdelaconstruccion' target='_blank' class='font-bold underline text-amber-600 dark:text-amber-400'>@somosmaestrosdelaconstruccion</a><br><br>¿En qué podemos ayudarte hoy?"
       }
     ];
 
@@ -119,7 +147,9 @@ class ConstructionAIAssistant {
         <div class="p-2.5 px-3 bg-stone-100 dark:bg-[#111317] border-t border-stone-200 dark:border-stone-800 flex gap-2 overflow-x-auto text-xs whitespace-nowrap scrollbar-none flex-shrink-0">
           <button class="quick-chip bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-3 py-1.5 rounded font-medium transition active:scale-95">Reforma de Baño</button>
           <button class="quick-chip bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-3 py-1.5 rounded font-medium transition active:scale-95">Pladur & Fosas LED</button>
+          <button class="quick-chip bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-3 py-1.5 rounded font-medium transition active:scale-95">Tarifas Base</button>
           <button class="quick-chip bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-3 py-1.5 rounded font-medium transition active:scale-95">Zonas en Valencia</button>
+          <button class="quick-chip bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-3 py-1.5 rounded font-medium transition active:scale-95">Visita Gratuita</button>
           <button class="quick-chip bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 border border-stone-300 dark:border-stone-700 text-stone-800 dark:text-stone-200 px-3 py-1.5 rounded font-medium transition active:scale-95">Plazos de Obra</button>
         </div>
 
@@ -291,15 +321,14 @@ class ConstructionAIAssistant {
   }
 
   getLocalAnswer(query) {
-    const lower = (query || '').toLowerCase();
+    const lower = (query || '').toLowerCase().trim();
     for (const item of this.localResponses) {
       if (item.triggers.some(t => lower.includes(t))) {
         return item.answer;
       }
     }
 
-    const safeQuery = this.escapeHtml(query);
-    return `Para valorar con precisión tu proyecto de <em>"${safeQuery}"</em> y ofrecerte un presupuesto cerrado sin compromiso, el oficial técnico puede visitar tu vivienda en Valencia:<br><br><strong>WhatsApp directo:</strong> <a href="https://wa.me/34722851328" class="text-amber-600 dark:text-amber-400 font-bold underline" target="_blank" rel="noopener noreferrer">722 851 328</a><br>También puedes calcular un coste estimado en nuestro <strong>Simulador Interactivo</strong>.`;
+    return `Para poder orientarte con precisión sobre tu reforma en Valencia, indícanos qué estancia o trabajo tienes en mente (por ejemplo: reforma de baño, pladur con iluminación LED, alisado de gotelé, cocina o suelos), o consúltanos directamente:<br><br><strong>WhatsApp / Oficial directo:</strong> <a href="https://wa.me/34722851328" class="text-amber-600 dark:text-amber-400 font-bold underline" target="_blank" rel="noopener noreferrer">722 851 328</a><br>También puedes consultar nuestras tarifas en el <strong>Simulador Online</strong>.`;
   }
 
   async callGeminiDirect(userQuery) {

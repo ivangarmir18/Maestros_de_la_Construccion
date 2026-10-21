@@ -117,10 +117,10 @@ const BudgetCalculator = {
   generateWhatsAppUrl(info) {
     const phone = "34722851328";
     const text = `¡Hola Maestros de la Construcción! He visto vuestras tarifas base en la web:
-🏗️ *Servicio de interés:* ${info.serviceName}
-📐 *Envergadura / Tipo:* ${info.sizeLabel}
-💰 *Tarifa orientativa base:* Desde ${info.basePriceFormatted}
-⏱️ *Plazo estimado:* ~${info.timeText}
+- Servicio de interés: ${info.serviceName}
+- Envergadura / Tipo: ${info.sizeLabel}
+- Tarifa orientativa base: Desde ${info.basePriceFormatted}
+- Plazo estimado: ~${info.timeText}
 
 Me gustaría concertar una visita técnica gratuita en Valencia o alrededores para medir y cerrar presupuesto exacto sin compromiso. ¡Gracias!`;
 

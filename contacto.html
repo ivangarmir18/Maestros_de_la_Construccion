@@ -276,11 +276,11 @@
                 if (!data) return;
 
                 const text = `*SOLICITUD DE REFORMA WEB*\n` +
-                             `👤 *Nombre:* ${data.name}\n` +
-                             `📞 *Teléfono:* ${data.phone}\n` +
-                             `📍 *Zona/Municipio:* ${data.location}\n` +
-                             `🔨 *Tipo de trabajo:* ${data.type}\n` +
-                             `📝 *Detalles:* ${data.message ? data.message : 'Sin detalles adicionales'}`;
+                             `- Nombre: ${data.name}\n` +
+                             `- Teléfono: ${data.phone}\n` +
+                             `- Zona/Municipio: ${data.location}\n` +
+                             `- Tipo de trabajo: ${data.type}\n` +
+                             `- Detalles: ${data.message ? data.message : 'Sin detalles adicionales'}`;
 
                 const whatsappUrl = `https://wa.me/34722851328?text=${encodeURIComponent(text)}`;
                 window.open(whatsappUrl, '_blank');
