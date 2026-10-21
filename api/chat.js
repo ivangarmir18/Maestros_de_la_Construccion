@@ -212,7 +212,7 @@ export default async function handler(req, res) {
             parts: [{ text: `${SYSTEM_PROMPT}\n\nConsulta del cliente:\n${cleanMessage}` }]
           }
         ],
-        generationConfig: { temperature: 0.65, maxOutputTokens: 400 }
+        generationConfig: { temperature: 0.65, maxOutputTokens: 800 }
       };
 
       for (const url of endpoints.slice(0, 4)) {
@@ -239,7 +239,13 @@ export default async function handler(req, res) {
       });
     }
 
-    const replyText = successfulData.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const candidate = successfulData.candidates?.[0];
+    const parts = candidate?.content?.parts || [];
+    const replyText = parts
+      .filter(p => p && typeof p.text === 'string')
+      .map(p => p.text)
+      .join('')
+      .trim();
 
     return res.status(200).json({
       success: true,
